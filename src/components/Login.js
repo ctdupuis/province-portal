@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 
+
 export default class Login extends Component {
     componentDidMount() {
         fetch('http://localhost:5000')
@@ -7,17 +8,32 @@ export default class Login extends Component {
         .then(j => console.log(j))
     }
 
-    handleSubmit = event =>{
+    state = {
+        username: '',
+        password: ''
+    }
+
+    handleChange = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
+
+    handleSubmit = event => {
         event.preventDefault()
-        console.log('submit button pressed')
+        console.log(this.state)
+        this.setState({
+            username: '',
+            password: ''
+        })
     }
 
     render() {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    Username:<input type='text' name='username' />
-                    Password:<input type='password' name='password' />
+                    Username:<input onChange={this.handleChange} type='text' name='username' />
+                    Password:<input onChange={this.handleChange} type='password' name='password' />
 
                     <input type="submit" />
                 </form>
