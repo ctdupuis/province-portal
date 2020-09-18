@@ -2,11 +2,7 @@ import React, { Component } from 'react'
 
 
 export default class Login extends Component {
-    componentDidMount() {
-        fetch('http://localhost:5000')
-        .then(r => r.json())
-        .then(j => console.log(j))
-    }
+    
 
     state = {
         username: '',
