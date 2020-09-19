@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Login from '../components/Login';
+import { connect } from 'react-redux';
+import { getLoginStatus, login, endSession } from '../actions/sessions';
 
-export default class SessionsContainer extends Component {
+class SessionsContainer extends Component {
     componentDidMount() {
-        fetch('http://localhost:5000/logged_in')
-        .then(r => r.json())
-        .then(j => console.log(j))
+        this.props.getLoginStatus();
     }
 
     render() {
@@ -17,3 +17,15 @@ export default class SessionsContainer extends Component {
         )
     }
 }
+
+export default connect(
+    state => ({
+        currentUser: state.userReducer.currentUser,
+        errors: state.userReducer.errors
+    }),
+    {
+        getLoginStatus,
+        endSession,
+        login
+    }
+)(SessionsContainer);

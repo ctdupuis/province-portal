@@ -22,3 +22,23 @@ export const login = (userdata, history) => {
         }
     }
 }
+export const getLoginStatus = () => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_SESSION_REQUEST' })
+        const response = await axios.get(`${url}/logged_in`, { withCredentials: true })
+        const data = response.data
+        if (data.logged_in === true ) {
+            const user = data.user
+            dispatch({ type: 'LOGIN_USER', user })
+        }
+    }
+}
+
+export const endSession = () => {
+    return (dispatch) =>  {
+        axios.get(`${url}/logout`, { withCredentials: true})
+        .then(res => {
+            dispatch({ type: 'LOGOUT_USER' })
+        })
+    }
+}
