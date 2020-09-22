@@ -23,7 +23,8 @@ export default function userReducer(
             }
         case 'START_SESSION_REQUEST':
             return {
-                ...state
+                ...state,
+                requesting: true
             }
    
         default: return state;

@@ -11,14 +11,18 @@ export const login = (userdata, history) => {
         }, { withCredentials: true }
     )
     const resp = response.data
+    debugger
+        // if (resp.first_login) {
+        //     history.push('/update-info')
+        // }
         if (resp.logged_in === true) {
             const user = resp.user
             dispatch({ type: 'LOGIN_USER', user })
-            history.push('/dashboard')
+            // history.push('/dashboard')
         } else {
             const err = resp.error
             dispatch({ type: 'LOGIN_ERROR', err })
-            history.push('/dashboard')
+            // history.push('/dashboard')
         }
     }
 }
@@ -27,6 +31,7 @@ export const getLoginStatus = () => {
         dispatch({ type: 'START_SESSION_REQUEST' })
         const response = await axios.get(`${url}/logged_in`, { withCredentials: true })
         const data = response.data
+        console.log(data)
         if (data.logged_in === true ) {
             const user = data.user
             dispatch({ type: 'LOGIN_USER', user })

@@ -22,7 +22,7 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
     <BrowserRouter>
-      <App store={store} />
+      <App />
     </BrowserRouter>
   </Provider>,
   document.getElementById('root')

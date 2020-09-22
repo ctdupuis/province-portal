@@ -12,7 +12,14 @@ class SessionsContainer extends Component {
     render() {
         return (
             <React.Fragment>
-                <Route exact path={'/'} component={Login} />
+                <Route exact path={'/'} 
+                    render={ props => 
+                        <Login 
+                            login={this.props.login} 
+                            {...props} 
+                        />
+                    } 
+                />
             </React.Fragment>
         )
     }
@@ -20,7 +27,7 @@ class SessionsContainer extends Component {
 
 export default connect(
     state => ({
-        currentUser: state.userReducer.currentUser,
+        currentUser: state.currentUser,
         errors: state.userReducer.errors
     }),
     {
