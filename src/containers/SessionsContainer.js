@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Redirect } from 'react-router-dom';
 import Login from '../components/Login';
 import { connect } from 'react-redux';
 import { getLoginStatus, login, endSession, updateInfo } from '../actions/sessions';
@@ -23,10 +23,17 @@ class SessionsContainer extends Component {
                 />
                 <Route exact path={'/update-info'}
                     render={ props =>
+                        // (!this.props.currentUser) ?
                         <InfoUpdate
                             updateInfo={this.props.updateInfo}
+                            currentUser={this.props.currentUser}
                             {...props}
                         />
+                        // :
+                        // <Redirect to={'/'}
+                        //     login={this.props.login}
+                        //     {...props}
+                        // /> 
                     }
                 />
             </React.Fragment>
@@ -37,7 +44,7 @@ class SessionsContainer extends Component {
 export default connect(
     state => ({
         currentUser: state.currentUser,
-        errors: state.userReducer.errors
+        errors: state.errors
     }),
     {
         getLoginStatus,

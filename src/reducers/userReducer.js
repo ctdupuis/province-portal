@@ -26,7 +26,6 @@ export default function userReducer(
                 ...state,
                 requesting: true
             }
-   
         default: return state;
     }
 }

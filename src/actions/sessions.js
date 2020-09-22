@@ -11,17 +11,19 @@ export const login = (userdata, history) => {
         }, { withCredentials: true }
     )
     const resp = response.data
-    debugger
+    // debugger
         if (resp.first_login) {
+            const user = resp.user
+            dispatch({ type: 'LOGIN_USER', user })
             history.push('/update-info')
         } else if (resp.logged_in === true) {
             const user = resp.user
             dispatch({ type: 'LOGIN_USER', user })
-            // history.push('/dashboard')
+            history.push('/dashboard')
         } else {
             const err = resp.error
             dispatch({ type: 'LOGIN_ERROR', err })
-            // history.push('/dashboard')
+            history.push('/')
         }
     }
 }
@@ -29,17 +31,22 @@ export const login = (userdata, history) => {
 export const updateInfo = (userdata, history) => {
     return async (dispatch) => {
         dispatch({ type: 'START_SESSION_REQUEST'})
-        const response = await axios.post(`${url}/update-info`, {
+        const response = await axios.post(`${url}/update`, {
             password: userdata.password,
             password_confirm: userdata.password_confirm
         }, { withCredentials: true })
         const data = response.data
+        if (data.logged_in) {
+            const user = data.user
+            dispatch({ type: 'LOGIN_USER', user })
+            history.push('/dashboard')
+        }
     }
 }
 
 export const getLoginStatus = () => {
     return async (dispatch) => {
-        dispatch({ type: 'START_SESSION_REQUEST' })
+        // dispatch({ type: 'START_SESSION_REQUEST' })
         const response = await axios.get(`${url}/logged_in`, { withCredentials: true })
         const data = response.data
         console.log(data)
