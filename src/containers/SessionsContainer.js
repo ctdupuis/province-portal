@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import { Route } from 'react-router-dom';
 import Login from '../components/Login';
 import { connect } from 'react-redux';
-import { getLoginStatus, login, endSession } from '../actions/sessions';
+import { getLoginStatus, login, endSession, updateInfo } from '../actions/sessions';
+import InfoUpdate from '../components/InfoUpdate';
 
 class SessionsContainer extends Component {
     componentDidMount() {
@@ -20,6 +21,14 @@ class SessionsContainer extends Component {
                         />
                     } 
                 />
+                <Route exact path={'/update-info'}
+                    render={ props =>
+                        <InfoUpdate
+                            updateInfo={this.props.updateInfo}
+                            {...props}
+                        />
+                    }
+                />
             </React.Fragment>
         )
     }
@@ -33,6 +42,7 @@ export default connect(
     {
         getLoginStatus,
         endSession,
-        login
+        login,
+        updateInfo
     }
 )(SessionsContainer);

@@ -12,10 +12,9 @@ export const login = (userdata, history) => {
     )
     const resp = response.data
     debugger
-        // if (resp.first_login) {
-        //     history.push('/update-info')
-        // }
-        if (resp.logged_in === true) {
+        if (resp.first_login) {
+            history.push('/update-info')
+        } else if (resp.logged_in === true) {
             const user = resp.user
             dispatch({ type: 'LOGIN_USER', user })
             // history.push('/dashboard')
@@ -26,6 +25,18 @@ export const login = (userdata, history) => {
         }
     }
 }
+
+export const updateInfo = (userdata, history) => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_SESSION_REQUEST'})
+        const response = await axios.post(`${url}/update-info`, {
+            password: userdata.password,
+            password_confirm: userdata.password_confirm
+        }, { withCredentials: true })
+        const data = response.data
+    }
+}
+
 export const getLoginStatus = () => {
     return async (dispatch) => {
         dispatch({ type: 'START_SESSION_REQUEST' })

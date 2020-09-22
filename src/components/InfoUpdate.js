@@ -1,12 +1,9 @@
 import React, { Component } from 'react'
 
-
-export default class Login extends Component {
-    
-
+export default class InfoUpdate extends Component {
     state = {
-        username: '',
-        password: ''
+        password: '',
+        password_confirm: ''
     }
 
     handleChange = event => {
@@ -18,10 +15,10 @@ export default class Login extends Component {
     handleSubmit = event => {
         event.preventDefault()
         console.log(this.state)
-        this.props.login(this.state, this.props.history)
+        this.props.updateInfo(this.state)
         this.setState({
-            username: '',
-            password: ''
+            password: '',
+            password_confirm: ''
         })
     }
 
@@ -29,10 +26,10 @@ export default class Login extends Component {
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
-                    Username:<input onChange={this.handleChange} type='text' name='username' />
                     Password:<input onChange={this.handleChange} type='password' name='password' />
+                    Password Confirmation:<input onChange={this.handleChange} type='password' name='password_confirm' />
 
-                    <input type="submit" value="Log In" />
+                    <input type="submit" value="Update Info" />
                 </form>
             </div>
         )
