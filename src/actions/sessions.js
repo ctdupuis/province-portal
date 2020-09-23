@@ -40,6 +40,10 @@ export const updateInfo = (userdata, history) => {
             const user = data.user
             dispatch({ type: 'LOGIN_USER', user })
             history.push('/dashboard')
+        } else {
+            const err = resp.error
+            dispatch({ type: 'LOGIN_ERROR', err })
+            history.push('/update-info')
         }
     }
 }
