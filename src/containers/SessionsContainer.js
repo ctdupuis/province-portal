@@ -16,10 +16,13 @@ class SessionsContainer extends Component {
             <React.Fragment>
                 <Route exact path={'/'} 
                     render={ props => 
+                        (!this.props.currentUser) ?
                         <Login 
                             login={this.props.login} 
                             {...props} 
                         />
+                        :
+                        <Redirect to={'/dashboard'} />
                     } 
                 />
                 <Route exact path={'/update-info'}
@@ -41,6 +44,8 @@ class SessionsContainer extends Component {
                     render={ props =>
                         <Dashboard
                             currentUser={this.props.currentUser}
+                            endSession={this.props.endSession}
+                            {...props}
                         />
                     }
                 />

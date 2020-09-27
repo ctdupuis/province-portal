@@ -11,7 +11,6 @@ export const login = (userdata, history) => {
         }, { withCredentials: true }
     )
     const resp = response.data
-    // debugger
         if (resp.first_login) {
             const user = resp.user
             dispatch({ type: 'LOGIN_USER', user })
@@ -64,11 +63,12 @@ export const getLoginStatus = () => {
     }
 }
 
-export const endSession = () => {
-    return (dispatch) =>  {
+export const endSession = (history) => {
+    return async (dispatch) =>  {
         axios.get(`${url}/logout`, { withCredentials: true})
         .then(res => {
             dispatch({ type: 'LOGOUT_USER' })
         })
+        history.push('/')
     }
 }

@@ -28,7 +28,8 @@ export default function userReducer(
             // debugger
             return {
                 ...state,
-                requesting: true
+                requesting: true,
+                currentUser: state.currentUser
             }
         case 'END_SESSION_REQUEST':
             return {
