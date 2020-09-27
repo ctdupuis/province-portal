@@ -51,8 +51,7 @@ class SessionsContainer extends Component {
 
 export default connect(
     state => ({
-        currentUser: state.currentUser,
-        errors: state.errors
+        currentUser: state.userReducer.currentUser
     }),
     {
         getLoginStatus,

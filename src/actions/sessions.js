@@ -32,6 +32,7 @@ export const updateInfo = (userdata, history) => {
     return async (dispatch) => {
         dispatch({ type: 'START_SESSION_REQUEST'})
         const response = await axios.post(`${url}/update`, {
+            username: userdata.username,
             password: userdata.password,
             password_confirm: userdata.password_confirm
         }, { withCredentials: true })
@@ -41,7 +42,7 @@ export const updateInfo = (userdata, history) => {
             dispatch({ type: 'LOGIN_USER', user })
             history.push('/dashboard')
         } else {
-            const err = resp.error
+            const err = response.error
             dispatch({ type: 'LOGIN_ERROR', err })
             history.push('/update-info')
         }
@@ -50,13 +51,15 @@ export const updateInfo = (userdata, history) => {
 
 export const getLoginStatus = () => {
     return async (dispatch) => {
-        // dispatch({ type: 'START_SESSION_REQUEST' })
+        dispatch({ type: 'START_SESSION_REQUEST' })
         const response = await axios.get(`${url}/logged_in`, { withCredentials: true })
         const data = response.data
         console.log(data)
         if (data.logged_in === true ) {
             const user = data.user
             dispatch({ type: 'LOGIN_USER', user })
+        } else {
+            dispatch({ type: 'END_SESSION_REQUEST' })
         }
     }
 }
