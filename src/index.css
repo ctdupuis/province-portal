@@ -94,4 +94,9 @@ header {
 
 .session-form input.form-btn:hover {
   background: var(--l-green);
+  transition: 0.3s;
+}
+
+.alert {
+  color: red;
 }

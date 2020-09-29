@@ -19,6 +19,7 @@ class SessionsContainer extends Component {
                         (!this.props.currentUser) ?
                         <Login 
                             login={this.props.login} 
+                            error={this.props.errors}
                             {...props} 
                         />
                         :
@@ -31,6 +32,7 @@ class SessionsContainer extends Component {
                         <InfoUpdate
                             updateInfo={this.props.updateInfo}
                             currentUser={this.props.currentUser}
+                            error={this.props.errors}
                             {...props}
                         />
                         // :
@@ -56,7 +58,8 @@ class SessionsContainer extends Component {
 
 export default connect(
     state => ({
-        currentUser: state.userReducer.currentUser
+        currentUser: state.userReducer.currentUser,
+        errors: state.userReducer.errors
     }),
     {
         getLoginStatus,
