@@ -15,12 +15,18 @@ code {
   --l-green: #9bc44c;
   --m-green: #165944;
   --d-green: #1f4844;
+  --o-green: #319847;
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-color: lightgrey;
 }
 
 .wrapper {
@@ -28,10 +34,13 @@ code {
 }
 
 header {
-  background-color: grey;
-  height: 100px;
+  background-color: whitesmoke;
+  height: 150px;
   width: 100%;
   text-align: left;
+  border-bottom: 7px solid var(--d-green);
+  border-left: 6px solid var(--m-green);
+  border-top: 5px solid var(--l-green);
 }
 
 .company-name {
@@ -47,4 +56,42 @@ header {
   height: 70%;
   padding-top: 1%;
   width: 17%;
+}
+
+.session-form-container {
+  padding: 15px;
+  margin: 15px 75px;
+}
+
+.form-box {
+  border: 10px solid var(--l-green);
+  margin: 10px 50px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+.session-form {
+  padding: 25px;
+}
+
+.session-form label {
+  margin: 5px;
+}
+
+.session-form input {
+  margin: 5px;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.session-form input.form-btn {
+  color: whitesmoke;
+  background: var(--m-green);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 7px;
+}
+
+.session-form input.form-btn:hover {
+  background: var(--l-green);
 }

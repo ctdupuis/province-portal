@@ -27,12 +27,18 @@ export default class Login extends Component {
     render() {
         return (
             <div className="session-form-container">
-                <form onSubmit={this.handleSubmit}>
-                    Username:<input onChange={this.handleChange} type='text' name='username' />
-                    Password:<input onChange={this.handleChange} type='password' name='password' />
+                <div className="form-box">
+                    <form className="session-form" onSubmit={this.handleSubmit}>
+                        <label>Username</label>
+                        <input onChange={this.handleChange} type='text' name='username' />
+                        <br />
+                        <label>Password</label>
+                        <input onChange={this.handleChange} type='password' name='password' />
+                        <br />
 
-                    <input type="submit" value="Log In" />
-                </form>
+                        <input className="form-btn" type="submit" value="Log In" />
+                    </form>
+                </div>
             </div>
         )
     }
