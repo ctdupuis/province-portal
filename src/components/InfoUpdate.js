@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 export default class InfoUpdate extends Component {
     state = {
-        username: this.props.currentUser.username,
+        // username: this.props.currentUser.username,
         password: '',
         password_confirm: ''
     }
@@ -25,15 +25,19 @@ export default class InfoUpdate extends Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.handleSubmit}>
-                    <h3>{this.state.username}</h3>
-                    <h4>please update your password</h4>
-                    Password:<input onChange={this.handleChange} type='password' name='password' />
-                    Password Confirmation:<input onChange={this.handleChange} type='password' name='password_confirm' />
+            <div className="session-form-container">
+                <div className="form-box">
+                    <form className="session-form" onSubmit={this.handleSubmit}>
+                        <label>Password</label>
+                        <input onChange={this.handleChange} type='password' name='password' />
+                        <br />
+                        <label>Confirm Password</label>
+                        <input onChange={this.handleChange} type='password' name='password_confirm' />
+                        <br />
 
-                    <input type="submit" value="Update Info" />
-                </form>
+                        <input className="form-btn" type="submit" value="Update Info" />
+                    </form>
+                </div>
             </div>
         )
     }
