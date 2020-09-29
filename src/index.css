@@ -11,3 +11,40 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+:root {
+  --l-green: #9bc44c;
+  --m-green: #165944;
+  --d-green: #1f4844;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+header {
+  background-color: grey;
+  height: 100px;
+  width: 100%;
+  text-align: left;
+}
+
+.company-name {
+  padding-left: 2%;
+  height: 100%;
+}
+
+.logo-container {
+  height: 100%;
+}
+
+.logo-container img {
+  height: 70%;
+  padding-top: 1%;
+  width: 17%;
+}

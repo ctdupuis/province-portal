@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import { getLoginStatus, login, endSession, updateInfo } from '../actions/sessions';
 import InfoUpdate from '../components/InfoUpdate';
 import Dashboard from '../components/Dashboard';
-import Header from '../components/Header';
 
 class SessionsContainer extends Component {
     componentDidMount() {
@@ -15,7 +14,6 @@ class SessionsContainer extends Component {
     render() {
         return (
             <React.Fragment>
-                <Header />
                 <Route exact path={'/'} 
                     render={ props => 
                         (!this.props.currentUser) ?

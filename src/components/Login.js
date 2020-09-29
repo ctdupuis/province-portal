@@ -26,7 +26,7 @@ export default class Login extends Component {
 
     render() {
         return (
-            <div>
+            <div className="session-form-container">
                 <form onSubmit={this.handleSubmit}>
                     Username:<input onChange={this.handleChange} type='text' name='username' />
                     Password:<input onChange={this.handleChange} type='password' name='password' />
