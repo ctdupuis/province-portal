@@ -52,7 +52,7 @@ export default class Login extends Component {
                             onChange={this.handleChange} 
                             type='password' 
                             name='password' 
-                            value={this.state.username}
+                            value={this.state.password}
                         />
                         <br />
 

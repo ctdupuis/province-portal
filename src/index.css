@@ -33,7 +33,7 @@ body {
   text-align: center;
 }
 
-header {
+.main-head {
   background-color: whitesmoke;
   height: 150px;
   width: 100%;
@@ -99,4 +99,24 @@ header {
 
 .alert {
   color: red;
+}
+
+.dash-container {
+  padding: 15px;
+  margin: 75px 15px;
+}
+
+.dash-header {
+  border: 2px solid var(--l-green);
+  margin: 10px 40px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+.dash-header div {
+  text-align: left;
+  background-color: var(--o-green);
+  width: 100%;
+  padding-left: 5px;
+  font-size: large;
 }
