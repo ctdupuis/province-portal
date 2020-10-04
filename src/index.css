@@ -144,3 +144,77 @@ body {
   padding: 10px;
   color: whitesmoke;
 }
+
+.comment-container {
+  border-bottom: 1px solid var(--o-green);
+  border-right: 1px solid var(--o-green);
+  border-left: 1px solid var(--o-green);
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.comment-container li {
+  display: block;
+  text-align: left;
+  background-color: grey;
+  padding: 10px 0 10px 20px;
+}
+
+.comment-container li.comment-head {
+  text-align: left;
+  font-size: 25px;
+  padding: 10px 5px;
+  border-bottom: 1px solid var(--o-green);
+  background-color: var(--o-green);
+  border-radius: 10px 10px 0 0;
+  color: whitesmoke;
+}
+
+
+div.comment li{
+  background-color: whitesmoke;
+  margin: 7px;
+  border-radius: 10px;
+}
+
+.comment-list {
+  background-color: var(--d-green);
+  border-radius: 10px;
+}
+
+.comment-submit {
+  padding: 7px;
+  background-color: var(--l-green);
+  color: whitesmoke;
+  border-radius: 7px;
+  width: 15%;
+  /* margin: 0  0 15px 40px; */
+}
+
+.comment-submit:hover {
+  cursor: pointer;
+  background: var(--m-green);
+  transition: 0.3s;
+}
+
+.new-comment {
+  padding-top: 10px;
+  box-sizing: border-box;
+  border-radius: 10px;
+}
+
+.comment-input {
+  height: 100%;
+  width: 75%;
+  /* margin-right: 12%; */
+  transition: width 0.4s ease-in-out;
+  background-color: lightgrey;
+  resize: none;
+  border-radius: 5px;
+}
+
+.comment-input:focus {
+  width: 80%;
+  background-color: whitesmoke;
+  border-radius: 15px;
+}
