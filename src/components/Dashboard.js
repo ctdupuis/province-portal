@@ -30,9 +30,9 @@ export default class Dashboard extends Component {
                                 <div className="comment">
                                     <li>Comment</li>
                                 </div>
-                                <div className="comment">
-                                    <div className="input-container">
-                                        <textarea type="text" className="comment-input" />
+                                <div className="comment flex-container">
+                                    <div className="input-container"  >
+                                        <textarea type="text" placeholder="Leave a comment..." className="comment-input" />
                                     </div>
                                     <div className="btn-container">
                                         <button className="comment-submit">Post Comment</button>    
