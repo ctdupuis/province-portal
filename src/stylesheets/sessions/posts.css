@@ -21,14 +21,14 @@
   border-radius: 100px;
   padding: 10px;
   color: whitesmoke;
-  margin: 8px 8px 8px 15px;
+  margin: 8px 8px 15px 15px;
   border: 1px solid var(--m-green);
 }
 
 .post-text {
   border: 2px solid var(--o-green);
   border-radius: 0 10px 10px 10px;
-  padding: 15px;
+  padding: 20px;
 }
 
 .comment-container {
@@ -56,11 +56,12 @@
   color: whitesmoke;
 }
 
-div.comment li {
+.comment li {
   background-color: whitesmoke;
   margin: 7px;
   border-radius: 0 10px 10px 10px;
   border: 2px solid var(--o-green);
+  padding: 25px;
 }
 
 .comment-list {
@@ -112,4 +113,21 @@ div.comment li {
   width: 100%;
   background-color: whitesmoke;
   border-radius: 15px;
+}
+
+.comment-author {
+  float: left;
+  background-color: var(--o-green);
+  border-radius: 100px;
+  padding: 10px;
+  color: whitesmoke;
+  margin: 8px 15px 35px 15px;
+  border: 1px solid var(--m-green);
+}
+
+.timestamp {
+  float: left;
+  font-size: small;
+  padding: 1px 0 1px 0;
+  color: var(--m-green);
 }

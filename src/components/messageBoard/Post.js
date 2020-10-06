@@ -1,7 +1,7 @@
 import React from "react";
 import CommentList from '../messageBoard/CommentList';
 
-const Post = (props) => {
+const Post = props => {
   return (
     <article className="post-container">
       <div className="post-content">
@@ -14,6 +14,8 @@ const Post = (props) => {
           reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
           pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
           culpa qui officia deserunt mollit anim id est laborum.
+          <br />
+        <span className="timestamp"><em>3 hours ago</em></span>
         </p>
         <CommentList />
       </div>
