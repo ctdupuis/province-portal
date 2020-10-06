@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import Alert from './Alert';
-
+import Alert from '../static/Alert';
+import '../../stylesheets/sessions/forms.css';
 
 export default class Login extends Component {
     

@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import SessionsContainer from './containers/SessionsContainer';
-import Header from './components/Header';
+import Header from './components/static/Header';
 
 function App() {
   return (

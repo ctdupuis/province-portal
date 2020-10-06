@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import '../../stylesheets/sessions/dashboard.css';
 
 export default class Dashboard extends Component {
     render() {
         return (
             <section className="dash-container">
                 <header className="dash-header">
-                    <h3>Announcements</h3>
+                    <h3>Message Board</h3>
                 </header>
                 <article className="post-container">
                     <div className="post-content">

@@ -1,0 +1,44 @@
+@import "../../../src/index.css";
+
+.session-form-container {
+  padding: 15px;
+  margin: 15px 75px;
+}
+
+.form-box {
+  border: 10px solid var(--l-green);
+  margin: 10px 50px;
+  background-color: whitesmoke;
+  border-radius: 5px;
+}
+
+.session-form {
+  padding: 25px;
+}
+
+.session-form label {
+  margin: 5px;
+}
+
+.session-form input {
+  margin: 5px;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.session-form input.form-btn {
+  color: whitesmoke;
+  background: var(--m-green);
+  cursor: pointer;
+  font-size: 12px;
+  padding: 7px;
+}
+
+.session-form input.form-btn:hover {
+  background: var(--l-green);
+  transition: 0.3s;
+}
+
+.alert {
+  color: red;
+}

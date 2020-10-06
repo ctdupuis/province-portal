@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import Login from '../components/Login';
+import Login from '../components/sessions/Login';
 import { connect } from 'react-redux';
 import { getLoginStatus, login, endSession, updateInfo } from '../actions/sessions';
-import InfoUpdate from '../components/InfoUpdate';
-import Dashboard from '../components/Dashboard';
+import InfoUpdate from '../components/sessions/InfoUpdate';
+import Dashboard from '../components/sessions/Dashboard';
 
 class SessionsContainer extends Component {
     componentDidMount() {
