@@ -4,7 +4,7 @@ import '../../stylesheets/sessions/forms.css';
 
 export default class InfoUpdate extends Component {
     state = {
-        // username: this.props.currentUser.username,
+        username: this.props.currentUser.username,
         password: '',
         password_confirm: ''
     }
