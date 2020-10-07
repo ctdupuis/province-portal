@@ -1,19 +1,14 @@
 import React from "react";
 import CommentList from '../messageBoard/CommentList';
 
-const Post = props => {
+const Post = ({ content, userID }) => {
+
   return (
     <article className="post-container">
       <div className="post-content">
         <div className="post-author">CTD</div>
         <p className="post-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat. Duis aute irure dolor in
-          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-          culpa qui officia deserunt mollit anim id est laborum.
+          {content}
           <br />
         <span className="timestamp"><em>3 hours ago</em></span>
         </p>

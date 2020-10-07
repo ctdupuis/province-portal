@@ -8,12 +8,16 @@ import {
   endSession,
   updateInfo,
 } from "../actions/sessions";
+import {
+  getPosts
+} from "../actions/posts";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Dashboard from "../components/sessions/Dashboard";
 
 class SessionsContainer extends Component {
   componentDidMount() {
     this.props.getLoginStatus();
+    this.props.getPosts();
   }
 
   render() {
@@ -61,6 +65,8 @@ class SessionsContainer extends Component {
             <Dashboard
               currentUser={this.props.currentUser}
               endSession={this.props.endSession}
+              posts={this.props.posts}
+              // getPosts={this.props.getPosts}
               {...props}
             />
           )}
@@ -74,11 +80,13 @@ export default connect(
   (state) => ({
     currentUser: state.userReducer.currentUser,
     errors: state.userReducer.errors,
+    posts: state.postsReducer.posts
   }),
   {
     getLoginStatus,
     endSession,
     login,
     updateInfo,
+    getPosts
   }
 )(SessionsContainer);

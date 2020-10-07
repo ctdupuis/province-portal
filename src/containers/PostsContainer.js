@@ -1,38 +1,20 @@
 import React, { Component } from "react";
 import "../stylesheets/sessions/posts.css";
-import { connect } from 'react-redux';
-import Post from "../components/messageBoard/Post";
 import NewPost from "../components/messageBoard/NewPost";
-import { 
-    getPosts
-} from '../actions/posts';
-class PostsContainer extends Component {
-    componentDidMount() {
-        this.props.getPosts();
-    }
+import PostList from "../components/messageBoard/PostList";
 
-    renderAllPosts() {
-        // this.props.posts.forEach(post => return <Post props={props} />)
-    }
+class PostsContainer extends Component {
     
     render() {
         return (
             <React.Fragment>
                 <NewPost />
-                <Post />
-                <Post />
+                <PostList 
+                    posts={this.props.posts}
+                />
             </React.Fragment>
         )
     }
 }
 
-export default connect(
-    (state) => ({
-        currentUser: state.userReducer.currentUser,
-        posts: state.postsReducer.posts,
-        errors: state.postsReducer.errors
-    }), 
-    {
-        getPosts
-    }
-)(PostsContainer);
+export default PostsContainer;
