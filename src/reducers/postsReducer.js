@@ -11,6 +11,12 @@ export default function postsReducer(
                 ...state,
                 posts: action.posts
             }
+        case 'ADD_POST':
+            const post = action.post
+            return {
+                ...state,
+                posts: [...state.posts, post]
+            }
     default: return state;
     }
 }

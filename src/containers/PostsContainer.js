@@ -8,7 +8,10 @@ class PostsContainer extends Component {
     render() {
         return (
             <React.Fragment>
-                <NewPost />
+                <NewPost
+                    currentUser={this.props.currentUser} 
+                    addPost={this.props.addPost}
+                />
                 <PostList 
                     posts={this.props.posts}
                 />

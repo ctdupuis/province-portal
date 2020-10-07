@@ -9,7 +9,8 @@ import {
   updateInfo,
 } from "../actions/sessions";
 import {
-  getPosts
+  getPosts,
+  addPost
 } from "../actions/posts";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Dashboard from "../components/sessions/Dashboard";
@@ -66,6 +67,7 @@ class SessionsContainer extends Component {
               currentUser={this.props.currentUser}
               endSession={this.props.endSession}
               posts={this.props.posts}
+              addPost={this.props.addPost}
               // getPosts={this.props.getPosts}
               {...props}
             />
@@ -87,6 +89,7 @@ export default connect(
     endSession,
     login,
     updateInfo,
-    getPosts
+    getPosts,
+    addPost
   }
 )(SessionsContainer);
