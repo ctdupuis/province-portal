@@ -14,6 +14,7 @@ import {
 } from "../actions/posts";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Dashboard from "../components/sessions/Dashboard";
+import Sidebar from "../components/sessions/Sidebar";
 
 class SessionsContainer extends Component {
   componentDidMount() {
@@ -63,14 +64,17 @@ class SessionsContainer extends Component {
           exact
           path={"/dashboard"}
           render={(props) => (
-            <Dashboard
-              currentUser={this.props.currentUser}
-              endSession={this.props.endSession}
-              posts={this.props.posts}
-              addPost={this.props.addPost}
-              // getPosts={this.props.getPosts}
-              {...props}
-            />
+            <>
+              {/* <Sidebar /> */}
+              <Dashboard
+                currentUser={this.props.currentUser}
+                endSession={this.props.endSession}
+                posts={this.props.posts}
+                addPost={this.props.addPost}
+                // getPosts={this.props.getPosts}
+                {...props}
+              />
+            </>
           )}
         />
       </React.Fragment>

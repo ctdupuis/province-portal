@@ -1,0 +1,27 @@
+@import "../../index.css";
+
+.sidebar {
+    background-color: whitesmoke;
+    float: left;
+    height: 100%;
+    width: auto;
+    margin-right: 20px;
+    border: 1px solid blue;
+    position: fixed;
+}
+
+.nav-list {
+    margin-top: 150%;
+}
+
+.nav-list li {
+    list-style-type: none;
+    transition: 0.5s;
+    border: 1px solid red;
+}
+
+.nav-list li:hover {
+    background-color: var(--o-green);
+    color: whitesmoke;
+    cursor: pointer;
+}
