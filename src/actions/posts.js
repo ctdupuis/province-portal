@@ -6,8 +6,7 @@ export const getPosts = () => {
     return async (dispatch) => {
         dispatch({ type: 'START_SESSION_REQUEST' })
         const response = await axios.get(`${url}/posts`, { withCredentials: true })
-        const data = response.data
-        const posts = data.posts
+        const posts = response.data
         dispatch({ type: 'SAVE_POSTS', posts })
     }
 }

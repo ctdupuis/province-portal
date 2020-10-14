@@ -7,7 +7,7 @@ import Sidebar from './components/sessions/Sidebar';
 function App() {
   return (
     <div className="App">
-      <Sidebar />
+      {/* <Sidebar /> */}
       <Header />
       <main className="wrapper">
         <SessionsContainer />

@@ -2,7 +2,8 @@ import React from 'react';
 import Post from './Post';
 
 const PostList = ({ posts }) => {
-    const renderPosts = posts.map(post => <Post key={post.id} content={post.content} userID={post.user_id} />)
+
+    const renderPosts = posts.map(post => <Post key={post.id} content={post.content} userID={post.user_id} author={post.author} created={post.created} />)
     return(
         renderPosts
     )
