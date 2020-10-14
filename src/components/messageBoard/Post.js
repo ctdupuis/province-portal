@@ -1,7 +1,7 @@
 import React from "react";
 import CommentList from '../messageBoard/CommentList';
 
-const Post = ({ content, userID, author, created }) => {
+const Post = ({ content, userID, author, created, comments }) => {
 
   return (
     <article className="post-container">
@@ -12,7 +12,7 @@ const Post = ({ content, userID, author, created }) => {
           <br />
         <span className="timestamp"><em>{created}</em></span>
         </p>
-        <CommentList />
+        <CommentList comments={comments}/>
       </div>
     </article>
   );

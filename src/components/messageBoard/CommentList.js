@@ -1,26 +1,13 @@
 import React from 'react';
 import Comment from './Comment';
 
-const CommentList = props => {
+const CommentList = ({ comments }) => {
+    const renderComments = comments.map(comment => <Comment content={comment.content} author={comment.author} created={comment.created} />)
     return(
         <div className="comment-container">
           <ul className="comment-list">
             <li className="comment-head">Comments</li>
-            <Comment />
-            <Comment />
-            <Comment />
-            <div className="comment">
-              <div className="post-author">AEJ</div>
-              <li>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
-              </li>
-            </div>
+            {renderComments}
             <div className="comment flex-container">
               <div className="input-container">
                 <textarea
