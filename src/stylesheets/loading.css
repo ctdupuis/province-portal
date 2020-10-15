@@ -1,0 +1,32 @@
+@import '../index.css';
+
+#example-2{
+    width: 5em;
+    height: 5em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.bar{
+    margin: 0.2em;
+    width: 0.75em;
+    height: 2.5em;
+
+    border: 0.1em solid var(--o-green);
+    border-left: 0.1em solid var(--l-green);
+    background-color: var(--o-green);
+
+    animation: 1.5s infinite example-two;
+}
+
+#bar-2{animation-delay: 0.25s}
+#bar-3{animation-delay: 0.5s}
+
+@keyframes example-two{
+    0% {height: 2.5em}
+    25% {height: 5em}
+    50% {height: 2.5em}
+    100% {height: 2.5em}
+}

@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PostsContainer from "../../containers/PostsContainer";
 import "../../stylesheets/sessions/dashboard.css";
 
+
 export default class Dashboard extends Component {
 
   render() {
