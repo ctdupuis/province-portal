@@ -10,7 +10,8 @@ import {
 } from "../actions/sessions";
 import {
   getPosts,
-  addPost
+  addPost,
+  addComment
 } from "../actions/posts";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Dashboard from "../components/sessions/Dashboard";
@@ -94,6 +95,7 @@ export default connect(
     login,
     updateInfo,
     getPosts,
-    addPost
+    addPost,
+    addComment
   }
 )(SessionsContainer);

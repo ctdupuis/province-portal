@@ -26,3 +26,18 @@ export const addPost = (postdata) => {
         dispatch({ type: 'ADD_POST', post })
     }
 }
+
+export const addComment = (commentdata, postID) => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_SESSION_REQUEST'})
+        const response = await axios.post(`${url}/posts/${postID}/comments`,
+        {
+            content: commentdata.content,
+            user_id: commentdata.userID,
+            post_id: postID,
+        },
+        { withCredentials: true } )
+        const data = response.data
+        console.log(data)
+    }
+}
