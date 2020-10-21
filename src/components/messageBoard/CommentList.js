@@ -15,7 +15,7 @@ const CommentList = ({ comments, postID, userID, addComment }) => {
     return(
         <div className="comment-container">
           <ul className="comment-list">
-            {conditionalRender(comments)}
+            {comments ? conditionalRender(comments) : <li className="comment-head">Be the first to Comment</li>}
             <NewComment userID={userID} postID={postID} addComment={addComment} />
           </ul>
         </div>

@@ -15,7 +15,8 @@ import {
 } from "../actions/posts";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Dashboard from "../components/sessions/Dashboard";
-import Sidebar from "../components/sessions/Sidebar";
+import Tabs from "../components/static/Tabs";
+
 
 class SessionsContainer extends Component {
   componentDidMount() {
@@ -23,9 +24,11 @@ class SessionsContainer extends Component {
     this.props.getPosts();
   }
 
+
   render() {
     return (
       <React.Fragment>
+        <Tabs />
         <Route
           exact
           path={"/"}

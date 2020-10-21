@@ -1,0 +1,18 @@
+@import '../index.css';
+
+.nav-tabs-container {
+    background-color: whitesmoke;
+    height: 3rem;
+}
+
+.nav-tab {
+    display: inline-block;
+    margin: 0 2rem 0 2rem;
+    text-align: center;
+    height: 100%;
+    transition: width 0.5s ease-in-out;
+}
+
+.nav-tab:hover {
+    border-bottom: .3rem solid var(--o-green);
+}
