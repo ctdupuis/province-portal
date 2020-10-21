@@ -15,6 +15,7 @@ export default class Dashboard extends Component {
           posts={this.props.posts} 
           currentUser={this.props.currentUser}
           addPost={this.props.addPost}
+          addComment={this.props.addComment}
         />
         <button onClick={() => this.props.endSession(this.props.history)}>
           Log Out

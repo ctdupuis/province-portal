@@ -14,6 +14,7 @@ class PostsContainer extends Component {
                 />
                 <PostList 
                     posts={this.props.posts}
+                    addComment={this.props.addComment}
                 />
             </React.Fragment>
         )

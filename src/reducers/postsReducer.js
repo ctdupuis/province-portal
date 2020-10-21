@@ -4,7 +4,8 @@ export default function postsReducer(
     },
     action
 ) {
-    let keepers; //save this for edit/delete actions
+    // let keepers; //save this for edit/delete actions
+    let post;
     switch (action.type) {
         case 'SAVE_POSTS':
             return {
@@ -12,10 +13,18 @@ export default function postsReducer(
                 posts: action.posts
             }
         case 'ADD_POST':
-            const post = action.post
+            post = action.post
             return {
                 ...state,
                 posts: [...state.posts, post]
+            }
+        case 'ADD_COMMENT':
+            post = state.posts.find(post => post.id === action.comment.post_id)
+            debugger
+            const comment = action.comment            
+            return {
+                ...state,
+                posts: [...state.posts, post.comments.concat(comment)]
             }
     default: return state;
     }

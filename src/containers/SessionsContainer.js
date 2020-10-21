@@ -72,6 +72,7 @@ class SessionsContainer extends Component {
                 endSession={this.props.endSession}
                 posts={this.props.posts}
                 addPost={this.props.addPost}
+                addComment={this.props.addComment}
                 // getPosts={this.props.getPosts}
                 {...props}
               />
