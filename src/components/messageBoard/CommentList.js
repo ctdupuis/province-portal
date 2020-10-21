@@ -3,10 +3,10 @@ import Comment from './Comment';
 import NewComment from './NewComment';
 
 const CommentList = ({ comments, postID, userID, addComment }) => {
+  const conditionalRender = comments => {
     const renderComments = comments.map(comment => <Comment key={comment.id} content={comment.content} author={comment.author} created={comment.created} />)
-    const conditionalRender = comments => {
       if (comments) {
-        return(<li className="comment-head">Comments</li>)
+        return renderComments
       } else {
         return(<li className="comment-head">Be the first to Comment</li>)
       }
@@ -15,8 +15,7 @@ const CommentList = ({ comments, postID, userID, addComment }) => {
     return(
         <div className="comment-container">
           <ul className="comment-list">
-            <li className="comment-head">Comments</li>
-            {renderComments}
+            {conditionalRender(comments)}
             <NewComment userID={userID} postID={postID} addComment={addComment} />
           </ul>
         </div>

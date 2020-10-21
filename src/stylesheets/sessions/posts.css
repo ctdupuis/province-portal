@@ -61,7 +61,7 @@
   background-color: whitesmoke;
   margin: 0.3rem;
   border-radius: 0 10px 10px 10px;
-  border: 2px solid var(--o-green);
+  border: .1rem solid var(--o-green);
   padding: 1.5rem;
 }
 
@@ -129,6 +129,6 @@
 .timestamp {
   float: left;
   font-size: small;
-  padding: 1px 0 1px 0;
+  padding: .3rem;
   color: var(--m-green);
 }

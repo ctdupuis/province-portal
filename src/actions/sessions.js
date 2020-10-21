@@ -4,7 +4,7 @@ const url = "http://localhost:5000";
 
 export const login = (userdata, history) => {
     return  async (dispatch) => {
-    dispatch({ type: 'START_SESSION_REQUEST' })
+    dispatch({ type: 'START_LOAD' })
     const response = await axios.post(`${url}`, {
             username: userdata.username,
             password: userdata.password
@@ -18,10 +18,12 @@ export const login = (userdata, history) => {
         } else if (resp.logged_in === true) {
             const user = resp.user
             dispatch({ type: 'LOGIN_USER', user })
+            dispatch({type: 'END_LOAD'})
             history.push('/dashboard')
         } else {
             const err = resp.error
             dispatch({ type: 'LOGIN_ERROR', err })
+            dispatch({type: 'END_LOAD'})
             history.push('/')
         }
     }
@@ -29,7 +31,7 @@ export const login = (userdata, history) => {
 
 export const updateInfo = (userdata, history) => {
     return async (dispatch) => {
-        dispatch({ type: 'START_SESSION_REQUEST'})
+        dispatch({ type: 'START_LOAD'})
         const response = await axios.post(`${url}/update`, {
             username: userdata.username,
             password: userdata.password,
@@ -50,7 +52,7 @@ export const updateInfo = (userdata, history) => {
 
 export const getLoginStatus = () => {
     return async (dispatch) => {
-        dispatch({ type: 'START_SESSION_REQUEST' })
+        dispatch({ type: 'START_LOAD' })
         const response = await axios.get(`${url}/logged_in`, { withCredentials: true })
         const data = response.data
         console.log(data)
@@ -65,9 +67,11 @@ export const getLoginStatus = () => {
 
 export const endSession = (history) => {
     return async (dispatch) =>  {
+        dispatch({ type: 'START_LOAD'})
         axios.get(`${url}/logout`, { withCredentials: true})
         .then(res => {
             dispatch({ type: 'LOGOUT_USER' })
+            dispatch({ type: 'END_LOAD'})
         })
         history.push('/')
     }

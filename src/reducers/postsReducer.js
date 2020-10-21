@@ -20,7 +20,7 @@ export default function postsReducer(
             }
         case 'ADD_COMMENT':
             post = state.posts.find(post => post.id === action.comment.post_id)
-            debugger
+            // debugger
             const comment = action.comment            
             return {
                 ...state,

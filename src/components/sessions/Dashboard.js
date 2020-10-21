@@ -1,12 +1,14 @@
 import React, { Component } from "react";
 import PostsContainer from "../../containers/PostsContainer";
 import "../../stylesheets/sessions/dashboard.css";
+import Loading from '../static/Loading';
 
 
 export default class Dashboard extends Component {
 
   render() {
     return (
+      this.props.loading ? <Loading /> :
       <section className="dash-container">
         <header className="dash-header">
           <h3>Message Board</h3>

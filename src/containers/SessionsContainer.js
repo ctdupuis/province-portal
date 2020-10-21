@@ -73,7 +73,7 @@ class SessionsContainer extends Component {
                 posts={this.props.posts}
                 addPost={this.props.addPost}
                 addComment={this.props.addComment}
-                // getPosts={this.props.getPosts}
+                loading={this.props.loading}
                 {...props}
               />
             </>
@@ -88,7 +88,8 @@ export default connect(
   (state) => ({
     currentUser: state.userReducer.currentUser,
     errors: state.userReducer.errors,
-    posts: state.postsReducer.posts
+    posts: state.postsReducer.posts,
+    loading: state.loadReducer.loading
   }),
   {
     getLoginStatus,
