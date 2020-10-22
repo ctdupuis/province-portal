@@ -21,9 +21,7 @@ export const addPost = (postdata) => {
             user_id: postdata.userID
         },
         { withCredentials: true } )
-        const data = response.data
-        console.log(data)
-        const post = data.post
+        const post = response.data
         dispatch({ type: 'ADD_POST', post })
         dispatch({ type: 'END_LOAD'})
     }

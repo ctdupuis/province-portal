@@ -13,6 +13,7 @@ export default function postsReducer(
                 posts: action.posts
             }
         case 'ADD_POST':
+            debugger
             post = action.post
             return {
                 ...state,

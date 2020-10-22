@@ -1,8 +1,11 @@
 @import '../index.css';
 
 .nav-tabs-container {
-    background-color: whitesmoke;
+    background-color: var(--o-green);
     height: 3rem;
+    border: .1rem solid black;
+    text-align: center;
+    justify-content: center;
 }
 
 .nav-tab {
@@ -10,9 +13,13 @@
     margin: 0 2rem 0 2rem;
     text-align: center;
     height: 100%;
-    transition: width 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+}
+
+.nav-tab a {
+    text-decoration: none;
 }
 
 .nav-tab:hover {
-    border-bottom: .3rem solid var(--o-green);
+    border-bottom: .3rem solid var(--l-green);
 }
