@@ -1,4 +1,13 @@
+.wrapper div {
+    text-align: center;
+}
+
 .map-container {
     text-align: center;
-    padding: 5rem;
+    /* padding: 5rem; */
+}
+
+.map {
+    height: 75%;
+    width: 50%;
 }

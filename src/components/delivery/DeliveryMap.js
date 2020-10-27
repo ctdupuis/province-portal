@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import '../../stylesheets/delivery.css';
+require('dotenv').config();
 
 class DeliveryMap extends Component {
     render() {
@@ -9,6 +10,7 @@ class DeliveryMap extends Component {
             <Map 
                 google={this.props.google}
                 initialCenter={{ lat: 30.146626, lng: -92.035548}}
+                className={"map"}
                 zoom={15}
                 style={{ height: '75%', width: "50%", position: 'relative'}}
                 containerStyle={{ textAlign: "center" }}
@@ -17,10 +19,6 @@ class DeliveryMap extends Component {
                     position={{ lat: 30.146626, lng: -92.035548 }}
                     name="Province"
                     title={"This is where you are"}    
-                    // icon={{
-                    //     url: "../public/icon.png",
-                        
-                    // }}
                 />
             </Map>
         </div>
@@ -29,5 +27,5 @@ class DeliveryMap extends Component {
 }
 
 export default GoogleApiWrapper({
-    apiKey: ''
+    apiKey: process.env.REACT_APP_GOOGLE_API_KEY
 })(DeliveryMap);
