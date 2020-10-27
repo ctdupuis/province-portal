@@ -65,7 +65,7 @@ export const getLoginStatus = () => {
     }
 }
 
-export const endSession = (history) => {
+export const endSession = () => {
     return async (dispatch) =>  {
         dispatch({ type: 'START_LOAD'})
         axios.get(`${url}/logout`, { withCredentials: true})
@@ -73,6 +73,6 @@ export const endSession = (history) => {
             dispatch({ type: 'LOGOUT_USER' })
             dispatch({ type: 'END_LOAD'})
         })
-        history.push('/')
+        // history.push('/')
     }
 }

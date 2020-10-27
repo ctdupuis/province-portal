@@ -16,6 +16,7 @@ import {
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Dashboard from "../components/sessions/Dashboard";
 import Tabs from "../components/static/Tabs";
+import DeliveryMap from "../components/delivery/DeliveryMap";
 
 
 class SessionsContainer extends Component {
@@ -28,7 +29,7 @@ class SessionsContainer extends Component {
   render() {
     return (
       <React.Fragment>
-        <Tabs />
+        
         <Route
           exact
           path={"/"}
@@ -69,13 +70,27 @@ class SessionsContainer extends Component {
           path={"/dashboard"}
           render={(props) => (
             <>
-              {/* <Sidebar /> */}
+              <Tabs endSession={this.props.endSession}/>
               <Dashboard
                 currentUser={this.props.currentUser}
                 endSession={this.props.endSession}
                 posts={this.props.posts}
                 addPost={this.props.addPost}
                 addComment={this.props.addComment}
+                loading={this.props.loading}
+                {...props}
+              />
+            </>
+          )}
+        />
+        <Route 
+          exact 
+          path={"/delivery-map"}
+          render={(props) => (
+            <>
+              <Tabs endSession={this.props.endSession}/>
+              <DeliveryMap
+                currentUser={this.props.currentUser}
                 loading={this.props.loading}
                 {...props}
               />

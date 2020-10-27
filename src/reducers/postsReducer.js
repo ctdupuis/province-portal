@@ -13,11 +13,9 @@ export default function postsReducer(
                 posts: action.posts
             }
         case 'ADD_POST':
-            debugger
-            post = action.post
             return {
                 ...state,
-                posts: [post, ...state.posts]
+                posts: [action.post, ...state.posts]
             }
         case 'ADD_COMMENT':
             post = state.posts.find(post => post.id === action.comment.post_id)
