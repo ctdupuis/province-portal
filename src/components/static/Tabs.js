@@ -6,19 +6,28 @@ const Tabs = ({ endSession }) => {
     return(
         <div className="nav-tabs-container">
                     <div className="nav-tab">
-                        <Link to={'/dashboard'}>Dash</Link>
+                        <div className="link-container">
+                            <Link to={'/dashboard'}>Dashboard</Link>
+                        </div>
                     </div>
                     <div className="nav-tab">
-                        <Link to={'/delivery-map'}>Delivery Map</Link>
+                        <div className="link-container">
+
+                            <Link to={'/delivery-map'}>Delivery Map</Link>
+                        </div>
                     </div>
                     <div className="nav-tab">
-                        <Link to={'/pickups'}>Pickups</Link>
+                        <div className="link-container">
+                            <Link to={'/pickups'}>Pickups</Link>
+                        </div>
                     </div>
                     <div className="nav-tab">
-                        <Link to={{
-                            pathname: '/',
-                            state: { redirect: true }
-                        }} >Log Out</Link>
+                        <div className="link-container">
+                            <Link to={{
+                                pathname: '/',
+                                state: { redirect: true }
+                            }} >Log Out</Link>
+                        </div>
                     </div>
             </div>
     )

@@ -1,11 +1,33 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
+import '../../stylesheets/delivery.css';
 
-export default class DeliveryMap extends Component {
+class DeliveryMap extends Component {
     render() {
         return (
-            <div>
-                <h2>Delivery Map Component</h2>
-            </div>
+        <div className="map-container">
+            <Map 
+                google={this.props.google}
+                initialCenter={{ lat: 30.146626, lng: -92.035548}}
+                zoom={15}
+                style={{ height: '75%', width: "50%", position: 'relative'}}
+                containerStyle={{ textAlign: "center" }}
+            >
+                <Marker 
+                    position={{ lat: 30.146626, lng: -92.035548 }}
+                    name="Province"
+                    title={"This is where you are"}    
+                    // icon={{
+                    //     url: "../public/icon.png",
+                        
+                    // }}
+                />
+            </Map>
+        </div>
         )
     }
 }
+
+export default GoogleApiWrapper({
+    apiKey: ''
+})(DeliveryMap);
