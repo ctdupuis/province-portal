@@ -1,21 +1,22 @@
 import React from 'react';
 import Comment from './Comment';
 import NewComment from './NewComment';
+import Loading from '../static/Loading';
 
 const CommentList = ({ comments, postID, userID, addComment }) => {
   const conditionalRender = comments => {
     const renderComments = comments.map(comment => <Comment key={comment.id} content={comment.content} author={comment.author} created={comment.created} />)
-      if (comments) {
-        return renderComments
-      } else {
+      if (!comments.length) {
         return(<li className="comment-head">Be the first to Comment</li>)
+      } else {
+        return renderComments
       }
     }
 
     return(
         <div className="comment-container">
           <ul className="comment-list">
-            {comments ? conditionalRender(comments) : <li className="comment-head">Be the first to Comment</li>}
+            {comments ? conditionalRender(comments) : <Loading />}
             <NewComment userID={userID} postID={postID} addComment={addComment} />
           </ul>
         </div>
