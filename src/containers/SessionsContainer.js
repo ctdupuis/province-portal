@@ -69,6 +69,7 @@ class SessionsContainer extends Component {
           exact
           path={"/dashboard"}
           render={(props) => (
+            this.props.currentUser ?
             <>
               <Tabs endSession={this.props.endSession}/>
               <Dashboard
@@ -80,7 +81,8 @@ class SessionsContainer extends Component {
                 loading={this.props.loading}
                 {...props}
               />
-            </>
+            </> :
+            <Redirect to={'/'} />
           )}
         />
         <Route 

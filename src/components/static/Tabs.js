@@ -23,10 +23,7 @@ const Tabs = ({ endSession }) => {
                     </div>
                     <div className="nav-tab">
                         <div className="link-container">
-                            <Link to={{
-                                pathname: '/',
-                                state: { redirect: true }
-                            }} >Log Out</Link>
+                            <Link to={'/dashboard'} onClick={() => endSession()}>Log Out</Link>
                         </div>
                     </div>
             </div>
