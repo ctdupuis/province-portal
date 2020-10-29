@@ -41,10 +41,12 @@ export const updateInfo = (userdata, history) => {
         if (data.logged_in) {
             const user = data.user
             dispatch({ type: 'LOGIN_USER', user })
+            dispatch({type: 'END_LOAD'})
             history.push('/dashboard')
         } else {
             const err = response.error
             dispatch({ type: 'LOGIN_ERROR', err })
+            dispatch({type: 'END_LOAD'})
             history.push('/update-info')
         }
     }
@@ -58,9 +60,10 @@ export const getLoginStatus = () => {
         console.log(data)
         if (data.logged_in === true ) {
             const user = data.user
+            dispatch({type: 'START_LOAD'})
             dispatch({ type: 'LOGIN_USER', user })
         } else {
-            dispatch({ type: 'END_SESSION_REQUEST' })
+            dispatch({type: 'END_LOAD'})
         }
     }
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import Post from "./Post";
 
-const PostList = ({ posts, addComment }) => {
+const PostList = ({ posts, addComment, currentUser }) => {
   const renderPosts = posts.map((post) => (
     <Post
       key={post.id}
@@ -12,6 +12,7 @@ const PostList = ({ posts, addComment }) => {
       created={post.created}
       comments={post.comments}
       addComment={addComment}
+      currentUser={currentUser}
     />
   ));
   return renderPosts;

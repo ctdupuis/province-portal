@@ -12,7 +12,12 @@ export default class NewComment extends Component {
     }
 
     handleClick = event => {
-        this.props.addComment(this.state)
+        event.preventDefault();
+        this.props.addComment(this.state);
+        this.setState({ 
+          ...this.state,
+          content: ''
+        })
     }
 
     render() {
@@ -27,10 +32,15 @@ export default class NewComment extends Component {
                 />
               </div>
               <div className="btn-container">
-                <button 
+                <form onSubmit={this.handleSubmit}>
+
+                <input
+                  type="submit" 
                   className="comment-submit"
                   onClick={this.handleClick}
-                >Post Comment</button>
+                  value="Post Comment"
+                />
+                </form>
               </div>
             </div>
         )

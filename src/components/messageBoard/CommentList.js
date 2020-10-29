@@ -3,7 +3,7 @@ import Comment from './Comment';
 import NewComment from './NewComment';
 import Loading from '../static/Loading';
 
-const CommentList = ({ comments, postID, userID, addComment }) => {
+const CommentList = ({ comments, postID, userID, addComment, currentUser }) => {
   const conditionalRender = comments => {
     const renderComments = comments.map(comment => <Comment key={comment.id} content={comment.content} author={comment.author} created={comment.created} />)
       if (!comments.length) {
@@ -17,7 +17,11 @@ const CommentList = ({ comments, postID, userID, addComment }) => {
         <div className="comment-container">
           <ul className="comment-list">
             {comments ? conditionalRender(comments) : <Loading />}
-            <NewComment userID={userID} postID={postID} addComment={addComment} />
+            <NewComment 
+              userID={currentUser.id} 
+              postID={postID} 
+              addComment={addComment} 
+            />
           </ul>
         </div>
     )

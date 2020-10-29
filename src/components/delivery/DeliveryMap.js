@@ -27,7 +27,7 @@ class DeliveryMap extends Component {
                     className={"map"}
                     zoom={15}
                     style={{ height: '75%', width: "50%", position: 'relative'}}
-                    containerStyle={{ textAlign: "center" }}
+                    // containerStyle={{ textAlign: "center" }}
                     >
                     <Marker 
                         position={{ lat: 30.146626, lng: -92.035548 }}
