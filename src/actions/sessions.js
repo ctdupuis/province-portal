@@ -14,6 +14,7 @@ export const login = (userdata, history) => {
         if (resp.first_login) {
             const user = resp.user
             dispatch({ type: 'LOGIN_USER', user })
+            dispatch({ type: 'END_LOAD'})
             history.push('/update-info')
         } else if (resp.logged_in === true) {
             const user = resp.user
@@ -60,8 +61,8 @@ export const getLoginStatus = () => {
         console.log(data)
         if (data.logged_in === true ) {
             const user = data.user
-            dispatch({type: 'START_LOAD'})
             dispatch({ type: 'LOGIN_USER', user })
+            dispatch({type: 'END_LOAD'})
         } else {
             dispatch({type: 'END_LOAD'})
         }
@@ -76,6 +77,5 @@ export const endSession = () => {
             dispatch({ type: 'LOGOUT_USER' })
             dispatch({ type: 'END_LOAD'})
         })
-        // history.push('/')
     }
 }

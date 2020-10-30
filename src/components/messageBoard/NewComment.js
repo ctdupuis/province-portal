@@ -11,7 +11,7 @@ export default class NewComment extends Component {
         this.setState({ content: event.target.value })
     }
 
-    handleClick = event => {
+    handleSubmit = event => {
         event.preventDefault();
         this.props.addComment(this.state);
         this.setState({ 
@@ -33,13 +33,11 @@ export default class NewComment extends Component {
               </div>
               <div className="btn-container">
                 <form onSubmit={this.handleSubmit}>
-
-                <input
-                  type="submit" 
-                  className="comment-submit"
-                  onClick={this.handleClick}
-                  value="Post Comment"
-                />
+                  <input
+                    type="submit" 
+                    className="comment-submit"
+                    value="Post Comment"
+                  />
                 </form>
               </div>
             </div>
