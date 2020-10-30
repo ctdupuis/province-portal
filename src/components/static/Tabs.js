@@ -12,13 +12,32 @@ const Tabs = ({ endSession }) => {
                     </div>
                     <div className="nav-tab">
                         <div className="link-container">
-
+                            <Link to={'/announcements'}>Announcements</Link>
+                        </div>
+                    </div>
+                    <div className="nav-tab">
+                        <div className="link-container">
                             <Link to={'/delivery-map'}>Delivery Map</Link>
                         </div>
                     </div>
                     <div className="nav-tab">
                         <div className="link-container">
                             <Link to={'/pickups'}>Pickups</Link>
+                        </div>
+                    </div>
+                    <div className="nav-tab">
+                        <div className="link-container">
+                            <Link to={'/inventory'}>Inventory</Link>
+                        </div>
+                    </div>
+                    <div className="nav-tab">
+                        <div className="link-container">
+                            <Link to={'/fedex-issues'}>FedEx Issues</Link>
+                        </div>
+                    </div>
+                    <div className="nav-tab">
+                        <div className="link-container">
+                            <Link to={'/mileage-tracker'}>Mileage Tracker</Link>
                         </div>
                     </div>
                     <div className="nav-tab">

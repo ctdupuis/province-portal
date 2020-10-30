@@ -14,9 +14,10 @@ import {
   addComment
 } from "../actions/posts";
 import InfoUpdate from "../components/sessions/InfoUpdate";
-import Dashboard from "../components/sessions/Dashboard";
+import Announcements from "../components/sessions/Announcements";
 import Tabs from "../components/static/Tabs";
 import DeliveryMap from "../components/delivery/DeliveryMap";
+import Dashboard from "../components/sessions/Dashboard";
 
 
 class SessionsContainer extends Component {
@@ -67,6 +68,26 @@ class SessionsContainer extends Component {
         />
         <Route
           exact
+          path={"/announcements"}
+          render={(props) => (
+            this.props.currentUser ?
+            <>
+              <Tabs endSession={this.props.endSession}/>
+              <Announcements
+                currentUser={this.props.currentUser}
+                endSession={this.props.endSession}
+                posts={this.props.posts}
+                addPost={this.props.addPost}
+                addComment={this.props.addComment}
+                loading={this.props.loading}
+                {...props}
+              />
+            </> :
+            <Redirect to={'/'} />
+          )}
+        />
+        <Route
+          exact
           path={"/dashboard"}
           render={(props) => (
             this.props.currentUser ?
@@ -75,9 +96,6 @@ class SessionsContainer extends Component {
               <Dashboard
                 currentUser={this.props.currentUser}
                 endSession={this.props.endSession}
-                posts={this.props.posts}
-                addPost={this.props.addPost}
-                addComment={this.props.addComment}
                 loading={this.props.loading}
                 {...props}
               />
