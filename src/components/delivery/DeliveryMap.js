@@ -52,8 +52,7 @@ class DeliveryMap extends Component {
                   handleChange={this.handleChange}
                   values={this.state.address}
                 />
-                <button onClick={this.saveDestination}>Save Destination</button>
-                <input type="submit" value="Calculate Mileage" />
+                <input type="submit" value="Check the Distance" />
               </form>
                 <Map 
                     google={this.props.google}
