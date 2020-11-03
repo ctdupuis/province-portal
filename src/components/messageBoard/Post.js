@@ -1,17 +1,21 @@
 import React, { Component } from "react";
 import CommentList from '../messageBoard/CommentList';
 import NewComment from "./NewComment";
+import { FaCommentAlt } from 'react-icons/fa';
 
 export default class Post extends Component {
   state = {
-    display: "none"
+    displayList: "none",
+    displayForm: "none"
   }
 
   commentFormat = comments => {
-    if (comments.length === 1) {
+    if (comments && comments.length === 1) {
       return "1 comment"
-    } else {
+    } else if (comments && comments.length > 1) {
       return `${comments.length} comments`
+    } else {
+      return 'No comments yet'
     }
   }
 
@@ -24,10 +28,14 @@ export default class Post extends Component {
         <p className="post-text">
           {content}
           <br />
-        <span className="timestamp"><em>{created} |</em></span><button onClick={() => this.setState({display: ''})}className="timestamp total-comments">{this.commentFormat(comments)}</button>
+        <span className="timestamp"><em>{created} |</em></span><button onClick={() => this.setState({displayList: ''})}className="timestamp total-comments">{this.commentFormat(comments)}</button>
         </p>
+        <div style={{ textAlign: 'left'}}>
+
+        <button className="display-new-comment" onClick={() => this.setState({displayForm: ''})}><FaCommentAlt/>  Comment</button>
+        </div>
         <CommentList 
-          style={this.state.display}
+          style={this.state.displayList}
           userID={userID} 
           addComment={addComment} 
           postID={id} 
@@ -35,6 +43,7 @@ export default class Post extends Component {
           currentUser={currentUser}
         />
         <NewComment 
+          style={this.state.displayForm}
           userID={currentUser.id} 
           postID={id} 
           addComment={addComment} 

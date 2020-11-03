@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../../stylesheets/sessions/dashboard.css";
 import Loading from '../static/Loading';
+import { FaPen } from 'react-icons/fa';
 
 
 export default class Dashboard extends Component {
@@ -18,6 +19,7 @@ export default class Dashboard extends Component {
         </header>
         <div className="dash-content">
           <h5>Welcome, {currentUser.first_name} {currentUser.last_name}</h5>
+          <FaPen />
         </div>
       </section>
     );

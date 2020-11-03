@@ -100,14 +100,14 @@
 }
 
 .comment-input {
-  height: 90%;
+  height: 80%;
   width: 80%;
   flex-grow: 8;
   padding: 10px;
   transition: width 0.4s ease-in-out;
   background-color: lightgrey;
   resize: none;
-  border-radius: 5px;
+  border-radius: 15px;
   font-size: large;
   border-color: var(--o-green);
 }
@@ -144,4 +144,18 @@
 
 .total-comments:hover {
   text-decoration: underline;
+}
+
+.display-new-comment {
+  color: whitesmoke;
+  background-color: var(--m-green);
+  border-radius: .5rem;
+  padding: .4rem;
+  transition: 0.5s;
+  margin-top: 0.5em;
+}
+
+.display-new-comment:hover {
+  background-color: var(--d-green);
+  cursor: pointer;
 }

@@ -7,26 +7,27 @@ export default class NewComment extends Component {
         userID: this.props.userID
     }
 
+    
     handleChange = event => {
-        this.setState({ content: event.target.value })
+      this.setState({ content: event.target.value })
     }
-
+    
     handleSubmit = event => {
-        event.preventDefault();
-        this.props.addComment(this.state);
-        this.setState({ 
-          ...this.state,
-          content: ''
-        })
+      event.preventDefault();
+      this.props.addComment(this.state);
+      this.setState({ 
+        ...this.state,
+        content: ''
+      })
     }
-
+    
     render() {
         return (
-            <div className="comment flex-container">
+            <div style={{ display: this.props.style }} className="comment flex-container">
               <div className="input-container">
-                <textarea
+                <input
                   type="text"
-                  placeholder="Leave a comment..."
+                  placeholder="Add a comment..."
                   className="comment-input"
                   onChange={this.handleChange}
                 />
@@ -36,7 +37,7 @@ export default class NewComment extends Component {
                   <input
                     type="submit" 
                     className="comment-submit"
-                    value="Post Comment"
+                    value="Post"
                   />
                 </form>
               </div>

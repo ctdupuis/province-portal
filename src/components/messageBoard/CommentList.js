@@ -7,7 +7,7 @@ const CommentList = ({ comments, postID, userID, addComment, currentUser, style 
   const conditionalRender = comments => {
     const renderComments = comments.map(comment => <Comment key={comment.id} content={comment.content} author={comment.author} created={comment.created} />)
       if (!comments.length) {
-        return(<li className="comment-head">Be the first to Comment</li>)
+        return null
       } else {
         return renderComments
       }
@@ -17,11 +17,6 @@ const CommentList = ({ comments, postID, userID, addComment, currentUser, style 
         <div className="comment-container">
           <ul className="comment-list" style={{display: style}}>
             {comments ? conditionalRender(comments) : <Loading />}
-            {/* <NewComment 
-              userID={currentUser.id} 
-              postID={postID} 
-              addComment={addComment} 
-            /> */}
           </ul>
         </div>
     )
