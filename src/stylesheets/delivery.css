@@ -2,8 +2,10 @@
     text-align: center;
 }
 
-.map-container {
-    text-align: center;
+.map {
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
     /* margin-left: 25%; */
 }
 

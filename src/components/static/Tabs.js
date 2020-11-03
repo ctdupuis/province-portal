@@ -17,27 +17,22 @@ const Tabs = ({ endSession }) => {
                     </div>
                     <div className="nav-tab">
                         <div className="link-container">
-                            <Link to={'/delivery-map'}>Delivery Map</Link>
-                        </div>
-                    </div>
-                    <div className="nav-tab">
-                        <div className="link-container">
                             <Link to={'/pickups'}>Pickups</Link>
                         </div>
                     </div>
                     <div className="nav-tab">
                         <div className="link-container">
-                            <Link to={'/inventory'}>Inventory</Link>
+                            <Link to={'/reports'}>Report Manager</Link>
                         </div>
                     </div>
                     <div className="nav-tab">
                         <div className="link-container">
-                            <Link to={'/fedex-issues'}>FedEx Issues</Link>
+                            <Link to={'/delivery-map'}>Delivery Map</Link>
                         </div>
                     </div>
                     <div className="nav-tab">
                         <div className="link-container">
-                            <Link to={'/mileage-tracker'}>Mileage Tracker</Link>
+                            <Link to={'/delivery-route'}>Delivery Route Planner</Link>
                         </div>
                     </div>
                     <div className="nav-tab">
