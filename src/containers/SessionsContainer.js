@@ -18,6 +18,7 @@ import Announcements from "../components/sessions/Announcements";
 import Tabs from "../components/static/Tabs";
 import DeliveryMap from "../components/delivery/DeliveryMap";
 import Dashboard from "../components/sessions/Dashboard";
+import Pickups from "../components/pickups/Pickups";
 
 
 class SessionsContainer extends Component {
@@ -110,6 +111,20 @@ class SessionsContainer extends Component {
             <>
               <Tabs endSession={this.props.endSession}/>
               <DeliveryMap
+                currentUser={this.props.currentUser}
+                loading={this.props.loading}
+                {...props}
+              />
+            </>
+          )}
+        />
+        <Route 
+          exact 
+          path={"/pickups"}
+          render={(props) => (
+            <>
+              <Tabs endSession={this.props.endSession}/>
+              <Pickups
                 currentUser={this.props.currentUser}
                 loading={this.props.loading}
                 {...props}

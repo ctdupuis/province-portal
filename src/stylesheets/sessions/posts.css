@@ -68,6 +68,7 @@
 
 .comment-list {
   border-radius: 10px;
+  text-align: left;
 }
 
 .comment-submit {
@@ -132,4 +133,15 @@
   font-size: small;
   padding: .3rem;
   color: var(--m-green);
+}
+
+.total-comments {
+  cursor: pointer;
+  transition: 0.5s;
+  background: none!important;
+  border: none;
+}
+
+.total-comments:hover {
+  text-decoration: underline;
 }
