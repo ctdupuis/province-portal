@@ -6,12 +6,32 @@ export default class DeliveryRoute extends Component {
     state = {
         destinations: [],
         destinationAmt: undefined,
+        buttonClicked: false,
         displayList: "none",
         origins: { lat: 30.146626, lng: -92.035548} 
     }
 
-    saveDestination = event => {
-        this.state.destinations.push(event.target.value)
+    saveDestinationAmt = event => {
+        // debugger
+        this.setState({ 
+            destinationAmt: event.target.previousElementSibling.value,
+            buttonClicked: !this.state.buttonClicked
+        })
+    }
+
+    renderInputs = event => {
+        let target = parseInt(event.target.previousElementSibling.value)
+        debugger
+        this.renderFields(target);
+    }
+
+    renderFields = number => {
+        debugger
+        if (number) {
+            for (let i = 0; i < number; i++) {
+                return(<DestinationInput key={i} />)
+            }
+        }
     }
 
     handleChange = event => {
@@ -25,10 +45,10 @@ export default class DeliveryRoute extends Component {
             <div>
                 <label htmlFor="destination-amt">How many stops are in your route?</label>
                 <input type="number" name="destinationAmt" onChange={this.handleChange} />
-                <button>This Many</button>
-                <DestinationList 
-                    fields={this.state.destinationAmt}
-                />
+                <button onClick={this.renderInputs}>This Many</button>
+                <ul className="destination-list">
+                    {this.renderInputs}
+                </ul>
                 {/* <button onClick={this.saveDestination}>Save Destination</button>
                 <input type="submit" value="Calculate Mileage" /> */}
 

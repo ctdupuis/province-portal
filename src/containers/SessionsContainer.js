@@ -18,7 +18,7 @@ import Announcements from "../components/sessions/Announcements";
 import Tabs from "../components/static/Tabs";
 import DeliveryMap from "../components/delivery/DeliveryMap";
 import Dashboard from "../components/sessions/Dashboard";
-import Pickups from "../components/pickups/Pickups";
+import Pickups from "../components/patient-services/PatientServices";
 import DeliveryRoute from "../components/delivery/DeliveryRoute";
 
 

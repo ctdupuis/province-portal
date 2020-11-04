@@ -17,7 +17,7 @@ const Tabs = ({ endSession }) => {
                     </div>
                     <div className="nav-tab">
                         <div className="link-container">
-                            <Link to={'/pickups'}>Pickups</Link>
+                            <Link to={'/pickups'}>Patient Services</Link>
                         </div>
                     </div>
                     <div className="nav-tab">
