@@ -20,6 +20,7 @@ import DeliveryMap from "../components/delivery/DeliveryMap";
 import Dashboard from "../components/sessions/Dashboard";
 import Pickups from "../components/patient-services/PatientServices";
 import DeliveryRoute from "../components/delivery/DeliveryRoute";
+import PatientServices from "../components/patient-services/PatientServices";
 
 
 class SessionsContainer extends Component {
@@ -47,6 +48,23 @@ class SessionsContainer extends Component {
               <Redirect to={"/dashboard"} />
             )
           }
+        />
+        <Route
+          exact
+          path={"/patient-services"}
+          render={(props) => (
+            this.props.currentUser ?
+            <>
+              <Tabs endSession={this.props.endSession}/>
+              <PatientServices
+                currentUser={this.props.currentUser}
+                endSession={this.props.endSession}
+                loading={this.props.loading}
+                {...props}
+              />
+            </> :
+            <Redirect to={'/'} />
+          )}
         />
         <Route
           exact
