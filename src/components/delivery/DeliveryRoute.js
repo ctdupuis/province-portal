@@ -5,7 +5,7 @@ import DestinationList from './DestinationList';
 export default class DeliveryRoute extends Component {
     state = {
         destinations: [],
-        destinationAmt: undefined,
+        destinationAmt: 0,
         buttonClicked: false,
         displayList: "none",
         origins: { lat: 30.146626, lng: -92.035548} 

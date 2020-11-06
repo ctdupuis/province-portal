@@ -65,6 +65,11 @@ class DeliveryMap extends Component {
                       position={{ lat: 30.146626, lng: -92.035548 }}
                       name="Province"
                       title={"This is where you are"}    
+                      // icon={{
+                      //   url: './icon.png',
+                      //   anchor: new google.maps.Point(17, 46),
+                      //   scaledSize: new google.maps.Size(37, 37) 
+                      // }}
                     />
                 </Map>
           </div>
