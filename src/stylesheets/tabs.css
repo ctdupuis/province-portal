@@ -3,7 +3,7 @@
 .nav-tabs-container {
     background-color: var(--o-green);
     height: 2.5rem;
-    border-bottom: .25rem solid var(--d-green);
+    border-bottom: .5rem solid var(--d-green);
     text-align: center;
     justify-content: center;
 }

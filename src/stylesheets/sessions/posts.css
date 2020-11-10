@@ -34,11 +34,13 @@
 }
 
 .comment-container {
-  border-bottom: 1px solid var(--o-green);
-  border-right: 1px solid var(--o-green);
-  border-left: 1px solid var(--o-green);
+  border-bottom: .1rem solid var(--o-green);
+  border-right: .1rem solid var(--o-green);
+  border-left: .15rem solid var(--o-green);
+  border-top: .15rem solid var(--o-green);
   margin-top: 10px;
   border-radius: 0 10px 10px 10px;
+  background-color: lightgrey;
 }
 
 .comment-container li {

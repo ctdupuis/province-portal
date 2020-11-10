@@ -4,10 +4,11 @@ import {
   GoogleApiWrapper,
   Marker,
   withGoogleMap,
-  withScriptjs
+  withScriptjs,
+  InfoWindow
  } from 'google-maps-react';
 import { getMileage } from '../../actions/deliveries';
-import '../../stylesheets/delivery.css';
+import '../../stylesheets/delivery/deliverymap.css';
 import DestinationInput from './DestinationInput';
 require('dotenv').config();
 
@@ -35,7 +36,6 @@ class DeliveryMap extends Component {
   handleSubmit = event => {
     event.preventDefault();
     getMileage(this.state, process.env.REACT_APP_GOOGLE_API_KEY)
-    console.log(event)
   }
 
   saveDestination = event => {
@@ -46,7 +46,6 @@ class DeliveryMap extends Component {
         return (
             <div className="map-container">
               <form className="destination-input" onSubmit={this.handleSubmit}>
-                <label htmlFor="destination">Destination</label>
                 <DestinationInput 
                   saveDestination={this.saveDestination} 
                   handleChange={this.handleChange}
@@ -65,27 +64,16 @@ class DeliveryMap extends Component {
                       position={{ lat: 30.146626, lng: -92.035548 }}
                       name="Province"
                       title={"This is where you are"}    
-                      // icon={{
-                      //   url: './icon.png',
-                      //   anchor: new google.maps.Point(17, 46),
-                      //   scaledSize: new google.maps.Size(37, 37) 
-                      // }}
+                      icon={{
+                        url: './icon.png',
+                        scaledSize: new this.props.google.maps.Size(37, 37) 
+                      }}
                     />
                 </Map>
           </div>
         )
     }
 }
-
-// const DeliveryMap = withGoogleMap((props) =>
-//   <Map
-//     defaultZoom={8}
-//     defaultCenter={{ lat: -34.397, lng: 150.644 }}
-//   >
-//     {props.isMarkerShown && <Marker position={{ lat: -34.397, lng: 150.644 }} />}
-//   </Map>
-// )
-
 
 export default GoogleApiWrapper({
     apiKey: process.env.REACT_APP_GOOGLE_API_KEY

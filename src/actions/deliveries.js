@@ -6,5 +6,5 @@ export const getMileage = (data, key) => {
     // return async (dispatch) => {
     //     const response = await axios.get
     // }
-    console.log(data)
+    console.log(data, key)
 }

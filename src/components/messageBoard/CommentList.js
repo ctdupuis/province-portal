@@ -14,8 +14,8 @@ const CommentList = ({ comments, postID, userID, addComment, currentUser, style 
     }
 
     return(
-        <div className="comment-container">
-          <ul className="comment-list" style={{display: style}}>
+        <div className="comment-container" style={{display: style}}>
+          <ul className="comment-list" >
             {comments ? conditionalRender(comments) : <Loading />}
           </ul>
         </div>
