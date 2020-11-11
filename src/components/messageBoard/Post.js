@@ -32,7 +32,6 @@ export default class Post extends Component {
         </p>
         <div style={{ textAlign: 'left'}}>
 
-        <button className="display-new-comment" onClick={() => this.setState({displayForm: ''})}><FaCommentAlt/>  Comment</button>
         </div>
         <CommentList 
           style={this.state.displayList}
@@ -42,6 +41,7 @@ export default class Post extends Component {
           comments={comments}
           currentUser={currentUser}
         />
+        <button className="display-new-comment" onClick={() => this.setState({displayForm: ''})}><FaCommentAlt/>  Comment</button>
         <NewComment 
           style={this.state.displayForm}
           userID={currentUser.id} 
