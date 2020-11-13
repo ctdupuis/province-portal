@@ -7,7 +7,7 @@ import {
   withScriptjs,
   InfoWindow
  } from 'google-maps-react';
-import { getMileage } from '../../actions/deliveries';
+import { getMileage, autoComplete } from '../../actions/deliveries';
 import '../../stylesheets/delivery/deliverymap.css';
 import DestinationInput from './DestinationInput';
 require('dotenv').config();
@@ -15,27 +15,31 @@ require('dotenv').config();
 class DeliveryMap extends Component {
 
   state = {
-    address: {
-      street: '',
-      city: '',
-      state: 'LA',
-      zipCode: ''
-    },
+    // address: {
+    //   street: '',
+    //   city: '',
+    //   state: 'LA',
+    //   zipCode: ''
+    // },
+    address: '',
     origins: { lat: 30.146626, lng: -92.035548} 
   }
 
   handleChange = event => {
-    this.setState({ 
-      ...this.state,
-      address: {
-        ...this.state.address,
-        [event.target.name]: event.target.value}
+    // this.setState({ 
+    //   ...this.state,
+    //   address: {
+    //     ...this.state.address,
+    //     [event.target.name]: event.target.value}
+    // })
+    this.setState({
+      [event.target.name]: event.target.value
     })
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    getMileage(this.state, process.env.REACT_APP_GOOGLE_API_KEY)
+    autoComplete(this.state, process.env.REACT_APP_GOOGLE_API_KEY)
   }
 
   saveDestination = event => {

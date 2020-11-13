@@ -155,6 +155,7 @@
   padding: .4rem;
   transition: 0.5s;
   margin-top: 0.5em;
+  float: left;
 }
 
 .display-new-comment:hover {
