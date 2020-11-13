@@ -15,23 +15,12 @@ require('dotenv').config();
 class DeliveryMap extends Component {
 
   state = {
-    // address: {
-    //   street: '',
-    //   city: '',
-    //   state: 'LA',
-    //   zipCode: ''
-    // },
     address: '',
+    visibleInfo: true,
     origins: { lat: 30.146626, lng: -92.035548} 
   }
 
   handleChange = event => {
-    // this.setState({ 
-    //   ...this.state,
-    //   address: {
-    //     ...this.state.address,
-    //     [event.target.name]: event.target.value}
-    // })
     this.setState({
       [event.target.name]: event.target.value
     })
@@ -73,6 +62,14 @@ class DeliveryMap extends Component {
                         scaledSize: new this.props.google.maps.Size(37, 37) 
                       }}
                     />
+                    <InfoWindow 
+                      visible={this.state.visibleInfo}
+                    >
+                      <div className="info-window">
+                        <p>You are here!</p>
+                      </div>
+                    </InfoWindow>
+
                 </Map>
           </div>
         )

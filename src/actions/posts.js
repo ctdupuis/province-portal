@@ -38,7 +38,6 @@ export const addComment = (commentdata) => {
         },
         { withCredentials: true } )
         const comment = response.data
-        console.log(comment)
         dispatch({ type: 'ADD_COMMENT', comment })
         dispatch({ type: 'END_LOAD'})
     }

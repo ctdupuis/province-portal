@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 
 export default class DestinationInput extends Component {
     render() {
-        if (this.props.values) {
-            const { street, city, state, zipCode } = this.props.values            
-        }
+        // if (this.props.values) {
+        //     const { street, city, state, zipCode } = this.props.values            
+        // }
         return (
             <div>
               <label htmlFor="address">Address:</label>

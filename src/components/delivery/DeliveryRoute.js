@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import DestinationInput from './DestinationInput';
-import DestinationList from './DestinationList';
 
 export default class DeliveryRoute extends Component {
     state = {

@@ -62,9 +62,9 @@ export const getLoginStatus = () => {
         if (data.logged_in === true ) {
             const user = data.user
             dispatch({ type: 'LOGIN_USER', user })
-            dispatch({type: 'END_LOAD'})
+            dispatch({ type: 'END_LOAD' })
         } else {
-            dispatch({type: 'END_LOAD'})
+            dispatch({ type: 'END_LOAD' })
         }
     }
 }
@@ -75,7 +75,7 @@ export const endSession = () => {
         axios.get(`${url}/logout`, { withCredentials: true})
         .then(res => {
             dispatch({ type: 'LOGOUT_USER' })
-            dispatch({ type: 'END_LOAD'})
+            dispatch({ type: 'END_LOAD' })
         })
     }
 }
