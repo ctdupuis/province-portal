@@ -1,10 +1,10 @@
 @import 'index.css';
 
-.wrapper {
+/* .wrapper {
   text-align: center;
-  /* border-left: 5px solid var(--d-green);
-  border-right: 5px solid var(--d-green); */
-}
+  border-left: 5px solid var(--d-green); 
+  border-right: 5px solid var(--d-green); 
+} */
 
 .main-head {
   background-color: whitesmoke;

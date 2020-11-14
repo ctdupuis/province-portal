@@ -15,19 +15,35 @@ export default class Dashboard extends Component {
       loading ? <Loading /> :
       <section className="dash-container">
         <header className="dash-header">
-          <h3>Dashboard | {currentUser.username} {this.renderAdminBadge(currentUser)}</h3>
+          <h3>{currentUser.first_name} {currentUser.last_name} | {currentUser.username} {this.renderAdminBadge(currentUser)}</h3>
         </header>
         <div className="dash-content">
-          <h5>Welcome, {currentUser.first_name} {currentUser.last_name}</h5>
-          <div className="left-side">
-            <div className="user-info">
-              {currentUser.first_name} {currentUser.last_name}
+            <div className="user-info-title">
+              Your Contact Info
             </div>
-          </div>
-          <div className="right-side">
-            <FaPen />
-          </div>
+            <div className="user-info-content">
+              Email: emailaddress@website.com
+              <button className="edit-info">
+                <FaPen />
+              </button>
+            </div>
+            <div className="user-info-content">
+              Phone: 337-555-6666
+              <button className="edit-info">
+                <FaPen />
+              </button>
+            </div>
         </div>
+            <div className="dash-content">
+              <div className="user-info-title">
+                Employee Contact List
+              </div>
+            </div>
+            <div className="dash-content">
+              <div className="user-info-title">
+                Add a New User
+              </div>
+            </div>
       </section>
     );
   }

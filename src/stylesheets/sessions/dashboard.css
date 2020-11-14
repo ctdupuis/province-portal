@@ -29,6 +29,30 @@
   background-color: whitesmoke;
   border-radius: 5px;
   padding: .5rem;
+  /* display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem; */
+}
+
+.sub-header {
+  text-align: left;
+  border-bottom: .1rem solid var(--d-green);
+  padding: .5rem;
+}
+
+.left-side {
+  text-align: left;
+  padding: .5rem;
+  margin: .1rem;
+}
+
+.user-info-title {
+  border-bottom: .1rem solid var(--d-green);
+  margin: .5rem;
+}
+
+.user-info-content {
+  margin: .5rem;
 }
 
 .admin-badge {

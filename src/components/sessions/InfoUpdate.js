@@ -6,7 +6,9 @@ export default class InfoUpdate extends Component {
     state = {
         username: this.props.currentUser.username,
         password: '',
-        password_confirm: ''
+        password_confirm: '',
+        email: '',
+        phone: ''
     }
 
     handleChange = event => {
@@ -53,6 +55,24 @@ export default class InfoUpdate extends Component {
                             type='password' 
                             name='password_confirm' 
                             value={this.state.password_confirm}
+                        />
+                        <br />
+
+                        <label>Email (Optional)</label>
+                        <input 
+                            onChange={this.handleChange} 
+                            type='email' 
+                            name='email' 
+                            value={this.state.email}
+                        />
+                        <br />
+
+                        <label>Phone (Optional)</label>
+                        <input 
+                            onChange={this.handleChange} 
+                            type='tel' 
+                            name='phone' 
+                            value={this.state.phone}
                         />
                         <br />
 

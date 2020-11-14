@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <main className="wrapper">
+      <main>
         <SessionsContainer />
       </main>
     </div>
