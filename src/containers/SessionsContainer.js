@@ -7,6 +7,7 @@ import {
   login,
   endSession,
   updateInfo,
+  getContacts
 } from "../actions/sessions";
 import {
   getPosts,
@@ -27,6 +28,7 @@ class SessionsContainer extends Component {
   componentDidMount() {
     this.props.getLoginStatus();
     this.props.getPosts();
+    this.props.getContacts();
   }
 
 
@@ -115,6 +117,7 @@ class SessionsContainer extends Component {
               <Tabs endSession={this.props.endSession}/>
               <Dashboard
                 currentUser={this.props.currentUser}
+                contacts={this.props.contacts}
                 endSession={this.props.endSession}
                 loading={this.props.loading}
                 {...props}
@@ -173,6 +176,7 @@ class SessionsContainer extends Component {
 export default connect(
   (state) => ({
     currentUser: state.userReducer.currentUser,
+    contacts: state.userReducer.contacts,
     errors: state.userReducer.errors,
     posts: state.postsReducer.posts,
     loading: state.loadReducer.loading
@@ -182,6 +186,7 @@ export default connect(
     endSession,
     login,
     updateInfo,
+    getContacts,
     getPosts,
     addPost,
     addComment

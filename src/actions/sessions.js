@@ -79,3 +79,13 @@ export const endSession = () => {
         })
     }
 }
+
+export const getContacts = () => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD' })
+        const response = await axios.get(`${url}/contacts`, { withCredentials: true })
+        const contacts = response.data
+        dispatch({ type: 'STORE_CONTACT_LIST', contacts})
+        dispatch({ type: 'END_LOAD'})
+    }
+}

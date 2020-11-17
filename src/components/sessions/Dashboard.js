@@ -2,11 +2,16 @@ import React, { Component } from "react";
 import "../../stylesheets/sessions/dashboard.css";
 import Loading from '../static/Loading';
 import { FaPen } from 'react-icons/fa';
+import ContactList from "./ContactList";
 
 
 export default class Dashboard extends Component {
   renderAdminBadge(currentUser) {
     return currentUser.admin ? <span className="admin-badge">Admin</span> : null
+  }
+
+  adminCheck(currentUser) {
+    return currentUser.admin
   }
 
   render() {
@@ -38,12 +43,15 @@ export default class Dashboard extends Component {
               <div className="user-info-title">
                 Employee Contact List
               </div>
+              <ContactList contacts={this.props.contacts}/>
             </div>
-            <div className="dash-content">
-              <div className="user-info-title">
-                Add a New User
+              {this.adminCheck(currentUser) ? 
+              (<div className="dash-content">
+                <div className="user-info-title">
+                  Add a New User
+                </div>
               </div>
-            </div>
+              ) : null }
       </section>
     );
   }

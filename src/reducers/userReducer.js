@@ -1,6 +1,7 @@
 export default function userReducer(
     state = {
-        currentUser: undefined
+        currentUser: undefined, 
+        contacts: []
     },
     action
 ) {
@@ -16,10 +17,14 @@ export default function userReducer(
                 currentUser: undefined
             }
         case 'LOGIN_ERROR':
-            console.log(action)
             return {
                 ...state,
                 errors: action.err,
+            }
+        case 'STORE_CONTACT_LIST':
+            return {
+                ...state,
+                contacts: action.contacts
             }
         default: return state;
     }
