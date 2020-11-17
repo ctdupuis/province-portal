@@ -52,7 +52,7 @@
 }
 
 .user-info-content {
-  margin: .5rem;
+  margin: 1rem;
 }
 
 .admin-badge {
@@ -62,4 +62,48 @@
   padding: 0.5rem;
   font-size: 1rem;
   margin: 0.5rem 0.5rem 0.8rem 0.5rem;
+}
+
+.contact {
+  margin: 1rem;
+  color: var(--d-green);
+}
+
+.edit-info {
+  border-radius: 1rem;
+  background: none!important;
+  padding: .2em;
+  color: var(--l-green);
+  float: right;
+  transition: 0.5s;
+  margin-top: auto;
+}
+
+.edit-info:hover {
+  background-color: lightgrey;
+  color: var(--m-green);
+}
+
+.new-user-form label {
+  margin: 1rem;
+  color: var(--m-green);
+}
+
+.new-user-form input {
+  margin: 1rem;
+  padding: .3em;
+  border-radius: 1em;
+}
+
+.new-user-sbmt {
+  background-color: var(--m-green);
+  height: 2rem;
+  width: 4rem;
+  color: whitesmoke;
+  transition: 0.5s;
+}
+
+.new-user-sbmt:hover {
+  background-color: var(--l-green);
+  cursor: pointer;
 }

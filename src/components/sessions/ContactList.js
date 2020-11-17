@@ -6,9 +6,8 @@ export default function ContactList({ contacts }) {
     const renderContacts = contacts => {
         if (contacts) {
             return contacts.map(contact => {
-                console.log(contact)
                 return(
-                    <div className="contact">
+                    <div className="contact" key={contact.id}>
                         {contact.username} | {contact.first_name} {contact.last_name}
                     </div>
                 )

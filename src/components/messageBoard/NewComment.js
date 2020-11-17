@@ -23,8 +23,8 @@ export default class NewComment extends Component {
     
     render() {
         return (
-            <div style={{ display: this.props.style }} className="comment flex-container">
-              <div className="input-container">
+            <>
+              <div style={{ display: this.props.style }} className="input-container">
                 <input
                   type="text"
                   placeholder="Add a comment..."
@@ -35,13 +35,14 @@ export default class NewComment extends Component {
               <div className="btn-container">
                 <form onSubmit={this.handleSubmit}>
                   <input
+                    style={{ display: this.props.style }}
                     type="submit" 
                     className="comment-submit"
                     value="Post"
                   />
                 </form>
               </div>
-            </div>
+    </>
         )
     }
 }

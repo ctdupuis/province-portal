@@ -89,3 +89,22 @@ export const getContacts = () => {
         dispatch({ type: 'END_LOAD'})
     }
 }
+
+export const createUser = (userdata) => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD' })
+        const response = await axios.post(`${url}/users`, 
+        {
+            username: userdata.username,
+            first_name: userdata.first_name,
+            last_name: userdata.last_name,
+            phone: userdata.phone,
+            email: userdata.email,
+            password: userdata.password
+        },
+        { withCredentials: true })
+        const user = response.data
+        console.log(user)
+        dispatch({ type: 'END_LOAD' })
+    }
+}

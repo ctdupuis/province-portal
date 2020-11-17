@@ -42,12 +42,14 @@ export default class Post extends Component {
           currentUser={currentUser}
         />
         <button className="display-new-comment" onClick={() => this.setState({displayForm: ''})}><FaCommentAlt/>  Comment</button>
+        <div className="comment flex-container">
         <NewComment 
           style={this.state.displayForm}
           userID={currentUser.id} 
           postID={id} 
           addComment={addComment} 
         />
+        </div>
       </div>
     </article>
     )
