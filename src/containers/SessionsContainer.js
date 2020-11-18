@@ -7,6 +7,7 @@ import {
   login,
   endSession,
   updateInfo,
+  createUser,
   getContacts
 } from "../actions/sessions";
 import {
@@ -120,6 +121,7 @@ class SessionsContainer extends Component {
                 contacts={this.props.contacts}
                 endSession={this.props.endSession}
                 loading={this.props.loading}
+                createUser={this.props.createUser}
                 {...props}
               />
             </> :
@@ -186,6 +188,7 @@ export default connect(
     endSession,
     login,
     updateInfo,
+    createUser,
     getContacts,
     getPosts,
     addPost,

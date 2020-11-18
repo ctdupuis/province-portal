@@ -41,6 +41,7 @@ export const updateInfo = (userdata, history) => {
         const data = response.data
         if (data.logged_in) {
             const user = data.user
+            debugger
             dispatch({ type: 'LOGIN_USER', user })
             dispatch({type: 'END_LOAD'})
             history.push('/dashboard')
@@ -104,7 +105,8 @@ export const createUser = (userdata) => {
         },
         { withCredentials: true })
         const user = response.data
-        console.log(user)
+        debugger
+        dispatch({ type: 'SAVE_USER', user })
         dispatch({ type: 'END_LOAD' })
     }
 }

@@ -26,6 +26,12 @@ export default function userReducer(
                 ...state,
                 contacts: action.contacts
             }
+        case 'SAVE_USER':
+            debugger
+            return {
+                ...state,
+                contacts: [...state.contacts, action.user]
+            }
         default: return state;
     }
 }
