@@ -31,13 +31,13 @@ export default class Dashboard extends Component {
               <button className="edit-info">Edit</button>
             </div>
             <div className="user-info-content">
-              Email: emailaddress@website.com
+              Email: {currentUser.email ? currentUser.email : "No email on file"}
               <button className="edit-info">
                 <FaPen />
               </button>
             </div>
             <div className="user-info-content">
-              Phone: 337-555-6666
+              Phone: {currentUser.phone ? currentUser.phone : "No phone number on file"}
               <button className="edit-info">
                 <FaPen />
               </button>

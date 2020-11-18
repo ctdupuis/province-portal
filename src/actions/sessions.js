@@ -36,7 +36,9 @@ export const updateInfo = (userdata, history) => {
         const response = await axios.post(`${url}/update`, {
             username: userdata.username,
             password: userdata.password,
-            password_confirm: userdata.password_confirm
+            password_confirm: userdata.password_confirm,
+            email: userdata.email,
+            phone: userdata.phone
         }, { withCredentials: true })
         const data = response.data
         if (data.logged_in) {

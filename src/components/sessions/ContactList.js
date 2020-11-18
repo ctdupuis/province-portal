@@ -7,16 +7,27 @@ export default function ContactList({ contacts }) {
         if (contacts) {
             return contacts.map(contact => {
                 return(
-                    <div className="contact" key={contact.id}>
-                        {contact.username} | {contact.first_name} {contact.last_name}
-                    </div>
+                    <tr>
+                        <td>{contact.username}</td>
+                        <td>{contact.first_name} {contact.last_name}</td>
+                        <td>{contact.phone ? contact.phone : "-"}</td>
+                        <td>{contact.email ? contact.email : "-"}</td>
+                        <td>{contact.admin ? "✅" : "🚫"}</td>
+                    </tr>
                 )
             })
         }  
     }
     return (
-        <div>
-            {renderContacts(contacts)}
-        </div>
+        <table className="contact-list">
+            <tr>
+                <th>Username</th>
+                <th>Name</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>Admin</th>
+            </tr>
+              {renderContacts(contacts)}
+        </table>
     )
 }

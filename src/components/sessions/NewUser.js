@@ -8,6 +8,7 @@ export default class NewUser extends Component {
     last_name: "",
     email: "",
     phone: "",
+    admin: false
   };
 
   handleChange = (event) => {
@@ -52,7 +53,7 @@ export default class NewUser extends Component {
           <input type="tel" name="phone" onChange={this.handleChange} />
           <br />
 
-          <input className="new-user-sbmt" type="submit" value="Create" />
+          <input className="new-user-sbmt" type="submit" value="Create User" />
         </form>
       </div>
     );

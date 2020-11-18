@@ -97,8 +97,8 @@
 
 .new-user-sbmt {
   background-color: var(--m-green);
-  height: 2rem;
-  width: 4rem;
+  /* height: 2rem;
+  width: 4rem; */
   color: whitesmoke;
   transition: 0.5s;
 }
@@ -106,4 +106,25 @@
 .new-user-sbmt:hover {
   background-color: var(--l-green);
   cursor: pointer;
+}
+
+.contact-list {
+  margin: 1rem;
+  border-spacing: 1rem;
+}
+
+.contact-list tr {
+  margin: 1rem;
+  border-bottom: .2rem solid black;
+}
+
+.contact-list th {
+  margin: .5rem;
+  color: var(--m-green);
+  border-bottom: .1rem solid var(--d-green);
+}
+
+.contact-list td {
+  margin: .5rem;
+  text-align: center;
 }
