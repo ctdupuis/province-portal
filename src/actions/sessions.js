@@ -17,14 +17,7 @@ export const login = (userdata, history) => {
             dispatch({ type: 'LOGIN_USER', user })
             dispatch({ type: 'END_LOAD'})
             history.push('/update-info')
-        }
-        //  else if (!resp.user.pass_updated) { //annoy them to add contact info, option to skip
-        //     const user = resp.user
-        //     dispatch({ type: 'LOGIN_USER', user })
-        //     dispatch({ type: 'END_LOAD'})
-        //     history.push('/update-info')
-        // } 
-        else if (resp.logged_in === true) {
+        } else if (resp.logged_in === true) {
             const user = resp.user
             dispatch({ type: 'LOGIN_USER', user })
             dispatch({type: 'END_LOAD'})

@@ -4,6 +4,7 @@ import Loading from '../static/Loading';
 import { FaPen } from 'react-icons/fa';
 import ContactList from "./ContactList";
 import NewUser from "./NewUser";
+import DeleteUser from "./DeleteUser";
 
 
 export default class Dashboard extends Component {
@@ -47,10 +48,14 @@ export default class Dashboard extends Component {
               <div className="user-info-title">
                 Employee Contact List
               </div>
-              <ContactList contacts={this.props.contacts}/>
+              <ContactList contacts={this.props.contacts} />
             </div>
               {this.adminCheck(currentUser) ? 
-              (<NewUser createUser={this.props.createUser} />
+              (
+              <div className="dash-content">
+                <NewUser createUser={this.props.createUser} />
+                <DeleteUser currentUser={this.props.currentUser} contacts={this.props.contacts} />
+              </div>
               ) : null }
               <div className="dash-content">
                 <div className="user-info-title">

@@ -20,14 +20,18 @@ export default function ContactList({ contacts }) {
     }
     return (
         <table className="contact-list">
-            <tr>
-                <th>Username</th>
-                <th>Name</th>
-                <th>Phone</th>
-                <th>Email</th>
-                <th>Admin</th>
-            </tr>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Email</th>
+                    <th>Admin</th>
+                </tr>
+            </thead>
+            <tbody>
               {renderContacts(contacts)}
+            </tbody>
         </table>
     )
 }

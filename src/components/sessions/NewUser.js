@@ -24,7 +24,7 @@ export default class NewUser extends Component {
 
   render() {
     return (
-      <div className="dash-content">
+      <>
         <div className="user-info-title">
           Add a New User
         </div>
@@ -55,7 +55,7 @@ export default class NewUser extends Component {
 
           <input className="new-user-sbmt" type="submit" value="Create User" />
         </form>
-      </div>
+      </>
     );
   }
 }

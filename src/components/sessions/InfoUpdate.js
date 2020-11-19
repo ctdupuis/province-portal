@@ -7,7 +7,6 @@ export default class InfoUpdate extends Component {
         username: this.props.currentUser.username,
         password: '',
         password_confirm: '',
-        passUpdated: this.props.currentUser.pass_updated,
         email: '',
         phone: ''
     }
@@ -78,7 +77,6 @@ export default class InfoUpdate extends Component {
                         <br />
 
                         <input className="form-btn" type="submit" value="Update Info" />
-                        <button className="form-btn">Not Now</button>
                     </form>
                 </div>
             </div>

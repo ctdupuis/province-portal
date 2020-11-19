@@ -128,3 +128,30 @@
   margin: .5rem;
   text-align: center;
 }
+
+#rm-employee {
+  margin: .5rem;
+  border-radius: .5rem;
+  font-size: 1rem;
+  padding: .2rem;
+  color: var(--m-green);
+}
+
+.deactivate {
+  color: red;
+  border-radius: .5rem;
+  padding: .3rem;
+  background-color: whitesmoke;
+  transition: 0.5s;
+}
+
+.deactivate:hover {
+  cursor: pointer;
+  color: whitesmoke;
+  background-color: red;
+}
+
+.select-label {
+  margin: 1rem;
+  color: var(--d-green);
+}
