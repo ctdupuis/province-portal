@@ -52,6 +52,12 @@ export default class Dashboard extends Component {
               {this.adminCheck(currentUser) ? 
               (<NewUser createUser={this.props.createUser} />
               ) : null }
+              <div className="dash-content">
+                <div className="user-info-title">
+                  Employee Schedule
+                </div>
+                <p>Coming soon!</p>
+              </div>
       </section>
     );
   }

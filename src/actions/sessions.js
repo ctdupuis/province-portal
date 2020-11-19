@@ -11,12 +11,20 @@ export const login = (userdata, history) => {
         }, { withCredentials: true }
     )
     const resp = response.data
-        if (resp.first_login) {
+        if (resp.first_login) { //send them to update password
             const user = resp.user
+            console.log(user)
             dispatch({ type: 'LOGIN_USER', user })
             dispatch({ type: 'END_LOAD'})
             history.push('/update-info')
-        } else if (resp.logged_in === true) {
+        }
+        //  else if (!resp.user.pass_updated) { //annoy them to add contact info, option to skip
+        //     const user = resp.user
+        //     dispatch({ type: 'LOGIN_USER', user })
+        //     dispatch({ type: 'END_LOAD'})
+        //     history.push('/update-info')
+        // } 
+        else if (resp.logged_in === true) {
             const user = resp.user
             dispatch({ type: 'LOGIN_USER', user })
             dispatch({type: 'END_LOAD'})
@@ -43,7 +51,7 @@ export const updateInfo = (userdata, history) => {
         const data = response.data
         if (data.logged_in) {
             const user = data.user
-            debugger
+            // debugger
             dispatch({ type: 'LOGIN_USER', user })
             dispatch({type: 'END_LOAD'})
             history.push('/dashboard')

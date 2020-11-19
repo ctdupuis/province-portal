@@ -1,7 +1,8 @@
 export default function userReducer(
     state = {
         currentUser: undefined, 
-        contacts: []
+        contacts: [],
+        errors: []
     },
     action
 ) {
@@ -9,12 +10,14 @@ export default function userReducer(
         case 'LOGIN_USER':
             return {
                 ...state,
-                currentUser: action.user
+                currentUser: action.user,
+                errors: []
             }
         case 'LOGOUT_USER':
             return {
                 ...state,
-                currentUser: undefined
+                currentUser: undefined,
+                errors: []
             }
         case 'LOGIN_ERROR':
             return {
