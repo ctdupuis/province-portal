@@ -7,7 +7,7 @@ export default function ContactList({ contacts }) {
         if (contacts) {
             return contacts.map(contact => {
                 return(
-                    <tr>
+                    <tr key={contact.id}>
                         <td>{contact.username}</td>
                         <td>{contact.first_name} {contact.last_name}</td>
                         <td>{contact.phone ? contact.phone : "-"}</td>

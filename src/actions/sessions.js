@@ -13,7 +13,6 @@ export const login = (userdata, history) => {
     const resp = response.data
         if (resp.first_login) { //send them to update password
             const user = resp.user
-            console.log(user)
             dispatch({ type: 'LOGIN_USER', user })
             dispatch({ type: 'END_LOAD'})
             history.push('/update-info')
@@ -44,7 +43,7 @@ export const updateInfo = (userdata, history) => {
         const data = response.data
         if (data.logged_in) {
             const user = data.user
-            // debugger
+            // dispatch({ type: 'UPDATE_CONTACT_INFO', user})
             dispatch({ type: 'LOGIN_USER', user })
             dispatch({type: 'END_LOAD'})
             history.push('/dashboard')

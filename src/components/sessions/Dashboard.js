@@ -8,7 +8,12 @@ import DeleteUser from "./DeleteUser";
 
 
 export default class Dashboard extends Component {
-  
+  state = {
+    toggleEmailInput: false,
+    togglePhoneInput: false,
+    email: '',
+    phone: ''
+  }
 
   renderAdminBadge(currentUser) {
     return currentUser.admin ? <span className="admin-badge">Admin</span> : null
@@ -16,6 +21,45 @@ export default class Dashboard extends Component {
 
   adminCheck(currentUser) {
     return currentUser.admin
+  }
+
+  handleChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value
+    })
+  }
+
+  handleClick = event => {
+    const name = event.target.previousElementSibling.previousElementSibling.name
+    // debugger
+  }
+
+  toggleEmailInput = () => {
+    this.setState({
+      toggleEmailInput: !this.state.toggleEmailInput
+    })
+  }
+
+  togglePhoneInput = () => {
+    this.setState({
+      togglePhoneInput: !this.state.togglePhoneInput
+    })
+  }
+
+  renderEmail = (currentUser) => {
+    if (currentUser.email) {
+      return currentUser.email
+    } else {
+      return "No email on file"
+    }
+  }
+
+  renderPhone = (currentUser) => {
+    if (currentUser.phone) {
+      return currentUser.phone
+    } else {
+      return "No phone number on file"
+    }
   }
 
   render() {
@@ -29,19 +73,49 @@ export default class Dashboard extends Component {
         <div className="dash-content">
             <div className="user-info-title">
               Your Contact Info
-              <button className="edit-info">Edit</button>
             </div>
             <div className="user-info-content">
-              Email: {currentUser.email ? currentUser.email : "No email on file"}
-              <button className="edit-info">
-                <FaPen />
-              </button>
+
+              Email: {this.state.toggleEmailInput ? 
+              <>
+                <input 
+                  name="email" 
+                  className="user-input" 
+                  type="email" 
+                  placeholder="Enter email..." 
+                  onChange={this.handleChange}
+                /> 
+                <button className="info-cancel" onClick={this.toggleEmailInput}>Cancel</button>
+                <button className="info-save" onClick={this.handleClick}>Save Changes</button>
+              </>
+              : 
+              <>
+              {this.renderEmail(currentUser)}
+                <button className="edit-info">
+                  <FaPen onClick={this.toggleEmailInput}/>
+                </button>
+              </>}
             </div>
             <div className="user-info-content">
-              Phone: {currentUser.phone ? currentUser.phone : "No phone number on file"}
-              <button className="edit-info">
-                <FaPen />
-              </button>
+              Phone: {this.state.togglePhoneInput ? 
+              <>
+                <input 
+                  name="phone" 
+                  className="user-input" 
+                  type="tel" 
+                  placeholder="Enter phone..." 
+                  onChange={this.handleChange}
+                /> 
+                <button className="info-cancel" onClick={this.togglePhoneInput}>Cancel</button>
+                <button className="info-save" onClick={this.handleClick}>Save Changes</button>
+              </>
+              : 
+              <>
+              {this.renderPhone(currentUser)}
+                <button className="edit-info">
+                  <FaPen onClick={this.togglePhoneInput}/>
+                </button>
+              </>}
             </div>
         </div>
             <div className="dash-content">
