@@ -1,5 +1,4 @@
 import axios from 'axios';
-import { userInfo } from 'os';
 
 const url = "http://localhost:5000";
 
@@ -45,7 +44,7 @@ export const updateInfo = (userdata, history) => {
         if (data.logged_in) {
             const user = data.user
             console.log(user)
-            // dispatch({ type: 'UPDATE_CONTACT_INFO', user})
+            dispatch({ type: 'UPDATE_USER', user})
             dispatch({ type: 'LOGIN_USER', user })
             dispatch({type: 'END_LOAD'})
             history.push('/')
@@ -110,7 +109,7 @@ export const createUser = (userdata) => {
         { withCredentials: true })
         const user = response.data
         debugger
-        dispatch({ type: 'SAVE_USER', user })
+        dispatch({ type: 'ADD_USER', user })
         dispatch({ type: 'END_LOAD' })
     }
 }

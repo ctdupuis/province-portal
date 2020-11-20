@@ -29,10 +29,16 @@ export default function userReducer(
                 ...state,
                 contacts: action.contacts
             }
-        case 'SAVE_USER':
+        case 'ADD_USER':
             return {
                 ...state,
                 contacts: [...state.contacts, action.user]
+            }
+        case 'UPDATE_USER':
+            const keepers = state.contacts.filter(u => u.id !== action.user.id) 
+            return {
+                ...state,
+                contacts: [...keepers, action.user]
             }
         default: return state;
     }
