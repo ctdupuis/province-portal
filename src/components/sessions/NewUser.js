@@ -29,7 +29,7 @@ export default class NewUser extends Component {
           Add a New User
         </div>
         <form className="new-user-form" onSubmit={this.handleSubmit}>
-          <label htmlFor="username">Username:</label>
+          <label htmlFor="username">Username</label>
           <input type="text" name="username" onChange={this.handleChange} />
           <br />
 

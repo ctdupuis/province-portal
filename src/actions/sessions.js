@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { userInfo } from 'os';
 
 const url = "http://localhost:5000";
 
@@ -43,10 +44,11 @@ export const updateInfo = (userdata, history) => {
         const data = response.data
         if (data.logged_in) {
             const user = data.user
+            console.log(user)
             // dispatch({ type: 'UPDATE_CONTACT_INFO', user})
             dispatch({ type: 'LOGIN_USER', user })
             dispatch({type: 'END_LOAD'})
-            history.push('/dashboard')
+            history.push('/')
         } else {
             const err = response.error
             dispatch({ type: 'LOGIN_ERROR', err })

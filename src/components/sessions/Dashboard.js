@@ -12,7 +12,8 @@ export default class Dashboard extends Component {
     toggleEmailInput: false,
     togglePhoneInput: false,
     email: '',
-    phone: ''
+    phone: '',
+    username: this.props.currentUser.username
   }
 
   renderAdminBadge(currentUser) {
@@ -30,8 +31,8 @@ export default class Dashboard extends Component {
   }
 
   handleClick = event => {
-    const name = event.target.previousElementSibling.previousElementSibling.name
-    // debugger
+    // const name = event.target.previousElementSibling.previousElementSibling.name
+    this.props.updateInfo(this.state, this.props.history)
   }
 
   toggleEmailInput = () => {

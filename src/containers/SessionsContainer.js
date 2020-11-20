@@ -122,6 +122,7 @@ class SessionsContainer extends Component {
                 endSession={this.props.endSession}
                 loading={this.props.loading}
                 createUser={this.props.createUser}
+                updateInfo={this.props.updateInfo}
                 {...props}
               />
             </> :
