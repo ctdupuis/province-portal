@@ -162,3 +162,7 @@
   background-color: var(--l-green);
   cursor: pointer;
 }
+
+.edit {
+  float: right;
+}

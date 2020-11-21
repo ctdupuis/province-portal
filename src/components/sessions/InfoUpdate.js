@@ -19,7 +19,6 @@ export default class InfoUpdate extends Component {
 
     handleSubmit = event => {
         event.preventDefault()
-        console.log(this.state)
         this.props.updateInfo(this.state, this.props.history)
         this.setState({
             password: '',

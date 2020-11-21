@@ -43,7 +43,6 @@ export const updateInfo = (userdata, history) => {
         const data = response.data
         if (data.logged_in) {
             const user = data.user
-            console.log(user)
             dispatch({ type: 'UPDATE_USER', user})
             dispatch({ type: 'LOGIN_USER', user })
             dispatch({type: 'END_LOAD'})

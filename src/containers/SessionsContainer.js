@@ -23,6 +23,7 @@ import Dashboard from "../components/sessions/Dashboard";
 import Pickups from "../components/patient-services/PatientServices";
 import DeliveryRoute from "../components/delivery/DeliveryRoute";
 import PatientServices from "../components/patient-services/PatientServices";
+import ReportManager from "../components/reports/ReportManager";
 
 
 class SessionsContainer extends Component {
@@ -136,6 +137,20 @@ class SessionsContainer extends Component {
             <>
               <Tabs endSession={this.props.endSession}/>
               <DeliveryMap
+                currentUser={this.props.currentUser}
+                loading={this.props.loading}
+                {...props}
+              />
+            </>
+          )}
+        />
+        <Route 
+          exact 
+          path={"/reports"}
+          render={(props) => (
+            <>
+              <Tabs endSession={this.props.endSession}/>
+              <ReportManager
                 currentUser={this.props.currentUser}
                 loading={this.props.loading}
                 {...props}

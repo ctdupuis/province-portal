@@ -19,6 +19,17 @@ export default class Post extends Component {
     }
   }
 
+  checkOwnership(currentUser, userID) {
+    if (currentUser.id === userID) {
+      return(
+        <>
+          <button className="timestamp total-comments edit">Delete</button>
+          <button className="timestamp total-comments edit">Edit</button>
+        </>
+      )
+    }
+  }
+
   render() {
     const { content, userID, author, created, comments, id, addComment, currentUser } = this.props;
     return(
@@ -29,10 +40,11 @@ export default class Post extends Component {
           {content}
           <br />
         <span className="timestamp"><em>{created} |</em></span><button onClick={() => this.setState({displayList: ''})}className="timestamp total-comments">{this.commentFormat(comments)}</button>
+        {this.checkOwnership(currentUser, userID)}
         </p>
-        <div style={{ textAlign: 'left'}}>
+        {/* <div style={{ textAlign: 'left'}}>
 
-        </div>
+        </div> */}
         <CommentList 
           style={this.state.displayList}
           userID={userID} 
