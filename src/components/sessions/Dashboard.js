@@ -24,26 +24,45 @@ export default class Dashboard extends Component {
     return currentUser.admin
   }
 
-  handleChange = event => {
-    this.setState({
-      [event.target.name]: event.target.value
-    })
+  handleChange = ({ target: { value, name } })=> {
+    if (name === "phone") {
+      this.setState(prevState => ({ phone: this.numberFormat(value, prevState.phone) }))
+
+    } else {
+      this.setState({
+        name: value
+      })
+    }
+  }
+
+  numberFormat = (value, previousValue) => {
+    if (!value) return value;
+    
+    const currentValue = value.replace(/[^\d]/g, '');
+    const cvLength = currentValue.length;
+
+    if (!previousValue || value.length > previousValue.length) {
+      if (cvLength < 4) return currentValue;
+      if (cvLength < 7) return `(${currentValue.slice(0, 3)} ${currentValue.slice(3)}`;
+      return `(${currentValue.slice(0, 3)}) ${currentValue.slice(3, 6)}-${currentValue.slice(6, 10)}`;
+    }
   }
 
   handleClick = event => {
-    // const name = event.target.previousElementSibling.previousElementSibling.name
     this.props.updateInfo(this.state, this.props.history)
   }
 
   toggleEmailInput = () => {
     this.setState({
-      toggleEmailInput: !this.state.toggleEmailInput
+      toggleEmailInput: !this.state.toggleEmailInput,
+      email: '',
     })
   }
 
   togglePhoneInput = () => {
     this.setState({
-      togglePhoneInput: !this.state.togglePhoneInput
+      togglePhoneInput: !this.state.togglePhoneInput,
+      phone: '',
     })
   }
 
@@ -105,6 +124,7 @@ export default class Dashboard extends Component {
                   className="user-input" 
                   type="tel" 
                   placeholder="Enter phone..." 
+                  value={this.state.phone}
                   onChange={this.handleChange}
                 /> 
                 <button className="info-cancel" onClick={this.togglePhoneInput}>Cancel</button>
