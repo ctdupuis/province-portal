@@ -13,8 +13,9 @@ export const getMileage = (data, key) => {
     console.log(data, key)
 }
 
-export const autoComplete = (data, key) => {
+export const getDistance = (data, key) => {
     let address = data.address.split(' ').join('+');
     let url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${address}&key=${key}`
+    debugger
     axios.get(url).then(r => console.log(r))
 }

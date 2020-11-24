@@ -9,6 +9,7 @@
     "axios": "^0.20.0",
     "dotenv": "^8.2.0",
     "google-maps-react": "^2.0.6",
+    "mapbox-gl": "^1.13.0",
     "node": "^14.10.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",

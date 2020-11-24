@@ -27,10 +27,9 @@ export default class Dashboard extends Component {
   handleChange = ({ target: { value, name } })=> {
     if (name === "phone") {
       this.setState(prevState => ({ phone: this.numberFormat(value, prevState.phone) }))
-
     } else {
       this.setState({
-        name: value
+        [name]: value
       })
     }
   }
@@ -95,7 +94,6 @@ export default class Dashboard extends Component {
               Your Contact Info
             </div>
             <div className="user-info-content">
-
               Email: {this.state.toggleEmailInput ? 
               <>
                 <input 

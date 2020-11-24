@@ -7,17 +7,26 @@ import {
   withScriptjs,
   InfoWindow
  } from 'google-maps-react';
-import { getMileage, autoComplete } from '../../actions/deliveries';
+import { getDistance } from '../../actions/deliveries';
 import '../../stylesheets/delivery/deliverymap.css';
 import DestinationInput from './DestinationInput';
 require('dotenv').config();
+var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+mapboxgl.access_token = process.env.REACT_APP_MAPBOX_KEY
 
 class DeliveryMap extends Component {
+  
+  map = new mapboxgl.Map({
+    container: 'map-container',
+    style: 'mapbox://styles/mapbox/streets-v11'
+  });
+
 
   state = {
     address: '',
     visibleInfo: true,
-    origins: { lat: 30.146626, lng: -92.035548} 
+    origins: { lat: 30.146626, lng: -92.035548},
+    destinations: [] 
   }
 
   handleChange = event => {
@@ -28,7 +37,7 @@ class DeliveryMap extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    autoComplete(this.state, process.env.REACT_APP_GOOGLE_API_KEY)
+    // getDistance(this.state, process.env.REACT_APP_GOOGLE_API_KEY)
   }
 
   saveDestination = event => {
@@ -37,12 +46,12 @@ class DeliveryMap extends Component {
 
     render() {
         return (
-            <div className="map-container">
+            <div id="map-container" className="map-container">
               <form className="destination-input" onSubmit={this.handleSubmit}>
                 <DestinationInput 
                   saveDestination={this.saveDestination} 
                   handleChange={this.handleChange}
-                  values={this.state.address}
+                  address={this.state.address}
                 />
                 <input type="submit" value="Check the Distance" />
               </form>
