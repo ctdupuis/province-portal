@@ -108,7 +108,6 @@ export const createUser = (userdata) => {
         },
         { withCredentials: true })
         const user = response.data
-        debugger
         dispatch({ type: 'ADD_USER', user })
         dispatch({ type: 'END_LOAD' })
     }

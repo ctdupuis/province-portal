@@ -5,6 +5,7 @@ import { FaPen } from 'react-icons/fa';
 import ContactList from "./ContactList";
 import NewUser from "./NewUser";
 import DeleteUser from "./DeleteUser";
+import EmployeeSchedule from "./EmployeeSchedule";
 
 
 export default class Dashboard extends Component {
@@ -142,6 +143,14 @@ export default class Dashboard extends Component {
               </>}
             </div>
         </div>
+              <div className="dash-content">
+                <div className="user-info-title">
+                  Employee Schedule
+                </div>
+                <EmployeeSchedule 
+                  contacts={this.props.contacts}
+                />
+              </div>
             <div className="dash-content">
               <div className="user-info-title">
                 Employee Contact List
@@ -155,12 +164,6 @@ export default class Dashboard extends Component {
                 <DeleteUser currentUser={this.props.currentUser} contacts={this.props.contacts} />
               </div>
               ) : null }
-              <div className="dash-content">
-                <div className="user-info-title">
-                  Employee Schedule
-                </div>
-                <p>Coming soon!</p>
-              </div>
       </section>
     );
   }

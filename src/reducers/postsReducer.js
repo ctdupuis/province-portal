@@ -20,7 +20,6 @@ export default function postsReducer(
         case 'ADD_COMMENT':
             post = state.posts.find(post => post.id === action.comment.post_id)
             post.comments.push(action.comment);
-            debugger
             return {
                 ...state,
                 posts: [...state.posts]
