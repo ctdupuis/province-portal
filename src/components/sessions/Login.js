@@ -16,13 +16,14 @@ export default class Login extends Component {
         })
     }
 
-    handleSubmit = event => {
-        event.preventDefault()
-        this.props.login(this.state, this.props.history)
-        this.setState({
-            username: '',
-            password: ''
-        })
+    handleClick = event => {
+        event.preventDefault();
+        if (event.target.value === "Demo") {
+            const demo = {username: 'demo', password: 'demo'}
+            this.props.login(demo, this.props.history)
+        } else {
+            this.props.login(this.state, this.props.history)
+        }
     }
 
     renderAlert = () => {
@@ -35,7 +36,7 @@ export default class Login extends Component {
         return (
             <div className="session-form-container">
                 <div className="form-box">
-                    <form className="session-form" onSubmit={this.handleSubmit}>
+                    <form className="session-form">
                         {this.renderAlert()}
 
                         <label>Username</label>
@@ -56,7 +57,8 @@ export default class Login extends Component {
                         />
                         <br />
 
-                        <input className="form-btn" type="submit" value="Log In" />
+                        <input className="form-btn" type="submit"  onClick={this.handleClick} value="Log In" />
+                        <input className="form-btn" type="submit"  onClick={this.handleClick} value="Demo" />
                     </form>
                 </div>
             </div>
