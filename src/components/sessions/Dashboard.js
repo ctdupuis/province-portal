@@ -10,8 +10,9 @@ import DeleteUser from "./DeleteUser";
 export default class Dashboard extends Component {
   componentDidMount() {
     this.props.getPosts();
+    this.props.getContacts();
   }
-  
+
   state = {
     toggleEmailInput: false,
     togglePhoneInput: false,

@@ -30,7 +30,6 @@ import ReportManager from "../components/reports/ReportManager";
 class SessionsContainer extends Component {
   componentDidMount() {
     this.props.getLoginStatus();
-    this.props.getContacts();
   }
 
 
@@ -125,6 +124,7 @@ class SessionsContainer extends Component {
                 createUser={this.props.createUser}
                 updateInfo={this.props.updateInfo}
                 getPosts={this.props.getPosts}
+                getContacts={this.props.getContacts}
                 {...props}
               />
             </> :

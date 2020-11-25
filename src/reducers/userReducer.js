@@ -29,6 +29,11 @@ export default function userReducer(
                 ...state,
                 contacts: action.contacts
             }
+        case 'RESET_CONTACTS':
+            return {
+                ...state,
+                contacts: []
+            }
         case 'ADD_USER':
             return {
                 ...state,

@@ -78,6 +78,7 @@ export const endSession = () => {
         axios.get(`${url}/logout`, { withCredentials: true})
         .then(res => {
             dispatch({ type: 'LOGOUT_USER' })
+            dispatch({ type: 'RESET_CONTACTS'})
             dispatch({ type: 'END_LOAD' })
         })
     }
