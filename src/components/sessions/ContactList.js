@@ -1,4 +1,5 @@
 import React from 'react';
+import Loading from '../static/Loading';
 
 export default function ContactList({ contacts }) {
 
@@ -16,7 +17,9 @@ export default function ContactList({ contacts }) {
                     </tr>
                 )
             })
-        }  
+        } else {
+            return <Loading />
+        }
     }
     return (
         <table className="contact-list">

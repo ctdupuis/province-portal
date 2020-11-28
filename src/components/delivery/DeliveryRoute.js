@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import DestinationInput from './DestinationInput';
 
 export default class DeliveryRoute extends Component {
+    
     state = {
         destinations: [],
         destinationAmt: 0,
@@ -19,13 +20,13 @@ export default class DeliveryRoute extends Component {
     }
 
     renderInputs = event => {
-        let target = parseInt(event.target.previousElementSibling.value)
         debugger
+        let target = parseInt(event.target.previousElementSibling.value)
         this.renderFields(target);
     }
 
     renderFields = number => {
-        debugger
+        // debugger
         if (number) {
             for (let i = 0; i < number; i++) {
                 return(<DestinationInput key={i} />)
@@ -34,9 +35,15 @@ export default class DeliveryRoute extends Component {
     }
 
     handleChange = event => {
-        this.setState({
-            [event.target.name]: event.target.value
+        // debugger
+        let newVal = parseInt(event.target.previousElementSibling.value)
+        this.setState((prevState, newVal) => {
+            debugger
+            // if (prevState.destinationAmt )
         })
+        // this.setState({
+        //     [event.target.name]: event.target.value
+        // })
     }
 
     render() {

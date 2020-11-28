@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component, useEffect } from "react";
 import "../../stylesheets/sessions/dashboard.css";
 import Loading from '../static/Loading';
 import { FaPen } from 'react-icons/fa';
@@ -6,12 +6,20 @@ import ContactList from "./ContactList";
 import NewUser from "./NewUser";
 import DeleteUser from "./DeleteUser";
 import EmployeeSchedule from "./EmployeeSchedule";
+import Example from "./Example";
 
 
 export default class Dashboard extends Component {
   componentDidMount() {
     this.props.getPosts();
     this.props.getContacts();
+    this.updateTitle();
+  }
+
+  updateTitle = () => {
+    const firstLetter = this.props.match.path.replace("/", "").charAt(0).toUpperCase()
+    const restOfTitle = this.props.match.path.slice(2, this.props.match.path.length)
+    document.title = `${firstLetter}${restOfTitle} | Province Portal`
   }
 
   state = {
@@ -95,6 +103,9 @@ export default class Dashboard extends Component {
         <header className="dash-header">
           <h3>{currentUser.first_name} {currentUser.last_name} | {currentUser.username} {this.renderAdminBadge(currentUser)}</h3>
         </header>
+        <div className="dash-content">
+          <Example />
+        </div>
         <div className="dash-content">
             <div className="user-info-title">
               Your Contact Info

@@ -30,16 +30,23 @@ export default class Post extends Component {
     }
   }
 
+  displayComments = event => {
+    // debugger
+    if (event.target.innerText != "No comments yet") {
+      this.setState({ displayList: ''})
+    }
+  }
+
   render() {
     const { content, userID, author, created, comments, id, addComment, currentUser } = this.props;
     return(
       <article className="post-container">
       <div className="post-content">
-        <div className="post-author">{author}</div>
+        <span className="post-author">{author}</span>
         <p className="post-text">
           {content}
           <br />
-        <span className="timestamp"><em>{created} |</em></span><button onClick={() => this.setState({displayList: ''})}className="timestamp total-comments">{this.commentFormat(comments)}</button>
+        <span className="timestamp"><em>{created} |</em></span><button onClick={this.displayComments}className="timestamp total-comments">{this.commentFormat(comments)}</button>
         {this.checkOwnership(currentUser, userID)}
         </p>
         {/* <div style={{ textAlign: 'left'}}>

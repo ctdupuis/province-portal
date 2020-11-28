@@ -2,7 +2,7 @@
 
 .post-container {
   background-color: whitesmoke;
-  margin: 10px 40px;
+  margin: .5rem 40px;
   padding: 5px;
   border-radius: 5px;
   border: 2px solid var(--d-green);
@@ -10,7 +10,7 @@
 
 .post-content {
   background-color: whitesmoke;
-  padding: 15px;
+  padding: 2rem;
   margin: 1.5rem;
   border-radius: 5px;
   text-align: left;
@@ -28,7 +28,7 @@
 
 .post-text {
   border: .1rem solid var(--o-green);
-  border-radius: 0 10px 10px 10px;
+  border-radius: 0 .5rem .5rem .5rem;
   padding: 1.5rem;
   text-align: left;
 }
@@ -38,8 +38,8 @@
   border-right: .1rem solid var(--o-green);
   border-left: .15rem solid var(--o-green);
   border-top: .15rem solid var(--o-green);
-  margin-top: 10px;
-  border-radius: 0 10px 10px 10px;
+  margin-top: .5rem;
+  border-radius: 0 .5rem .5rem .5rem;
   background-color: lightgrey;
 }
 
@@ -47,29 +47,29 @@
   display: block;
   text-align: left;
   background-color: lightgrey;
-  padding: 10px 0 10px 20px;
+  padding: .5rem 0 .5rem 20px;
 }
 
 .comment-container li.comment-head {
   text-align: left;
   font-size: 20px;
-  padding: 10px 15px;
+  padding: .5rem 15px;
   border-bottom: 1px solid var(--o-green);
   background-color: var(--o-green);
-  border-radius: 0 10px 0 0;
+  border-radius: 0 .5rem 0 0;
   color: whitesmoke;
 }
 
 .comment li {
   background-color: whitesmoke;
   margin: 0.3rem;
-  border-radius: 0 10px 10px 10px;
+  border-radius: 0 .5rem .5rem .5rem;
   border: .1rem solid var(--o-green);
   padding: 1.5rem;
 }
 
 .comment-list {
-  border-radius: 10px;
+  border-radius: .5rem;
   text-align: left;
 }
 
@@ -80,7 +80,7 @@
   border-radius: 7px;
   width: 100%;
   height: 90%;
-  margin-left: 10px;
+  margin-left: .5rem;
   font-size: medium;
 }
 
@@ -92,9 +92,9 @@
 }
 
 .new-comment {
-  padding-top: 10px;
+  padding-top: .5rem;
   box-sizing: border-box;
-  border-radius: 10px;
+  border-radius: .5rem;
 }
 
 .input-container {
@@ -105,7 +105,7 @@
   height: 80%;
   width: 80%;
   flex-grow: 8;
-  padding: 10px;
+  padding: .5rem;
   transition: width 0.4s ease-in-out;
   background-color: lightgrey;
   resize: none;
@@ -124,7 +124,7 @@
   float: left;
   background-color: var(--o-green);
   border-radius: 100px;
-  padding: 10px;
+  padding: .5rem;
   color: whitesmoke;
   margin: .75rem;
   border: 1px solid var(--m-green);
@@ -154,7 +154,7 @@
   border-radius: .5rem;
   padding: .4rem;
   transition: 0.5s;
-  margin-top: 0.5em;
+  margin-top: 1em;
   float: left;
 }
 

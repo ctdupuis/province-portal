@@ -5,6 +5,15 @@ import Loading from '../static/Loading';
 
 
 export default class Announcements extends Component {
+  componentDidMount() {
+    this.updateTitle();
+  }
+
+  updateTitle = () => {
+    const firstLetter = this.props.match.path.replace("/", "").charAt(0).toUpperCase()
+    const restOfTitle = this.props.match.path.slice(2, this.props.match.path.length)
+    document.title = `${firstLetter}${restOfTitle} | Province Portal`
+  }
 
   render() {
     return (
