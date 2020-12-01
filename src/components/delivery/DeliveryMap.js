@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useRef } from 'react';
 import { 
   Map,
   GoogleApiWrapper,
@@ -10,16 +10,23 @@ import {
 import { getDistance } from '../../actions/deliveries';
 import '../../stylesheets/delivery/deliverymap.css';
 import DestinationInput from './DestinationInput';
+import mapboxgl from 'mapbox-gl';
 require('dotenv').config();
-var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
+// var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 mapboxgl.access_token = process.env.REACT_APP_MAPBOX_KEY
 
 class DeliveryMap extends Component {
+  mapContainerRef = () => useRef(null);
   
-  map = new mapboxgl.Map({
-    container: 'map-container',
-    style: 'mapbox://styles/mapbox/streets-v11'
-  });
+  componentDidMount(){
+    const map = new mapboxgl.Map({
+      container: this.mapContainerRef.current,
+      // See style options here: https://docs.mapbox.com/api/maps/#styles
+      style: 'mapbox://styles/mapbox/streets-v11',
+      center: [-104.9876, 39.7405],
+      zoom: 12.5,
+  })
+  };
 
 
   state = {
@@ -46,7 +53,7 @@ class DeliveryMap extends Component {
 
     render() {
         return (
-            <div id="map-container" className="map-container">
+            <div id="map-container" className="map-container" ref={this.mapContainerRef}>
               <form className="destination-input" onSubmit={this.handleSubmit}>
                 <DestinationInput 
                   saveDestination={this.saveDestination} 
@@ -55,36 +62,12 @@ class DeliveryMap extends Component {
                 />
                 <input type="submit" value="Check the Distance" />
               </form>
-                <Map 
-                    google={this.props.google}
-                    initialCenter={this.state.origins}
-                    className={"map"}
-                    zoom={13}
-                    style={{ height: '75%', width: "50%", position: 'relative'}}
-                    >
-                    <Marker 
-                      position={{ lat: 30.146626, lng: -92.035548 }}
-                      name="Province"
-                      title={"This is where you are"}    
-                      icon={{
-                        url: './icon.png',
-                        scaledSize: new this.props.google.maps.Size(37, 37) 
-                      }}
-                    />
-                    <InfoWindow 
-                      visible={this.state.visibleInfo}
-                    >
-                      <div className="info-window">
-                        <p>You are here!</p>
-                      </div>
-                    </InfoWindow>
-
-                </Map>
           </div>
         )
     }
 }
 
-export default GoogleApiWrapper({
-    apiKey: process.env.REACT_APP_GOOGLE_API_KEY
-})(DeliveryMap);
+// export default GoogleApiWrapper({
+//     apiKey: process.env.REACT_APP_GOOGLE_API_KEY
+// })(DeliveryMap);
+export default DeliveryMap;
