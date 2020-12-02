@@ -1,35 +1,19 @@
-import React, { Component, useRef } from 'react';
-import { 
-  Map,
-  GoogleApiWrapper,
-  Marker,
-  withGoogleMap,
-  withScriptjs,
-  InfoWindow
- } from 'google-maps-react';
-import { getDistance } from '../../actions/deliveries';
+import React, { Component } from 'react';
 import '../../stylesheets/delivery/deliverymap.css';
 import DestinationInput from './DestinationInput';
-import mapboxgl from 'mapbox-gl';
+import ReactMapGL from 'react-map-gl';
 require('dotenv').config();
-// var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
-mapboxgl.access_token = process.env.REACT_APP_MAPBOX_KEY
 
 class DeliveryMap extends Component {
-  mapContainerRef = () => useRef(null);
-  
-  componentDidMount(){
-    const map = new mapboxgl.Map({
-      container: this.mapContainerRef.current,
-      // See style options here: https://docs.mapbox.com/api/maps/#styles
-      style: 'mapbox://styles/mapbox/streets-v11',
-      center: [-104.9876, 39.7405],
-      zoom: 12.5,
-  })
-  };
-
 
   state = {
+    viewport: {
+      latitude: 30.146626,
+      longitude: -92.035548,
+      width: "50vw",
+      height: "50vh",
+      zoom: 14
+    },
     address: '',
     visibleInfo: true,
     origins: { lat: 30.146626, lng: -92.035548},
@@ -53,21 +37,21 @@ class DeliveryMap extends Component {
 
     render() {
         return (
-            <div id="map-container" className="map-container" ref={this.mapContainerRef}>
-              <form className="destination-input" onSubmit={this.handleSubmit}>
-                <DestinationInput 
-                  saveDestination={this.saveDestination} 
-                  handleChange={this.handleChange}
-                  address={this.state.address}
-                />
-                <input type="submit" value="Check the Distance" />
-              </form>
+          <div className="map">
+            <ReactMapGL 
+              mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_KEY}
+              {...this.state.viewport}
+              onViewportChange={newView => {
+                this.setState({
+                  ...this.state,
+                  viewport: newView
+                })
+              }}
+              >Markers here
+            </ReactMapGL>
           </div>
         )
     }
 }
 
-// export default GoogleApiWrapper({
-//     apiKey: process.env.REACT_APP_GOOGLE_API_KEY
-// })(DeliveryMap);
 export default DeliveryMap;
