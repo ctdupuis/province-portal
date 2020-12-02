@@ -10,7 +10,7 @@ class DeliveryMap extends Component {
     viewport: {
       latitude: 30.146626,
       longitude: -92.035548,
-      width: "75vw",
+      width: "85vw",
       height: "75vh",
       zoom: 11
     },
@@ -18,18 +18,11 @@ class DeliveryMap extends Component {
       lat: 30.146626,
       lng: -92.035548
     },
-    marker: {
-      lat: 30.14796675005706, 
-      lng: -92.0141882385185
-    },
     boundaries: [
       { lat: 30.13480050767714, lng: -92.10654263102711},
       { lat: 30.108900, lng: -92.059526 }
     ],
-    address: '',
-    visibleInfo: true,
-    origins: { lat: 30.146626, lng: -92.035548},
-    destinations: [] 
+    address: ''
   }
 
   handleChange = event => {
@@ -40,11 +33,16 @@ class DeliveryMap extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
-    // getDistance(this.state, process.env.REACT_APP_GOOGLE_API_KEY)
+    this.setState({
+      ...this.state,
+      address: event.target.children[0].value
+    })
   }
 
-  saveDestination = event => {
-    this.state.destinations.push(event.target.value)
+  renderLocation = () => {
+    if (this.state.address) {
+      return <span className="location">Showing Location For "{this.state.address}"</span>
+    }
   }
 
     render() {
@@ -54,39 +52,52 @@ class DeliveryMap extends Component {
               <h3>Delivery Map</h3>
             </header>
 
-            <div className="dash-content map">
-              <form className="new-user-form">
-                <label>Address</label>
-                <input type="text" placeholder="Enter address..." />
+            <div className="dash-content">
+              <form className="new-user-form" onSubmit={this.handleSubmit}>
+                <input 
+                  type="text" 
+                  name="address"
+                  placeholder="Enter address..." 
+                  // onChange={this.handleChange}
+                  />
 
                 <input className="new-user-sbmt" type="submit" value="Check Location" />
+                {this.renderLocation()}
               </form>
-              <ReactMapGL 
-                boundaries={this.state.boundaries}
-                mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_KEY}
-                {...this.state.viewport}
-                onViewportChange={newView => {
-                  this.setState({
-                    ...this.state,
-                    viewport: newView
-                  })
-                }}
-              >
-                <Marker latitude={this.state.origins.lat} longitude={this.state.origins.lng}>
-                  <span className="marker-img">
-                    <img className="province-marker" src="/icon.png" alt="Province Icon" />
-                  </span>
-                </Marker>
-                {this.state.boundaries.map(location => {
-                  return (
-                  <Marker latitude={location.lat} longitude={location.lng}>
-                    <img src="./marker.png" alt="boundary" className="province-marker" />
-                    <span>Don't go passed here</span>
+
+              <div className="map">
+                <ReactMapGL 
+                  boundaries={this.state.boundaries}
+                  mapboxApiAccessToken={process.env.REACT_APP_MAPBOX_KEY}
+                  {...this.state.viewport}
+                  onViewportChange={newView => {
+                    this.setState({
+                      ...this.state,
+                      viewport: newView
+                    })
+                  }}
+                >
+                  <Marker latitude={this.state.origins.lat} longitude={this.state.origins.lng}>
+                    <span className="marker-img">
+                      <img className="province-marker" src="/icon.png" alt="Province Icon" />
+                    </span>
                   </Marker>
-                  )
-                })}
-              </ReactMapGL>
+
+                  {this.state.boundaries.map(location => {
+                    return (
+                    <Marker latitude={location.lat} longitude={location.lng}>
+                      <img src="./marker.png" alt="boundary" className="province-marker" />
+                      <span>Don't go passed here</span>
+                    </Marker>
+                    )
+                  })}
+                </ReactMapGL>
+              </div>
             </div>
+
+
+
+
           </section>
         )
     }
