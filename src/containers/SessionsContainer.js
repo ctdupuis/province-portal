@@ -21,8 +21,6 @@ import Announcements from "../components/sessions/Announcements";
 import Tabs from "../components/static/Tabs";
 import DeliveryMap from "../components/delivery/DeliveryMap";
 import Dashboard from "../components/sessions/Dashboard";
-import Pickups from "../components/patient-services/PatientServices";
-import DeliveryRoute from "../components/delivery/DeliveryRoute";
 import PatientServices from "../components/patient-services/PatientServices";
 import ReportManager from "../components/reports/ReportManager";
 
@@ -102,6 +100,7 @@ class SessionsContainer extends Component {
                 posts={this.props.posts}
                 addPost={this.props.addPost}
                 addComment={this.props.addComment}
+                getPosts={this.props.getPosts}
                 loading={this.props.loading}
                 {...props}
               />
@@ -123,7 +122,6 @@ class SessionsContainer extends Component {
                 loading={this.props.loading}
                 createUser={this.props.createUser}
                 updateInfo={this.props.updateInfo}
-                getPosts={this.props.getPosts}
                 getContacts={this.props.getContacts}
                 {...props}
               />
@@ -133,7 +131,7 @@ class SessionsContainer extends Component {
         />
         <Route 
           exact 
-          path={"/delivery-map"}
+          path={"/deliveries"}
           render={(props) => (
             <>
               <Tabs endSession={this.props.endSession}/>
@@ -152,34 +150,6 @@ class SessionsContainer extends Component {
             <>
               <Tabs endSession={this.props.endSession}/>
               <ReportManager
-                currentUser={this.props.currentUser}
-                loading={this.props.loading}
-                {...props}
-              />
-            </>
-          )}
-        />
-        <Route 
-          exact 
-          path={"/delivery-route"}
-          render={(props) => (
-            <>
-              <Tabs endSession={this.props.endSession}/>
-              <DeliveryRoute
-                currentUser={this.props.currentUser}
-                loading={this.props.loading}
-                {...props}
-              />
-            </>
-          )}
-        />
-        <Route 
-          exact 
-          path={"/pickups"}
-          render={(props) => (
-            <>
-              <Tabs endSession={this.props.endSession}/>
-              <Pickups
                 currentUser={this.props.currentUser}
                 loading={this.props.loading}
                 {...props}

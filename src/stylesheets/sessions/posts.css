@@ -24,10 +24,12 @@
   color: whitesmoke;
   margin: 0.75rem;
   border: 1px solid var(--m-green);
+  height: 100%;
+  width: 5%;
 }
 
 .post-text {
-  border: .1rem solid var(--o-green);
+  border: .1em solid var(--o-green);
   border-radius: 0 .5rem .5rem .5rem;
   padding: 1.5rem;
   text-align: left;

@@ -11,7 +11,6 @@ import Example from "./Example";
 
 export default class Dashboard extends Component {
   componentDidMount() {
-    this.props.getPosts();
     this.props.getContacts();
     this.updateTitle();
   }

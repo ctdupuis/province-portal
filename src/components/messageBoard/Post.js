@@ -42,7 +42,7 @@ export default class Post extends Component {
     return(
       <article className="post-container">
       <div className="post-content">
-        <span className="post-author">{author}</span>
+        <div className="post-author">{author}</div>
         <p className="post-text">
           {content}
           <br />

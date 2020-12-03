@@ -7,6 +7,7 @@ import Loading from '../static/Loading';
 export default class Announcements extends Component {
   componentDidMount() {
     this.updateTitle();
+    this.props.getPosts();
   }
 
   updateTitle = () => {

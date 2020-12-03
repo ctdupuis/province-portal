@@ -27,14 +27,10 @@ const Tabs = ({ endSession }) => {
                     </div>
                     <div className="nav-tab">
                         <div className="link-container">
-                            <Link to={'/delivery-map'}>Delivery Map</Link>
+                            <Link to={'/deliveries'}>Deliveries</Link>
                         </div>
                     </div>
-                    <div className="nav-tab">
-                        <div className="link-container">
-                            <Link to={'/delivery-route'}>Delivery Route Planner</Link>
-                        </div>
-                    </div>
+                   
                     <div className="nav-tab">
                         <div className="link-container">
                             <Link to={'/dashboard'} onClick={() => endSession()}>Log Out</Link>
