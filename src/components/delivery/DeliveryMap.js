@@ -18,6 +18,10 @@ class DeliveryMap extends Component {
       height: "75vh",
       zoom: 11
     },
+    location: {
+      address: "",
+      city: "Lafayette"
+    },
     origins: {
       lat: 30.146626,
       lng: -92.035548
@@ -30,48 +34,59 @@ class DeliveryMap extends Component {
       {lat: 30.176960877413638, lng: -92.00190848597113},
       {lat: 30.206932573334075, lng: -92.0379573741186}
     ],
-    address: '',
     test: "",
     destinations: []
   }
 
   handleChange = event => {
     this.setState({
-      [event.target.name]: event.target.value
+      location: {
+        ...this.state.location,
+        address: event.target.value
+      }
+    })
+  }
+
+  setCity = event => {
+    this.setState({ 
+      location: {
+        ...this.state.location,
+        city: event.target.value
+      }
     })
   }
 
   handleSubmit = event => {
     event.preventDefault();
-    // this.setState({
-    //   ...this.state,
-    //   address: event.target.children[0].value
-    // })
-    getGeocode();
-  }
-
-  renderLocation = () => {
-    if (this.state.address) {
-      return <span className="location">Showing Location For "{this.state.address}"</span>
-    }
-  }
-
-  testClick = () => {
-    this.setState({
+    getGeocode(this.state.location).then(dest => this.setState({
       ...this.state,
-      test: {lat: 30.147027679654673, lng: -92.01448751773326}
-    })
+      destinations: [...this.state.destinations, dest]
+    }))
   }
 
   renderMarker = () => {
     if (this.state.test) {
       return <Marker 
-      position={this.state.test} 
-      icon={{
-        url: './marker.png',
-        scaledSize: new this.props.google.maps.Size(37, 37)
-      }}
+        position={this.state.test} 
+        icon={{
+          url: './marker.png',
+          scaledSize: new this.props.google.maps.Size(37, 37)
+        }}
       />
+    }
+  }
+
+  renderDestinations = () => {
+    if (this.state.destinations.length > 0) {
+      return this.state.destinations.map( destination => {
+        return <Marker 
+        position={destination} 
+        icon={{
+          url: './marker.png',
+          scaledSize: new this.props.google.maps.Size(37, 37)
+        }}
+        />
+      })
     }
   }
 
@@ -95,12 +110,17 @@ class DeliveryMap extends Component {
                   type="text" 
                   name="address"
                   placeholder="Enter address..." 
+                  onChange={this.handleChange}
                 />
+                <select id="city-select" value={this.state.city} onChange={this.setCity}>
+                  <option value="Lafayette">Lafayette</option>
+                  <option value="Youngsville">Youngsville</option>
+                  <option value="Broussard">Broussard</option>
+                </select>
 
-                <input className="new-user-sbmt" type="submit" value="Check Location" />
-                
+                <input className="new-user-sbmt" type="submit" value="Check Location" />              
               </form>
-              <button onClick={this.testClick}>Try Rendering a Marker</button>
+
 
               <div className="map-container">
                 <Map
@@ -118,10 +138,10 @@ class DeliveryMap extends Component {
                       scaledSize: new this.props.google.maps.Size(37, 37)
                     }}
                   />
-                  {this.renderMarker()}
-                {this.state.boundaries.map(location => {
+                  {this.renderDestinations()}
+                {/* {this.state.boundaries.map(location => {
                   return <Marker position={location} icon={{url: '/marker.png', scaledSize: new this.props.google.maps.Size(37, 37)}} />
-                })}
+                })} */}
                 </Map>
             </div>
             <br />
