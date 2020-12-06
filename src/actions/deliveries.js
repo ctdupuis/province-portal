@@ -10,10 +10,12 @@ export const getGeocode = async function(location){
     const coords = { 
         place_id: data.place_id, 
         address: data.formatted_address, 
-        lat: data.geometry.location.lat, 
-        lng: data.geometry.location.lng
+        position: {
+            lat: data.geometry.location.lat, 
+            lng: data.geometry.location.lng
+        }
     }
-    debugger
+    // debugger
     return coords
 }
 

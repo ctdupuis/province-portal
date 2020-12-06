@@ -66,7 +66,6 @@ class DeliveryMap extends Component {
       activeMarker: marker,
       showingInfoWindow: true
     })
-    // debugger
   }
 
   onClose = props => {
@@ -90,7 +89,10 @@ class DeliveryMap extends Component {
     if (this.state.destinations.length > 0) {
       return this.state.destinations.map( destination => {
         return <Marker 
-        position={destination} 
+        key={destination.place_id}
+        name={destination.address}
+        position={destination.position} 
+        onClick={this.onMarkerClick}
         icon={{
           url: './marker.png',
           scaledSize: new this.props.google.maps.Size(37, 37)
@@ -160,6 +162,7 @@ class DeliveryMap extends Component {
                       scaledSize: new this.props.google.maps.Size(37, 37)
                     }}
                   />
+                  {this.renderDestinations()}
                       <InfoWindow
                         visible={this.state.showingInfoWindow}
                         marker={this.state.activeMarker}
@@ -167,10 +170,8 @@ class DeliveryMap extends Component {
                       >
                         <div className="marker-info">
                           <h4>{this.state.selectedPlace.name}</h4>
-                          <p>{this.state.selectedPlace.title}</p>
                         </div>
                       </InfoWindow>
-                  {this.renderDestinations()}
                 {/* {this.state.boundaries.map(location => {
                   return <Marker position={location} icon={{url: '/marker.png', scaledSize: new this.props.google.maps.Size(37, 37)}} />
                 })} */}
