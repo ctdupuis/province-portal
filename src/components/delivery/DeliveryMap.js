@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import '../../stylesheets/delivery/deliverymap.css';
-import DestinationInput from './DestinationInput';
-import ReactMapGL from 'react-map-gl';
 import Loading from '../static/Loading';
-
-import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
-import { getGeocode } from '../../actions/deliveries';
+import { Map, GoogleApiWrapper, Marker, InfoWindow, Polygon} from 'google-maps-react';
+import { getGeocode, establishBounds } from '../../actions/deliveries';
 require('dotenv').config();
 
 class DeliveryMap extends Component {
+  componentDidMount(){
+    establishBounds(this.state.boundaries);
+  }
 
   state = {
     viewport: {
@@ -34,8 +34,10 @@ class DeliveryMap extends Component {
       {lat: 30.176960877413638, lng: -92.00190848597113},
       {lat: 30.206932573334075, lng: -92.0379573741186}
     ],
-    test: "",
-    destinations: []
+    destinations: [],
+    showingInfoWindow: false,
+    activeMarker: {},
+    selectedPlace: {}
   }
 
   handleChange = event => {
@@ -56,24 +58,21 @@ class DeliveryMap extends Component {
     })
   }
 
+  onMarkerClick = (props, marker, event) => {
+    this.setState({
+      selectedPlace: props,
+      activeMarker: marker,
+      showingInfoWindow: true
+    })
+    // debugger
+  }
+
   handleSubmit = event => {
     event.preventDefault();
     getGeocode(this.state.location).then(dest => this.setState({
       ...this.state,
       destinations: [...this.state.destinations, dest]
     }))
-  }
-
-  renderMarker = () => {
-    if (this.state.test) {
-      return <Marker 
-        position={this.state.test} 
-        icon={{
-          url: './marker.png',
-          scaledSize: new this.props.google.maps.Size(37, 37)
-        }}
-      />
-    }
   }
 
   renderDestinations = () => {
@@ -97,6 +96,10 @@ class DeliveryMap extends Component {
         width: "50%",
         position: "static"
       }
+      // const bounds = new this.props.google.maps.LatLngBounds();
+      // for (let i = 0; i < this.state.boundaries.length; i++) {
+      //   bounds.extend(this.state.boundaries[i]);
+      // }
         return (
           loading ? <Loading /> :
           <section className="dash-container">
@@ -126,18 +129,35 @@ class DeliveryMap extends Component {
                 <Map
                   google={this.props.google}
                   initialCenter={this.state.origins}
-                  zoom={11.5}
+                  zoom={12}
                   style={mapStyles}
                   className={"map"}
                 >
+                  {/* <Polygon
+                    path={this.state.boundaries}
+                    strokeColor="#0000FF"
+                    strokeOpacity={0.8}
+                    strokeWeight={2} /> */}
                   <Marker 
                     position={this.state.origins}
-                    name="Province"
+                    name={"Province"}
+                    title={"You are here"}
+                    onClick={this.onMarkerClick}
                     icon={{
                       url: '/icon.png',
                       scaledSize: new this.props.google.maps.Size(37, 37)
                     }}
-                  />
+                  >
+                      <InfoWindow
+                        visible={this.state.showingInfoWindow}
+                        marker={this.state.activeMarker}
+                      >
+                        <div className="marker-info">
+                          <p>{this.state.selectedPlace.name}</p>
+                          <p>{this.state.selectedPlace.title}</p>
+                        </div>
+                      </InfoWindow>
+                  </Marker>
                   {this.renderDestinations()}
                 {/* {this.state.boundaries.map(location => {
                   return <Marker position={location} icon={{url: '/marker.png', scaledSize: new this.props.google.maps.Size(37, 37)}} />
@@ -160,7 +180,6 @@ class DeliveryMap extends Component {
     }
 }
 
-// export default DeliveryMap;
 export default GoogleApiWrapper({
   apiKey: process.env.REACT_APP_GOOGLE_API_KEY
 })(DeliveryMap);
