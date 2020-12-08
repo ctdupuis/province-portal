@@ -32,7 +32,7 @@ export default class Post extends Component {
 
   displayComments = event => {
     // debugger
-    if (event.target.innerText != "No comments yet") {
+    if (event.target.innerText !== "No comments yet") {
       this.setState({ displayList: ''})
     }
   }

@@ -1,11 +1,10 @@
 import axios from 'axios';
-
-const url = "http://localhost:5000";
+import { API_ROOT } from '../constants';
 
 export const login = (userdata, history) => {
     return  async (dispatch) => {
     dispatch({ type: 'START_LOAD' })
-    const response = await axios.post(`${url}`, {
+    const response = await axios.post(`${API_ROOT}`, {
             username: userdata.username,
             password: userdata.password
         }, { withCredentials: true }
@@ -33,7 +32,7 @@ export const login = (userdata, history) => {
 export const updateInfo = (userdata, history) => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD'})
-        const response = await axios.post(`${url}/update`, {
+        const response = await axios.post(`${API_ROOT}/update`, {
             username: userdata.username,
             password: userdata.password,
             password_confirm: userdata.password_confirm,
@@ -59,7 +58,7 @@ export const updateInfo = (userdata, history) => {
 export const getLoginStatus = () => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD' })
-        const response = await axios.get(`${url}/logged_in`, { withCredentials: true })
+        const response = await axios.get(`${API_ROOT}/logged_in`, { withCredentials: true })
         const data = response.data
         console.log(data)
         if (data.logged_in === true ) {
@@ -75,7 +74,7 @@ export const getLoginStatus = () => {
 export const endSession = () => {
     return async (dispatch) =>  {
         dispatch({ type: 'START_LOAD'})
-        axios.get(`${url}/logout`, { withCredentials: true})
+        axios.get(`${API_ROOT}/logout`, { withCredentials: true})
         .then(res => {
             dispatch({ type: 'LOGOUT_USER' })
             dispatch({ type: 'RESET_CONTACTS'})
@@ -87,7 +86,7 @@ export const endSession = () => {
 export const getContacts = () => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD' })
-        const response = await axios.get(`${url}/contacts`, { withCredentials: true })
+        const response = await axios.get(`${API_ROOT}/contacts`, { withCredentials: true })
         const contacts = response.data
         dispatch({ type: 'STORE_CONTACT_LIST', contacts})
         dispatch({ type: 'END_LOAD'})
@@ -97,7 +96,7 @@ export const getContacts = () => {
 export const createUser = (userdata) => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD' })
-        const response = await axios.post(`${url}/users`, 
+        const response = await axios.post(`${API_ROOT}/users`, 
         {
             username: userdata.username,
             first_name: userdata.first_name,

@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import '../../stylesheets/delivery/deliverymap.css';
 import Loading from '../static/Loading';
-import { Map, GoogleApiWrapper, Marker, InfoWindow, Polyline } from 'google-maps-react';
+import { Map, GoogleApiWrapper, Marker, InfoWindow } from 'google-maps-react';
 import { getGeocode, establishBounds } from '../../actions/deliveries';
-import { FaLessThanEqual } from 'react-icons/fa';
 require('dotenv').config();
 
 class DeliveryMap extends Component {
@@ -16,7 +15,7 @@ class DeliveryMap extends Component {
       address: "",
       city: "Lafayette"
     },
-    origins: {
+    origin: {
       lat: 30.146626,
       lng: -92.035548
     },
@@ -32,6 +31,7 @@ class DeliveryMap extends Component {
     showingInfoWindow: false,
     activeMarker: {},
     selectedPlace: {},
+    route: [],
     polyline: "sy_wDt_bqP}IeI`@y@Ny@Zi@p@eBHm@EkACoAnEwKxFyN|DcJ`@wA@Yf@@~Cc@fAM^Av@LjH|ExJcUdD}H^gBTuBf@}CnCwLzDqKhIqTfBcE|C}Ep@sAp@y@LB`@KPa@?QTaADy@|AoDvJkUzMc[bAqAfAo@r@U~@Mf@AjHZdR@fANx@ZjIvF|N`KnAfA~GnHzHrIp@f@h@Vp@Pz@H|@?v@MxBaAjHqEnDuCl@]fAa@lK_BlHeA_CaPI_B\\oBHeAAcKAuVKu|@Mol@LCL]M[MEA}NJwMRsSEsa@?kMRaBHMtO@zGLdERfEErM_A~AKbIEpBAdHArCGrBU|AUNOl@Qp@[|AiAjA{Af@aA`@kAtA{GdE_T`BoIv@cEtBsLfGsZl@eBvAiCzAgC|IeKhC}C|@wAj@uAXqARkAVeD@aCGuAHu@DAFGHWAYOQWCSLEJy@HqNAA_ZC_`A?kLmKAuK?yWCy]?oV?cy@CqRECyVAyPDiIFAHI@OGMMCKDELq@DgSCk]Ak`@E_D?{C?Ps@j@yBx@wCt@kBpAoBYc@q@s@SKe@Mk@A}@Ac@Kk@Y_@e@Se@I_@GkAGeJGaMgIGe@F[Vc@l@mCfD_AZsC?yXDqTD{DB[?CTSdA[~@Wj@}@fAoGtF[b@O`@eBzNmA|KsAxM[pEWpGSnDq@lFwBdOy@rDcB`FeBjDaChEqGdLqA`B_A~@qB|A_EpC}ClCgBrB{BzCaAvAw@`B_DrLy@~BsFzIq@nAiAbBgBrCgT|\\uBxC{AdBmBtAkB|@sA`@iCb@mCLeSFuCJgBZiA\\gBz@}BlB_ErEmBlAs@\\Ok@Y_A]d@MNEOQk@y@\\o@R{@XGJCFBJV`ANp@k@R_Cx@aA\\cCz@yAx@}B|BkPbTw[|a@wCpD_Az@_BhAmCbA}ATwIb@kIj@qL~@iCJwGD{@G_@Ia@h@{@fAuBpCaGrItBfHxEhQdBpGVfB@fBYjCSv@m@dAuGfIaBrBw@jAu@jBsChJ_AfCaB~B{C~DiOxRcApA|@bBh@dAbCxEdChF`@fAjB|GdGfb@lAfGj@~B~AzFpAxDxAlCbCvChA`AfBfAhAj@lHtCdG~BhHtCtC|AvCxB|BzBxI~InJxJnk@ll@hRrRrBlBZZlAdAPh@tA|AnEnEjHrH|JfKxBrBxC`C|BpA|B~@dIbCpD`AhRhFxOhE|ErAhFfBpAl@~BtArGtFhYjWdMfLzAtATc@GGo@k@"
   }
 
@@ -72,7 +72,8 @@ class DeliveryMap extends Component {
     if (this.state.showingInfoWindow) {
       this.setState({
         showingInfoWindow: false,
-        activeMarker: {}
+        activeMarker: {}, 
+        selectedPlace: {}
       })
     }
   }
@@ -141,7 +142,7 @@ class DeliveryMap extends Component {
               <div className="map-container">
                 <Map
                   google={this.props.google}
-                  initialCenter={this.state.origins}
+                  initialCenter={this.state.origin}
                   zoom={12}
                   style={mapStyles}
                   className={"map"}

@@ -1,11 +1,10 @@
 import axios from 'axios';
-
-const url = "http://localhost:5000";
+import { API_ROOT } from '../constants';
 
 export const getPosts = () => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD' })
-        const response = await axios.get(`${url}/posts`, { withCredentials: true })
+        const response = await axios.get(`${API_ROOT}/posts`, { withCredentials: true })
         const posts = response.data
         dispatch({ type: 'SAVE_POSTS', posts })
         dispatch({ type: 'END_LOAD'})
@@ -15,7 +14,7 @@ export const getPosts = () => {
 export const addPost = (postdata) => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD' })
-        const response = await axios.post(`${url}/posts`,
+        const response = await axios.post(`${API_ROOT}/posts`,
         {
             content: postdata.content,
             user_id: postdata.userID
@@ -30,7 +29,7 @@ export const addPost = (postdata) => {
 export const addComment = (commentdata) => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD'})
-        const response = await axios.post(`${url}/posts/${commentdata.postID}/comments`,
+        const response = await axios.post(`${API_ROOT}/posts/${commentdata.postID}/comments`,
         {
             content: commentdata.content,
             user_id: commentdata.userID,

@@ -1,4 +1,4 @@
-import React, { Component, useEffect } from "react";
+import React, { Component } from "react";
 import "../../stylesheets/sessions/dashboard.css";
 import Loading from '../static/Loading';
 import { FaPen } from 'react-icons/fa';

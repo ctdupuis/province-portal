@@ -15,7 +15,6 @@ import {
   addPost,
   addComment
 } from "../actions/posts";
-import { getDistance } from "../actions/deliveries";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Announcements from "../components/sessions/Announcements";
 import Tabs from "../components/static/Tabs";
