@@ -12,6 +12,7 @@ import Example from "./Example";
 export default class Dashboard extends Component {
   componentDidMount() {
     this.props.getContacts();
+    this.props.getSchedule();
     this.updateTitle();
   }
 

@@ -15,6 +15,9 @@ import {
   addPost,
   addComment
 } from "../actions/posts";
+import {
+  getSchedule
+} from "../actions/schedules";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Announcements from "../components/sessions/Announcements";
 import Tabs from "../components/static/Tabs";
@@ -117,6 +120,8 @@ class SessionsContainer extends Component {
               <Dashboard
                 currentUser={this.props.currentUser}
                 contacts={this.props.contacts}
+                schedule={this.props.schedule}
+                getSchedule={this.props.getSchedule}
                 endSession={this.props.endSession}
                 loading={this.props.loading}
                 createUser={this.props.createUser}
@@ -163,11 +168,12 @@ class SessionsContainer extends Component {
 
 export default connect(
   (state) => ({
-    currentUser: state.userReducer.currentUser,
-    contacts: state.userReducer.contacts,
-    errors: state.userReducer.errors,
-    posts: state.postsReducer.posts,
-    loading: state.loadReducer.loading
+    currentUser: state.currentUser,
+    contacts: state.contacts,
+    errors: state.errors,
+    posts: state.posts,
+    schedule: state.schedule,
+    loading: state.loading
   }),
   {
     getLoginStatus,
@@ -176,6 +182,7 @@ export default connect(
     updateInfo,
     createUser,
     getContacts,
+    getSchedule,
     getPosts,
     addPost,
     addComment
