@@ -6,8 +6,6 @@ import ContactList from "./ContactList";
 import NewUser from "./NewUser";
 import DeleteUser from "./DeleteUser";
 import EmployeeSchedule from "./EmployeeSchedule";
-import Example from "./Example";
-
 
 export default class Dashboard extends Component {
   componentDidMount() {
@@ -96,16 +94,13 @@ export default class Dashboard extends Component {
   }
 
   render() {
-    const { currentUser, loading } = this.props
+    const { currentUser, contacts, schedule, loading } = this.props
     return (
       loading ? <Loading /> :
       <section className="dash-container">
         <header className="dash-header">
           <h3>{currentUser.first_name} {currentUser.last_name} | {currentUser.username} {this.renderAdminBadge(currentUser)}</h3>
         </header>
-        <div className="dash-content">
-          <Example />
-        </div>
         <div className="dash-content">
             <div className="user-info-title">
               Your Contact Info
@@ -159,14 +154,15 @@ export default class Dashboard extends Component {
                   Employee Schedule
                 </div>
                 <EmployeeSchedule 
-                  contacts={this.props.contacts}
+                  contacts={contacts}
+                  schedule={schedule}
                 />
               </div>
             <div className="dash-content">
               <div className="user-info-title">
                 Employee Contact List
               </div>
-              <ContactList contacts={this.props.contacts} />
+              <ContactList contacts={contacts} />
             </div>
               {this.adminCheck(currentUser) ? 
               (

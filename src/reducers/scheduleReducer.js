@@ -1,6 +1,6 @@
 export default function scheduleReducer(
     state = {
-        schedule: {}
+        schedule: []
     },
     action
 ) {
@@ -9,6 +9,11 @@ export default function scheduleReducer(
             return {
                 ...state,
                 schedule: action.schedule
+            }
+        case 'CLEAR_SCHEDULE':
+            return {
+                ...state,
+                schedule: undefined
             }
     default: return state;
     }
