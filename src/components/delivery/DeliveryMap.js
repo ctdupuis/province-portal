@@ -9,13 +9,10 @@ import {
   Polyline,
   DirectionsRenderer,
 } from "google-maps-react";
-import { getGeocode, establishBounds } from "../../actions/deliveries";
+import { getGeocode } from "../../actions/deliveries";
 require("dotenv").config();
 
 class DeliveryMap extends Component {
-  componentDidMount() {
-    establishBounds(this.state.boundaries);
-  }
 
   state = {
     location: {
@@ -113,8 +110,6 @@ class DeliveryMap extends Component {
       });
     }
   };
-
-  getGeocode = async function () {};
 
   handleSubmit = (event) => {
     event.preventDefault();

@@ -15,32 +15,7 @@ export const getGeocode = async function(location){
             lng: data.geometry.location.lng
         }
     }
-
-    // debugger
     return coords
-}
-
-export const establishBounds = async function(bounds) {
-    let origin = bounds[0]
-    let waypoints = bounds.slice(1)
-    let pointsUrl = `https://maps.googleapis.com/maps/api/directions/json?
-    origin=${origin.lat},${origin.lng}&destination=${origin.lat},${origin.lng}&waypoints=`
-    let keyString = `&key=${process.env.REACT_APP_GOOGLE_API_KEY}`
-    // buildUrl(pointsUrl, waypoints, keyString).then(r => fetchRoute(r)).catch(err => console.log(err))
-    // debugger
-}
-
-const fetchRoute = async function(url) {
-    let sanitized = url.trim();
-    // debugger
-    const response = await axios.get(sanitized)
-}
-
-const buildUrl = async function(pointsUrl, waypoints, keyString) {
-    waypoints.forEach(point => {
-        pointsUrl += `${point.lat}%2C${point.lng}|`
-    })
-    return pointsUrl.slice(0, pointsUrl.length - 1) + keyString
 }
 
 export const getDistance = (data) => {
