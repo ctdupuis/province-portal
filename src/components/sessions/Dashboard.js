@@ -168,7 +168,11 @@ export default class Dashboard extends Component {
               (
               <div className="dash-content">
                 <NewUser createUser={this.props.createUser} />
-                <DeleteUser currentUser={this.props.currentUser} contacts={this.props.contacts} />
+                <DeleteUser 
+                  currentUser={this.props.currentUser} 
+                  removeUser={this.props.removeUser} 
+                  contacts={this.props.contacts} 
+                />
               </div>
               ) : null }
       </section>

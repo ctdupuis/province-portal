@@ -6,6 +6,7 @@ export default function userReducer(
     },
     action
 ) {
+    let keepers;
     switch (action.type) {
         case 'LOGIN_USER':
             return {
@@ -41,10 +42,16 @@ export default function userReducer(
                 contacts: [...state.contacts, action.user]
             }
         case 'UPDATE_USER':
-            const keepers = state.contacts.filter(u => u.id !== action.user.id) 
+            keepers = state.contacts.filter(u => u.id !== action.user.id) 
             return {
                 ...state,
                 contacts: [...keepers, action.user]
+            }
+        case 'REMOVE_USER':
+            keepers = state.contacts.filter(u => u.id !== action.userID)
+            return {
+                ...state,
+                contacts: [...keepers]
             }
         default: return state;
     }

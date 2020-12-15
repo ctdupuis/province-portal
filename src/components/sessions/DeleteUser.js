@@ -19,7 +19,7 @@ export default function DeleteUser(props) {
             <select id="rm-employee">
                 {props.contacts ? employeeSelects(props.contacts) : <Loading />}
             </select>
-            <button className="deactivate" onClick={() => console.log("Place deactivate() here!")}>Deactivate</button>
+            <button className="deactivate" onClick={(event) => {props.removeUser(parseInt(event.target.previousElementSibling.value))}}>Deactivate</button>
         </>
     )
 }

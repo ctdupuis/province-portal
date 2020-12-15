@@ -4,6 +4,7 @@ export default function scheduleReducer(
     },
     action
 ) {
+    let keepers;
     switch (action.type) {
         case 'SAVE_SCHEDULE':
             return {
@@ -14,6 +15,12 @@ export default function scheduleReducer(
             return {
                 ...state,
                 schedule: undefined
+            }
+        case 'REMOVE_SCHEDULE':
+            keepers = state.schedule.filter(sch => sch.user_id !== action.userID)
+            return {
+                ...state,
+                schedule: [...keepers]
             }
     default: return state;
     }

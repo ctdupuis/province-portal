@@ -112,3 +112,14 @@ export const createUser = (userdata) => {
         dispatch({ type: 'END_LOAD' })
     }
 }
+
+export const removeUser = (userID) => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD' })
+        const response = await axios.post(`${API_ROOT}/users/${userID}/delete`, { withCredentials: true })
+        const data = response.data
+        dispatch({ type: 'REMOVE_USER', userID })
+        dispatch({ type: 'REMOVE_SCHEDULE', userID })
+        dispatch({ type: 'END_LOAD'})
+    }
+}
