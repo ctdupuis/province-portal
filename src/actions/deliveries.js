@@ -15,6 +15,7 @@ export const getGeocode = async function(location){
             lng: data.geometry.location.lng
         }
     }
+
     // debugger
     return coords
 }
@@ -42,9 +43,10 @@ const buildUrl = async function(pointsUrl, waypoints, keyString) {
     return pointsUrl.slice(0, pointsUrl.length - 1) + keyString
 }
 
-export const getDistance = (data, key) => {
+export const getDistance = (data) => {
     let address = data.address.split(' ').join('+');
-    let url = `https://maps.googleapis.com/maps/api/place/autocomplete/json?input=${address}&key=${key}`
+    let url = `https://maps.googleapis.com/maps/api/directions/json?
+    origin=&key=${process.env.REACT_APP_GOOGLE_API_KEY}`
     debugger
     axios.get(url).then(r => console.log(r))
 }
