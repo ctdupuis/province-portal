@@ -104,7 +104,8 @@ export const createUser = (userdata) => {
             last_name: userdata.last_name,
             phone: userdata.phone,
             email: userdata.email,
-            password: userdata.password
+            password: userdata.password,
+            admin: userdata.admin
         },
         { withCredentials: true })
         const user = response.data
