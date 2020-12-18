@@ -26,10 +26,9 @@ export default function userReducer(
                 errors: action.err,
             }
         case 'STORE_CONTACT_LIST':
-            let contacts = action.contacts.filter(c => c.username !== "DEM")
             return {
                 ...state,
-                contacts: contacts
+                contacts: action.contacts
             }
         case 'RESET_CONTACTS':
             return {
