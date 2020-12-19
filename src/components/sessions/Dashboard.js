@@ -23,6 +23,7 @@ export default class Dashboard extends Component {
   state = {
     toggleEmailInput: false,
     togglePhoneInput: false,
+    toggleScheduleEdit: false,
     email: '',
     phone: '',
     username: this.props.currentUser.username
@@ -74,6 +75,12 @@ export default class Dashboard extends Component {
     this.setState({
       togglePhoneInput: !this.state.togglePhoneInput,
       phone: '',
+    })
+  }
+
+  toggleScheduleEdit = () => {
+    this.setState({
+      toggleScheduleEdit: !this.state.toggleScheduleEdit
     })
   }
 
@@ -156,6 +163,8 @@ export default class Dashboard extends Component {
                 <EmployeeSchedule 
                   contacts={contacts}
                   schedule={schedule}
+                  scheduleValue={this.state.toggleScheduleEdit}
+                  toggleScheduleEdit={this.toggleScheduleEdit}
                 />
               </div>
             <div className="dash-content">
