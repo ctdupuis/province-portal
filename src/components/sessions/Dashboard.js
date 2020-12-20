@@ -156,6 +156,7 @@ export default class Dashboard extends Component {
                 <EmployeeSchedule 
                   contacts={contacts}
                   schedule={schedule}
+                  currentUser={currentUser}
                 />
               </div>
             <div className="dash-content">

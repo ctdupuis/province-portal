@@ -71,7 +71,7 @@ export default class EmployeeSchedule extends Component {
         const dates = schedule ? schedule.shifts.map(shift => shift.date) : null
         return (
             <>
-                {this.state.toggleScheduleEdit ? 
+                {this.state.toggleScheduleEdit && this.props.currentUser.admin ? 
                 <>
                     <label className="label" htmlFor="startDate">Start Date</label>
                     <input className="input" name="startDate" type="date" onChange={this.dateChange} /> 
@@ -96,14 +96,20 @@ export default class EmployeeSchedule extends Component {
                         {this.state.toggleScheduleEdit ? this.renderEdit(this.props.schedule) : this.renderSchedule(this.props.schedule)}
                     </tbody>
                 </table>
-                {this.state.toggleScheduleEdit ? 
+                {this.state.toggleScheduleEdit && this.props.currentUser.admin ? 
                 <>
                     <button className="green-btn">Save Changes</button>
                     <button className="red-btn" onClick={this.toggleScheduleEdit}>Cancel</button>
                 </> 
                 : 
-                <button className="green-btn" onClick={this.toggleScheduleEdit}>Edit Schedule</button>
-                }
+                this.props.currentUser.admin ? 
+                <button 
+                    className="green-btn" 
+                    onClick={this.toggleScheduleEdit}>
+                        Edit Schedule
+                </button>
+                : null }
+                
             </>
         )
     }
