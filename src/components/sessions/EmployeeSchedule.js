@@ -1,6 +1,28 @@
 import React, { Component } from 'react';
 
 export default class EmployeeSchedule extends Component {
+    state = {
+        shifts: [],
+        toggleScheduleEdit: false,
+        startDate: "",
+        endDate: ""
+    }
+
+    toggleScheduleEdit = () => {
+        this.setState({
+          toggleScheduleEdit: !this.state.toggleScheduleEdit
+        })
+      }
+
+    handleChange = event => {
+        debugger
+    }
+
+    dateChange = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+    }
 
     renderSchedule(schedule) {
         if (schedule) {
@@ -19,10 +41,18 @@ export default class EmployeeSchedule extends Component {
     renderEdit(schedule) {
         if (schedule) {
             return schedule.map(sched => {
+                const user = sched.user
                 const shifts = sched.shifts.map(shift => {
                     return(
                         <td key={shift.id}>
-                            <input className="shift-input" type="number" name="shift-start" placeholder={shift.time}/>
+                            <input 
+                                className="shift-input" 
+                                type="number"
+                                data-date={shift.date}
+                                name={sched.id}
+                                placeholder={shift.time}
+                                onChange={this.handleChange}
+                            />
                         </td>
                     )
                 })
@@ -41,6 +71,16 @@ export default class EmployeeSchedule extends Component {
         const dates = schedule ? schedule.shifts.map(shift => shift.date) : null
         return (
             <>
+                {this.state.toggleScheduleEdit ? 
+                <>
+                    <label className="label" htmlFor="startDate">Start Date</label>
+                    <input className="input" name="startDate" type="date" onChange={this.dateChange} /> 
+                    <label className="label" htmlFor="endDate">End Date</label>
+                    <input className="input" name="endDate" type="date" onChange={this.dateChange} />
+                    <br />
+                </>
+                :
+                null }
                 <table className="contact-list">
                     <thead>
                         <tr>
@@ -53,16 +93,16 @@ export default class EmployeeSchedule extends Component {
                         </tr>
                     </thead>
                     <tbody>
-                        {this.props.scheduleValue ? this.renderEdit(this.props.schedule) : this.renderSchedule(this.props.schedule)}
+                        {this.state.toggleScheduleEdit ? this.renderEdit(this.props.schedule) : this.renderSchedule(this.props.schedule)}
                     </tbody>
                 </table>
-                {this.props.scheduleValue ? 
+                {this.state.toggleScheduleEdit ? 
                 <>
-                    <button>Save Changes</button>
-                    <button onClick={this.props.toggleScheduleEdit}>Cancel</button>
+                    <button className="green-btn">Save Changes</button>
+                    <button className="red-btn" onClick={this.toggleScheduleEdit}>Cancel</button>
                 </> 
                 : 
-                <button onClick={this.props.toggleScheduleEdit}>Edit Schedule</button>
+                <button className="green-btn" onClick={this.toggleScheduleEdit}>Edit Schedule</button>
                 }
             </>
         )
