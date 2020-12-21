@@ -225,3 +225,12 @@
   background-color: rgb(250, 32, 32);
   cursor: pointer;
 }
+
+.shift-input {
+  border-radius: .5rem;
+  padding: .1em;
+  border: .1em solid var(--m-green);
+  color: var(--d-green);
+  width: 32%;
+  text-align: right;
+}

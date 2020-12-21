@@ -15,7 +15,7 @@ export default class EmployeeSchedule extends Component {
       }
 
     handleChange = event => {
-        debugger
+        // debugger
     }
 
     dateChange = event => {
@@ -60,6 +60,8 @@ export default class EmployeeSchedule extends Component {
                     <tr key={sched.id}>
                         <td>{sched.user.first_name}</td>
                         {shifts}
+                        <td><input type="checkbox" name="autofill" /></td>
+                        <td><input type="checkbox" name="sameSchedule" /></td>
                     </tr>
                 )
             })
@@ -90,6 +92,14 @@ export default class EmployeeSchedule extends Component {
                             <th>Wed {dates ? dates[2] : null}</th>
                             <th>Thurs {dates ? dates[3] : null}</th>
                             <th>Fri {dates ? dates[4] : null}</th>
+
+                            {this.state.toggleScheduleEdit ?
+                            <th>Autofill</th> : null
+                            }
+
+                            {this.state.toggleScheduleEdit ?
+                            <th>Same Shifts</th> : null
+                            }
                         </tr>
                     </thead>
                     <tbody>

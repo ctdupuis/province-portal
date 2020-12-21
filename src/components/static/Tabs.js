@@ -1,39 +1,40 @@
 import React from 'react';
 import '../../stylesheets/tabs.css';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Tabs = ({ endSession }) => {
+   
     return(
         <div className="nav-tabs-container">
                     <div className="nav-tab">
                         <div className="link-container">
-                            <Link to={'/dashboard'}>Dashboard</Link>
+                            <NavLink to={'/dashboard'} activeStyle={{ backgroundColor: "var(--d-green)"}}>Dashboard</NavLink>
                         </div>
                     </div>
                     <div className="nav-tab">
                         <div className="link-container">
-                            <Link to={'/announcements'}>Announcements</Link>
+                            <NavLink to={'/announcements'} activeStyle={{backgroundColor: "var(--d-green)"}}>Announcements</NavLink>
                         </div>
                     </div>
                     <div className="nav-tab">
                         <div className="link-container">
-                            <Link to={'/patient-services'}>Patient Services</Link>
+                            <NavLink to={'/patient-services'} activeStyle={{backgroundColor: "var(--d-green)"}}>Patient Services</NavLink>
                         </div>
                     </div>
                     <div className="nav-tab">
                         <div className="link-container">
-                            <Link to={'/reports'}>Report Manager</Link>
+                            <NavLink to={'/reports'} activeStyle={{backgroundColor: "var(--d-green)"}}>Report Manager</NavLink>
                         </div>
                     </div>
                     <div className="nav-tab">
                         <div className="link-container">
-                            <Link to={'/deliveries'}>Deliveries</Link>
+                            <NavLink to={'/deliveries'} activeStyle={{backgroundColor: "var(--d-green)"}}>Deliveries</NavLink>
                         </div>
                     </div>
                    
                     <div className="nav-tab">
                         <div className="link-container">
-                            <Link to={'/dashboard'} onClick={() => endSession()}>Log Out</Link>
+                            <NavLink to={'/dashboard'} onClick={() => endSession()}>Log Out</NavLink>
                         </div>
                     </div>
             </div>
