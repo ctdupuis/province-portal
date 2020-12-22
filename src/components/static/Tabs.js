@@ -3,13 +3,17 @@ import "../../stylesheets/tabs.css";
 import { NavLink } from "react-router-dom";
 
 const Tabs = ({ endSession }) => {
+    const activeStyle = {
+        backgroundColor: "var(--d-green",
+        borderRadius: "1rem"
+    }
   return (
     <div className="nav-tabs-container">
       <div className="nav-tab">
         <div className="link-container">
           <NavLink
             to={"/dashboard"}
-            activeStyle={{ backgroundColor: "var(--d-green)" }}
+            activeStyle={activeStyle}
           >
             Dashboard
           </NavLink>
@@ -19,7 +23,7 @@ const Tabs = ({ endSession }) => {
         <div className="link-container">
           <NavLink
             to={"/announcements"}
-            activeStyle={{ backgroundColor: "var(--d-green)" }}
+            activeStyle={activeStyle}
           >
             Announcements
           </NavLink>
@@ -29,7 +33,7 @@ const Tabs = ({ endSession }) => {
         <div className="link-container">
           <NavLink
             to={"/patient-services"}
-            activeStyle={{ backgroundColor: "var(--d-green)" }}
+            activeStyle={activeStyle}
           >
             Patient Services
           </NavLink>
@@ -39,7 +43,7 @@ const Tabs = ({ endSession }) => {
         <div className="link-container">
           <NavLink
             to={"/reports"}
-            activeStyle={{ backgroundColor: "var(--d-green)" }}
+            activeStyle={activeStyle}
           >
             Report Manager
           </NavLink>
@@ -49,7 +53,7 @@ const Tabs = ({ endSession }) => {
         <div className="link-container">
           <NavLink
             to={"/deliveries"}
-            activeStyle={{ backgroundColor: "var(--d-green)" }}
+            activeStyle={activeStyle}
           >
             Deliveries
           </NavLink>

@@ -2,8 +2,9 @@
     border: .1rem solid var(--d-green);
     display: flex;
     justify-content: center;
-    height: 30rem;
+    height: 35rem;
     padding: 1%;
+    margin: 1rem;
 }
 
 .map {

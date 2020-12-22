@@ -7,10 +7,11 @@ import {
   Marker,
   InfoWindow,
   Polyline,
-  DirectionsRenderer,
+  DirectionsRenderer
 } from "google-maps-react";
 import { getGeocode } from "../../actions/deliveries";
 require("dotenv").config();
+
 
 class DeliveryMap extends Component {
 
@@ -147,18 +148,11 @@ class DeliveryMap extends Component {
       width: "50%",
       position: "static",
     };
-    // const bounds = new this.props.google.maps.LatLngBounds();
-    // for (let i = 0; i < this.state.boundaries.length; i++) {
-    //   bounds.extend(this.state.boundaries[i]);
-    // }
+
     return loading ? (
       <Loading />
     ) : (
-      <section className="dash-container">
-        <header className="dash-header">
-          <h3>Deliveries</h3>
-        </header>
-
+      <section className="dash-container">\
         <div className="dash-content">
           <form className="new-user-form" onSubmit={this.handleSubmit}>
             <input
@@ -193,7 +187,7 @@ class DeliveryMap extends Component {
               className={"map"}
             >
               <Polyline
-                path={this.state.bounds}
+                path={this.state.bounds}           
                 geodesic={true}
                 strokeColor="#319847"
                 strokeOpacity={0.8}
