@@ -23,9 +23,9 @@ export default class NewPost extends Component {
   render() {
     return (
       <article className="post-container">
-        <div className="flex-container">
+        <div className="new-post-container">
           <div className="input-container">
-            <textarea
+            <input
               type="text"
               placeholder="Share your thoughts..."
               className="comment-input"

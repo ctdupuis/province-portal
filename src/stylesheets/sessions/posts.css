@@ -3,92 +3,93 @@
 .post-container {
   background-color: whitesmoke;
   margin: .5rem 40px;
-  padding: 5px;
+  padding: 10px 5%;
   border-radius: 5px;
   border: 2px solid var(--d-green);
 }
 
 .post-content {
+  display: flex;
+  align-items: center;
   background-color: whitesmoke;
-  padding: 2rem;
-  margin: 1.5rem;
-  border-radius: 5px;
-  text-align: left;
+  padding: 10px 2%;
+  margin-bottom: 10px;
+  border-radius: 0 .5rem .5rem .5rem;
+  border: .1rem solid var(--d-green);
 }
 
 .post-author {
-  float: left;
+  align-self: flex-start;
   background-color: var(--o-green);
-  border-radius: 100px;
-  padding: 0.8rem;
+  border-radius: 100%;
+  padding: 10px;
   color: whitesmoke;
-  margin: 0.75rem;
   border: 1px solid var(--m-green);
   height: 100%;
   width: 5%;
+  margin-right: 10px;
+}
+
+div.post_text_and_meta_data {
+  display: flex;
+  flex-direction: column;
+}
+
+div.meta_data {
+  display: flex;
+  justify-content: space-between;
+}
+
+div.comments_amt_wrapper {
+  margin-left: 5px;
 }
 
 .post-text {
-  border: .1em solid var(--o-green);
   border-radius: 0 .5rem .5rem .5rem;
-  padding: 1.5rem;
-  text-align: left;
+}
+
+div.comment_handler {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
 }
 
 .comment-container {
-  border-bottom: .1rem solid var(--o-green);
-  border-right: .1rem solid var(--o-green);
-  border-left: .15rem solid var(--o-green);
-  border-top: .15rem solid var(--o-green);
-  margin-top: .5rem;
-  border-radius: 0 .5rem .5rem .5rem;
-  background-color: lightgrey;
-}
-
-.comment-container li {
   display: block;
-  text-align: left;
-  background-color: lightgrey;
-  padding: .5rem 0 .5rem 20px;
+  padding: 10px 2%;
+  border-radius: .5rem;
 }
 
-.comment-container li.comment-head {
-  text-align: left;
-  font-size: 20px;
-  padding: .5rem 15px;
-  border-bottom: 1px solid var(--o-green);
-  background-color: var(--o-green);
-  border-radius: 0 .5rem 0 0;
-  color: whitesmoke;
-}
-
-.comment li {
+li.comment {
+  display: flex;
+  align-items: center;
+  padding: 10px 2%;
   background-color: whitesmoke;
-  margin: 0.3rem;
   border-radius: 0 .5rem .5rem .5rem;
   border: .1rem solid var(--o-green);
-  padding: 1.5rem;
+  margin-bottom: 10px;
 }
 
 .comment-list {
   border-radius: .5rem;
-  text-align: left;
+  display: flex;
+  flex-direction: column;
 }
 
 .comment-submit {
   padding: 7px;
-  background-color: var(--m-green);
-  color: lightgrey;
-  border-radius: 7px;
+  background-color: var(--o-green);
+  color: whitesmoke;
+  border-radius: 0 15px 15px 0;
+  font-size: 1rem;
   width: 100%;
-  height: 90%;
-  margin-left: .5rem;
-  font-size: medium;
+  height: 100%;
+  border: none;
 }
 
 .comment-submit:hover {
   cursor: pointer;
-  background: var(--l-green);
+  background: var(--d-green);
   transition: 0.3s;
   color: whitesmoke;
 }
@@ -101,41 +102,46 @@
 
 .input-container {
   width: 85%;
+  height: 50px;
+}
+
+div.comment_field {
+  height: 45px;
+  width: 70%;
 }
 
 .comment-input {
-  height: 80%;
-  width: 80%;
-  flex-grow: 8;
-  padding: .5rem;
+  height: 100%;
+  width: 100%;
   transition: width 0.4s ease-in-out;
   background-color: lightgrey;
   resize: none;
-  border-radius: 15px;
-  font-size: large;
+  border-radius: 15px 0 0 15px;
+  font-size: 1rem;
+  padding-left: 5px;
+  border: none;
   border-color: var(--o-green);
+  outline: none;
+
 }
 
-.comment-input:focus {
-  width: 100%;
-  background-color: whitesmoke;
-  border-radius: 15px;
+.comment_submit_btn {
+  height: 45px;
+  width: 10%;
 }
 
 .comment-author {
-  float: left;
+  align-self: flex-start;
   background-color: var(--o-green);
-  border-radius: 100px;
-  padding: .5rem;
+  border-radius: 100%;
+  padding: 10px;
+  margin-right: 10px;
   color: whitesmoke;
-  margin: .75rem;
   border: 1px solid var(--m-green);
 }
 
 .timestamp {
-  float: left;
   font-size: small;
-  padding: .3rem;
   color: var(--m-green);
 }
 
@@ -150,14 +156,15 @@
   text-decoration: underline;
 }
 
+.edit {
+  margin-left: 5px;
+}
+
 .display-new-comment {
   color: whitesmoke;
   background-color: var(--m-green);
   border-radius: .5rem;
-  padding: .4rem;
   transition: 0.5s;
-  margin-top: 1em;
-  float: left;
 }
 
 .display-new-comment:hover {
@@ -165,6 +172,12 @@
   cursor: pointer;
 }
 
-.edit {
-  float: right;
+.comment-text-and-meta-data {
+  flex-direction: column;
 }
+
+.new-post-container {
+  display: flex;
+  justify-content: center;
+}
+
