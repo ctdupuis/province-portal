@@ -1,57 +1,75 @@
 import React, { Component } from "react";
-import CommentList from '../messageBoard/CommentList';
+import CommentList from "../messageBoard/CommentList";
 import NewComment from "./NewComment";
-import { FaCommentAlt } from 'react-icons/fa';
+import { FaCommentAlt } from "react-icons/fa";
 
 export default class Post extends Component {
   state = {
     displayList: "none",
-    displayForm: "none"
-  }
+    displayForm: "none",
+  };
 
-  commentFormat = comments => {
+  commentFormat = (comments) => {
     if (comments && comments.length === 1) {
-      return "1 comment"
+      return "1 comment";
     } else if (comments && comments.length > 1) {
-      return `${comments.length} comments`
+      return `${comments.length} comments`;
     } else {
-      return 'No comments yet'
+      return "No comments yet";
     }
-  }
+  };
 
   checkOwnership(currentUser, userID) {
     if (currentUser.id === userID) {
-      return(
-        <>
-          <button className="timestamp total-comments edit">Delete</button>
-          <button className="timestamp total-comments edit">Edit</button>
-        </>
-      )
+      return (
+      <div className="edit-delete-container">
+        <button className="timestamp total-comments edit">
+          Delete
+        </button>
+        <button className="timestamp total-comments edit">
+          Edit
+        </button>
+      </div>
+      );
     }
   }
 
-  displayComments = event => {
-    // debugger
+  displayComments = (event) => {
     if (event.target.innerText !== "No comments yet") {
-      this.setState({ displayList: ''})
+      this.setState({ displayList: "" });
     }
-  }
+  };
 
   render() {
-    const { content, userID, author, created, comments, id, addComment, currentUser } = this.props;
-    return(
+    const {
+      content,
+      userID,
+      author,
+      created,
+      comments,
+      id,
+      addComment,
+      currentUser,
+    } = this.props;
+    return (
       <article className="post-container">
-      <div className="post-content">
-        <div className="post-author">{author}</div>
-        <p className="post-text">
-          {content}
-          <br />
-        <span className="timestamp"><em>{created} |</em></span><button onClick={this.displayComments}className="timestamp total-comments">{this.commentFormat(comments)}</button>
-        {this.checkOwnership(currentUser, userID)}
-        </p>
-        {/* <div style={{ textAlign: 'left'}}>
-
-        </div> */}
+        <div className="post-content">
+          <div className="post-author">{author}</div>
+          <div className="post_text_and_meta_data">
+            <div className="post-text">
+              {content}
+            </div>
+            <div className="meta_data">
+              <div className="timestamp_wrapper">
+                <span className="timestamp">{created} |</span>
+                <button onClick={this.displayComments} className="timestamp total-comments">
+                  {this.commentFormat(comments)}
+                </button>
+              </div>
+              {this.checkOwnership(currentUser, userID)}
+            </div>
+          </div>
+        </div>
         <CommentList 
           style={this.state.displayList}
           userID={userID} 
@@ -60,17 +78,13 @@ export default class Post extends Component {
           comments={comments}
           currentUser={currentUser}
         />
-        <button className="display-new-comment" onClick={() => this.setState({displayForm: ''})}><FaCommentAlt/>  Comment</button>
-        <div className="comment flex-container">
         <NewComment 
           style={this.state.displayForm}
           userID={currentUser.id} 
           postID={id} 
           addComment={addComment} 
         />
-        </div>
-      </div>
-    </article>
-    )
+      </article>
+    );
   }
-};
+}

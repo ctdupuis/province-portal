@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import { FaCommentAlt } from "react-icons/fa";
 
 export default class NewComment extends Component {
     state = {
@@ -23,26 +24,25 @@ export default class NewComment extends Component {
     
     render() {
         return (
-            <>
-              <div style={{ display: this.props.style }} className="input-container">
-                <input
-                  type="text"
-                  placeholder="Add a comment..."
-                  className="comment-input"
-                  onChange={this.handleChange}
-                />
-              </div>
-              <div className="btn-container">
-                <form onSubmit={this.handleSubmit}>
-                  <input
-                    style={{ display: this.props.style }}
-                    type="submit" 
-                    className="comment-submit"
-                    value="Post"
-                  />
-                </form>
-              </div>
-    </>
+          <div className="comment_handler">
+            <div className="comment_field">
+              <input
+                className="comment-input"
+                placeholder="Add a comment..."
+                type="text"
+                onChange={this.handleChange}
+              />
+            </div>
+            <div className="comment_submit_btn">
+              <form style={{height: "100%"}} onSubmit={this.handleSubmit}>
+              <input 
+                className="comment-submit" 
+                type="submit" 
+                value="Comment" 
+              />
+              </form>
+            </div>
+          </div>
         )
     }
 }

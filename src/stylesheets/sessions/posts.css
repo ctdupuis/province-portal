@@ -28,6 +28,7 @@
   height: 100%;
   width: 5%;
   margin-right: 10px;
+  text-align: center;
 }
 
 div.post_text_and_meta_data {
@@ -150,6 +151,7 @@ div.comment_field {
   transition: 0.5s;
   background: none!important;
   border: none;
+  margin-left: 5px;
 }
 
 .total-comments:hover {
