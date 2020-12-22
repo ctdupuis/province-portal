@@ -65,6 +65,7 @@ export default class NewUser extends Component {
             name="username"
             onChange={this.handleChange}
             value={this.state.username}
+            required
           />
           <br />
 
@@ -74,6 +75,7 @@ export default class NewUser extends Component {
             name="first_name"
             onChange={this.handleChange}
             value={this.state.first_name}
+            required
           />
           <br />
 
@@ -83,6 +85,7 @@ export default class NewUser extends Component {
             name="last_name"
             onChange={this.handleChange}
             value={this.state.last_name}
+            required
           />
           <br />
 
@@ -92,6 +95,7 @@ export default class NewUser extends Component {
             name="password"
             onChange={this.handleChange}
             value={this.state.password}
+            required
           />
           <br />
 
