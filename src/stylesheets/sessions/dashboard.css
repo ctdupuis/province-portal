@@ -11,6 +11,7 @@
   background-color: var(--o-green);
   border-radius: 5px;
   padding: 10px;
+  display: flex;
 }
 
 .dash-header h3 {
@@ -29,9 +30,6 @@
   background-color: whitesmoke;
   border-radius: 5px;
   padding: .5rem;
-  /* display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 1rem; */
 }
 
 .sub-header {
@@ -61,7 +59,8 @@
   border-radius: 5rem;
   padding: 0.5rem;
   font-size: 1rem;
-  margin: 0.5rem 0.5rem 0.8rem 0.5rem;
+  margin-left: 20px;
+  color: whitesmoke;
 }
 
 .contact {
@@ -98,8 +97,6 @@
 
 .new-user-sbmt {
   background-color: var(--m-green);
-  /* height: 2rem;
-  width: 4rem; */
   color: whitesmoke;
   transition: 0.5s;
 }

@@ -29,7 +29,7 @@ export default class Dashboard extends Component {
   }
 
   renderAdminBadge(currentUser) {
-    return currentUser.admin ? <span className="admin-badge">Admin</span> : null
+    return currentUser.admin ? <div className="admin-badge">Admin</div> : null
   }
 
   adminCheck(currentUser) {
@@ -99,7 +99,10 @@ export default class Dashboard extends Component {
       loading ? <Loading /> :
       <section className="dash-container">
         <header className="dash-header">
-          <h3>{currentUser.first_name} {currentUser.last_name} | {currentUser.username} {this.renderAdminBadge(currentUser)}</h3>
+          <div className="dash-header-title">
+            <h3>{currentUser.first_name} {currentUser.last_name} | {currentUser.username} </h3>
+          </div>
+            {this.renderAdminBadge(currentUser)}
         </header>
         <div className="dash-content">
             <div className="user-info-title">
