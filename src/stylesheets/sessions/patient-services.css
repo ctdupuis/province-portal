@@ -1,0 +1,14 @@
+@import "../../index.css";
+
+.messages-area {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message {
+    border: 2px solid var(--m-green);
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px 0 10px 10px;
+}

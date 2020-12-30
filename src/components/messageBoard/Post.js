@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CommentList from "../messageBoard/CommentList";
 import NewComment from "./NewComment";
-import { FaCommentAlt } from "react-icons/fa";
+
 
 export default class Post extends Component {
   state = {

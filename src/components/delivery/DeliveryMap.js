@@ -6,8 +6,7 @@ import {
   GoogleApiWrapper,
   Marker,
   InfoWindow,
-  Polyline,
-  DirectionsRenderer
+  Polyline
 } from "google-maps-react";
 import { getGeocode } from "../../actions/deliveries";
 require("dotenv").config();
@@ -152,7 +151,7 @@ class DeliveryMap extends Component {
     return loading ? (
       <Loading />
     ) : (
-      <section className="dash-container">\
+      <section className="dash-container">
         <div className="dash-content">
           <form className="new-user-form" onSubmit={this.handleSubmit}>
             <input

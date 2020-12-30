@@ -1,11 +1,20 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import "../../stylesheets/sessions/patient-services.css";
+import Message from './Message';
 
 export default class PatientServices extends Component {
     render() {
         return (
-            <div>
-                Patient Services goes here
-            </div>
+            <section className="dash-container">
+                <div className="dash-content">
+                    <div className="user-info-title">
+                        Message Thread
+                    </div>
+                    <div className="messages-area">
+                        <Message />
+                    </div>
+                </div>
+            </section>
         )
     }
 }
