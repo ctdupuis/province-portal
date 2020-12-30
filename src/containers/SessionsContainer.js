@@ -175,6 +175,7 @@ export default connect(
     errors: state.userReducer.errors,
     posts: state.postsReducer.posts,
     schedule: state.scheduleReducer.schedule,
+    conversation: state.conversationReducer.conversation,
     loading: state.loadReducer.loading
   }),
   {

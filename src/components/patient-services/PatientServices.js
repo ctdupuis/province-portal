@@ -12,6 +12,7 @@ export default class PatientServices extends Component {
                     </div>
                     <div className="messages-area">
                         <Message />
+                        <Message />
                     </div>
                 </div>
             </section>
