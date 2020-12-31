@@ -19,6 +19,9 @@ import {
 import {
   getSchedule
 } from "../actions/schedules";
+import {
+  getConversation
+} from "../actions/patient-services";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Announcements from "../components/sessions/Announcements";
 import Tabs from "../components/static/Tabs";
@@ -63,6 +66,8 @@ class SessionsContainer extends Component {
               <PatientServices
                 currentUser={this.props.currentUser}
                 endSession={this.props.endSession}
+                getConversation={this.props.getConversation}
+                conversation={this.props.conversation}
                 loading={this.props.loading}
                 {...props}
               />
@@ -189,6 +194,7 @@ export default connect(
     getSchedule,
     getPosts,
     addPost,
-    addComment
+    addComment,
+    getConversation
   }
 )(SessionsContainer);

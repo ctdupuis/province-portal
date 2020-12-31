@@ -1,6 +1,6 @@
 export default function conversationReducer(
     state = {
-        conversation: []
+        conversation: undefined
     },
     action
 ) {
