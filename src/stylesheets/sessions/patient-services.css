@@ -12,3 +12,25 @@
     padding: 10px;
     border-radius: 10px 0 10px 10px;
 }
+
+.message-body {
+    padding: 10px;
+}
+
+.message-metadata {
+    display: flex;
+}
+
+.message-author {
+    font-size: small;
+    background-color: var(--o-green);
+    padding: 5px;
+    border-radius: 100%;
+    color: whitesmoke;
+    border: 1px solid var(--d-green);
+}
+
+.message-timestamps {
+    padding-top: 10px;
+    margin-left: 15px;
+}

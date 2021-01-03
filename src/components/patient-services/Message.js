@@ -12,7 +12,9 @@ export default function Message({ message }) {
                     {author}
                 </div>
                 <div className="message-timestamps">
-                    {created}
+                    <em>
+                        {created}
+                    </em>
                 </div>
             </div>
         </div>
