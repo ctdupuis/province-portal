@@ -10,3 +10,4 @@ export const getConversation = () => {
         dispatch({ type: 'END_LOAD'})
     }
 }
+

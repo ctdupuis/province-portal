@@ -4,6 +4,11 @@ import Loading from '../static/Loading';
 import Message from './Message';
 
 export default class PatientServices extends Component {
+    state = {
+        body: "",
+        currentUser: this.props.currentUser
+    }
+
     componentDidMount(){
         this.props.getConversation();
     }
@@ -13,6 +18,18 @@ export default class PatientServices extends Component {
             return conversation.messages.map(message => <Message key={message.id} message={message} />)
         }
     }
+    
+    handleSubmit = event => {
+        event.preventDefault();
+        console.log(this.state);
+    }
+
+    handleChange = event => {
+        this.setState({
+            [event.target.name]: event.target.value
+        })
+
+    }
 
     render() {
         const { loading, conversation } = this.props
@@ -21,7 +38,26 @@ export default class PatientServices extends Component {
             <section className="dash-container">
                 <div className="dash-content">
                     <div className="user-info-title">
-                        Message Thread
+                        <h3>What's going on?</h3>
+                        <div className="comment_handler">
+                            <div className="comment_field">
+                            <input
+                                className="comment-input"
+                                name="body"
+                                type="text"
+                                onChange={this.handleChange}
+                            />
+                            </div>
+                            <div className="comment_submit_btn">
+                            <form style={{height: "100%"}} onSubmit={this.handleSubmit}>
+                            <input 
+                                className="comment-submit" 
+                                type="submit" 
+                                value="Post" 
+                            />
+                            </form>
+                            </div>
+                        </div>
                     </div>
                     <div className="messages-area">
                         {this.displayMessages(conversation)}
