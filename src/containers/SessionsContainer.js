@@ -20,7 +20,8 @@ import {
   getSchedule
 } from "../actions/schedules";
 import {
-  getConversation
+  getConversation,
+  createMessage
 } from "../actions/patient-services";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Announcements from "../components/sessions/Announcements";
@@ -68,6 +69,7 @@ class SessionsContainer extends Component {
                 endSession={this.props.endSession}
                 getConversation={this.props.getConversation}
                 conversation={this.props.conversation}
+                createMessage={this.props.createMessage}
                 loading={this.props.loading}
                 {...props}
               />
@@ -195,6 +197,7 @@ export default connect(
     getPosts,
     addPost,
     addComment,
-    getConversation
+    getConversation,
+    createMessage
   }
 )(SessionsContainer);

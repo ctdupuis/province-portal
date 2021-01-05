@@ -11,3 +11,11 @@ export const getConversation = () => {
     }
 }
 
+export const createMessage = (messageData) => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD' })
+        const response = await axios.post(`${API_ROOT}/messages`,
+        { text: messageData.body, user: messageData.currentUser },
+        { withCredentials: true })
+    }
+}
