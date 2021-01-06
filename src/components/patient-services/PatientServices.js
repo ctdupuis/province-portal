@@ -15,7 +15,10 @@ export default class PatientServices extends Component {
 
     displayMessages = (conversation) => {
         if (conversation) {
-            return conversation.messages.map(message => <Message key={message.id} message={message} />)
+            const sortedMessages = conversation.messages.sort(
+                (a, b) => new Date(b.created_at) - new Date(a.created_at)
+            );
+            return sortedMessages.map(message => <Message key={message.id} message={message} />)
         }
     }
     
