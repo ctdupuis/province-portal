@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import "../../stylesheets/sessions/patient-services.css";
 import Loading from '../static/Loading';
 import Message from './Message';
+import { ActionCableConsumer } from 'react-actioncable-provider';
+import NewMessage from './NewMessage';
 
 export default class PatientServices extends Component {
     state = {
@@ -42,25 +44,13 @@ export default class PatientServices extends Component {
                 <div className="dash-content">
                     <div className="user-info-title">
                         <h3>What's going on?</h3>
-                        <div className="comment_handler">
-                            <div className="comment_field">
-                            <input
-                                className="comment-input"
-                                name="body"
-                                type="text"
-                                onChange={this.handleChange}
-                            />
-                            </div>
-                            <div className="comment_submit_btn">
-                            <form style={{height: "100%"}} onSubmit={this.handleSubmit}>
-                            <input 
-                                className="comment-submit" 
-                                type="submit" 
-                                value="Post" 
-                            />
-                            </form>
-                            </div>
-                        </div>
+                        <ActionCableConsumer
+                            channel={{ channel: "ConversationsChannel" }}
+                        />
+                        <NewMessage 
+                            handleChange={this.handleChange}
+                            handleSubmit={this.handleSubmit}
+                        />
                     </div>
                     <div className="messages-area">
                         {this.displayMessages(conversation)}

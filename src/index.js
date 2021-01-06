@@ -25,11 +25,11 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <BrowserRouter>
       <ActionCableProvider url={API_WS_ROOT}>
+    <BrowserRouter>
         <App />
-      </ActionCableProvider>
     </BrowserRouter>
+      </ActionCableProvider>
   </Provider>,
   document.getElementById('root')
 );
