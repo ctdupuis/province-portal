@@ -15,13 +15,11 @@ export default class PatientServices extends Component {
         this.props.getConversation();
     }
 
-    displayMessages = (conversation) => {
-        if (conversation) {
-            const sortedMessages = conversation.messages.sort(
-                (a, b) => new Date(b.created_at) - new Date(a.created_at)
-            );
-            return sortedMessages.map(message => <Message key={message.id} message={message} />)
-        }
+    displayMessages = (messages) => {
+        const sortedMessages = messages.sort(
+            (a, b) => new Date(b.created_at) - new Date(a.created_at)
+        );
+        return sortedMessages.map(message => <Message key={message.id} message={message} />)
     }
     
     handleSubmit = event => {
@@ -37,7 +35,7 @@ export default class PatientServices extends Component {
     }
 
     render() {
-        const { loading, conversation } = this.props
+        const { loading, messages } = this.props
         return loading ? <Loading /> :
         (
             <section className="dash-container">
@@ -53,7 +51,7 @@ export default class PatientServices extends Component {
                         />
                     </div>
                     <div className="messages-area">
-                        {this.displayMessages(conversation)}
+                        {this.displayMessages(messages)}
                     </div>
                 </div>
             </section>
