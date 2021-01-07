@@ -3,11 +3,11 @@ import userReducer from './userReducer';
 import postsReducer from './postsReducer';
 import loadReducer from './loadReducer';
 import scheduleReducer from './scheduleReducer';
-import conversationReducer from './conversationReducer';
+import messagesReducer from './messagesReducer';
 
 
 const rootReducer = combineReducers({
-    userReducer, postsReducer, loadReducer, scheduleReducer, conversationReducer
+    userReducer, postsReducer, loadReducer, scheduleReducer, messagesReducer
 })
 
 export default rootReducer;

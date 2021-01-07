@@ -68,7 +68,7 @@ class SessionsContainer extends Component {
                 currentUser={this.props.currentUser}
                 endSession={this.props.endSession}
                 getConversation={this.props.getConversation}
-                conversation={this.props.conversation}
+                messages={this.props.messages}
                 createMessage={this.props.createMessage}
                 loading={this.props.loading}
                 {...props}
@@ -182,7 +182,7 @@ export default connect(
     errors: state.userReducer.errors,
     posts: state.postsReducer.posts,
     schedule: state.scheduleReducer.schedule,
-    conversation: state.conversationReducer.conversation,
+    messages: state.messagesReducer.messages,
     loading: state.loadReducer.loading
   }),
   {

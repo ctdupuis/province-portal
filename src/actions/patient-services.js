@@ -4,9 +4,9 @@ import { API_ROOT } from '../constants';
 export const getConversation = () => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD' })
-        const response = await axios.get(`${API_ROOT}/conversations`, { withCredentials: true })
-        const conversation = response.data
-        dispatch({ type: 'SAVE_CONVERSATION', conversation })
+        const response = await axios.get(`${API_ROOT}/messages`, { withCredentials: true })
+        const messages = response.data
+        dispatch({ type: 'STORE_MESSAGES', messages })
         dispatch({ type: 'END_LOAD'})
     }
 }
@@ -18,7 +18,6 @@ export const createMessage = (messageData) => {
         { text: messageData.body, user: messageData.currentUser },
         { withCredentials: true })
         const newMessage = response.data
-        console.log(newMessage)
         dispatch({ type: 'END_LOAD' })
     }
 }
