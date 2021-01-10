@@ -9,6 +9,7 @@ import {
   Polyline
 } from "google-maps-react";
 import { getGeocode } from "../../actions/deliveries";
+import DeliveryEntry from "./DeliveryEntry";
 require("dotenv").config();
 
 
@@ -215,6 +216,7 @@ class DeliveryMap extends Component {
             </Map>
           </div>
         </div>
+        <DeliveryEntry />
       </section>
     );
   }
