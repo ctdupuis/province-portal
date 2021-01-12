@@ -23,12 +23,12 @@ export default class DeliveryEntry extends Component {
         })
     }
 
-    displayFieldset = () => {
-        return(
-            <fieldset>
-                <legend>Entries</legend>
-            </fieldset>
-        )
+    handleSubmit = e => { e.preventDefault(); }
+
+    addLocation = () => {
+        this.setState((prevState) => ({
+            locations: [...prevState.locations, {address: ""}]
+        }))
     }
 
     render() {
@@ -37,18 +37,32 @@ export default class DeliveryEntry extends Component {
                 <div className="user-info-title">
                     <h3>Mileage Entry</h3>
                 </div>
-                <input type="number" name="fields" />
-                <button onClick={(e) => this.setFields(e)}>This Many</button>
-                <form className="new-user-form">
-                    <input
+                {/* <input type="number" name="fields" />
+                <button onClick={(e) => this.setFields(e)}>This Many</button> */}
+                <form className="new-user-form" onSubmit={this.handleSubmit}>
+                    {/* <input
                         type="text"
                         name="address"
                         placeholder="Enter address..."
                         onChange={this.handleChange}
-                    />               
-                        {this.entryFields()}
-                    <button onClick={this.incrementFields}>
+                    />                */}
+                    {this.state.locations.map((val, idx) => {
+                        let locationID = `location-${idx}`
+                        return(
+                            <fieldset key={idx}>
+                                <legend>Address #{idx + 1}</legend>
+                                <input
+                                    type="text"
+                                    name={locationID}
+                                />
+                            </fieldset>
+                        )
+                    })}
+                    <button onClick={this.addLocation}>
                         Add Another Field
+                    </button>
+                    <button>
+                        Finalize Route
                     </button>
                 </form>
             </div>
