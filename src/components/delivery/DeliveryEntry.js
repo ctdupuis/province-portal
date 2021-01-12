@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 
 export default class DeliveryEntry extends Component {
     state = {
-        fields: 3,
         locations: [{address: ""}]
     }
 
@@ -23,12 +22,24 @@ export default class DeliveryEntry extends Component {
         })
     }
 
-    handleSubmit = e => { e.preventDefault(); }
+    handleSubmit = event => { event.preventDefault(); }
+
+    handleChange = event => {
+        if(["address"].includes(event.target.className) ) {
+            let locations = [...this.state.locations]
+            locations[event.target.dataset.id][event.target.className] = event.target.value
+            this.setState({ locations })
+        }
+    }
 
     addLocation = () => {
         this.setState((prevState) => ({
             locations: [...prevState.locations, {address: ""}]
         }))
+    }
+
+    finalizeRoute = () => {
+        console.log(this.state)
     }
 
     render() {
@@ -54,14 +65,18 @@ export default class DeliveryEntry extends Component {
                                 <input
                                     type="text"
                                     name={locationID}
+                                    className="address"
+                                    id={locationID}
+                                    data-id={idx}
+                                    onChange={this.handleChange}
                                 />
                             </fieldset>
                         )
                     })}
-                    <button onClick={this.addLocation}>
+                    <button className="green-btn" onClick={this.addLocation}>
                         Add Another Field
                     </button>
-                    <button>
+                    <button className="green-btn" onClick={this.finalizeRoute}>
                         Finalize Route
                     </button>
                 </form>
