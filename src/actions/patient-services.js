@@ -18,6 +18,7 @@ export const createMessage = (messageData) => {
         { text: messageData.body, user: messageData.currentUser },
         { withCredentials: true })
         const newMessage = response.data
+        console.log(newMessage)
         dispatch({ type: 'END_LOAD' })
     }
 }

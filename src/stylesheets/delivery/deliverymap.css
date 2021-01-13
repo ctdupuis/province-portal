@@ -38,3 +38,7 @@ legend {
     color: var(--m-green);
 }
 
+.number-input {
+    text-align: center;
+    width: 3rem;
+}

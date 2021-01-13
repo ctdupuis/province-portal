@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 
 export default class DeliveryEntry extends Component {
     state = {
-        locations: [{address: ""}]
+        locations: [{address: ""}],
+        mileage: undefined
     }
 
     entryFields = () => {
@@ -25,10 +26,12 @@ export default class DeliveryEntry extends Component {
     handleSubmit = event => { event.preventDefault(); }
 
     handleChange = event => {
-        if(["address"].includes(event.target.className) ) {
+        if (["address"].includes(event.target.className) ) {
             let locations = [...this.state.locations]
             locations[event.target.dataset.id][event.target.className] = event.target.value
             this.setState({ locations })
+        } else {
+            this.setState({ [event.target.name]: event.target.value })
         }
     }
 
@@ -73,6 +76,13 @@ export default class DeliveryEntry extends Component {
                             </fieldset>
                         )
                     })}
+                    <label htmlFor="mileage">Total Mileage</label>
+                    <input 
+                        type="number" 
+                        name="mileage"
+                        onChange={this.handleChange}
+                        className="number-input"
+                    />
                     <button className="green-btn" onClick={this.addLocation}>
                         Add Another Field
                     </button>
