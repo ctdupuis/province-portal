@@ -8,7 +8,7 @@ import {
   InfoWindow,
   Polyline
 } from "google-maps-react";
-import { getGeocode } from "../../actions/deliveries";
+import { getGeocode, finalizeRoute } from "../../actions/deliveries";
 import DeliveryEntry from "./DeliveryEntry";
 require("dotenv").config();
 
@@ -211,12 +211,15 @@ class DeliveryMap extends Component {
               >
                 <div className="marker-info">
                   <h4>{this.state.selectedPlace.name}</h4>
+                  <button className="green-btn" onClick={this.addToRoute}>Add to route</button>
                 </div>
               </InfoWindow>
             </Map>
           </div>
         </div>
-        <DeliveryEntry />
+        <DeliveryEntry 
+          finalizeRoute={finalizeRoute}
+        />
       </section>
     );
   }

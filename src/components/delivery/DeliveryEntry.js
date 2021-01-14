@@ -3,30 +3,21 @@ import React, { Component } from 'react';
 export default class DeliveryEntry extends Component {
     state = {
         locations: [{address: ""}],
-        mileage: undefined
+        mileage: ""
     }
 
-    entryFields = () => {
-        for (let i = 0; i < this.state.fields; i++) {
-            return <input type="text" placeholder={`Enter address ${i+1}`} />
-        }
+    handleSubmit = event => { 
+        event.preventDefault(); 
+        this.props.finalizeRoute(this.state)
+        // this.setState({
+        //     locations: [{ address: "" }],
+        //     mileage: ""
+        // })
     }
-
-    incrementFields = () => {
-        this.setState((prevState) => ({ fields: prevState.fields + 1 }))
-    }
-
-    async setFields(event) {
-        const fieldsAmt = parseInt(event.target.previousElementSibling.value)
-        this.setState({
-            fields: fieldsAmt
-        })
-    }
-
-    handleSubmit = event => { event.preventDefault(); }
 
     handleChange = event => {
-        if (["address"].includes(event.target.className) ) {
+        // debugger
+        if (["address"].includes(event.target.className)) {
             let locations = [...this.state.locations]
             locations[event.target.dataset.id][event.target.className] = event.target.value
             this.setState({ locations })
@@ -35,10 +26,10 @@ export default class DeliveryEntry extends Component {
         }
     }
 
-    addLocation = () => {
+    addLocation = event => {
         this.setState((prevState) => ({
-            locations: [...prevState.locations, {address: ""}]
-        }))
+            locations: [...prevState.locations, { address: "" }]
+        }));
     }
 
     finalizeRoute = () => {
@@ -49,7 +40,7 @@ export default class DeliveryEntry extends Component {
         return (
             <div className="dash-content">
                 <div className="user-info-title">
-                    <h3>Mileage Entry</h3>
+                    <h3>Route Planner</h3>
                 </div>
                 {/* <input type="number" name="fields" />
                 <button onClick={(e) => this.setFields(e)}>This Many</button> */}
@@ -86,10 +77,11 @@ export default class DeliveryEntry extends Component {
                     <button className="green-btn" onClick={this.addLocation}>
                         Add Another Field
                     </button>
+                    <br />
+                </form>
                     <button className="green-btn" onClick={this.finalizeRoute}>
                         Finalize Route
                     </button>
-                </form>
             </div>
         )
     }

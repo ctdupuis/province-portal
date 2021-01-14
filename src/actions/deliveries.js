@@ -1,7 +1,8 @@
 import axios from 'axios';
+import { API_ROOT } from '../constants';
 require('dotenv').config();
 
-export const getGeocode = async function(location){
+export const getGeocode = async function(location) {
     let address = location.address.split(' ').join('+');
     let city = location.city
     let url = `https://maps.googleapis.com/maps/api/geocode/json?address=${address},+${city},+LA&key=${process.env.REACT_APP_GOOGLE_API_KEY}`
@@ -24,4 +25,15 @@ export const getDistance = (data) => {
     origin=&key=${process.env.REACT_APP_GOOGLE_API_KEY}`
     debugger
     axios.get(url).then(r => console.log(r))
+}
+
+
+export const finalizeRoute = (data) => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD' })
+        const response = await axios.post(`${API_ROOT}/delivery_entries`, 
+        { },
+        {withCredentials: true })
+
+    }
 }

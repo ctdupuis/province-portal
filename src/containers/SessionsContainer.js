@@ -23,6 +23,10 @@ import {
   getConversation,
   createMessage
 } from "../actions/patient-services";
+import {
+  getGeocode,
+  finalizeRoute
+} from "../actions/deliveries";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Announcements from "../components/sessions/Announcements";
 import Tabs from "../components/static/Tabs";
@@ -40,8 +44,7 @@ class SessionsContainer extends Component {
 
   render() {
     return (
-      <React.Fragment>
-        
+      <React.Fragment>        
         <Route
           exact
           path={"/"}
@@ -198,6 +201,6 @@ export default connect(
     addPost,
     addComment,
     getConversation,
-    createMessage
+    createMessage,
   }
 )(SessionsContainer);
