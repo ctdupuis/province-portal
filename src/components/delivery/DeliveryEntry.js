@@ -2,22 +2,22 @@ import React, { Component } from 'react';
 
 export default class DeliveryEntry extends Component {
     state = {
-        locations: [{address: ""}],
+        locations: [{address: "", patient: ""}],
         mileage: ""
     }
 
-    handleSubmit = event => { 
-        event.preventDefault(); 
-        this.props.finalizeRoute(this.state)
-        // this.setState({
-        //     locations: [{ address: "" }],
-        //     mileage: ""
-        // })
-    }
+    // handleSubmit = event => { 
+    //     event.preventDefault(); 
+    //     this.props.finalizeRoute(this.state)
+    //     // this.setState({
+    //     //     locations: [{ address: "" }],
+    //     //     mileage: ""
+    //     // })
+    // }
 
     handleChange = event => {
         // debugger
-        if (["address"].includes(event.target.className)) {
+        if (["address", "patient"].includes(event.target.className)) {
             let locations = [...this.state.locations]
             locations[event.target.dataset.id][event.target.className] = event.target.value
             this.setState({ locations })
@@ -27,13 +27,10 @@ export default class DeliveryEntry extends Component {
     }
 
     addLocation = event => {
+        event.preventDefault();
         this.setState((prevState) => ({
             locations: [...prevState.locations, { address: "" }]
         }));
-    }
-
-    finalizeRoute = () => {
-        console.log(this.state)
     }
 
     render() {
@@ -45,22 +42,26 @@ export default class DeliveryEntry extends Component {
                 {/* <input type="number" name="fields" />
                 <button onClick={(e) => this.setFields(e)}>This Many</button> */}
                 <form className="new-user-form" onSubmit={this.handleSubmit}>
-                    {/* <input
-                        type="text"
-                        name="address"
-                        placeholder="Enter address..."
-                        onChange={this.handleChange}
-                    />                */}
                     {this.state.locations.map((val, idx) => {
-                        let locationID = `location-${idx}`
+                        let locationID = `location-${idx}`, patientID = `patient-${idx}`
                         return(
                             <fieldset key={idx}>
-                                <legend>Address #{idx + 1}</legend>
+                                <legend>Stop #{idx + 1}</legend>
+                                <label htmlFor="address">Address</label>
                                 <input
                                     type="text"
                                     name={locationID}
                                     className="address"
                                     id={locationID}
+                                    data-id={idx}
+                                    onChange={this.handleChange}
+                                />
+                                <label htmlFor="patient">Patient Name</label>
+                                <input
+                                    type="text"
+                                    name={patientID}
+                                    className="patient"
+                                    id={patientID}
                                     data-id={idx}
                                     onChange={this.handleChange}
                                 />
@@ -75,11 +76,11 @@ export default class DeliveryEntry extends Component {
                         className="number-input"
                     />
                     <button className="green-btn" onClick={this.addLocation}>
-                        Add Another Field
+                        Add Another Stop
                     </button>
                     <br />
                 </form>
-                    <button className="green-btn" onClick={this.finalizeRoute}>
+                    <button className="green-btn" onClick={() => this.props.finalizeRoute(this.state)}>
                         Finalize Route
                     </button>
             </div>

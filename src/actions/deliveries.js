@@ -30,10 +30,12 @@ export const getDistance = (data) => {
 
 export const finalizeRoute = (data) => {
     return async (dispatch) => {
+        debugger
         dispatch({ type: 'START_LOAD' })
         const response = await axios.post(`${API_ROOT}/delivery_entries`, 
         { },
         {withCredentials: true })
-
+        const data = response.data
+        dispatch({ type: 'END_LOAD' })
     }
 }

@@ -153,6 +153,7 @@ class SessionsContainer extends Component {
               <Tabs endSession={this.props.endSession}/>
               <DeliveryMap
                 currentUser={this.props.currentUser}
+                finalizeRoute={this.props.finalizeRoute}
                 loading={this.props.loading}
                 {...props}
               />
@@ -202,5 +203,6 @@ export default connect(
     addComment,
     getConversation,
     createMessage,
+    finalizeRoute
   }
 )(SessionsContainer);

@@ -218,7 +218,7 @@ class DeliveryMap extends Component {
           </div>
         </div>
         <DeliveryEntry 
-          finalizeRoute={finalizeRoute}
+          finalizeRoute={this.props.finalizeRoute}
         />
       </section>
     );
