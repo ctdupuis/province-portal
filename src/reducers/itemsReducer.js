@@ -9,7 +9,7 @@ export default function itemsReducer(
         case 'STORE_ITEMS':
             return {
                 ...state,
-                items: [action.items]
+                items: action.items
             }
         case 'CLEAR_ITEMS':
             return {

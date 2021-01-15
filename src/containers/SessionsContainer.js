@@ -27,6 +27,9 @@ import {
   getGeocode,
   finalizeRoute
 } from "../actions/deliveries";
+import {
+  getItems
+} from "../actions/items";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Announcements from "../components/sessions/Announcements";
 import Tabs from "../components/static/Tabs";
@@ -183,7 +186,8 @@ class SessionsContainer extends Component {
               <Tabs endSession={this.props.endSession}/>
               <Inventory
                 currentUser={this.props.currentUser}
-                // getInventory={this.props.getInventory}
+                getItems={this.props.getItems}
+                items={this.props.items}
                 loading={this.props.loading}
                 {...props}
               />
@@ -203,6 +207,7 @@ export default connect(
     posts: state.postsReducer.posts,
     schedule: state.scheduleReducer.schedule,
     messages: state.messagesReducer.messages,
+    items: state.itemsReducer.items,
     loading: state.loadReducer.loading
   }),
   {
@@ -219,6 +224,7 @@ export default connect(
     addComment,
     getConversation,
     createMessage,
-    finalizeRoute
+    finalizeRoute,
+    getItems
   }
 )(SessionsContainer);

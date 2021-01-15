@@ -6,6 +6,7 @@ export const getItems = () => {
         dispatch({ type: 'START_LOAD' })
         const response = await axios.get(`${API_ROOT}/items`, { withCredentials: true })
         const items = response.data
+        // debugger
         dispatch({ type: 'STORE_ITEMS', items })
         dispatch({ type: 'END_LOAD' })
     }
