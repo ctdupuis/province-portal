@@ -8,7 +8,7 @@ import {
   InfoWindow,
   Polyline
 } from "google-maps-react";
-import { getGeocode, finalizeRoute } from "../../actions/deliveries";
+import { getGeocode } from "../../actions/deliveries";
 import DeliveryEntry from "./DeliveryEntry";
 require("dotenv").config();
 

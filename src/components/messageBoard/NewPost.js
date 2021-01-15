@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import { FaCommentAlt } from "react-icons/fa";
 
 export default class NewPost extends Component {
   state = {

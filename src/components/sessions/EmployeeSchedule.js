@@ -41,7 +41,6 @@ export default class EmployeeSchedule extends Component {
     renderEdit(schedule) {
         if (schedule) {
             return schedule.map(sched => {
-                const user = sched.user
                 const shifts = sched.shifts.map(shift => {
                     return(
                         <td key={shift.id}>
