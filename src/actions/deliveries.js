@@ -29,13 +29,17 @@ export const getDistance = (data) => {
 
 
 export const finalizeRoute = (data) => {
+    const postObj = {
+        locations: [...data.locations],
+        mileage: data.mileage
+    }
     return async (dispatch) => {
-        debugger
         dispatch({ type: 'START_LOAD' })
         const response = await axios.post(`${API_ROOT}/delivery_entries`, 
-        { },
-        {withCredentials: true })
+        postObj,
+        { withCredentials: true  })
         const data = response.data
+        debugger
         dispatch({ type: 'END_LOAD' })
     }
 }
