@@ -6,17 +6,7 @@ export default class DeliveryEntry extends Component {
         mileage: ""
     }
 
-    // handleSubmit = event => { 
-    //     event.preventDefault(); 
-    //     this.props.finalizeRoute(this.state)
-    //     // this.setState({
-    //     //     locations: [{ address: "" }],
-    //     //     mileage: ""
-    //     // })
-    // }
-
     handleChange = event => {
-        // debugger
         if (["address", "patient"].includes(event.target.className)) {
             let locations = [...this.state.locations]
             locations[event.target.dataset.id][event.target.className] = event.target.value
@@ -29,18 +19,17 @@ export default class DeliveryEntry extends Component {
     addLocation = event => {
         event.preventDefault();
         this.setState((prevState) => ({
-            locations: [...prevState.locations, { address: "" }]
+            locations: [...prevState.locations, { address: "", patient: "" }]
         }));
     }
 
     render() {
+        let locations = this.state.locations
         return (
             <div className="dash-content">
                 <div className="user-info-title">
                     <h3>Route Planner</h3>
                 </div>
-                {/* <input type="number" name="fields" />
-                <button onClick={(e) => this.setFields(e)}>This Many</button> */}
                 <form className="new-user-form" onSubmit={this.handleSubmit}>
                     {this.state.locations.map((val, idx) => {
                         let locationID = `location-${idx}`, patientID = `patient-${idx}`
@@ -54,6 +43,7 @@ export default class DeliveryEntry extends Component {
                                     className="address"
                                     id={locationID}
                                     data-id={idx}
+                                    value={locations[idx].address}
                                     onChange={this.handleChange}
                                 />
                                 <label htmlFor="patient">Patient Name</label>
@@ -63,6 +53,7 @@ export default class DeliveryEntry extends Component {
                                     className="patient"
                                     id={patientID}
                                     data-id={idx}
+                                    value={locations[idx].patient}
                                     onChange={this.handleChange}
                                 />
                             </fieldset>

@@ -66,7 +66,7 @@ class DeliveryMap extends Component {
     showingInfoWindow: false,
     activeMarker: {},
     selectedPlace: {},
-    route: [],
+    addStop: false
   };
 
   constructUrl = () => {
@@ -141,6 +141,10 @@ class DeliveryMap extends Component {
     }
   };
 
+  addToRoute = event => {
+    console.log("event fired")
+  }
+
   render() {
     const loading = this.props.loading;
     const mapStyles = {
@@ -211,7 +215,11 @@ class DeliveryMap extends Component {
               >
                 <div className="marker-info">
                   <h4>{this.state.selectedPlace.name}</h4>
+                  {/* {this.state.selectedPlace.name !== "Province Pharmacy" ? 
                   <button className="green-btn" onClick={this.addToRoute}>Add to route</button>
+                  :
+                  null
+                  } */}
                 </div>
               </InfoWindow>
             </Map>
@@ -219,6 +227,8 @@ class DeliveryMap extends Component {
         </div>
         <DeliveryEntry 
           finalizeRoute={this.props.finalizeRoute}
+          activeLocation={this.state.activeMarker.name}
+          addStop={this.state.addStop}
         />
       </section>
     );
