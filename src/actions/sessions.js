@@ -79,6 +79,7 @@ export const endSession = () => {
             dispatch({ type: 'LOGOUT_USER' })
             dispatch({ type: 'RESET_CONTACTS' })
             dispatch({ type: 'CLEAR_SCHEDULE' })
+            dispatch({ type: 'CLEAR_ITEMS'})
             dispatch({ type: 'END_LOAD' })
         })
     }

@@ -34,6 +34,7 @@ import DeliveryMap from "../components/delivery/DeliveryMap";
 import Dashboard from "../components/sessions/Dashboard";
 import PatientServices from "../components/patient-services/PatientServices";
 import ReportManager from "../components/reports/ReportManager";
+import Inventory from "../components/sessions/Inventory";
 
 
 class SessionsContainer extends Component {
@@ -168,6 +169,21 @@ class SessionsContainer extends Component {
               <Tabs endSession={this.props.endSession}/>
               <ReportManager
                 currentUser={this.props.currentUser}
+                loading={this.props.loading}
+                {...props}
+              />
+            </>
+          )}
+        />
+        <Route 
+          exact 
+          path={"/inventory"}
+          render={(props) => (
+            <>
+              <Tabs endSession={this.props.endSession}/>
+              <Inventory
+                currentUser={this.props.currentUser}
+                // getInventory={this.props.getInventory}
                 loading={this.props.loading}
                 {...props}
               />

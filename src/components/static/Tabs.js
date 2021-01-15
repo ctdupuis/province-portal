@@ -59,7 +59,16 @@ const Tabs = ({ endSession }) => {
           </NavLink>
         </div>
       </div>
-
+      <div className="nav-tab">
+        <div className="link-container">
+          <NavLink
+            to={"/inventory"}
+            activeStyle={activeStyle}
+          >
+            Inventory
+          </NavLink>
+        </div>
+      </div>
       <div className="nav-tab">
         <div className="link-container">
           <NavLink to={"/dashboard"} onClick={() => endSession()}>
