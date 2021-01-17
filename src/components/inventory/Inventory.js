@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import NewItemForm from './NewItemForm';
+import "../../stylesheets/logs/inventory.css"
 
 export default class Inventory extends Component {
     componentDidMount() {
@@ -32,16 +33,15 @@ export default class Inventory extends Component {
     }
 
     render() {
-        // let localItems = this.state.localItems
         const items = this.props.items
         const shippingItems = items.filter(item => item.category === "Shipping Supplies")
         const cleaningItems = items.filter(item => item.category === "Cleaning Supplies")
         return (
             <section className="dash-container">
                 <div className="dash-content">
-                    {/* <div className="user-info-title">
-                        <h3>Add A New Item</h3>
-                    </div> */}
+                    <div className="user-info-title">
+                        <h3>Add An Item</h3>
+                    </div>
                     <NewItemForm />
                     <div class="user-info-title">
                         <h3>Shipping Supplies</h3>
