@@ -76,6 +76,7 @@
   float: right;
   transition: 0.5s;
   margin-top: auto;
+  border: none;
 }
 
 .edit-info:hover {

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import NewItemForm from './NewItemForm';
-import "../../stylesheets/logs/inventory.css"
+import "../../stylesheets/logs/inventory.css";
+import Loading from '../static/Loading';
+import { FaPen } from 'react-icons/fa';
 
 export default class Inventory extends Component {
     componentDidMount() {
@@ -24,6 +26,11 @@ export default class Inventory extends Component {
                 <td>{item.product_name}</td>
                 <td>{item.quantity}</td>
                 <td>{item.unit_of_measurement}</td>
+                <td>
+                <button className="edit-info">
+                  <FaPen />
+                </button>
+                </td>
             </tr>)
         })
         return(
@@ -38,7 +45,9 @@ export default class Inventory extends Component {
         const shippingItems = items.filter(item => item.category === "Shipping Supplies")
         const cleaningItems = items.filter(item => item.category === "Cleaning Supplies")
         const officeItems = items.filter(item => item.category === "Office Supplies")
+        const loading = this.props.loading
         return (
+            loading ? <Loading /> :
             <section className="dash-container">
                 <div className="dash-content">
                     <div className="user-info-title">
