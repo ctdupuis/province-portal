@@ -37,7 +37,7 @@ import DeliveryMap from "../components/delivery/DeliveryMap";
 import Dashboard from "../components/sessions/Dashboard";
 import PatientServices from "../components/patient-services/PatientServices";
 import ReportManager from "../components/reports/ReportManager";
-import Inventory from "../components/sessions/Inventory";
+import Inventory from "../components/inventory/Inventory";
 
 
 class SessionsContainer extends Component {
