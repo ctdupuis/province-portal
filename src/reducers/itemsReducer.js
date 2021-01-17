@@ -14,7 +14,7 @@ export default function itemsReducer(
         case 'ADD_ITEMS':
             return {
                 ...state,
-                items: [...state.items, action.items]
+                items: [...state.items, ...action.items]
             }
         case 'CLEAR_ITEMS':
             return {

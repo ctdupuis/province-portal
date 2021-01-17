@@ -17,7 +17,6 @@ export const addItems = (itemData) => {
         const response = await axios.post(`${API_ROOT}/items`,
         { itemData },
         { withCredentials: true })
-        debugger
         const items = response.data
         dispatch({ type: 'ADD_ITEMS', items })
         dispatch({ type: 'END_LOAD'})
