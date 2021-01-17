@@ -11,6 +11,11 @@ export default function itemsReducer(
                 ...state,
                 items: action.items
             }
+        case 'ADD_ITEMS':
+            return {
+                ...state,
+                items: [...state.items, action.items]
+            }
         case 'CLEAR_ITEMS':
             return {
                 ...state,
