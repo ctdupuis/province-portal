@@ -50,6 +50,7 @@ export default class NewItemForm extends Component {
                                 data-id={idx}
                                 value={items[idx].product_name}
                                 onChange={this.handleChange}
+                                required={true}
                             />
 
                             <label htmlFor={qtyID}>Quantity</label>
@@ -61,6 +62,7 @@ export default class NewItemForm extends Component {
                                 data-id={idx}
                                 value={items[idx].qty}
                                 onChange={this.handleChange}
+                                required={true}
                             />
                             <label htmlFor={unitsID}>Unit of Measurement</label>
                             <input
@@ -71,6 +73,7 @@ export default class NewItemForm extends Component {
                                 data-id={idx}
                                 value={items[idx].units}
                                 onChange={this.handleChange}
+                                required={true}
                             />
                             <select
                                 id={categoryID}
@@ -79,6 +82,7 @@ export default class NewItemForm extends Component {
                                 className="category"
                                 value={items[idx].category}
                                 onChange={this.handleChange}
+                                required={true}
                             >
                                 <option>Select a category...</option>
                                 <option value="Shipping Supplies">Shipping Supplies</option>
@@ -90,7 +94,7 @@ export default class NewItemForm extends Component {
                     )
                 })}
                 <button className="green-btn" onClick={this.addItem}>Add Another Item</button>
-                <button className="green-btn">Submit Item(s)</button>
+                <button className="green-btn" onClick={() => this.props.addItems(this.state)}>Submit Item(s)</button>
             </div>
         )
     }

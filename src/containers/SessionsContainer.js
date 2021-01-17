@@ -28,7 +28,8 @@ import {
   finalizeRoute
 } from "../actions/deliveries";
 import {
-  getItems
+  getItems,
+  addItems
 } from "../actions/items";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Announcements from "../components/sessions/Announcements";
@@ -187,6 +188,7 @@ class SessionsContainer extends Component {
               <Inventory
                 currentUser={this.props.currentUser}
                 getItems={this.props.getItems}
+                addItems={this.props.addItems}
                 items={this.props.items}
                 loading={this.props.loading}
                 {...props}
@@ -225,6 +227,7 @@ export default connect(
     getConversation,
     createMessage,
     finalizeRoute,
-    getItems
+    getItems,
+    addItems
   }
 )(SessionsContainer);

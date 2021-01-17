@@ -19,7 +19,8 @@ export default class Inventory extends Component {
 
     tableBody = items => {
         const tabledata = items.map(item => {
-            return(<tr>
+            return(
+            <tr key={item.id}>
                 <td>{item.product_name}</td>
                 <td>{item.quantity}</td>
                 <td>{item.unit_of_measurement}</td>
@@ -36,14 +37,15 @@ export default class Inventory extends Component {
         const items = this.props.items
         const shippingItems = items.filter(item => item.category === "Shipping Supplies")
         const cleaningItems = items.filter(item => item.category === "Cleaning Supplies")
+        const officeItems = items.filter(item => item.category === "Office Supplies")
         return (
             <section className="dash-container">
                 <div className="dash-content">
                     <div className="user-info-title">
                         <h3>Add An Item</h3>
                     </div>
-                    <NewItemForm />
-                    <div class="user-info-title">
+                    <NewItemForm addItems={this.props.addItems} />
+                    <div className="user-info-title">
                         <h3>Shipping Supplies</h3>
                     </div>
                     <table className="contact-list">
@@ -57,6 +59,14 @@ export default class Inventory extends Component {
                     <table className="contact-list">
                         {this.tableHeaders()}
                         {this.tableBody(cleaningItems)}
+                    </table>
+
+                    <div className="user-info-title">
+                        <h3>Office Supplies</h3>
+                    </div>
+                    <table className="contact-list">
+                        {this.tableHeaders()}
+                        {this.tableBody(officeItems)}
                     </table>
                 </div>
             </section>
