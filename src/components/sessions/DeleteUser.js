@@ -13,7 +13,7 @@ export default function DeleteUser(props) {
     return (
         <>
             <div className="user-info-title">
-                Deactivate Employee Account
+                <h3>Deactivate Employee Account</h3>
             </div>
             <label className="select-label" htmlFor="rm-employee">Select an employee</label>
             <select id="rm-employee">

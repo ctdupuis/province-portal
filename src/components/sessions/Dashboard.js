@@ -106,7 +106,7 @@ export default class Dashboard extends Component {
         </header>
         <div className="dash-content">
             <div className="user-info-title">
-              Your Contact Info
+              <h3>Your Contact Info</h3>
             </div>
             <div className="user-info-content">
               Email: {this.state.toggleEmailInput ? 
@@ -154,7 +154,7 @@ export default class Dashboard extends Component {
         </div>
               <div className="dash-content">
                 <div className="user-info-title">
-                  Employee Schedule
+                  <h3>Employee Schedule</h3>
                 </div>
                 <EmployeeSchedule 
                   contacts={contacts}
@@ -164,7 +164,7 @@ export default class Dashboard extends Component {
               </div>
             <div className="dash-content">
               <div className="user-info-title">
-                Employee Contact List
+                <h3>Employee Contact List</h3>
               </div>
               <ContactList contacts={contacts} />
             </div>

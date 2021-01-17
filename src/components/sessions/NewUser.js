@@ -57,7 +57,9 @@ export default class NewUser extends Component {
   render() {
     return (
       <>
-        <div className="user-info-title">Add a New User</div>
+        <div className="user-info-title">
+          <h3>Add a New User</h3>
+        </div>
         <form className="new-user-form" onSubmit={this.handleSubmit}>
           <label htmlFor="username">Username</label>
           <input

@@ -56,6 +56,7 @@ export default class Inventory extends Component {
                     </div>
                     <table className="contact-list">
                         {this.tableHeaders()}
+                        {this.tableBody(cleaningItems)}
                     </table>
                 </div>
             </section>
