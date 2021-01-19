@@ -10,28 +10,30 @@ export default class ReportManager extends Component {
                         <h3>Check Log</h3>
                     </div>
                     <div className="user-info-content">
-                        <form>
+                        <form id="report-form">
                             <label htmlFor="patient_name">Patient Name</label>
                             <input
                                 type="text"
                                 name="patient_name"
+                                className="report-text"
                             />
                             <label htmlFor="rxNumber">RX #</label>
                             <input
                                 type="text"
                                 name="rxNumber"
+                                className="report-text"
                             />
                             <label htmlFor="ogAmount">Original Amount</label>
                             <input 
                                 type="number"
                                 name="ogAmount"
-                                className="num"
+                                className="report-num"
                             />
                             <label htmlFor="adjAmount">Adjusted Amount</label>
                             <input
                                 type="number"
                                 name="adjAmount"
-                                className="num"
+                                className="report-num"
                             />
 
                             <button 
