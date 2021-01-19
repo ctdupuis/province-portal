@@ -1,0 +1,15 @@
+@import '../index.css';
+
+#reports {
+    margin-bottom: 10px;
+}
+
+.num {
+    width: 5%;
+    text-align: center;
+}
+
+label, input {
+    margin: 5px 15px 5px 0;
+    color: var(--d-green);
+}

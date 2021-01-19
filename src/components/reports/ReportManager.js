@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import '../../stylesheets/reports.css'
 
 export default class ReportManager extends Component {
     render() {
@@ -6,7 +7,43 @@ export default class ReportManager extends Component {
             <section className="dash-container">
                 <div className="dash-content">
                     <div className="user-info-title">
-                        <h3>Select the type of report you need</h3>
+                        <h3>Check Log</h3>
+                    </div>
+                    <div className="user-info-content">
+                        <form>
+                            <label htmlFor="patient_name">Patient Name</label>
+                            <input
+                                type="text"
+                                name="patient_name"
+                            />
+                            <label htmlFor="rxNumber">RX #</label>
+                            <input
+                                type="text"
+                                name="rxNumber"
+                            />
+                            <label htmlFor="ogAmount">Original Amount</label>
+                            <input 
+                                type="number"
+                                name="ogAmount"
+                                className="num"
+                            />
+                            <label htmlFor="adjAmount">Adjusted Amount</label>
+                            <input
+                                type="number"
+                                name="adjAmount"
+                                className="num"
+                            />
+
+                            <button 
+                                className="green-btn"
+                                type="submit"
+                            >Save Entry</button>
+                        </form>
+                    </div>
+                </div>
+                <div className="dash-content">
+                    <div className="user-info-title">
+                        <h3>Report Viewer</h3>
                     </div>
 
                     <div className="user-info-content">
