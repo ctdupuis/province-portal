@@ -24,20 +24,3 @@ select {
 .fieldset-flex {
     display: flex;
 }
-
-.edit-info {
-    border-radius: 1rem;
-    background: none!important;
-    padding: .2em;
-    color: var(--l-green);
-    float: right;
-    transition: 0.5s;
-    margin-top: auto;
-    border: none;
-}
-  
-.edit-info:hover {
-    background-color: lightgrey;
-    color: var(--m-green);
-    cursor: pointer;
-}
