@@ -34,6 +34,7 @@
 div.post_text_and_meta_data {
   display: flex;
   flex-direction: column;
+  width: 100%
 }
 
 div.meta_data {
@@ -183,3 +184,22 @@ div.comment_field {
   justify-content: center;
 }
 
+.edit-delete-container {
+  margin-right: 0;
+}
+
+.delete-info {
+  border-radius: 1rem;
+  background: none!important;
+  padding: .2em;
+  color: rgb(158, 14, 14);
+  transition: 0.5s;
+  margin-top: auto;
+  border: none;
+}
+
+.delete-info:hover {
+  background-color: lightgrey;
+  color: rgb(250, 32, 32);
+  cursor: pointer;
+}

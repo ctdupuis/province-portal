@@ -20,9 +20,6 @@ export default class Announcements extends Component {
     return (
       this.props.loading ? <Loading /> :
       <section className="dash-container">
-        {/* <header className="dash-header">
-          <h3>Announcements</h3>
-        </header> */}
         <PostsContainer
           posts={this.props.posts} 
           currentUser={this.props.currentUser}

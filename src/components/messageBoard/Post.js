@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import CommentList from "../messageBoard/CommentList";
 import NewComment from "./NewComment";
+import { FaPen, FaTrash, FaTrashAlt } from 'react-icons/fa';
 
 
 export default class Post extends Component {
@@ -23,11 +24,11 @@ export default class Post extends Component {
     if (currentUser.id === userID) {
       return (
       <div className="edit-delete-container">
-        <button className="timestamp total-comments edit">
-          Delete
+        <button className="timestamp total-comments edit-info">
+          <FaPen />
         </button>
-        <button className="timestamp total-comments edit">
-          Edit
+        <button className="timestamp total-comments delete-info">
+          <FaTrash />
         </button>
       </div>
       );
