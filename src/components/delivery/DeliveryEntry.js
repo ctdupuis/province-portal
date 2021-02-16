@@ -23,6 +23,15 @@ export default class DeliveryEntry extends Component {
         }));
     }
 
+    popLocation = event => {
+        event.preventDefault();
+        let keepers = this.state.locations.slice(0, this.state.locations.length-1)
+        this.setState({
+            ...this.state,
+            locations: [...keepers]
+        })
+    }
+
     render() {
         let locations = this.state.locations
         return (
@@ -68,6 +77,9 @@ export default class DeliveryEntry extends Component {
                     />
                     <button className="green-btn" onClick={this.addLocation}>
                         Add Another Stop
+                    </button>
+                    <button className="green-btn" onClick={this.popLocation}>
+                        Remove Stop
                     </button>
                     <br />
                 </form>
