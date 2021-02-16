@@ -12,4 +12,5 @@
 .report-text, label {
     margin: 5px 15px 5px 0;
     color: var(--d-green);
+    outline: none;
 }

@@ -22,6 +22,15 @@ export default class NewItemForm extends Component {
         }));
     }
 
+    popItem = event => {
+        event.preventDefault();
+        let keepers = this.state.items.slice(0, this.state.items.length-1)
+        this.setState({
+            ...this.state,
+            items: [...keepers]
+        })
+    }
+
     setCity = (event) => {
         this.setState({
           location: {
@@ -93,8 +102,15 @@ export default class NewItemForm extends Component {
                         </fieldset>
                     )
                 })}
-                <button className="green-btn" onClick={this.addItem}>Add Another Item</button>
-                <button className="green-btn" onClick={() => this.props.addItems(this.state)}>Submit Item(s)</button>
+                <button className="green-btn" onClick={this.addItem}>
+                    Add Another Item
+                </button>
+                <button className="green-btn" onClick={this.popItem}>
+                    Remove Item
+                </button>
+                <button className="green-btn" onClick={() => this.props.addItems(this.state)}>
+                    Submit Item(s)
+                </button>
             </div>
         )
     }

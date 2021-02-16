@@ -76,6 +76,8 @@
   transition: 0.5s;
   margin-top: auto;
   border: none;
+  float: right;
+  outline: none;
 }
 
 .edit-info:hover {
@@ -92,7 +94,9 @@
 .new-user-form input {
   margin: 1rem;
   padding: .3em;
-  border-radius: 1em;
+  border-radius: .5em;
+  outline: none;
+  border: 1px solid var(--d-green);
 }
 
 .new-user-sbmt {
@@ -169,6 +173,7 @@
   color: whitesmoke;
   background-color: var(--m-green);
   transition: 0.5s;
+  outline: none;
 }
 
 .info-save:hover {
@@ -183,6 +188,7 @@
   color: whitesmoke;
   background-color: rgb(158, 14, 14);
   transition: 0.5s;
+  outline: none;
 }
 
 .info-cancel:hover {

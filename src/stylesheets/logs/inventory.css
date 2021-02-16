@@ -4,10 +4,12 @@
     padding: 10px;
 }
 
-#new-item label, input {
+#new-item input {
     margin-right: 8px;
-    border-radius: 50px;
+    border-radius: .5rem;
     padding: 4px;
+    outline: none;
+    border: 1px solid var(--d-green);
 }
 
 select {
