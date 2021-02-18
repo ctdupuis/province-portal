@@ -34,16 +34,21 @@ export default class PatientServices extends Component {
 
     }
 
+    onReceived = response => {
+        const message = JSON.parse(response)
+        debugger
+    }
+
     render() {
         const { loading, messages } = this.props
-        return loading ? <Loading /> :
-        (
+        return(
             <section className="dash-container">
                 <div className="dash-content">
                     <div className="user-info-title">
                         <h3>What's going on?</h3>
                         <ActionCableConsumer
-                            channel={{ channel: "ConversationsChannel" }}
+                            channel={{ channel: "MessagesChannel", demo: this.props.currentUser.demo }}
+                            onReceived={this.onReceived}
                         />
                         <NewMessage 
                             handleChange={this.handleChange}

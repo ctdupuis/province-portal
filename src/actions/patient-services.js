@@ -22,3 +22,9 @@ export const createMessage = (messageData) => {
         dispatch({ type: 'END_LOAD' })
     }
 }
+
+export const addMessage = (message) => {
+    return async (dispatch) => {
+        dispatch({ type: 'ADD_MESSAGE', message})
+    }
+}

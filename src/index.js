@@ -12,8 +12,6 @@ import { BrowserRouter } from 'react-router-dom';
 import { API_WS_ROOT } from './constants';
 
 
-
-
 const store = createStore(
   rootReducer,
   compose(
@@ -26,9 +24,9 @@ const store = createStore(
 ReactDOM.render(
   <Provider store={store}>
       <ActionCableProvider url={API_WS_ROOT}>
-    <BrowserRouter>
-        <App />
-    </BrowserRouter>
+        <BrowserRouter>
+            <App />
+        </BrowserRouter>
       </ActionCableProvider>
   </Provider>,
   document.getElementById('root')
