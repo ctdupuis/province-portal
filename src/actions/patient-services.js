@@ -17,8 +17,6 @@ export const createMessage = (messageData) => {
         const response = await axios.post(`${API_ROOT}/messages`,
         { text: messageData.body, user: messageData.currentUser },
         { withCredentials: true })
-        const newMessage = response.data
-        console.log(newMessage)
         dispatch({ type: 'END_LOAD' })
     }
 }

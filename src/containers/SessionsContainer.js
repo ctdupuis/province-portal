@@ -21,7 +21,8 @@ import {
 } from "../actions/schedules";
 import {
   getConversation,
-  createMessage
+  createMessage,
+  addMessage
 } from "../actions/patient-services";
 import {
   getGeocode,
@@ -78,6 +79,7 @@ class SessionsContainer extends Component {
                 getConversation={this.props.getConversation}
                 messages={this.props.messages}
                 createMessage={this.props.createMessage}
+                addMessage={this.props.addMessage}
                 loading={this.props.loading}
                 {...props}
               />
@@ -226,6 +228,7 @@ export default connect(
     addComment,
     getConversation,
     createMessage,
+    addMessage,
     finalizeRoute,
     getItems,
     addItems

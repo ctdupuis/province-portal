@@ -25,6 +25,7 @@ export default class PatientServices extends Component {
     handleSubmit = event => {
         event.preventDefault();
         this.props.createMessage(this.state);
+        console.warn("This is the state after the submission", this.state)
     }
 
     handleChange = event => {
@@ -35,8 +36,9 @@ export default class PatientServices extends Component {
     }
 
     onReceived = response => {
-        const message = JSON.parse(response)
-        debugger
+        const message = JSON.parse(response);
+        console.log("Response from onReceived()", message)
+        this.props.addMessage(message);
     }
 
     render() {
