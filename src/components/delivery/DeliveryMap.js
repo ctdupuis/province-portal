@@ -27,14 +27,6 @@ class DeliveryMap extends Component {
         lng: -92.035548,
       },
     },
-    boundaries: [
-      { lat: 30.150839490122195, lng: -92.09357565868899 },
-      { lat: 30.10956547664899, lng: -92.05924338426283 },
-      { lat: 30.084911616736843, lng: -91.9905788354105 },
-      { lat: 30.131540840461998, lng: -91.96482962959087 },
-      { lat: 30.176960877413638, lng: -92.00190848597113 },
-      { lat: 30.206932573334075, lng: -92.0379573741186 },
-    ],
     bounds: [
       { lat: 30.15059, lng: -92.093792 },
       { lat: 30.130907, lng: -92.055522 },
@@ -62,19 +54,19 @@ class DeliveryMap extends Component {
       { lat: 30.15059, lng: -92.093792 },
     ],
     destinations: [],
+    route: [],
     dest: { lat: 30.160673, lng: -91.991078 },
     showingInfoWindow: false,
     activeMarker: {},
     selectedPlace: {},
-    addStop: false
   };
 
-  constructUrl = () => {
-    let str = ``;
-    this.state.boundaries.forEach((bound) => {
-      str.concat(`${bound.lat},${bound.lng}`);
-    });
-  };
+  addToRoute = event => {
+    event.preventDefault();
+    event.stopPropagation();
+    console.log("SOMETHING PLEASE")
+    debugger
+  }
 
   handleChange = (event) => {
     this.setState({
@@ -141,10 +133,6 @@ class DeliveryMap extends Component {
     }
   };
 
-  addToRoute = event => {
-    console.log("event fired")
-  }
-
   render() {
     const loading = this.props.loading;
     const mapStyles = {
@@ -160,7 +148,7 @@ class DeliveryMap extends Component {
         <div className="dash-content">
           <form className="new-user-form" onSubmit={this.handleSubmit}>
             <input
-              type="text"
+              type="search"
               name="address"
               placeholder="Enter address..."
               onChange={this.handleChange}
@@ -215,11 +203,11 @@ class DeliveryMap extends Component {
               >
                 <div className="marker-info">
                   <h4>{this.state.selectedPlace.name}</h4>
-                  {/* {this.state.selectedPlace.name !== "Province Pharmacy" ? 
+                  {this.state.selectedPlace.name !== "Province Pharmacy" ? 
                   <button className="green-btn" onClick={this.addToRoute}>Add to route</button>
                   :
                   null
-                  } */}
+                  }
                 </div>
               </InfoWindow>
             </Map>
@@ -228,7 +216,8 @@ class DeliveryMap extends Component {
         <DeliveryEntry 
           finalizeRoute={this.props.finalizeRoute}
           activeLocation={this.state.activeMarker.name}
-          addStop={this.state.addStop}
+          destinations={this.state.destinations}
+          route={this.state.route}
         />
       </section>
     );

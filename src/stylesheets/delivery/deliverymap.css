@@ -20,6 +20,7 @@
 
 .marker-info {
     color: var(--m-green);
+    text-align: center;
 }
 
 #city-select {

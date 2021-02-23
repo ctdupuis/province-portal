@@ -3,10 +3,10 @@ import "../../stylesheets/tabs.css";
 import { NavLink } from "react-router-dom";
 
 const Tabs = ({ endSession }) => {
-    const activeStyle = {
-        backgroundColor: "var(--d-green",
-        borderRadius: "1rem"
-    }
+  const activeStyle = {
+    backgroundColor: "var(--d-green",
+    borderRadius: "1rem"
+  }
   return (
     <div className="nav-tabs-container">
       <div className="nav-tab">

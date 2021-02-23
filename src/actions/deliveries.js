@@ -39,7 +39,7 @@ export const finalizeRoute = (data) => {
         postObj,
         { withCredentials: true  })
         const data = response.data
-        debugger
+        // debugger
         dispatch({ type: 'END_LOAD' })
     }
 }
