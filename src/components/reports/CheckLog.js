@@ -17,7 +17,13 @@ export default class CheckLog extends Component {
     handleSubmit = event => {
         event.preventDefault();
         if (window.confirm("Double check before submitting!")) {
-            console.log(this.state)
+            this.props.createCheckEntry(this.state)
+            this.setState({
+                patient_name: "",
+                rx_num: "",
+                original_amt: "",
+                adjusted_amt: ""
+            });
         }
     }
 
@@ -35,6 +41,7 @@ export default class CheckLog extends Component {
                             type="text"
                             name="patient_name"
                             className="report-text"
+                            value={this.state.patient_name}
                             onChange={this.handleChange}
                         />
                         <label htmlFor="rxNumber">RX #</label>
@@ -42,6 +49,8 @@ export default class CheckLog extends Component {
                             type="text"
                             name="rx_num"
                             className="report-text"
+                            value={this.state.rx_num}
+                            maxLength="6"
                             onChange={this.handleChange}
                         />
                         <label htmlFor="original_amt">Original Amount</label>
@@ -51,6 +60,7 @@ export default class CheckLog extends Component {
                             step="0.01"
                             name="original_amt"
                             className="report-num"
+                            value={this.state.original_amt}
                             onChange={this.handleChange}
                         />
                         <label htmlFor="adjusted_amt">Adjusted Amount</label>
@@ -60,6 +70,7 @@ export default class CheckLog extends Component {
                             step="0.01"
                             name="adjusted_amt"
                             className="report-num"
+                            value={this.state.adjusted_amt}
                             onChange={this.handleChange}
                         />
     

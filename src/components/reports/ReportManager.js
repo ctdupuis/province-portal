@@ -6,7 +6,9 @@ export default class ReportManager extends Component {
     render() {
         return (
             <section className="dash-container">
-                <CheckLog />
+                <CheckLog 
+                    createCheckEntry={this.props.createCheckEntry}
+                />
                 <div className="dash-content">
                     <div className="user-info-title">
                         <h3>Report Viewer</h3>

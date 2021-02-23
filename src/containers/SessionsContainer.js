@@ -32,6 +32,7 @@ import {
   getItems,
   addItems
 } from "../actions/items";
+import { createCheckEntry } from "../actions/log-entries";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Announcements from "../components/sessions/Announcements";
 import Tabs from "../components/static/Tabs";
@@ -176,6 +177,7 @@ class SessionsContainer extends Component {
               <ReportManager
                 currentUser={this.props.currentUser}
                 loading={this.props.loading}
+                createCheckEntry={this.props.createCheckEntry}
                 {...props}
               />
             </>
@@ -231,6 +233,7 @@ export default connect(
     addMessage,
     finalizeRoute,
     getItems,
-    addItems
+    addItems,
+    createCheckEntry
   }
 )(SessionsContainer);
