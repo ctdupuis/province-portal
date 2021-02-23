@@ -25,7 +25,6 @@ import {
   addMessage
 } from "../actions/patient-services";
 import {
-  getGeocode,
   finalizeRoute
 } from "../actions/deliveries";
 import {

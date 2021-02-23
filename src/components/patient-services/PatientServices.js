@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import "../../stylesheets/sessions/patient-services.css";
-import Loading from '../static/Loading';
 import Message from './Message';
 import { ActionCableConsumer } from 'react-actioncable-provider';
 import NewMessage from './NewMessage';
@@ -44,7 +43,7 @@ export default class PatientServices extends Component {
     }
 
     render() {
-        const { loading, messages } = this.props
+        const { messages } = this.props
         return(
             <section className="dash-container">
                 <div className="dash-content">

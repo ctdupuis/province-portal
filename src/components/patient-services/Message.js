@@ -1,7 +1,7 @@
 import React from 'react';
 
 export default function Message({ message }) {
-    const {id, text, author, created, updated} = message
+    const { text, author, created } = message
     return (
         <div className="message">
             <div className="message-body">

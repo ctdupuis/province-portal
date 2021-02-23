@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CommentList from "../messageBoard/CommentList";
 import NewComment from "./NewComment";
-import { FaPen, FaTrash, FaTrashAlt } from 'react-icons/fa';
+import { FaPen, FaTrash } from 'react-icons/fa';
 
 
 export default class Post extends Component {

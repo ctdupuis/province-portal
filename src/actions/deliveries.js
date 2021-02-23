@@ -19,15 +19,6 @@ export const getGeocode = async function(location) {
     return coords
 }
 
-export const getDistance = (data) => {
-    let address = data.address.split(' ').join('+');
-    let url = `https://maps.googleapis.com/maps/api/directions/json?
-    origin=&key=${process.env.REACT_APP_GOOGLE_API_KEY}`
-    debugger
-    axios.get(url).then(r => console.log(r))
-}
-
-
 export const finalizeRoute = (data) => {
     const postObj = {
         locations: [...data.locations],
