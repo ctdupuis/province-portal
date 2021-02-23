@@ -25,14 +25,16 @@ export default class PatientServices extends Component {
     handleSubmit = event => {
         event.preventDefault();
         this.props.createMessage(this.state);
-        console.warn("This is the state after the submission", this.state)
+        this.setState({
+            ...this.state,
+            body: ""
+        })
     }
 
     handleChange = event => {
         this.setState({
             [event.target.name]: event.target.value
         })
-
     }
 
     onReceived = response => {
@@ -55,6 +57,7 @@ export default class PatientServices extends Component {
                         <NewMessage 
                             handleChange={this.handleChange}
                             handleSubmit={this.handleSubmit}
+                            body={this.state.body}
                         />
                     </div>
                     <div className="messages-area">

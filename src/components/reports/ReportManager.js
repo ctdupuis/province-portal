@@ -1,48 +1,12 @@
 import React, { Component } from 'react';
 import '../../stylesheets/reports.css'
+import CheckLog from './CheckLog';
 
 export default class ReportManager extends Component {
     render() {
         return (
             <section className="dash-container">
-                <div className="dash-content">
-                    <div className="user-info-title">
-                        <h3>Check Log</h3>
-                    </div>
-                    <div className="user-info-content">
-                        <form id="report-form">
-                            <label htmlFor="patient_name">Patient Name</label>
-                            <input
-                                type="text"
-                                name="patient_name"
-                                className="report-text"
-                            />
-                            <label htmlFor="rxNumber">RX #</label>
-                            <input
-                                type="text"
-                                name="rxNumber"
-                                className="report-text"
-                            />
-                            <label htmlFor="ogAmount">Original Amount</label>
-                            <input 
-                                type="number"
-                                name="ogAmount"
-                                className="report-num"
-                            />
-                            <label htmlFor="adjAmount">Adjusted Amount</label>
-                            <input
-                                type="number"
-                                name="adjAmount"
-                                className="report-num"
-                            />
-
-                            <button 
-                                className="green-btn"
-                                type="submit"
-                            >Save Entry</button>
-                        </form>
-                    </div>
-                </div>
+                <CheckLog />
                 <div className="dash-content">
                     <div className="user-info-title">
                         <h3>Report Viewer</h3>

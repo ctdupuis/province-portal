@@ -1,6 +1,6 @@
-import React from 'react'
+import React from 'react';
 
-export default function NewMessage({ handleChange, handleSubmit }) {
+export default function NewMessage({ handleChange, handleSubmit, body }) {
     return (
         <div className="comment_handler">
             <div className="comment_field">
@@ -9,6 +9,7 @@ export default function NewMessage({ handleChange, handleSubmit }) {
                 name="body"
                 type="text"
                 onChange={handleChange}
+                value={body}
             />
             </div>
             <div className="comment_submit_btn">
