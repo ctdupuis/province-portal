@@ -9,7 +9,7 @@ export default class Post extends Component {
     displayList: "none",
     displayForm: "none",
     isEditing: false,
-    body: ""
+    content: ""
   };
 
 
@@ -81,18 +81,18 @@ export default class Post extends Component {
           <div className="post-author">{author}</div>
           <div className="post_text_and_meta_data">
             { this.state.isEditing ? 
-            <div className="post-text">
-              <input 
-                defaultValue={content} 
-                name="body"
-                onChange={this.handleChange}
-                className="edit-input"
-              />
-            </div>
-            :
-            <div className="post-text">
-              {content}
-            </div>
+              <div className="post-text">
+                <input 
+                  defaultValue={content} 
+                  name="content"
+                  onChange={this.handleChange}
+                  className="edit-input"
+                />
+              </div>
+              :
+              <div className="post-text">
+                {content}
+              </div>
             }
             <div className="meta_data">
               <div className="timestamp_wrapper">

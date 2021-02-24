@@ -26,6 +26,18 @@ export const addPost = (postdata) => {
     }
 }
 
+export const updatePost = (postdata) => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD'})
+        const response = await axios.patch(`${API_ROOT}/${postdata.id}`, 
+        {
+            content: postdata.content
+        },
+        { withCredentials: true })
+        const post = response.data
+    }
+}
+
 export const addComment = (commentdata) => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD'})

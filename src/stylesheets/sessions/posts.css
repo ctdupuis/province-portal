@@ -48,6 +48,7 @@ div.comments_amt_wrapper {
 
 .post-text {
   border-radius: 0 .5rem .5rem .5rem;
+  margin: 1%;
 }
 
 div.comment_handler {
@@ -212,4 +213,5 @@ div.comment_field {
   border-radius: 50px;
   outline: none;
   padding: 2px;
+  font-size: 1em;
 }
