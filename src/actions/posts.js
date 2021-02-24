@@ -29,12 +29,14 @@ export const addPost = (postdata) => {
 export const updatePost = (postdata) => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD'})
-        const response = await axios.patch(`${API_ROOT}/${postdata.id}`, 
+        const response = await axios.patch(`${API_ROOT}/posts/${postdata.id}`, 
         {
             content: postdata.content
         },
         { withCredentials: true })
         const post = response.data
+        dispatch({ type: 'UPDATE_POST', post })
+        dispatch({ type: 'END_LOAD'})
     }
 }
 

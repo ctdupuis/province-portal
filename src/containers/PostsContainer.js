@@ -15,6 +15,7 @@ class PostsContainer extends Component {
                 <PostList 
                     posts={this.props.posts}
                     addComment={this.props.addComment}
+                    updatePost={this.props.updatePost}
                     currentUser={this.props.currentUser}
                 />
                 

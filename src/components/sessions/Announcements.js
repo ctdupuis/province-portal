@@ -24,6 +24,7 @@ export default class Announcements extends Component {
           posts={this.props.posts} 
           currentUser={this.props.currentUser}
           addPost={this.props.addPost}
+          updatePost={this.props.updatePost}
           addComment={this.props.addComment}
         />
       </section>

@@ -14,7 +14,8 @@ import {
 import {
   getPosts,
   addPost,
-  addComment
+  addComment,
+  updatePost
 } from "../actions/posts";
 import {
   getSchedule
@@ -121,6 +122,7 @@ class SessionsContainer extends Component {
                 addPost={this.props.addPost}
                 addComment={this.props.addComment}
                 getPosts={this.props.getPosts}
+                updatePost={this.props.updatePost}
                 loading={this.props.loading}
                 {...props}
               />
@@ -226,6 +228,7 @@ export default connect(
     getSchedule,
     getPosts,
     addPost,
+    updatePost,
     addComment,
     getConversation,
     createMessage,

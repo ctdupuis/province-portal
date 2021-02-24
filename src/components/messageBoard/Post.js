@@ -30,14 +30,14 @@ export default class Post extends Component {
     }
   };
 
-  checkOwnership(currentUser, userID) {
+  checkOwnership(currentUser, userID, postID) {
     if (currentUser.id === userID) {
       return (
       <div className="edit-delete-container">
         {this.state.isEditing ? 
           <>
             <button className="info-cancel" onClick={this.toggleEdit}>Cancel</button>
-            <button className="info-save" onClick={this.handleClick}>Save</button>
+            <button className="info-save" onClick={() => this.props.updatePost({ id: postID, content: this.state.content })}>Save</button>
           </>
           :
           <>
@@ -101,7 +101,7 @@ export default class Post extends Component {
                   {this.commentFormat(comments)}
                 </button>
               </div>
-              {this.checkOwnership(currentUser, userID)}
+              {this.checkOwnership(currentUser, userID, id)}
             </div>
           </div>
         </div>
