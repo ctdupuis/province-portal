@@ -197,10 +197,19 @@ div.comment_field {
   margin-top: auto;
   border: none;
   outline: none;
+  float: right;
 }
 
 .delete-info:hover {
   background-color: lightgrey;
   color: rgb(250, 32, 32);
   cursor: pointer;
+}
+
+.edit-input {
+  width: 100%;
+  border: none;
+  border-radius: 50px;
+  outline: none;
+  padding: 2px;
 }

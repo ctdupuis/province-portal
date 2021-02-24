@@ -8,7 +8,17 @@ export default class Post extends Component {
   state = {
     displayList: "none",
     displayForm: "none",
+    isEditing: false,
+    body: ""
   };
+
+
+  toggleEdit = () => {
+    this.setState({
+      ...this.state,
+      isEditing: !this.state.isEditing
+    })
+  }
 
   commentFormat = (comments) => {
     if (comments && comments.length === 1) {
@@ -24,12 +34,21 @@ export default class Post extends Component {
     if (currentUser.id === userID) {
       return (
       <div className="edit-delete-container">
-        <button className="timestamp total-comments edit-info">
-          <FaPen />
-        </button>
-        <button className="timestamp total-comments delete-info">
-          <FaTrash />
-        </button>
+        {this.state.isEditing ? 
+          <>
+            <button className="info-cancel" onClick={this.toggleEdit}>Cancel</button>
+            <button className="info-save" onClick={this.handleClick}>Save</button>
+          </>
+          :
+          <>
+            <button className="timestamp total-comments delete-info">
+              <FaTrash />
+            </button>
+            <button className="timestamp total-comments edit-info" onClick={this.toggleEdit}>
+              <FaPen />
+            </button>
+          </>
+          }
       </div>
       );
     }
@@ -40,6 +59,10 @@ export default class Post extends Component {
       this.setState({ displayList: "" });
     }
   };
+
+  handleChange = event => {
+    this.setState({ [event.target.name]: event.target.value })
+  }
 
   render() {
     const {
@@ -57,9 +80,20 @@ export default class Post extends Component {
         <div className="post-content">
           <div className="post-author">{author}</div>
           <div className="post_text_and_meta_data">
+            { this.state.isEditing ? 
+            <div className="post-text">
+              <input 
+                defaultValue={content} 
+                name="body"
+                onChange={this.handleChange}
+                className="edit-input"
+              />
+            </div>
+            :
             <div className="post-text">
               {content}
             </div>
+            }
             <div className="meta_data">
               <div className="timestamp_wrapper">
                 <span className="timestamp">{created} |</span>

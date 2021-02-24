@@ -11,13 +11,6 @@ export default class Dashboard extends Component {
   componentDidMount() {
     this.props.getContacts();
     this.props.getSchedule();
-    this.updateTitle();
-  }
-
-  updateTitle = () => {
-    const firstLetter = this.props.match.path.replace("/", "").charAt(0).toUpperCase()
-    const restOfTitle = this.props.match.path.slice(2, this.props.match.path.length)
-    document.title = `${firstLetter}${restOfTitle} | Province Portal`
   }
 
   state = {

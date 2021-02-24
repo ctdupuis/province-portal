@@ -170,7 +170,7 @@
   border-radius: 1rem;
   float: right;
   margin-right: .5rem;
-  padding: .3rem;
+  padding: .2em;
   color: whitesmoke;
   background-color: var(--m-green);
   transition: 0.5s;
@@ -185,7 +185,7 @@
 .info-cancel {
   border-radius: 1rem;
   float: right;
-  padding: .3rem;
+  padding: .2em;
   color: whitesmoke;
   background-color: rgb(158, 14, 14);
   transition: 0.5s;

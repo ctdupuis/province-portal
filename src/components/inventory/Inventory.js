@@ -12,9 +12,11 @@ export default class Inventory extends Component {
     tableHeaders = () => {
         return(
             <thead>
-                <th>Product</th>
-                <th>Quantity</th>
-                <th>Unit Of Measurement</th>
+                <tr>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Unit Of Measurement</th>
+                </tr>
             </thead>
         )
     }
