@@ -40,6 +40,17 @@ export const updatePost = (postdata) => {
     }
 }
 
+export const removePost = (postID) => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD' })
+        const response = await axios.delete(`${API_ROOT}/posts/${postID}`, { withCredentials: true })
+        const data = response.data
+        console.log(data)
+        dispatch({ type: 'REMOVE_POST', postID})
+        dispatch({ type: 'END_LOAD' })
+    }
+}
+
 export const addComment = (commentdata) => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD'})
