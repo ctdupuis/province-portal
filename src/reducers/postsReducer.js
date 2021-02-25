@@ -29,6 +29,11 @@ export default function postsReducer(
             return {
                 posts: [...keepers, action.post]
             }
+        case 'REMOVE_POST':
+            keepers = state.posts.filter(post => post.id !== action.postID)
+            return {
+                posts: [...keepers]
+            }
     default: return state;
     }
 }
