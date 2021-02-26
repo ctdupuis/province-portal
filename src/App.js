@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import SessionsContainer from './containers/SessionsContainer';
 import Header from './components/static/Header';
+import PostsContainer from './containers/PostsContainer';
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       <Header />
       <main>
         <SessionsContainer />
+        <PostsContainer />
       </main>
     </div>
   );

@@ -12,12 +12,6 @@ import {
   getContacts
 } from "../actions/sessions";
 import {
-  getPosts,
-  addPost,
-  addComment,
-  updatePost
-} from "../actions/posts";
-import {
   getSchedule
 } from "../actions/schedules";
 import {
@@ -34,7 +28,6 @@ import {
 } from "../actions/items";
 import { createCheckEntry } from "../actions/log-entries";
 import InfoUpdate from "../components/sessions/InfoUpdate";
-import Announcements from "../components/sessions/Announcements";
 import Tabs from "../components/static/Tabs";
 import DeliveryMap from "../components/delivery/DeliveryMap";
 import Dashboard from "../components/sessions/Dashboard";
@@ -47,7 +40,6 @@ class SessionsContainer extends Component {
   componentDidMount() {
     this.props.getLoginStatus();
   }
-
 
   render() {
     return (
@@ -107,28 +99,6 @@ class SessionsContainer extends Component {
             //     {...props}
             // />
           }
-        />
-        <Route
-          exact
-          path={"/announcements"}
-          render={(props) => (
-            this.props.currentUser ?
-            <>
-              <Tabs endSession={this.props.endSession}/>
-              <Announcements
-                currentUser={this.props.currentUser}
-                endSession={this.props.endSession}
-                posts={this.props.posts}
-                addPost={this.props.addPost}
-                addComment={this.props.addComment}
-                getPosts={this.props.getPosts}
-                updatePost={this.props.updatePost}
-                loading={this.props.loading}
-                {...props}
-              />
-            </> :
-            <Redirect to={'/'} />
-          )}
         />
         <Route
           exact
@@ -211,7 +181,6 @@ export default connect(
     currentUser: state.userReducer.currentUser,
     contacts: state.userReducer.contacts,
     errors: state.userReducer.errors,
-    posts: state.postsReducer.posts,
     schedule: state.scheduleReducer.schedule,
     messages: state.messagesReducer.messages,
     items: state.itemsReducer.items,
@@ -226,10 +195,6 @@ export default connect(
     removeUser,
     getContacts,
     getSchedule,
-    getPosts,
-    addPost,
-    updatePost,
-    addComment,
     getConversation,
     createMessage,
     addMessage,
