@@ -26,8 +26,10 @@ export default function postsReducer(
             }
         case 'UPDATE_POST':
             keepers = state.posts.filter(post => post.id !== action.post.id)
+            let idx = state.posts.map((p) => {return p.id}).indexOf(action.post.id)
+            keepers.splice(idx, 0, action.post)
             return {
-                posts: [...keepers, action.post]
+                posts: [...keepers]
             }
         case 'REMOVE_POST':
             keepers = state.posts.filter(post => post.id !== action.postID)

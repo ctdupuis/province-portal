@@ -1,7 +1,8 @@
 import React from "react";
+import Loading from "../static/Loading";
 import Post from "./Post";
 
-const PostList = ({ posts, addComment, updatePost, currentUser }) => {
+const PostList = ({ posts, addComment, updatePost, currentUser, loading }) => {
   const renderPosts = posts.map((post) => (
     <Post
       key={post.id}
@@ -16,7 +17,9 @@ const PostList = ({ posts, addComment, updatePost, currentUser }) => {
       currentUser={currentUser}
     />
   ));
-  return renderPosts;
+  return(
+    loading ? <Loading /> : renderPosts
+  )
 };
 
 export default PostList;

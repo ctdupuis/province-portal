@@ -32,12 +32,15 @@ class PostsContainer extends Component {
                         <NewPost
                             currentUser={this.props.currentUser} 
                             addPost={this.props.addPost}
+                            {...props}
                         />
                         <PostList 
                             posts={this.props.posts}
                             addComment={this.props.addComment}
                             updatePost={this.props.updatePost}
                             currentUser={this.props.currentUser}
+                            loading={this.props.loading}
+                            {...props}
                         />
                     </>
                     :
