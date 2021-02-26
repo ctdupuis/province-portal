@@ -6,7 +6,8 @@ import {
     getPosts,
     addPost,
     updatePost,
-    addComment
+    addComment,
+    removePost
 } from '../actions/posts';
 import {
     endSession
@@ -38,6 +39,7 @@ class PostsContainer extends Component {
                             posts={this.props.posts}
                             addComment={this.props.addComment}
                             updatePost={this.props.updatePost}
+                            removePost={this.props.removePost}
                             currentUser={this.props.currentUser}
                             loading={this.props.loading}
                             {...props}
@@ -62,6 +64,7 @@ export default connect(
         getPosts,
         addPost,
         updatePost,
+        removePost,
         addComment,
         endSession
     }
