@@ -38,6 +38,14 @@ export default class Comment extends Component {
     }
   }
 
+  handleChange = event => this.setState({ [event.target.name]: event.target.value })
+  
+  handleDelete = commentID => {
+    if (window.confirm("Are you sure? This action cannot be undone.")) {
+      this.props.removeComment(commentID)
+    }
+  }
+
   render() {
     const {
       id,

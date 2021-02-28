@@ -36,6 +36,7 @@ export default function postsReducer(
             return {
                 posts: [...keepers]
             }
+
     default: return state;
     }
 }

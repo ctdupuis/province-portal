@@ -63,6 +63,28 @@ export const addComment = (commentdata) => {
         { withCredentials: true } )
         const comment = response.data
         dispatch({ type: 'ADD_COMMENT', comment })
-        dispatch({ type: 'END_LOAD'})
+        dispatch({ type: 'END_LOAD' })
+    }
+}
+
+export const updateComment = (commentdata) => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD' })
+        const response = await axios.patch(`${API_ROOT}/posts/${commentdata.post_id}/comments/${commentdata.comment_id}`,
+        {
+            content: commentdata.content
+        },
+        { withCredentials: true })
+        const comment = response.data
+        dispatch({ type: 'UPDATE_COMMENT', comment })
+        dispatch({ type: 'END_LOAD' })
+    }
+}
+
+export const removeComment = (commentID, postID) => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD' })
+        const response = await axios.delete(`${API_ROOT}/posts/${postID}/comments/${commentID}`)
+        dispatch({ type: 'REMOVE_COMMENT', commentID })
     }
 }

@@ -12,7 +12,7 @@ const CommentList = ({ comments, postID, userID, addComment, currentUser, style 
       created={comment.created} 
       postID={postID}
       userID={userID}
-      />
+    />
     )
       if (!comments.length) {
         return null

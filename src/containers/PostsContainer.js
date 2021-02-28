@@ -6,8 +6,10 @@ import {
     getPosts,
     addPost,
     updatePost,
+    removePost,
     addComment,
-    removePost
+    updateComment,
+    removeComment
 } from '../actions/posts';
 import {
     endSession
