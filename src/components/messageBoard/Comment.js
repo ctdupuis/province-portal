@@ -14,14 +14,14 @@ export default class Comment extends Component {
     })
   }
 
-  checkOwnership(currentUser, userID, commentID) {
+  checkOwnership(currentUser, postID, userID, commentID) {
     if (currentUser.id === userID) {
       return (
       <div className="edit-delete-container">
         {this.state.isEditing ? 
           <>
             <button className="info-cancel" onClick={this.toggleEdit}>Cancel</button>
-            <button className="info-save" onClick={() => this.props.updateComment({ id: commentID, content: this.state.content })}>Save</button>
+            <button className="info-save" onClick={() => this.props.updateComment({ comment_id: commentID, post_id: postID, content: this.state.content })}>Save</button>
           </>
           :
           <>
@@ -39,7 +39,7 @@ export default class Comment extends Component {
   }
 
   handleChange = event => this.setState({ [event.target.name]: event.target.value })
-  
+
   handleDelete = commentID => {
     if (window.confirm("Are you sure? This action cannot be undone.")) {
       this.props.removeComment(commentID)
@@ -76,7 +76,7 @@ export default class Comment extends Component {
             <div className="timestamp_wrapper">
               <span className="timestamp">{created}</span>
             </div>
-            {this.checkOwnership(currentUser, userID, id)}
+            {this.checkOwnership(currentUser, postID, userID, id)}
           </div>
         </div>
       </li>

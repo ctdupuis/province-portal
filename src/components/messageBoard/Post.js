@@ -79,6 +79,8 @@ export default class Post extends Component {
       comments,
       id,
       addComment,
+      updateComment,
+      removeComment,
       currentUser,
     } = this.props;
     return (
@@ -115,6 +117,8 @@ export default class Post extends Component {
           style={this.state.displayList}
           userID={userID} 
           addComment={addComment} 
+          updateComment={updateComment}
+          removeComment={removeComment}
           postID={id} 
           comments={comments}
           currentUser={currentUser}

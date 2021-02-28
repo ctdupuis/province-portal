@@ -1,9 +1,8 @@
 import React from "react";
-import { removePost } from "../../actions/posts";
 import Loading from "../static/Loading";
 import Post from "./Post";
 
-const PostList = ({ posts, addComment, updatePost, removePost, currentUser, loading }) => {
+const PostList = ({ posts, updatePost, removePost, addComment, updateComment, removeComment, currentUser, loading }) => {
   const renderPosts = posts.map((post) => (
     <Post
       key={post.id}
@@ -14,6 +13,8 @@ const PostList = ({ posts, addComment, updatePost, removePost, currentUser, load
       created={post.created}
       comments={post.comments}
       addComment={addComment}
+      updateComment={updateComment}
+      removeComment={removeComment}
       updatePost={updatePost}
       removePost={removePost}
       currentUser={currentUser}

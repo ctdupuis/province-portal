@@ -2,11 +2,14 @@ import React from 'react';
 import Comment from './Comment';
 import Loading from '../static/Loading';
 
-const CommentList = ({ comments, postID, userID, addComment, currentUser, style }) => {
+const CommentList = ({ comments, postID, userID, updateComment, removeComment, currentUser, style }) => {
   const conditionalRender = comments => {
     const renderComments = comments.map(comment => 
     <Comment key={comment.id} 
+      id={comment.id}
       currentUser={currentUser}
+      updateComment={updateComment}
+      removeComment={removeComment}
       content={comment.content} 
       author={comment.author} 
       created={comment.created} 

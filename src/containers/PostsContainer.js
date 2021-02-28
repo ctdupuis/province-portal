@@ -39,9 +39,11 @@ class PostsContainer extends Component {
                         />
                         <PostList 
                             posts={this.props.posts}
-                            addComment={this.props.addComment}
                             updatePost={this.props.updatePost}
                             removePost={this.props.removePost}
+                            addComment={this.props.addComment}
+                            updateComment={this.props.updateComment}
+                            removeComment={this.props.removeComment}
                             currentUser={this.props.currentUser}
                             loading={this.props.loading}
                             {...props}
@@ -68,6 +70,8 @@ export default connect(
         updatePost,
         removePost,
         addComment,
+        updateComment,
+        removeComment,
         endSession
     }
 )(PostsContainer);
