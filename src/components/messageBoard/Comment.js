@@ -25,7 +25,7 @@ export default class Comment extends Component {
           </>
           :
           <>
-            <button className="timestamp total-comments delete-info" onClick={() => this.handleDelete(commentID)}>
+            <button className="timestamp total-comments delete-info" onClick={() => this.handleDelete(commentID, postID)}>
               <FaTrash />
             </button>
             <button className="timestamp total-comments edit-info" onClick={this.toggleEdit}>
@@ -40,9 +40,9 @@ export default class Comment extends Component {
 
   handleChange = event => this.setState({ [event.target.name]: event.target.value })
 
-  handleDelete = commentID => {
+  handleDelete = (commentID, postID) => {
     if (window.confirm("Are you sure? This action cannot be undone.")) {
-      this.props.removeComment(commentID)
+      this.props.removeComment(commentID, postID)
     }
   }
 

@@ -43,6 +43,12 @@ export default function postsReducer(
             keepers = post.comments.filter(c => c.id !== action.comment.id)
             keepers.splice(idx, 0, action.comment)
             post.comments = [...keepers]
+            break;
+        case 'REMOVE_COMMENT':
+            post = state.posts.find(post => post.id === action.postID)
+            keepers = post.comments.filter(c => c.id !== action.commentID)
+            post.comments = [...keepers]
+            break;
     default: return state;
     }
 }
