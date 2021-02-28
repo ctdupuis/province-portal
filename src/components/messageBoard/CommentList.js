@@ -4,7 +4,16 @@ import Loading from '../static/Loading';
 
 const CommentList = ({ comments, postID, userID, addComment, currentUser, style }) => {
   const conditionalRender = comments => {
-    const renderComments = comments.map(comment => <Comment key={comment.id} content={comment.content} author={comment.author} created={comment.created} />)
+    const renderComments = comments.map(comment => 
+    <Comment key={comment.id} 
+      currentUser={currentUser}
+      content={comment.content} 
+      author={comment.author} 
+      created={comment.created} 
+      postID={postID}
+      userID={userID}
+      />
+    )
       if (!comments.length) {
         return null
       } else {

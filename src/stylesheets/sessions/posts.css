@@ -178,6 +178,7 @@ div.comment_field {
 
 .comment-text-and-meta-data {
   flex-direction: column;
+  width: 100%;
 }
 
 .new-post-container {

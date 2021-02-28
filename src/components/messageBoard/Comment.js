@@ -41,6 +41,8 @@ export default class Comment extends Component {
   render() {
     const {
       id,
+      userID,
+      currentUser,
       content,
       author,
       created,
@@ -50,9 +52,18 @@ export default class Comment extends Component {
       <li className="comment">
         <div className="comment-author">{author}</div>
         <div className="comment-text-and-meta-data">
-          <div className="comment-text">
-            {content}
-          </div>
+          { this.state.isEditing ? 
+            <input
+              defaultValue={content}
+              name="content"
+              onChange={this.handleChange}
+              className="edit-input"
+            /> 
+            :
+            <div className="comment-text">
+              {content}
+            </div>
+          }
           <div className="meta_data">
             <div className="timestamp_wrapper">
               <span className="timestamp">{created}</span>
@@ -64,23 +75,3 @@ export default class Comment extends Component {
     )
   }
 }
-
-// const Comment = ({ content, author, created }) => {
-//     return(
-//       <li className="comment">
-//       <div className="comment-author">{author}</div>
-//       <div className="comment-text-and-meta-data">
-//         <div className="comment-text">
-//           {content}
-//         </div>
-//         <div className="meta_data">
-//           <div className="timestamp_wrapper">
-//             <span className="timestamp">{created}</span>
-//           </div>
-//         </div>
-//       </div>
-//     </li>
-//     )
-// }
-
-// export default Comment;
