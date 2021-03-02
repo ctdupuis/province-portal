@@ -182,7 +182,7 @@ export default connect(
     contacts: state.userReducer.contacts,
     errors: state.userReducer.errors,
     schedule: state.scheduleReducer.schedule,
-    messages: state.messagesReducer.messages,
+    // messages: state.messagesReducer.messages,
     items: state.itemsReducer.items,
     loading: state.loadReducer.loading
   }),
@@ -195,9 +195,6 @@ export default connect(
     removeUser,
     getContacts,
     getSchedule,
-    getConversation,
-    createMessage,
-    addMessage,
     finalizeRoute,
     getItems,
     addItems,
