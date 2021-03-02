@@ -3,7 +3,7 @@ import "../stylesheets/sessions/patient-services.css";
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {
-    getConversation,
+    getMessages,
     createMessage,
     addMessage
 } from "../actions/patient-services";
@@ -24,7 +24,7 @@ class MessagesContainer extends Component {
                         <PatientServices
                             currentUser={this.props.currentUser}
                             endSession={this.props.endSession}
-                            getConversation={this.props.getConversation}
+                            getMessages={this.props.getMessages}
                             messages={this.props.messages}
                             createMessage={this.props.createMessage}
                             addMessage={this.props.addMessage}
@@ -48,7 +48,7 @@ export default connect(
     {
         addMessage,
         createMessage,
-        getConversation,
+        getMessages,
         endSession
     }
 )(MessagesContainer);

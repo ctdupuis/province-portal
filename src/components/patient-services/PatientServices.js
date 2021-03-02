@@ -3,15 +3,38 @@ import "../../stylesheets/sessions/patient-services.css";
 import Message from './Message';
 import { ActionCableConsumer } from 'react-actioncable-provider';
 import NewMessage from './NewMessage';
+import { API_WS_ROOT } from '../../constants';
+import { getConvo } from '../../actions/patient-services';
+
+const actioncable = require("actioncable")
 
 export default class PatientServices extends Component {
     state = {
         body: "",
         currentUser: this.props.currentUser
     }
-
+    
     componentDidMount(){
-        this.props.getConversation();
+        this.props.getMessages();
+        this.cable = actioncable.createConsumer(API_WS_ROOT)
+        getConvo().then(
+            (convo) => {
+                this.convoChannel = this.cable.subscriptions.create({
+                    channel: "MessagesChannel",
+                    id: convo.id,
+                    demo: this.props.currentUser.demo
+                }, 
+                {
+                    connected: () => {
+                        console.log("connected")
+                    },
+                    disconnected: () => {
+                        console.warn("disconnected")
+                    },
+                    received: data => {this.onReceived(data)}
+                })
+            }
+        )
     }
 
     displayMessages = (messages) => {
@@ -38,7 +61,6 @@ export default class PatientServices extends Component {
 
     onReceived = response => {
         const message = JSON.parse(response);
-        console.log("Response from onReceived()", message)
         this.props.addMessage(message);
     }
 
@@ -49,10 +71,10 @@ export default class PatientServices extends Component {
                 <div className="dash-content">
                     <div className="user-info-title">
                         <h3>What's going on?</h3>
-                        <ActionCableConsumer
+                        {/* <ActionCableConsumer
                             channel={{ channel: "MessagesChannel", demo: this.props.currentUser.demo }}
                             onReceived={this.onReceived}
-                        />
+                        /> */}
                         <NewMessage 
                             handleChange={this.handleChange}
                             handleSubmit={this.handleSubmit}

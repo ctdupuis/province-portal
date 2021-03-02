@@ -26,7 +26,6 @@ import InfoUpdate from "../components/sessions/InfoUpdate";
 import Tabs from "../components/static/Tabs";
 import DeliveryMap from "../components/delivery/DeliveryMap";
 import Dashboard from "../components/sessions/Dashboard";
-import PatientServices from "../components/patient-services/PatientServices";
 import ReportManager from "../components/reports/ReportManager";
 import Inventory from "../components/inventory/Inventory";
 

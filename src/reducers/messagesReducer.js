@@ -11,7 +11,6 @@ export default function messagesReducer(
                 messages: action.messages
             }
         case 'ADD_MESSAGE':
-            console.log("Adding message to the state", action.message)
             return {
                 ...state,
                 messages: [...state.messages, action.message]
