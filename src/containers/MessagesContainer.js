@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 import "../stylesheets/sessions/patient-services.css";
 import { Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
 import {
     getConversation,
     createMessage,
     addMessage
 } from "../actions/patient-services";
 import { endSession } from "../actions/sessions";
+import Tabs from '../components/static/Tabs';
+import PatientServices from '../components/patient-services/PatientServices';
 
 class MessagesContainer extends Component {
     render() {

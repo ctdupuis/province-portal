@@ -15,11 +15,6 @@ import {
   getSchedule
 } from "../actions/schedules";
 import {
-  getConversation,
-  createMessage,
-  addMessage
-} from "../actions/patient-services";
-import {
   finalizeRoute
 } from "../actions/deliveries";
 import {
@@ -58,27 +53,6 @@ class SessionsContainer extends Component {
               <Redirect to={"/dashboard"} />
             )
           }
-        />
-        <Route
-          exact
-          path={"/patient-services"}
-          render={(props) => (
-            this.props.currentUser ?
-            <>
-              <Tabs endSession={this.props.endSession}/>
-              <PatientServices
-                currentUser={this.props.currentUser}
-                endSession={this.props.endSession}
-                getConversation={this.props.getConversation}
-                messages={this.props.messages}
-                createMessage={this.props.createMessage}
-                addMessage={this.props.addMessage}
-                loading={this.props.loading}
-                {...props}
-              />
-            </> :
-            <Redirect to={'/'} />
-          )}
         />
         <Route
           exact
@@ -182,7 +156,6 @@ export default connect(
     contacts: state.userReducer.contacts,
     errors: state.userReducer.errors,
     schedule: state.scheduleReducer.schedule,
-    // messages: state.messagesReducer.messages,
     items: state.itemsReducer.items,
     loading: state.loadReducer.loading
   }),
