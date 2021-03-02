@@ -77,6 +77,7 @@ export const endSession = () => {
         axios.get(`${API_ROOT}/logout`, { withCredentials: true})
         .then(res => {
             dispatch({ type: 'LOGOUT_USER' })
+            dispatch({ type: 'CLEAR_POSTS' })
             dispatch({ type: 'RESET_CONTACTS' })
             dispatch({ type: 'CLEAR_SCHEDULE' })
             dispatch({ type: 'CLEAR_ITEMS'})

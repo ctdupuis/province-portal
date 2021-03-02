@@ -13,6 +13,11 @@ export default function postsReducer(
                 ...state,
                 posts: action.posts
             }
+        case 'CLEAR_POSTS':
+            return {
+                ...state,
+                posts: []
+            }
         case 'ADD_POST':
             return {
                 ...state,
