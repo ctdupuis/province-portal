@@ -19,9 +19,6 @@ import { connect } from "react-redux";
 import { Route, Redirect } from "react-router-dom";
 
 class PostsContainer extends Component {
-    componentDidMount() {
-        this.props.getPosts();
-    }
     
     render() {
         return (
@@ -38,6 +35,7 @@ class PostsContainer extends Component {
                             {...props}
                         />
                         <PostList 
+                        getPosts={this.props.getPosts}
                             posts={this.props.posts}
                             updatePost={this.props.updatePost}
                             removePost={this.props.removePost}

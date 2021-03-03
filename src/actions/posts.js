@@ -45,7 +45,6 @@ export const removePost = (postID) => {
         dispatch({ type: 'START_LOAD' })
         const response = await axios.delete(`${API_ROOT}/posts/${postID}`, { withCredentials: true })
         const data = response.data
-        console.log(data)
         dispatch({ type: 'REMOVE_POST', postID})
         dispatch({ type: 'END_LOAD' })
     }
