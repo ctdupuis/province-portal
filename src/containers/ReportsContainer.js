@@ -10,6 +10,7 @@ import {
     createCheckEntry,
     getReport
 } from "../actions/log-entries";
+import { endSession } from '../actions/sessions';
 import Inventory from "../components/inventory/Inventory";
 import ReportManager from "../components/reports/ReportManager";
 import Tabs from "../components/static/Tabs";
@@ -45,6 +46,7 @@ class ReportsContainer extends Component {
                             currentUser={this.props.currentUser}
                             loading={this.props.loading}
                             createCheckEntry={this.props.createCheckEntry}
+                            getReport={getReport}
                             {...props}
                         />
                     </>
@@ -64,6 +66,7 @@ export default connect(
     {
         getItems,
         addItems,
-        createCheckEntry
+        createCheckEntry,
+        endSession
     }
 )(ReportsContainer);

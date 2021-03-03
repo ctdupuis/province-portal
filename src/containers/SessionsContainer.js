@@ -17,18 +17,10 @@ import {
 import {
   finalizeRoute
 } from "../actions/deliveries";
-// import {
-//   getItems,
-//   addItems
-// } from "../actions/items";
-// import { createCheckEntry } from "../actions/log-entries";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Tabs from "../components/static/Tabs";
 import DeliveryMap from "../components/delivery/DeliveryMap";
 import Dashboard from "../components/sessions/Dashboard";
-// import ReportManager from "../components/reports/ReportManager";
-// import Inventory from "../components/inventory/Inventory";
-
 
 class SessionsContainer extends Component {
   componentDidMount() {
@@ -112,38 +104,6 @@ class SessionsContainer extends Component {
             </>
           )}
         />
-        {/* <Route 
-          exact 
-          path={"/reports"}
-          render={(props) => (
-            <>
-              <Tabs endSession={this.props.endSession}/>
-              <ReportManager
-                currentUser={this.props.currentUser}
-                loading={this.props.loading}
-                createCheckEntry={this.props.createCheckEntry}
-                {...props}
-              />
-            </>
-          )}
-        />
-        <Route 
-          exact 
-          path={"/inventory"}
-          render={(props) => (
-            <>
-              <Tabs endSession={this.props.endSession}/>
-              <Inventory
-                currentUser={this.props.currentUser}
-                getItems={this.props.getItems}
-                addItems={this.props.addItems}
-                items={this.props.items}
-                loading={this.props.loading}
-                {...props}
-              />
-            </>
-          )}
-        /> */}
       </React.Fragment>
     );
   }
@@ -155,7 +115,6 @@ export default connect(
     contacts: state.userReducer.contacts,
     errors: state.userReducer.errors,
     schedule: state.scheduleReducer.schedule,
-    // items: state.itemsReducer.items,
     loading: state.loadReducer.loading
   }),
   {
@@ -167,9 +126,6 @@ export default connect(
     removeUser,
     getContacts,
     getSchedule,
-    finalizeRoute,
-    // getItems,
-    // addItems,
-    // createCheckEntry
+    finalizeRoute
   }
 )(SessionsContainer);
