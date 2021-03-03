@@ -18,3 +18,14 @@ export const createCheckEntry = (entryData) => {
         }
     }
 }
+
+export const getReport = async(reportdata) => {
+    const response = await axios.post(`${API_ROOT}/report`, 
+    {
+        start_date: reportdata.start_date,
+        end_date: reportdata.end_date,
+        type: reportdata.type
+    }, { withCredentials: true })
+    const data = response.data
+    return data
+}
