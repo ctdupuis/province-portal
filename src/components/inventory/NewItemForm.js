@@ -31,14 +31,12 @@ export default class NewItemForm extends Component {
         })
     }
 
-    setCity = (event) => {
+    handleSubmit = event => {
+        this.props.addItems(this.state)
         this.setState({
-          location: {
-            ...this.state.location,
-            city: event.target.value,
-          },
-        });
-      };
+            items: [{product_name: "", qty: 0, units: "", category: ""}]
+        })
+    }
 
     render() {
         let items = this.state.items
@@ -108,7 +106,7 @@ export default class NewItemForm extends Component {
                 <button className="green-btn" onClick={this.popItem}>
                     Remove Item
                 </button>
-                <button className="green-btn" onClick={() => this.props.addItems(this.state)}>
+                <button className="green-btn" onClick={() => this.handleSubmit(this.state)}>
                     Submit Item(s)
                 </button>
             </div>

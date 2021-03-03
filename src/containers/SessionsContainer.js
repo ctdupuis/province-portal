@@ -17,17 +17,17 @@ import {
 import {
   finalizeRoute
 } from "../actions/deliveries";
-import {
-  getItems,
-  addItems
-} from "../actions/items";
-import { createCheckEntry } from "../actions/log-entries";
+// import {
+//   getItems,
+//   addItems
+// } from "../actions/items";
+// import { createCheckEntry } from "../actions/log-entries";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Tabs from "../components/static/Tabs";
 import DeliveryMap from "../components/delivery/DeliveryMap";
 import Dashboard from "../components/sessions/Dashboard";
-import ReportManager from "../components/reports/ReportManager";
-import Inventory from "../components/inventory/Inventory";
+// import ReportManager from "../components/reports/ReportManager";
+// import Inventory from "../components/inventory/Inventory";
 
 
 class SessionsContainer extends Component {
@@ -112,7 +112,7 @@ class SessionsContainer extends Component {
             </>
           )}
         />
-        <Route 
+        {/* <Route 
           exact 
           path={"/reports"}
           render={(props) => (
@@ -143,7 +143,7 @@ class SessionsContainer extends Component {
               />
             </>
           )}
-        />
+        /> */}
       </React.Fragment>
     );
   }
@@ -155,7 +155,7 @@ export default connect(
     contacts: state.userReducer.contacts,
     errors: state.userReducer.errors,
     schedule: state.scheduleReducer.schedule,
-    items: state.itemsReducer.items,
+    // items: state.itemsReducer.items,
     loading: state.loadReducer.loading
   }),
   {
@@ -168,8 +168,8 @@ export default connect(
     getContacts,
     getSchedule,
     finalizeRoute,
-    getItems,
-    addItems,
-    createCheckEntry
+    // getItems,
+    // addItems,
+    // createCheckEntry
   }
 )(SessionsContainer);

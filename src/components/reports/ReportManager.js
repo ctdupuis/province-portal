@@ -47,6 +47,7 @@ export default class ReportManager extends Component {
                             name="start_date" 
                             id="start-date" 
                             value={this.state.start_date}
+                            onChange={this.onChange}
                         />
 
                         <label htmlFor="end-date">End Date</label>
@@ -55,8 +56,9 @@ export default class ReportManager extends Component {
                             name="end_date" 
                             id="end-date" 
                             value={this.state.end_date}
+                            onChange={this.onChange}
                         />
-                        
+
                     </div>
                     <button className="green-btn">Generate Report</button>
                 </div>
