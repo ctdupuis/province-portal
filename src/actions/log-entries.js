@@ -27,5 +27,6 @@ export const getReport = async(reportdata) => {
         type: reportdata.type
     }, { withCredentials: true })
     const data = response.data
+    console.log(data)
     return data
 }

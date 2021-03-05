@@ -2,12 +2,14 @@ import React, { Component } from 'react';
 import '../../stylesheets/reports.css'
 import CheckLog from './CheckLog';
 import moment from 'moment';
+import MilesReport from './MilesReport';
 
 export default class ReportManager extends Component {
     state = {
         start_date: "",
         end_date: "",
-        type: "Mileage"
+        type: "Mileage",
+        report: undefined
     }
 
     onChange = event => {
@@ -26,12 +28,22 @@ export default class ReportManager extends Component {
     }
 
     handleSubmit = event => {
-        this.props.getReport(this.state);
+        this.props.getReport(this.state)
+        .then((report) => this.setState({ 
+            ...this.state,
+            report: report
+        }));
         this.setState({
             start_date: "",
             end_date: "",
-            type: ""
+            type: "Mileage"
         });
+    }
+
+    renderReport(report) {
+        if (report) {
+            return <MilesReport entries={this.state.report} />
+        }
     }
 
     render() {
@@ -48,7 +60,6 @@ export default class ReportManager extends Component {
                     <div className="user-info-content">
 
                         <select id="reports" onChange={this.setType}>
-                            <option>Select a report...</option>
                             <option value="Mileage">Mileage Report</option>
                             <option value="Check">Check Report</option>
                         </select>
@@ -78,6 +89,8 @@ export default class ReportManager extends Component {
                     </div>
                     <button className="green-btn" onClick={() => this.handleSubmit(this.state)}>Generate Report</button>
                 </div>
+
+                {this.renderReport(this.state.report)}
             </section>
         )
     }
