@@ -46,12 +46,10 @@ export default class NewUser extends Component {
   };
 
   setAdmin = event => {
-    event.preventDefault();
     this.setState(prevState => ({
       ...prevState,
       admin: !prevState.admin
     }))
-    console.log("Clicked checkbox")
   }
 
   render() {
@@ -124,7 +122,7 @@ export default class NewUser extends Component {
             name="admin"
             type="checkbox"
             onChange={this.setAdmin}
-            // checked={!!this.state.admin}
+            checked={this.state.admin}
           />
 
           <input className="new-user-sbmt" type="submit" value="Create User" />

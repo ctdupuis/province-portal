@@ -10,6 +10,12 @@ export default function DeleteUser(props) {
         })
     }
 
+    const handleDelete = userID => {
+        if (window.confirm("Are you sure? This action cannot be undone.")) {
+            props.removeUser(userID)
+        }
+    }
+
     return (
         <>
             <div className="user-info-title">
@@ -19,7 +25,7 @@ export default function DeleteUser(props) {
             <select id="rm-employee">
                 {props.contacts ? employeeSelects(props.contacts) : <Loading />}
             </select>
-            <button className="deactivate" onClick={(event) => {props.removeUser(parseInt(event.target.previousElementSibling.value))}}>Deactivate</button>
+            <button className="deactivate" onClick={(event) => {handleDelete(parseInt(event.target.previousElementSibling.value))}}>Deactivate</button>
         </>
     )
 }

@@ -40,7 +40,7 @@ export const updateItem = (itemdata) => {
     }
 }
 
-export const removeitem = (itemID) => {
+export const removeItem = (itemID) => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD' })
         const response = await axios.delete(`${API_ROOT}/items/${itemID}`, { withCredentials: true })

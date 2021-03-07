@@ -5,7 +5,8 @@ import Loading from '../components/static/Loading';
 import {
     getItems,
     addItems,
-    updateItem
+    updateItem,
+    removeItem
 } from "../actions/items";
 import { 
     createCheckEntry,
@@ -31,6 +32,7 @@ class ReportsContainer extends Component {
                             getItems={this.props.getItems}
                             addItems={this.props.addItems}
                             updateItem={this.props.updateItem}
+                            removeItem={this.props.removeItem}
                             items={this.props.items}
                             loading={this.props.loading}
                             {...props}
@@ -69,6 +71,7 @@ export default connect(
         getItems,
         addItems,
         updateItem,
+        removeItem,
         createCheckEntry,
         endSession
     }

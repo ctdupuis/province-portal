@@ -56,6 +56,12 @@ export default class Inventory extends Component {
         })
     }
 
+    handleDelete = itemID => {
+        if (window.confirm("Are you sure? This action cannot be undone.")) {
+            this.props.removeItem(itemID)
+        }
+    }
+
     tableBody = items => {
         const tabledata = items.map(item => {
             return(
@@ -75,7 +81,7 @@ export default class Inventory extends Component {
                 <td>{item.quantity}</td>
                 <td>{item.unit_of_measurement}</td>
                 <td>
-                <button className="delete-info" onClick={() => console.log("Delete this item:", item.product_name)}>
+                <button className="delete-info" onClick={() => this.handleDelete(item.id)}>
                     <FaTrash />
                 </button>
                 <button data-id={item.id} className="edit-info" onClick={this.toggleEdit}>

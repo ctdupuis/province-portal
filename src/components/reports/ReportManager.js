@@ -50,6 +50,7 @@ export default class ReportManager extends Component {
                     return <MilesReport entries={this.state.report} />
                 case 'Check':
                     return <CheckReport entries={this.state.report} />
+                default: return null;
             }
         }
     }
