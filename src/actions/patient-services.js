@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { API_ROOT, API_WS_ROOT } from '../constants';
+import { API_ROOT } from '../constants';
 
 export const getMessages = () => {
     return async (dispatch) => {

@@ -40,7 +40,6 @@ export default class Inventory extends Component {
         } else {
             this.setState({ id: id })
         }
-        // debugger
     }
     
     handleChange = event => {
@@ -65,8 +64,8 @@ export default class Inventory extends Component {
                 <td><input name="product_name" onChange={this.handleChange} defaultValue={item.product_name}/></td>
                 <td><input name="quantity" onChange={this.handleChange} defaultValue={item.quantity} /></td>
                 <td><input name="unit_of_measurement" onChange={this.handleChange} defaultValue={item.unit_of_measurement} /></td>
-                <button onClick={this.handleSubmit}>Save</button>
-                <button onClick={this.toggleEdit}>Cancel</button>
+                <td><button onClick={this.handleSubmit}>Save</button></td>
+                <td><button onClick={this.toggleEdit}>Cancel</button></td>
             </tr>
             :
             <tr key={item.id} id={item.id}>
