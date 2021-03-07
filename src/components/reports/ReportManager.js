@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import '../../stylesheets/reports.css';
+import '../../stylesheets/logs/reports.css'
 import CheckLog from './CheckLog';
 import moment from 'moment';
 import MilesReport from './MilesReport';

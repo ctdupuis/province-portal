@@ -22,6 +22,12 @@ export default function itemsReducer(
                 ...state,
                 items: [...keepers, action.item]
             }
+        case 'REMOVE_ITEMS':
+            keepers = state.items.filter(item => item.id !== action.itemID)
+            return {
+                ...state,
+                items: [...keepers]
+            }
         case 'CLEAR_ITEMS':
             return {
                 ...state,

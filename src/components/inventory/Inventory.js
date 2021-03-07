@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NewItemForm from './NewItemForm';
 import "../../stylesheets/logs/inventory.css";
 import Loading from '../static/Loading';
-import { FaPen } from 'react-icons/fa';
+import { FaPen, FaTrash } from 'react-icons/fa';
 
 export default class Inventory extends Component {
     state = {
@@ -61,11 +61,13 @@ export default class Inventory extends Component {
             return(
             this.state.id == item.id ? 
             <tr key={item.id} id={item.id}>
-                <td><input name="product_name" onChange={this.handleChange} defaultValue={item.product_name}/></td>
-                <td><input name="quantity" onChange={this.handleChange} defaultValue={item.quantity} /></td>
-                <td><input name="unit_of_measurement" onChange={this.handleChange} defaultValue={item.unit_of_measurement} /></td>
-                <td><button onClick={this.handleSubmit}>Save</button></td>
-                <td><button onClick={this.toggleEdit}>Cancel</button></td>
+                <td><input className="item-input" name="product_name" onChange={this.handleChange} defaultValue={item.product_name}/></td>
+                <td><input className="item-input" name="quantity" onChange={this.handleChange} defaultValue={item.quantity} /></td>
+                <td><input className="item-input" name="unit_of_measurement" onChange={this.handleChange} defaultValue={item.unit_of_measurement} /></td>
+                <td>
+                    <button className="save" onClick={this.handleSubmit}>Save</button>
+                    <button className="cancel" onClick={this.toggleEdit}>Cancel</button>
+                </td>
             </tr>
             :
             <tr key={item.id} id={item.id}>
@@ -73,6 +75,9 @@ export default class Inventory extends Component {
                 <td>{item.quantity}</td>
                 <td>{item.unit_of_measurement}</td>
                 <td>
+                <button className="delete-info" onClick={() => console.log("Delete this item:", item.product_name)}>
+                    <FaTrash />
+                </button>
                 <button data-id={item.id} className="edit-info" onClick={this.toggleEdit}>
                   <FaPen />
                 </button>
