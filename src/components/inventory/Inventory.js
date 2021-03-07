@@ -5,6 +5,10 @@ import Loading from '../static/Loading';
 import { FaPen } from 'react-icons/fa';
 
 export default class Inventory extends Component {
+    state = {
+        activeEdit: undefined
+    }
+
     componentDidMount() {
         this.props.getItems();
     }
@@ -21,19 +25,42 @@ export default class Inventory extends Component {
         )
     }
 
+    toggleEdit = event => {
+        const id = event.currentTarget.dataset.id
+        if (this.state.activeEdit) {
+            this.setState({
+                ...this.state,
+                activeEdit: undefined
+            })
+        } else {
+            this.setState({ activeEdit: id })
+        }
+        // debugger
+    }
+
     tableBody = items => {
         const tabledata = items.map(item => {
             return(
-            <tr key={item.id}>
+            this.state.activeEdit == item.id ? 
+            <tr key={item.id} id={item.id}>
+                <td><input name="product_name" defaultValue={item.product_name}/></td>
+                <td><input name="quantity" defaultValue={item.quantity} /></td>
+                <td><input name="unit_of_measurement" defaultValue={item.unit_of_measurement} /></td>
+                <button>Save</button>
+                <button onClick={this.toggleEdit}>Cancel</button>
+            </tr>
+            :
+            <tr key={item.id} id={item.id}>
                 <td>{item.product_name}</td>
                 <td>{item.quantity}</td>
                 <td>{item.unit_of_measurement}</td>
                 <td>
-                <button className="edit-info">
+                <button data-id={item.id} className="edit-info" onClick={this.toggleEdit}>
                   <FaPen />
                 </button>
                 </td>
-            </tr>)
+            </tr>
+            )
         })
         return(
             <tbody>
