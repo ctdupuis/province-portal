@@ -27,6 +27,11 @@ export const getReport = async(reportdata) => {
         type: reportdata.type
     }, { withCredentials: true })
     const data = response.data
-    console.log(data)
-    return data
+    let obj
+    if (data[0].check_log_id) {
+        obj = Object.assign(data, { layout: "Check" })
+    } else {
+        obj = Object.assign(data, { layout: "Mileage" })
+    }
+    return obj
 }

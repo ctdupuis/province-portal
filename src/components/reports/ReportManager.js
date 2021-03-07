@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import '../../stylesheets/reports.css'
+import '../../stylesheets/reports.css';
 import CheckLog from './CheckLog';
 import moment from 'moment';
 import MilesReport from './MilesReport';
+import CheckReport from './CheckReport';
 
 export default class ReportManager extends Component {
     state = {
@@ -31,8 +32,10 @@ export default class ReportManager extends Component {
         this.props.getReport(this.state)
         .then((report) => this.setState({ 
             ...this.state,
-            report: report
-        }));
+            report: report,
+            layout: report.layout
+            })
+        );
         this.setState({
             start_date: "",
             end_date: "",
@@ -42,7 +45,12 @@ export default class ReportManager extends Component {
 
     renderReport(report) {
         if (report) {
-            return <MilesReport entries={this.state.report} />
+            switch (report.layout) {
+                case 'Mileage':
+                    return <MilesReport entries={this.state.report} />
+                case 'Check':
+                    return <CheckReport entries={this.state.report} />
+            }
         }
     }
 
