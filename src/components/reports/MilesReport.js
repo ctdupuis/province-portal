@@ -12,7 +12,7 @@ export default function MilesReport({ entries }) {
             </tr>
         )
     })
-    const table = <table id="report">
+    const table = <table id="mileage">
         <thead>
             <tr>
                 <th>Patient Name</th>
