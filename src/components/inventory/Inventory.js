@@ -6,7 +6,10 @@ import { FaPen } from 'react-icons/fa';
 
 export default class Inventory extends Component {
     state = {
-        activeEdit: undefined
+        id: undefined,
+        product_name: "",
+        quantity: "",
+        unit_of_measurement: ""
     }
 
     componentDidMount() {
@@ -27,25 +30,30 @@ export default class Inventory extends Component {
 
     toggleEdit = event => {
         const id = event.currentTarget.dataset.id
-        if (this.state.activeEdit) {
+        if (this.state.id) {
             this.setState({
-                ...this.state,
-                activeEdit: undefined
+                id: undefined,
+                product_name: "",
+                quantity: "",
+                unit_of_measurement: ""
             })
         } else {
-            this.setState({ activeEdit: id })
+            this.setState({ id: id })
         }
         // debugger
     }
-
+    
+    handleChange = event => {
+        this.setState({ [event.target.name]: event.target.value })
+    }
     tableBody = items => {
         const tabledata = items.map(item => {
             return(
-            this.state.activeEdit == item.id ? 
+            this.state.id == item.id ? 
             <tr key={item.id} id={item.id}>
-                <td><input name="product_name" defaultValue={item.product_name}/></td>
-                <td><input name="quantity" defaultValue={item.quantity} /></td>
-                <td><input name="unit_of_measurement" defaultValue={item.unit_of_measurement} /></td>
+                <td><input name="product_name" onChange={this.handleChange} defaultValue={item.product_name}/></td>
+                <td><input name="quantity" onChange={this.handleChange} defaultValue={item.quantity} /></td>
+                <td><input name="unit_of_measurement" onChange={this.handleChange} defaultValue={item.unit_of_measurement} /></td>
                 <button>Save</button>
                 <button onClick={this.toggleEdit}>Cancel</button>
             </tr>

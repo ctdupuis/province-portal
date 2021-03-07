@@ -22,3 +22,18 @@ export const addItems = (itemData) => {
         dispatch({ type: 'END_LOAD'})
     }
 }
+
+export const updateItem = (itemdata) => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD' })
+        const response = await axios.patch(`${API_ROOT}/items/${itemdata.id}`,
+        {
+            product_name: itemdata.product_name,
+            quantity: itemdata.quantity,
+            unit_of_measurement: itemdata.unit_of_measurement
+        }, { withCredentials: true })
+        const item = response.data
+        // dispatch({ type: 'UPDATE_ITEM', item })
+        dispatch({ type: 'END_LOAD' })
+    }
+}
