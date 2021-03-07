@@ -9,10 +9,11 @@ export default function CheckReport({ entries }) {
                 <td>{e.original_amt}</td>
                 <td>{e.adjusted_amt}</td>
                 <td>{e.price_difference}</td>
+                <td>{e.date_format}</td>
             </tr>
         )
     })
-    const table = <table id="check">
+    const table = <table id="report-layout">
         <thead>
             <tr>
                 <th>Patient Name</th>
@@ -20,6 +21,7 @@ export default function CheckReport({ entries }) {
                 <th>Original Amount</th>
                 <th>Adjusted Amount</th>
                 <th>Price Differential</th>
+                <th>Date</th>
             </tr>
         </thead>
         <tbody>

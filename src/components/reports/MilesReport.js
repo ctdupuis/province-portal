@@ -8,11 +8,11 @@ export default function MilesReport({ entries }) {
                 <td>{e.patient_address}</td>
                 {/* <td>Mileage: {e.miles}</td> */}
                 <td>{e.user.first_name} | {e.user.username}</td>
-                <td>{e.created}</td>
+                <td>{e.date_format}</td>
             </tr>
         )
     })
-    const table = <table id="mileage">
+    const table = <table id="report-layout">
         <thead>
             <tr>
                 <th>Patient Name</th>
