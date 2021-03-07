@@ -46,6 +46,17 @@ export default class Inventory extends Component {
     handleChange = event => {
         this.setState({ [event.target.name]: event.target.value })
     }
+
+    handleSubmit = event => {
+        this.props.updateItem(this.state)
+        this.setState({
+            id: undefined,
+            product_name: "",
+            quantity: "",
+            unit_of_measurement: ""
+        })
+    }
+
     tableBody = items => {
         const tabledata = items.map(item => {
             return(
@@ -54,7 +65,7 @@ export default class Inventory extends Component {
                 <td><input name="product_name" onChange={this.handleChange} defaultValue={item.product_name}/></td>
                 <td><input name="quantity" onChange={this.handleChange} defaultValue={item.quantity} /></td>
                 <td><input name="unit_of_measurement" onChange={this.handleChange} defaultValue={item.unit_of_measurement} /></td>
-                <button>Save</button>
+                <button onClick={this.handleSubmit}>Save</button>
                 <button onClick={this.toggleEdit}>Cancel</button>
             </tr>
             :

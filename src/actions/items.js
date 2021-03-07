@@ -28,11 +28,13 @@ export const updateItem = (itemdata) => {
         dispatch({ type: 'START_LOAD' })
         const response = await axios.patch(`${API_ROOT}/items/${itemdata.id}`,
         {
+            id: itemdata.id,
             product_name: itemdata.product_name,
             quantity: itemdata.quantity,
             unit_of_measurement: itemdata.unit_of_measurement
         }, { withCredentials: true })
         const item = response.data
+        console.log(item)
         // dispatch({ type: 'UPDATE_ITEM', item })
         dispatch({ type: 'END_LOAD' })
     }

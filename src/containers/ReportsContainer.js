@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import Loading from '../components/static/Loading';
 import {
     getItems,
-    addItems
+    addItems,
+    updateItem
 } from "../actions/items";
 import { 
     createCheckEntry,
@@ -29,6 +30,7 @@ class ReportsContainer extends Component {
                             currentUser={this.props.currentUser}
                             getItems={this.props.getItems}
                             addItems={this.props.addItems}
+                            updateItem={this.props.updateItem}
                             items={this.props.items}
                             loading={this.props.loading}
                             {...props}
@@ -66,6 +68,7 @@ export default connect(
     {
         getItems,
         addItems,
+        updateItem,
         createCheckEntry,
         endSession
     }
