@@ -145,16 +145,16 @@ export default class Dashboard extends Component {
               </>}
             </div>
         </div>
-              <div className="dash-content">
+              {/* <div className="dash-content">
                 <div className="user-info-title">
                   <h3>Employee Schedule</h3>
                 </div>
-                {/* <EmployeeSchedule 
+                <EmployeeSchedule 
                   contacts={contacts}
                   schedule={schedule}
                   currentUser={currentUser}
-                /> */}
-              </div>
+                />
+              </div> */}
             <div className="dash-content">
               <div className="user-info-title">
                 <h3>Employee Contact List</h3>

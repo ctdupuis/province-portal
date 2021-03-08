@@ -25,6 +25,7 @@ class ReportsContainer extends Component {
                     exact 
                     path={"/inventory"}
                     render={(props) => (
+                    this.props.currentUser ? 
                     <>
                         <Tabs endSession={this.props.endSession}/>
                         <Inventory
@@ -38,6 +39,8 @@ class ReportsContainer extends Component {
                             {...props}
                         />
                     </>
+                    :
+                    <Redirect to={'/'} />
                     )}
                 />
                 <Route 

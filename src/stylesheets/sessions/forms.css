@@ -8,7 +8,7 @@
 
 .form-box {
   border: 10px solid var(--l-green);
-  margin: 10px 50px;
+  margin: 10px 20%;
   background-color: whitesmoke;
   border-radius: 5px;
 }
@@ -24,7 +24,10 @@
 .session-form input {
   margin: 5px;
   border-radius: 5px;
-  padding: 3px;
+  padding: 3px 3px 3px 8px;
+  border-radius: 10px;
+  outline: none;
+  border-width: 1px;
 }
 
 .session-form input.form-btn {

@@ -35,7 +35,7 @@ class PostsContainer extends Component {
                             {...props}
                         />
                         <PostList 
-                        getPosts={this.props.getPosts}
+                            getPosts={this.props.getPosts}
                             posts={this.props.posts}
                             updatePost={this.props.updatePost}
                             removePost={this.props.removePost}
