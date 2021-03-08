@@ -1,5 +1,5 @@
-import React from 'react'
-import Loading from '../static/Loading'
+import React from 'react';
+import Loading from '../static/Loading';
 
 export default function DeleteUser(props) {
     const employeeSelects = (employees) => {
