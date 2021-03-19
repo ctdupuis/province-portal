@@ -25,4 +25,5 @@ select {
 
 .fieldset-flex {
     display: flex;
+    flex-wrap: wrap;
 }

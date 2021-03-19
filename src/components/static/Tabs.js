@@ -4,8 +4,9 @@ import { NavLink } from "react-router-dom";
 
 const Tabs = ({ endSession }) => {
   const activeStyle = {
-    backgroundColor: "var(--d-green",
-    borderRadius: "1rem"
+    backgroundColor: "var(--d-green)",
+    borderRadius: "1rem",
+    transition: "0.5s"
   }
   return (
     <div className="nav-tabs-container">
