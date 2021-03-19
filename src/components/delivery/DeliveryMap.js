@@ -203,11 +203,11 @@ class DeliveryMap extends Component {
               >
                 <div className="marker-info">
                   <h4>{this.state.selectedPlace.name}</h4>
-                  {this.state.selectedPlace.name !== "Province Pharmacy" ? 
+                  {/* {this.state.selectedPlace.name !== "Province Pharmacy" ? 
                   <button className="green-btn" onClick={() => this.addToRoute()}>Add to route</button>
                   :
                   null
-                  }
+                  } */}
                 </div>
               </InfoWindow>
             </Map>

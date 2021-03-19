@@ -65,9 +65,9 @@ export default class DeliveryEntry extends Component {
                                     value={locations[idx].patient}
                                     onChange={this.handleChange}
                                 />
-                                <button className="green-btn" onClick={() => { debugger }}>
+                                {/* <button className="green-btn" onClick={() => { debugger }}>
                                     Check Location
-                                </button>
+                                </button> */}
                             </fieldset>
                         )
                     })}
