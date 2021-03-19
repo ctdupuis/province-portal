@@ -35,7 +35,7 @@ const Tabs = ({ endSession }) => {
             to={"/patient-services"}
             activeStyle={activeStyle}
           >
-            Patient Services
+            Messaging
           </NavLink>
         </div>
       </div>
@@ -45,7 +45,7 @@ const Tabs = ({ endSession }) => {
             to={"/reports"}
             activeStyle={activeStyle}
           >
-            Report Manager
+            Reports
           </NavLink>
         </div>
       </div>
