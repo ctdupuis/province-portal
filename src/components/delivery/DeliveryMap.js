@@ -77,6 +77,14 @@ class DeliveryMap extends Component {
     });
   };
 
+  clearMap = event => {
+    event.preventDefault();
+    this.setState({
+      ...this.state,
+      destinations: []
+    })
+  }
+
   setCity = (event) => {
     this.setState({
       location: {
@@ -168,6 +176,11 @@ class DeliveryMap extends Component {
               type="submit"
               value="Check Location"
             />
+
+            <button
+              className="new-user-sbmt green-btn"
+              onClick={this.clearMap}
+            >Clear Map </button>
           </form>
 
           <div className="map-container">
