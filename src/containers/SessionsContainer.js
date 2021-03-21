@@ -50,18 +50,18 @@ class SessionsContainer extends Component {
           path={"/update-info"}
           render={
             (props) => 
-              (!this.props.currentUser) ?
+              // (!this.props.currentUser) ?
               <InfoUpdate
                 updateInfo={this.props.updateInfo}
                 currentUser={this.props.currentUser}
                 error={this.props.errors}
                 {...props}
               />
-              :
-              <Redirect to={'/'}
-                  login={this.props.login}
-                  {...props}
-              />
+              // :
+              // <Redirect to={'/'}
+              //     login={this.props.login}
+              //     {...props}
+              // />
           }
         />
         <Route
