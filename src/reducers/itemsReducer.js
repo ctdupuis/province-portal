@@ -5,6 +5,7 @@ export default function itemsReducer(
     action
 ) {
     let keepers; //save this for edit/delete actions
+    let idx; //for injecting updates
     switch (action.type) {
         case 'STORE_ITEMS':
             return {
@@ -18,12 +19,13 @@ export default function itemsReducer(
             }
         case 'UPDATE_ITEM':
             keepers = state.items.filter(item => item.id !== action.item.id)
-            console.log("in the reducer:", action.item)
+            idx = state.items.map((i) => i.id).indexOf(action.item.id)
+            keepers.splice(idx, 0, action.item)
             return {
                 ...state,
-                items: [...keepers, action.item]
+                items: [...keepers]
             }
-        case 'REMOVE_ITEMS':
+        case 'REMOVE_ITEM':
             keepers = state.items.filter(item => item.id !== action.itemID)
             return {
                 ...state,
