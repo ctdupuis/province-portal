@@ -34,7 +34,7 @@ export const updateItem = (itemdata) => {
             unit_of_measurement: itemdata.unit_of_measurement
         }, { withCredentials: true })
         const item = response.data
-        // console.log(item)
+        console.log("In the items action:", item)
         dispatch({ type: 'UPDATE_ITEM', item })
         dispatch({ type: 'END_LOAD' })
     }

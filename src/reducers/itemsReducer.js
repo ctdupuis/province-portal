@@ -18,6 +18,7 @@ export default function itemsReducer(
             }
         case 'UPDATE_ITEM':
             keepers = state.items.filter(item => item.id !== action.item.id)
+            console.log("in the reducer:", action.item)
             return {
                 ...state,
                 items: [...keepers, action.item]

@@ -30,6 +30,7 @@ export default class Inventory extends Component {
 
     toggleEdit = event => {
         const id = event.currentTarget.dataset.id
+        const { product_name, quantity, unit_of_measurement } = this.props.items.find(item => item.id === parseInt(id))
         if (this.state.id) {
             this.setState({
                 id: undefined,
@@ -38,7 +39,12 @@ export default class Inventory extends Component {
                 unit_of_measurement: ""
             })
         } else {
-            this.setState({ id: id })
+            this.setState({ 
+                id: id,
+                product_name: product_name,
+                quantity: quantity,
+                unit_of_measurement: unit_of_measurement
+            })
         }
     }
     
