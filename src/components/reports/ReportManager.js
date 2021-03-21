@@ -9,7 +9,7 @@ export default class ReportManager extends Component {
     state = {
         start_date: "",
         end_date: "",
-        type: "Mileage",
+        type: undefined,
         report: undefined
     }
 
@@ -24,8 +24,20 @@ export default class ReportManager extends Component {
                 type: event.target.value
             })
         } else {
-           return null
+           this.setState({
+               ...this.state,
+               type: undefined
+           })
         }
+    }
+
+    checkDisable = () => {
+        if (this.state.type && this.state.start_date !== "" && this.state.end_date !== "") {
+            return true
+        } else {
+            return false
+        }
+
     }
 
     handleSubmit = event => {
@@ -39,7 +51,7 @@ export default class ReportManager extends Component {
         this.setState({
             start_date: "",
             end_date: "",
-            type: "Mileage"
+            type: undefined
         });
     }
 
@@ -56,6 +68,7 @@ export default class ReportManager extends Component {
     }
 
     render() {
+        const disabled = this.checkDisable() ? false : true 
         return (
             <section className="dash-container">
                 <CheckLog 
@@ -69,6 +82,7 @@ export default class ReportManager extends Component {
                     <div className="user-info-content">
 
                         <select id="reports" onChange={this.setType}>
+                            <option>Select a report...</option>
                             <option value="Mileage">Mileage Report</option>
                             <option value="Check">Check Report</option>
                         </select>
@@ -96,7 +110,12 @@ export default class ReportManager extends Component {
                         />
 
                     </div>
-                    <button className="green-btn" onClick={() => this.handleSubmit(this.state)}>Generate Report</button>
+                    <button 
+                        className="green-btn"
+                        disabled={disabled}
+                        onClick={() => this.handleSubmit(this.state)}>
+                            Generate Report
+                        </button>
                 </div>
 
                 {this.renderReport(this.state.report)}
