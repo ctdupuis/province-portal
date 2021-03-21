@@ -22,6 +22,7 @@ export default class NewComment extends Component {
     }
     
     render() {
+      const disabled = this.state.content === "" ? true : false
         return (
           <div className="comment_handler">
             <div className="comment_field">
@@ -37,7 +38,8 @@ export default class NewComment extends Component {
               <input 
                 className="comment-submit" 
                 type="submit" 
-                value="Comment" 
+                value="Comment"
+                disabled={disabled} 
               />
               </form>
             </div>

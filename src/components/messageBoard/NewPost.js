@@ -20,7 +20,9 @@ export default class NewPost extends Component {
     })
   }
 
+
   render() {
+    const disabled = this.state.content === "" ? true : false
     return (
       <article className="post-container">
         <div className="new-post-container">
@@ -37,6 +39,7 @@ export default class NewPost extends Component {
           <div className="btn-container">
             <button 
             onClick={this.handleSubmit} 
+            disabled={disabled}
             className="comment-submit"
             >
               Post Message
