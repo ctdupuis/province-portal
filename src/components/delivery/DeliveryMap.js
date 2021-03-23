@@ -145,7 +145,7 @@ class DeliveryMap extends Component {
     const loading = this.props.loading;
     const mapStyles = {
       height: "70%",
-      width: "50%",
+      width: "70%",
       position: "static",
     };
 

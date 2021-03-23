@@ -28,7 +28,7 @@ export default class CheckLog extends Component {
     }
 
     render() {
-
+        const disabled = (this.state.patient_name === "" || this.state.rx_num === "" || this.state.original_amt === "" || this.state.adjusted_amt === "") ? true : false
         return (
             <div className="dash-content" onSubmit={this.handleSubmit}>
                 <div className="user-info-title">
@@ -77,6 +77,7 @@ export default class CheckLog extends Component {
                         <button 
                             className="green-btn"
                             type="submit"
+                            disabled={disabled}
                         >Save Entry</button>
                     </form>
                 </div>
