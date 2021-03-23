@@ -28,7 +28,7 @@ export const addPost = (postdata) => {
 
 export const updatePost = (postdata) => {
     return async (dispatch) => {
-        // dispatch({ type: 'START_LOAD'})
+        dispatch({ type: 'START_LOAD'})
         const response = await axios.patch(`${API_ROOT}/posts/${postdata.id}`, 
         {
             content: postdata.content
@@ -36,17 +36,17 @@ export const updatePost = (postdata) => {
         { withCredentials: true })
         const post = response.data
         dispatch({ type: 'UPDATE_POST', post })
-        // dispatch({ type: 'END_LOAD'})
+        dispatch({ type: 'END_LOAD'})
     }
 }
 
 export const removePost = (postID) => {
     return async (dispatch) => {
-        // dispatch({ type: 'START_LOAD' })
+        dispatch({ type: 'START_LOAD' })
         const response = await axios.delete(`${API_ROOT}/posts/${postID}`, { withCredentials: true })
         const data = response.data
         dispatch({ type: 'REMOVE_POST', postID})
-        // dispatch({ type: 'END_LOAD' })
+        dispatch({ type: 'END_LOAD' })
     }
 }
 
@@ -66,9 +66,9 @@ export const addComment = (commentdata) => {
     }
 }
 
-export const updateComment = (commentdata) => {
+export const updateComment = async(commentdata) => {
     return async (dispatch) => {
-        // dispatch({ type: 'START_LOAD' })
+        dispatch({ type: 'START_LOAD' })
         const response = await axios.patch(`${API_ROOT}/posts/${commentdata.post_id}/comments/${commentdata.comment_id}`,
         {
             content: commentdata.content
@@ -76,15 +76,15 @@ export const updateComment = (commentdata) => {
         { withCredentials: true })
         const comment = response.data
         dispatch({ type: 'UPDATE_COMMENT', comment })
-        // dispatch({ type: 'END_LOAD' })
+        dispatch({ type: 'END_LOAD' })
     }
 }
 
 export const removeComment = (commentID, postID) => {
     return async (dispatch) => {
-        // dispatch({ type: 'START_LOAD' })
+        dispatch({ type: 'START_LOAD' })
         const response = await axios.delete(`${API_ROOT}/posts/${postID}/comments/${commentID}`, {withCredentials: true})
         dispatch({ type: 'REMOVE_COMMENT', commentID: commentID, postID: postID })
-        // dispatch({ type: 'END_LOAD' })
+        dispatch({ type: 'END_LOAD' })
     }
 }

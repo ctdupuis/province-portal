@@ -74,6 +74,9 @@ export default class DeliveryEntry extends Component {
                     <label htmlFor="mileage">Total Mileage</label>
                     <input 
                         type="number" 
+                        min="0"
+                        max="100"
+                        step="0.1"
                         name="mileage"
                         onChange={this.handleChange}
                         className="number-input"

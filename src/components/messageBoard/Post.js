@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import CommentList from "../messageBoard/CommentList";
 import NewComment from "./NewComment";
 import { FaPen, FaTrash } from 'react-icons/fa';
+import Loading from '../static/Loading';
 
 
 export default class Post extends Component {

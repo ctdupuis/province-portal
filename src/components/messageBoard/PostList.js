@@ -30,7 +30,8 @@ export default class PostList extends Component {
     render() {
         const { loading, posts } = this.props;
         return (
-            loading ? <Loading /> : this.renderPosts(posts)
+            loading ? <Loading /> : 
+            this.renderPosts(posts)
         )
     }
 }
