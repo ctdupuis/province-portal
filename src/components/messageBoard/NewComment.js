@@ -31,6 +31,7 @@ export default class NewComment extends Component {
                 placeholder="Add a comment..."
                 type="text"
                 onChange={this.handleChange}
+                value={this.state.content}
               />
             </div>
             <div className="comment_submit_btn">

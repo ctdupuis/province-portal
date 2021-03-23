@@ -22,11 +22,11 @@
   align-self: flex-start;
   background-color: var(--o-green);
   border-radius: 100%;
-  padding: .5%;
+  padding: 1.5%;
   color: whitesmoke;
   border: 1px solid var(--m-green);
   height: 100%;
-  width: 5%;
+  /* width: 5%; */
   margin-right: 10px;
   text-align: center;
 }
@@ -138,7 +138,7 @@ div.comment_field {
   align-self: flex-start;
   background-color: var(--o-green);
   border-radius: 100%;
-  padding: 10px;
+  padding: 1%;
   margin-right: 10px;
   color: whitesmoke;
   border: 1px solid var(--m-green);
