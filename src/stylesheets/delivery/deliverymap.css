@@ -4,13 +4,14 @@
     justify-content: center;
     height: 37rem;
     padding: 1%;
+    position: static;
     margin: 1rem;
 }
 
 .map {
     display: flex;
     justify-content: center;
-    position: static;
+    position: relative;
 }
 
 .province-marker {
