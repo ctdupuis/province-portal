@@ -73,9 +73,9 @@ export default class Inventory extends Component {
             return(
             this.state.id == item.id ? 
             <tr key={item.id} id={item.id}>
-                <td><input className="item-input" name="product_name" onChange={this.handleChange} defaultValue={item.product_name}/></td>
-                <td><input className="item-input" name="quantity" onChange={this.handleChange} defaultValue={item.quantity} /></td>
-                <td><input className="item-input" name="unit_of_measurement" onChange={this.handleChange} defaultValue={item.unit_of_measurement} /></td>
+                <td><input type="text" className="item-input" name="product_name" onChange={this.handleChange} defaultValue={item.product_name}/></td>
+                <td><input type="number" min="0" step="0.1" max="100" className="item-input" name="quantity" onChange={this.handleChange} defaultValue={item.quantity} /></td>
+                <td><input type="text" className="item-input" name="unit_of_measurement" onChange={this.handleChange} defaultValue={item.unit_of_measurement} /></td>
                 <td>
                     <button className="save" onClick={this.handleSubmit}>Save</button>
                     <button className="cancel" onClick={this.toggleEdit}>Cancel</button>

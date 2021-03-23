@@ -64,6 +64,9 @@ export default class NewItemForm extends Component {
                             <input 
                                 type="number"
                                 name={qtyID}
+                                min="0"
+                                max="100"
+                                step="0.1"
                                 className="qty"
                                 id={qtyID}
                                 data-id={idx}
