@@ -17,7 +17,7 @@ export default function NewMessage({ handleChange, handleSubmit, body }) {
             <input 
                 className="comment-submit" 
                 type="submit" 
-                value="Post" 
+                value="Send Message" 
             />
             </form>
             </div>

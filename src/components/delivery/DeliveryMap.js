@@ -153,6 +153,12 @@ class DeliveryMap extends Component {
       <Loading />
     ) : (
       <section className="dash-container">
+        <DeliveryEntry 
+          finalizeRoute={this.props.finalizeRoute}
+          activeLocation={this.state.activeMarker.name}
+          destinations={this.state.destinations}
+          route={this.state.route}
+        />
         <div className="dash-content">
           <form className="new-user-form" onSubmit={this.handleSubmit}>
             <input
@@ -226,12 +232,6 @@ class DeliveryMap extends Component {
             </Map>
           </div>
         </div>
-        <DeliveryEntry 
-          finalizeRoute={this.props.finalizeRoute}
-          activeLocation={this.state.activeMarker.name}
-          destinations={this.state.destinations}
-          route={this.state.route}
-        />
       </section>
     );
   }

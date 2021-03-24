@@ -45,16 +45,6 @@ export default class DeliveryEntry extends Component {
                         return(
                             <fieldset key={idx}>
                                 <legend>Stop #{idx + 1}</legend>
-                                <label htmlFor="address">Address</label>
-                                <input
-                                    type="text"
-                                    name={locationID}
-                                    className="address"
-                                    id={locationID}
-                                    data-id={idx}
-                                    value={locations[idx].address}
-                                    onChange={this.handleChange}
-                                />
                                 <label htmlFor="patient">Patient Name</label>
                                 <input
                                     type="text"
@@ -63,6 +53,16 @@ export default class DeliveryEntry extends Component {
                                     id={patientID}
                                     data-id={idx}
                                     value={locations[idx].patient}
+                                    onChange={this.handleChange}
+                                />
+                                <label htmlFor="address">Address</label>
+                                <input
+                                    type="text"
+                                    name={locationID}
+                                    className="address"
+                                    id={locationID}
+                                    data-id={idx}
+                                    value={locations[idx].address}
                                     onChange={this.handleChange}
                                 />
                                 {/* <button className="green-btn" onClick={() => { debugger }}>
