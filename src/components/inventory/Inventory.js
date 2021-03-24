@@ -30,7 +30,6 @@ export default class Inventory extends Component {
 
     toggleEdit = event => {
         const id = event.currentTarget.dataset.id
-        // debugger
         if (this.state.id) {
             this.setState({
                 id: undefined,
@@ -64,7 +63,7 @@ export default class Inventory extends Component {
     }
 
     handleDelete = itemID => {
-        if (window.confirm("Are you sure? This action cannot be undone.")) {
+        if (window.confirm("Are you sure?\nThis action cannot be undone.")) {
             this.props.removeItem(itemID)
         }
     }

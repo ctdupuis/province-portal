@@ -15,6 +15,7 @@ export default class Comment extends Component {
   }
 
   checkOwnership(currentUser, postID, userID, commentID) {
+    // debugger
     if (currentUser.id === userID) {
       return (
       <div className="edit-delete-container">

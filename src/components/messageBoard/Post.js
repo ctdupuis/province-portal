@@ -66,7 +66,7 @@ export default class Post extends Component {
   }
 
   handleDelete = postID => {
-    if (window.confirm("Are you sure? This action cannot be undone.")) {
+    if (window.confirm("Are you sure?\nThis action cannot be undone.")) {
       this.props.removePost(postID)
     }
   }
@@ -116,7 +116,6 @@ export default class Post extends Component {
         </div>
         <CommentList 
           style={this.state.displayList}
-          userID={userID} 
           addComment={addComment} 
           updateComment={updateComment}
           removeComment={removeComment}

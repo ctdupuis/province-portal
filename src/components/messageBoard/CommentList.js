@@ -14,7 +14,7 @@ const CommentList = ({ comments, postID, userID, updateComment, removeComment, c
       author={comment.author} 
       created={comment.created} 
       postID={postID}
-      userID={userID}
+      userID={comment.user_id}
     />
     )
       if (!comments.length) {
