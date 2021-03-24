@@ -4,24 +4,24 @@ export default function CheckReport({ entries }) {
     const renderEntries = entries.map((e) => {
         return(
             <tr key={e.id}>
-                <td>{e.patient_name}</td>
+                <td>{e.date_format}</td>
                 <td>{e.rx_num}</td>
+                <td>{e.patient_name}</td>
                 <td>{e.original_amt}</td>
                 <td>{e.adjusted_amt}</td>
                 <td>{e.price_difference}</td>
-                <td>{e.date_format}</td>
             </tr>
         )
     })
     const table = <table id="report-layout">
         <thead>
             <tr>
-                <th>Patient Name</th>
+                <th>Date</th>
                 <th>RX #</th>
+                <th>Patient Name</th>
                 <th>Original Amount</th>
                 <th>Adjusted Amount</th>
                 <th>Price Differential</th>
-                <th>Date</th>
             </tr>
         </thead>
         <tbody>
