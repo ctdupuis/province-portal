@@ -66,6 +66,7 @@ export default class PatientServices extends Component {
 
     render() {
         const { messages } = this.props
+        const disabled = this.state.body === "" ? true : false
         return(
             <section className="dash-container">
                 <div className="dash-content">
@@ -79,6 +80,7 @@ export default class PatientServices extends Component {
                             handleChange={this.handleChange}
                             handleSubmit={this.handleSubmit}
                             body={this.state.body}
+                            disabled={disabled}
                         />
                     </div>
                     <div className="messages-area">

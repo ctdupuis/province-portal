@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default function NewMessage({ handleChange, handleSubmit, body }) {
+export default function NewMessage({ handleChange, handleSubmit, body, disabled }) {
     return (
         <div className="comment_handler">
             <div className="comment_field">
@@ -18,6 +18,7 @@ export default function NewMessage({ handleChange, handleSubmit, body }) {
                 className="comment-submit" 
                 type="submit" 
                 value="Send Message" 
+                disabled={disabled}
             />
             </form>
             </div>
