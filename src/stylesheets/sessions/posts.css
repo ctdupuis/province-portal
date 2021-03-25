@@ -126,7 +126,12 @@ div.comment_field {
   border: none;
   border-color: var(--o-green);
   outline: none;
+  transition: 0.2s;
+}
 
+.comment-input:focus {
+  background-color: white;
+  border: 1px solid var(--o-green);
 }
 
 .comment_submit_btn {
