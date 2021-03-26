@@ -3,8 +3,35 @@ import Loading from '../static/Loading';
 import Post from './Post';
 
 export default class PostList extends Component {
+    state = {
+        position: ""
+    }
+
     componentDidMount() {
         this.props.getPosts();
+        window.addEventListener('scroll', this.listenToScroll)
+        let position = localStorage.getItem('positon')
+        window.scrollTo(position, 0)
+    }
+        
+    componentWillUnmount() {
+        window.removeEventListener('scroll', this.listenToScroll)
+        localStorage.setItem('position', this.state.position)
+    }
+        
+    listenToScroll = () => {
+        const winScroll =
+            document.body.scrollTop || document.documentElement.scrollTop
+        
+        const height =
+            document.documentElement.scrollHeight -
+            document.documentElement.clientHeight
+        
+        const scrolled = winScroll / height
+        
+        this.setState({
+            position: scrolled,
+        })
     }
 
     renderPosts = posts => {

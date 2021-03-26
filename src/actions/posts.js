@@ -66,7 +66,7 @@ export const addComment = (commentdata) => {
     }
 }
 
-export const updateComment = async(commentdata) => {
+export const updateComment = (commentdata) => {
     return async (dispatch) => {
         dispatch({ type: 'START_LOAD' })
         const response = await axios.patch(`${API_ROOT}/posts/${commentdata.post_id}/comments/${commentdata.comment_id}`,

@@ -16,13 +16,20 @@ export default class Comment extends Component {
 
   checkOwnership(currentUser, postID, userID, commentID) {
     // debugger
+    const commentdata = {
+      comment_id: commentID,
+      post_id: postID,
+      content: this.state.content
+    }
     if (currentUser.id === userID) {
       return (
       <div className="edit-delete-container">
         {this.state.isEditing ? 
           <>
             <button className="info-cancel" onClick={this.toggleEdit}>Cancel</button>
-            <button className="info-save" onClick={() => this.props.updateComment({ comment_id: commentID, post_id: postID, content: this.state.content })}>Save</button>
+            <button className="info-save" onClick={
+              () => this.props.updateComment(commentdata)}
+            >Save</button>
           </>
           :
           <>
