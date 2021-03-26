@@ -13,6 +13,8 @@ const CommentList = ({ comments, postID, userID, updateComment, removeComment, c
       content={comment.content} 
       author={comment.author} 
       created={comment.created} 
+      updated={comment.updated}
+      edited={comment.edited}
       postID={postID}
       userID={comment.user_id}
     />

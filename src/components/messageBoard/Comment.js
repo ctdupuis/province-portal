@@ -15,7 +15,6 @@ export default class Comment extends Component {
   }
 
   checkOwnership(currentUser, postID, userID, commentID) {
-    // debugger
     const commentdata = {
       comment_id: commentID,
       post_id: postID,
@@ -62,6 +61,8 @@ export default class Comment extends Component {
       content,
       author,
       created,
+      updated,
+      edited,
       postID
     } = this.props;
     return(
@@ -82,7 +83,7 @@ export default class Comment extends Component {
           }
           <div className="meta_data">
             <div className="timestamp_wrapper">
-              <span className="timestamp">{created}</span>
+              { !edited ? <span className="timestamp">{created}</span> : <span className="timestamp">{updated} (edited)</span> }
             </div>
             {this.checkOwnership(currentUser, postID, userID, id)}
           </div>

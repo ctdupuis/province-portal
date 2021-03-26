@@ -77,8 +77,10 @@ export default class Post extends Component {
       userID,
       author,
       created,
+      updated,
       comments,
       id,
+      edited,
       addComment,
       updateComment,
       removeComment,
@@ -105,7 +107,7 @@ export default class Post extends Component {
             }
             <div className="meta_data">
               <div className="timestamp_wrapper">
-                <span className="timestamp">{created} |</span>
+                { !edited ? <span className="timestamp">{created} |</span> : <span className="timestamp">{updated} (edited) |</span> }
                 <button onClick={this.displayComments} className="timestamp total-comments">
                   {this.commentFormat(comments)}
                 </button>

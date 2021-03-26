@@ -43,12 +43,13 @@
 }
 
 .save {
-    border-radius: 1rem;
+    border-radius: .5em;
     padding: .3rem;
     color: whitesmoke;
     outline: none;
     transition: 0.5s;
     background-color: var(--m-green);
+    border: .1em solid var(--d-green);
     /* margin-right: -75%; */
 }
 
@@ -58,7 +59,7 @@
 }
 
 .cancel {
-    border-radius: 1rem;
+    border-radius: .5em;
     padding: .3rem;
     color: whitesmoke;
     outline: none;

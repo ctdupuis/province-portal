@@ -43,7 +43,9 @@ export default class PostList extends Component {
                 userID={post.user_id}
                 author={post.author}
                 created={post.created}
+                updated={post.updated}
                 comments={post.comments}
+                edited={post.edited}
                 addComment={this.props.addComment}
                 updateComment={this.props.updateComment}
                 removeComment={this.props.removeComment}
