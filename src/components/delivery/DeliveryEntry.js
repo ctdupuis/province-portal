@@ -89,7 +89,7 @@ export default class DeliveryEntry extends Component {
                     </button>
                     <br />
                 </form>
-                    <button className="green-btn" onClick={() => this.props.finalizeRoute(this.state)}>
+                    <button className="green-btn" onClick={() => this.props.finalizeRoute(this.state, this.props.origin)}>
                         Finalize Route
                     </button>
             </div>

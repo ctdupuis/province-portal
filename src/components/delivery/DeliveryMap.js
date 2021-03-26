@@ -158,6 +158,7 @@ class DeliveryMap extends Component {
           activeLocation={this.state.activeMarker.name}
           destinations={this.state.destinations}
           route={this.state.route}
+          origin={this.state.origin}
         />
         <div className="dash-content">
           <form className="new-user-form" onSubmit={this.handleSubmit}>
