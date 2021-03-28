@@ -41,7 +41,7 @@ export default class PatientServices extends Component {
         const sortedMessages = messages.sort(
             (a, b) => new Date(b.created_at) - new Date(a.created_at)
         );
-        return sortedMessages.map(message => <Message key={message.id} message={message} />)
+        return sortedMessages.map(message => <Message key={message.id} currentUser={this.props.currentUser} message={message} />)
     }
     
     handleSubmit = event => {

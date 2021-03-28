@@ -4,21 +4,21 @@ export default function MilesReport({ entries }) {
     const renderEntries = entries.map((e) => {
         return(
             <tr key={e.id}>
+                <td>{e.date_format}</td>
                 <td>{e.patient_name}</td>
                 <td>{e.patient_address}</td>
                 {/* <td>Mileage: {e.miles}</td> */}
                 <td>{e.user.first_name} | {e.user.username}</td>
-                <td>{e.date_format}</td>
             </tr>
         )
     })
     const table = <table id="report-layout">
         <thead>
             <tr>
+                <th>Date</th>
                 <th>Patient Name</th>
                 <th>Patient Address</th>
                 <th>User</th>
-                <th>Date</th>
             </tr>
         </thead>
         <tbody>
