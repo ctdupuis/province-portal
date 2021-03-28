@@ -91,6 +91,7 @@ export default class PatientServices extends Component {
                             body={this.state.body}
                             disabled={disabled}
                             currentUser={this.props.currentUser}
+                            wipeMessages={this.props.wipeMessages}
                         />
                     </div>
                     <div className="messages-area">

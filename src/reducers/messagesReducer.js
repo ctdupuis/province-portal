@@ -22,6 +22,11 @@ export default function messagesReducer(
                 ...state,
                 messages: [...keepers]
             }
+        case 'CLEAR_MESSAGES':
+            return {
+                ...state,
+                messages: []
+            }
     default: return state;
     }
 }

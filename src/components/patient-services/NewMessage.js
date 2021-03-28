@@ -1,6 +1,14 @@
 import React from 'react';
 
-export default function NewMessage({ handleChange, handleSubmit, body, disabled, currentUser }) {
+export default function NewMessage({ handleChange, handleSubmit, body, disabled, wipeMessages, currentUser }) {
+
+    const handleMessageWipe = (currentUser, wipeMessages) => {
+        let name = `${currentUser.first_name} ${currentUser.last_name}`
+        if (window.prompt("This is a very destructive action. Please type your full name to confirm") === name ) {
+            wipeMessages();
+        }
+    }
+
     return (
         <div className="comment_handler">
             <div className="comment_field">
@@ -22,8 +30,7 @@ export default function NewMessage({ handleChange, handleSubmit, body, disabled,
                 />
                 </form>
             </div>
-                { currentUser.admin ? <button className="comment-submit rounded">Clear Messages</button> : null }
-                
+                { currentUser.admin ? <button onClick={() => handleMessageWipe(currentUser, wipeMessages)} className="comment-submit rounded">Clear Messages</button> : null }              
         </div>
     )
 }

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { ActionCableConsumer } from 'react-actioncable-provider';
 import { API_ROOT } from '../constants';
 
 export const getMessages = () => {
@@ -37,5 +38,12 @@ export const removeMessage = (messageID) => {
     return async (dispatch) => {
         const response = await axios.delete(`${API_ROOT}/messages/${messageID}`, { withCredentials:true })
         dispatch({ type: 'REMOVE_MESSAGE', messageID })
+    }
+}
+
+export const wipeMessages = () => {
+    return async (dispatch) => {
+        const response = await axios.delete(`${API_ROOT}/all_messages`, { withCredentials: true })
+        dispatch({ type: 'CLEAR_MESSAGES'})
     }
 }

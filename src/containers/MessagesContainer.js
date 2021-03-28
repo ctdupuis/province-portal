@@ -6,7 +6,8 @@ import {
     getMessages,
     createMessage,
     addMessage,
-    removeMessage
+    removeMessage,
+    wipeMessages
 } from "../actions/patient-services";
 import { endSession } from "../actions/sessions";
 import Tabs from '../components/static/Tabs';
@@ -30,6 +31,7 @@ class MessagesContainer extends Component {
                             createMessage={this.props.createMessage}
                             addMessage={this.props.addMessage}
                             removeMessage={this.props.removeMessage}
+                            wipeMessages={this.props.wipeMessages}
                             loading={this.props.loading}
                             {...props}
                         />
@@ -52,6 +54,7 @@ export default connect(
         createMessage,
         getMessages,
         removeMessage,
+        wipeMessages,
         endSession
     }
 )(MessagesContainer);
