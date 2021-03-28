@@ -4,6 +4,7 @@ export default function messagesReducer(
     },
     action
 ) {
+    let keepers;
     switch (action.type) {
         case 'STORE_MESSAGES':
             return {
@@ -14,6 +15,12 @@ export default function messagesReducer(
             return {
                 ...state,
                 messages: [...state.messages, action.message]
+            }
+        case 'REMOVE_MESSAGE':
+            keepers = state.messages.filter(message => message.id !== action.messageID)
+            return {
+                ...state,
+                messages: [...keepers]
             }
     default: return state;
     }

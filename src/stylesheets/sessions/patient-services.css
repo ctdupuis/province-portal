@@ -38,3 +38,9 @@
 .form-container {
     display: flex;
 }
+
+.rounded {
+    height: 45px;
+    border-radius: 15px;
+    margin-left: 1%;
+}

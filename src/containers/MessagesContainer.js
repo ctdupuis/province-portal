@@ -5,7 +5,8 @@ import { connect } from 'react-redux';
 import {
     getMessages,
     createMessage,
-    addMessage
+    addMessage,
+    removeMessage
 } from "../actions/patient-services";
 import { endSession } from "../actions/sessions";
 import Tabs from '../components/static/Tabs';
@@ -49,6 +50,7 @@ export default connect(
         addMessage,
         createMessage,
         getMessages,
+        removeMessage,
         endSession
     }
 )(MessagesContainer);

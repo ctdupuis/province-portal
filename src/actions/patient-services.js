@@ -32,3 +32,10 @@ export const addMessage = (message) => {
         dispatch({ type: 'ADD_MESSAGE', message })
     }
 }
+
+export const removeMessage = (messageID) => {
+    return async (dispatch) => {
+        const response = await axios.delete(`${API_ROOT}/messages/${messageID}/delete`)
+        dispatch({ type: 'REMOVE_MESSAGE', messageID })
+    }
+}

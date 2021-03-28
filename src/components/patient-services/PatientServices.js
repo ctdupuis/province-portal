@@ -41,7 +41,14 @@ export default class PatientServices extends Component {
         const sortedMessages = messages.sort(
             (a, b) => new Date(b.created_at) - new Date(a.created_at)
         );
-        return sortedMessages.map(message => <Message key={message.id} currentUser={this.props.currentUser} message={message} />)
+        return sortedMessages.map(message => 
+            <Message 
+                key={message.id} 
+                currentUser={this.props.currentUser} 
+                message={message} 
+                removeMessage={this.props.removeMessage}
+            />
+        )
     }
     
     handleSubmit = event => {
@@ -74,7 +81,6 @@ export default class PatientServices extends Component {
             <section className="dash-container">
                 <div className="dash-content">
                     <div className="user-info-title">
-                        <h3>What's going on?</h3>
                         {/* <ActionCableConsumer
                             channel={{ channel: "MessagesChannel", demo: this.props.currentUser.demo }}
                             onReceived={this.onReceived}
@@ -84,6 +90,7 @@ export default class PatientServices extends Component {
                             handleSubmit={this.handleSubmit}
                             body={this.state.body}
                             disabled={disabled}
+                            currentUser={this.props.currentUser}
                         />
                     </div>
                     <div className="messages-area">
