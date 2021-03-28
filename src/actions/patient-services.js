@@ -35,7 +35,7 @@ export const addMessage = (message) => {
 
 export const removeMessage = (messageID) => {
     return async (dispatch) => {
-        const response = await axios.delete(`${API_ROOT}/messages/${messageID}/delete`)
+        const response = await axios.delete(`${API_ROOT}/messages/${messageID}`, { withCredentials:true })
         dispatch({ type: 'REMOVE_MESSAGE', messageID })
     }
 }

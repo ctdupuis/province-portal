@@ -29,6 +29,7 @@ class MessagesContainer extends Component {
                             messages={this.props.messages}
                             createMessage={this.props.createMessage}
                             addMessage={this.props.addMessage}
+                            removeMessage={this.props.removeMessage}
                             loading={this.props.loading}
                             {...props}
                         />

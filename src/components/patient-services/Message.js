@@ -4,7 +4,7 @@ import { FaTrash } from 'react-icons/fa';
 export default function Message({ message, currentUser, removeMessage }) {
     const handleDelete = messageID => {
         if (window.confirm("Are you sure?\nThis action cannot be undone")) {
-            this.props.removeMessage(messageID)
+            removeMessage(messageID)
         }
     }
 
@@ -21,7 +21,7 @@ export default function Message({ message, currentUser, removeMessage }) {
     }
 
     const { id, text, author, created, user_id } = message
-    
+
     return (
         <div className="message">
             <div className="message-body">
