@@ -5,10 +5,12 @@ export default function MilesReport({ entries }) {
         return(
             <tr key={e.id}>
                 <td>{e.date_format}</td>
-                <td>{e.patient_name}</td>
-                <td>{e.patient_address}</td>
+                {/* <td>{e.patient_name}</td>
+                <td>{e.patient_address}</td> */}
                 {/* <td>Mileage: {e.miles}</td> */}
                 <td>{e.user.first_name} | {e.user.username}</td>
+                <td>{e.stops.length}</td>
+                <td>{e.miles}</td>
             </tr>
         )
     })
@@ -16,9 +18,11 @@ export default function MilesReport({ entries }) {
         <thead>
             <tr>
                 <th>Date</th>
-                <th>Patient Name</th>
-                <th>Patient Address</th>
+                {/* <th>Patient Name</th>
+                <th>Patient Address</th> */}
                 <th>User</th>
+                <th># of Stops</th>
+                <th>Total Miles</th>
             </tr>
         </thead>
         <tbody>
