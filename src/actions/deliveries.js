@@ -24,9 +24,6 @@ export const finalizeRoute = (data, origin) => {
         locations: [...data.locations],
         mileage: data.mileage
     }
-    // const addresses = await data.locations.map((add) => {
-    //     return getGeocode(add).then(res => {return res.place_id} )
-    // })
     const addresses = data.locations.map((a) =>  a.address.split(" ").join("+") )
     // console.log(addresses)
     return async (dispatch) => {
@@ -44,19 +41,19 @@ export const finalizeRoute = (data, origin) => {
         const dirresponse = await axios.get(finalURL, {withCredentials: true})
         const dirdata = dirresponse.data.routes
         console.log(dirdata)
-        debugger
+
+        dispatch({ type: 'START_LOAD' })
+        const response = await axios.post(`${API_ROOT}/routes`, 
+        postObj,
+        { withCredentials: true  })
+        const data = response.data
+        dispatch({ type: 'END_LOAD' })
     }
     
     // const directions = await getDirections(data, origin)
     // return async (dispatch) => {
-    //     dispatch({ type: 'START_LOAD' })
-    //     const response = await axios.post(`${API_ROOT}/delivery_entries`, 
-    //     postObj,
-    //     { withCredentials: true  })
-    //     const data = response.data
-    //     dispatch({ type: 'END_LOAD' })
-    // }
-}
+        // }
+    }
 
 //
 
