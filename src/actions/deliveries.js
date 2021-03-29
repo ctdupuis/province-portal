@@ -25,22 +25,19 @@ export const finalizeRoute = (data, origin) => {
         mileage: data.mileage
     }
     const addresses = data.locations.map((a) =>  a.address.split(" ").join("+") )
-    // console.log(addresses)
     return async (dispatch) => {
-        let preURL = `https://maps.googleapis.com/maps/api/directions/json?origin=place_id:${origin.place_id}&waypoints=`
-        let appURL = `&destination=place_id:${origin.place_id}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`
-        let builtURL = ``
-        let i = 0;
-        console.log("Inside the dispatch function:", addresses, addresses.length)
-        while (i < addresses.length) {
-            builtURL += `via:${addresses[i]}|`
-            i += 1
-        }
-        let finalURL = `${preURL}${builtURL}${appURL}`
-        console.log("The final fetch url:", finalURL)
-        const dirresponse = await axios.get(finalURL, {withCredentials: true})
-        const dirdata = dirresponse.data.routes
-        console.log(dirdata)
+        // let preURL = `https://maps.googleapis.com/maps/api/directions/json?origin=place_id:${origin.place_id}&waypoints=`
+        // let appURL = `&destination=place_id:${origin.place_id}&key=${process.env.REACT_APP_GOOGLE_API_KEY}`
+        // let builtURL = ``
+        // let i = 0;
+        // while (i < addresses.length) {
+        //     builtURL += `via:${addresses[i]}|`
+        //     i += 1
+        // }
+        // let finalURL = `${preURL}${builtURL}${appURL}`
+        // const dirresponse = await axios.get(finalURL, {withCredentials: true})
+        // const dirdata = dirresponse.data.routes
+        // console.log(dirdata)
 
         dispatch({ type: 'START_LOAD' })
         const response = await axios.post(`${API_ROOT}/routes`, 
@@ -49,14 +46,5 @@ export const finalizeRoute = (data, origin) => {
         const data = response.data
         dispatch({ type: 'END_LOAD' })
     }
-    
-    // const directions = await getDirections(data, origin)
-    // return async (dispatch) => {
-        // }
-    }
+}
 
-//
-
-// export const getDirections = async function(locations, origin) {
-//     const url = `https://maps.googleapis.com/maps/api/directions/`
-// }
