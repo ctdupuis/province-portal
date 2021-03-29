@@ -1,16 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
+import RouteDetails from './RouteDetails';
 
 export default function MilesReport({ entries }) {
+    const [detailDisplay, setDisplay] = useState(false)
+    const [detailID, setDetailID] = useState(undefined)
+
     const renderEntries = entries.map((e) => {
         return(
             <tr key={e.id}>
                 <td>{e.date_format}</td>
-                {/* <td>{e.patient_name}</td>
-                <td>{e.patient_address}</td> */}
-                {/* <td>Mileage: {e.miles}</td> */}
                 <td>{e.user.first_name} | {e.user.username}</td>
                 <td>{e.stops.length}</td>
                 <td>{e.miles}</td>
+                <td>
+                    {detailDisplay && detailID === e.id ? 
+                    <>
+                        <button onClick={() => {
+                            setDisplay(!detailDisplay)
+                            setDetailID(undefined)
+                        }}> - </button>
+                        <RouteDetails stops={e.stops} />
+                    </>
+                    :
+                    <button onClick={() => {
+                        setDisplay(!detailDisplay)
+                        setDetailID(e.id)
+                    }}> + </button>
+                    }
+                </td>
             </tr>
         )
     })
@@ -18,11 +35,10 @@ export default function MilesReport({ entries }) {
         <thead>
             <tr>
                 <th>Date</th>
-                {/* <th>Patient Name</th>
-                <th>Patient Address</th> */}
                 <th>User</th>
                 <th># of Stops</th>
                 <th>Total Miles</th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
