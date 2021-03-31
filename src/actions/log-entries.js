@@ -27,6 +27,7 @@ export const getReport = async(reportdata) => {
         type: reportdata.type
     }, { withCredentials: true })
     const data = response.data
+    debugger
     let obj
     if (data[0].check_log_id) {
         obj = Object.assign(data, { layout: "Check" })

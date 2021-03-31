@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import moment from 'moment';
+import { getReport } from '../../actions/log-entries';
 
 export default class RouteEdit extends Component {
     state = {
@@ -11,6 +12,23 @@ export default class RouteEdit extends Component {
 
     onChange = event => {
         this.setState({ [event.target.name]: event.target.value })
+    }
+
+    setType = async(value) => {
+        this.setState({
+            ...this.state,
+            type: value
+        })
+        return this.state
+    }
+
+    handleClick = event => {
+        this.setType(event.target.value)
+        .then((state) => getReport(this.state))
+        .then((report) => this.setState({
+            ...this.state,
+            report: report
+        }))
     }
 
     checkDisable = () => {
@@ -51,9 +69,32 @@ export default class RouteEdit extends Component {
                             max={moment().format("YYYY-MM-DD")}
                         />
                     </div>
-                    <button className="green-btn" disabled={disabled}>Add A Stop</button>
-                    <button className="green-btn" disabled={disabled}>Edit A Stop</button>
-                    <button className="green-btn" disabled={disabled}>Remove A Stop</button>
+                    <button 
+                        className="green-btn" 
+                        disabled={disabled}
+                        onClick={this.handleClick}
+                        value={"add"}
+                    >
+                        Add A Stop
+                    </button>
+
+                    <button 
+                        className="green-btn" 
+                        disabled={disabled}
+                        onClick={this.handleClick}
+                        value={"edit"}
+                    >
+                        Edit A Stop
+                    </button>
+
+                    <button 
+                        className="green-btn" 
+                        disabled={disabled}
+                        onClick={this.handleClick}
+                        value={"remove"}
+                    >
+                        Remove A Stop
+                    </button>
                 </div>
             </div>
         )
