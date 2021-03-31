@@ -69,8 +69,11 @@ export default class PatientServices extends Component {
     onReceived = response => {
         const message = JSON.parse(response);
         const found = this.props.messages.find(mes => mes.id === message.id)
+        console.log(found)
         if (!found) {
             this.props.addMessage(message);
+        } else {
+            return null
         }
     }
 

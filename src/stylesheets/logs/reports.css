@@ -65,6 +65,7 @@
     outline: none;
     transition: 0.5s;
     background-color: rgb(158, 14, 14);
+    border: .1em solid rgb(253, 14, 14)
 }
 
 .cancel:hover {

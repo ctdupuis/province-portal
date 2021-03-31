@@ -191,6 +191,7 @@
   background-color: rgb(158, 14, 14);
   transition: 0.5s;
   outline: none;
+  border: .1em solid rgb(253, 14, 14)
 }
 
 .info-cancel:hover {
