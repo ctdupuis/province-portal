@@ -1,6 +1,9 @@
 import React, { Component } from 'react';
 import moment from 'moment';
 import { getReport } from '../../actions/log-entries';
+import AddStop from './AddStop';
+import EditStop from './EditStop';
+import RemoveStop from './RemoveStop';
 
 export default class RouteEdit extends Component {
     state = {
@@ -38,6 +41,20 @@ export default class RouteEdit extends Component {
             return false
         }
 
+    }
+
+    renderRouteAmend = report => {
+        if (report) {
+            switch (report.type) {
+                case 'add':
+                    return <AddStop />
+                case 'edit':
+                    return <EditStop />
+                case 'remove':
+                    return <RemoveStop />
+                default: return null;
+            }
+        }
     }
 
     render() {
@@ -95,6 +112,8 @@ export default class RouteEdit extends Component {
                     >
                         Remove A Stop
                     </button>
+
+                    {this.renderRouteAmend(this.state.report)}
                 </div>
             </div>
         )
