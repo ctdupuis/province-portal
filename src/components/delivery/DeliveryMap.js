@@ -10,6 +10,7 @@ import {
 } from "google-maps-react";
 import { getGeocode } from "../../actions/deliveries";
 import DeliveryEntry from "./DeliveryEntry";
+import RouteEdit from "./RouteEdit";
 require("dotenv").config();
 
 
@@ -233,6 +234,7 @@ class DeliveryMap extends Component {
             </Map>
           </div>
         </div>
+        <RouteEdit />
       </section>
     );
   }
