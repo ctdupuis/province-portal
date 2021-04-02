@@ -8,7 +8,7 @@ import RemoveStop from './RemoveStop';
 export default class RouteEdit extends Component {
     state = {
         start_date: "",
-        end_date: "",
+        // end_date: "",
         type: undefined,
         report: undefined
     }
@@ -35,7 +35,7 @@ export default class RouteEdit extends Component {
     }
 
     checkDisable = () => {
-        if (this.state.start_date !== "" && this.state.end_date !== "") {
+        if (this.state.start_date !== "") {
             return true
         } else {
             return false
@@ -45,13 +45,13 @@ export default class RouteEdit extends Component {
 
     renderRouteAmend = report => {
         if (report) {
-            switch (report.type) {
+            switch (this.state.type) {
                 case 'add':
-                    return <AddStop />
+                    return <AddStop entries={report} />
                 case 'edit':
-                    return <EditStop />
+                    return <EditStop entries={report} />
                 case 'remove':
-                    return <RemoveStop />
+                    return <RemoveStop entries={report} />
                 default: return null;
             }
         }
@@ -66,22 +66,12 @@ export default class RouteEdit extends Component {
                 </div>
                 <div className="user-info-content">
                     <div className="form-group">
-                        <label htmlFor="start-date">Start Date</label>
+                        <label htmlFor="start-date">Route Date</label>
                         <input 
                             type="date" 
                             name="start_date" 
                             id="start-date" 
                             value={this.state.start_date}
-                            onChange={this.onChange}
-                            max={moment().format("YYYY-MM-DD")}
-                        />
-
-                        <label htmlFor="end-date">End Date</label>
-                        <input 
-                            type="date" 
-                            name="end_date" 
-                            id="end-date" 
-                            value={this.state.end_date}
                             onChange={this.onChange}
                             max={moment().format("YYYY-MM-DD")}
                         />
