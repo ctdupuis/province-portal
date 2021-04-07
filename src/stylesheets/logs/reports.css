@@ -81,3 +81,13 @@
     width: 100%;
     border-width: 1px;
 }
+
+.expand, .collapse {
+    float: right;
+    padding: .1em;
+}
+
+.stop {
+    list-style-type: none;
+    margin: .2em 0;
+}

@@ -16,19 +16,19 @@ export default function MilesReport({ entries }) {
                 <td>
                     {detailDisplay && detailID === e.id ? 
                     <>
-                        <button onClick={() => {
+                        <button className="collapse" onClick={() => {
                             setDisplay(!detailDisplay)
                             setDetailID(undefined)
                         }}> - </button>
+                    <RouteDetails stops={e.stops} />
                     </>
                     :
-                    <button onClick={() => {
+                    <button className="expand" onClick={() => {
                         setDisplay(!detailDisplay)
                         setDetailID(e.id)
                     }}> + </button>
                 }
                 </td>
-                <RouteDetails stops={e.stops} />
             </tr>
                 </>
         )
@@ -40,7 +40,11 @@ export default function MilesReport({ entries }) {
                 <th>User</th>
                 <th># of Stops</th>
                 <th>Total Miles</th>
-                <th></th>
+                {detailDisplay ?
+                    <th>Patient Name | Patient Address</th>
+                    :
+                    <th></th>
+                }
             </tr>
         </thead>
         <tbody>
