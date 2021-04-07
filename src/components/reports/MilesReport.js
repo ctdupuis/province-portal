@@ -7,6 +7,7 @@ export default function MilesReport({ entries }) {
 
     const renderEntries = entries.map((e) => {
         return(
+            <>
             <tr key={e.id}>
                 <td>{e.date_format}</td>
                 <td>{e.user.first_name} | {e.user.username}</td>
@@ -19,16 +20,17 @@ export default function MilesReport({ entries }) {
                             setDisplay(!detailDisplay)
                             setDetailID(undefined)
                         }}> - </button>
-                        <RouteDetails stops={e.stops} />
                     </>
                     :
                     <button onClick={() => {
                         setDisplay(!detailDisplay)
                         setDetailID(e.id)
                     }}> + </button>
-                    }
+                }
                 </td>
+                <RouteDetails stops={e.stops} />
             </tr>
+                </>
         )
     })
     const table = <table id="report-layout">
