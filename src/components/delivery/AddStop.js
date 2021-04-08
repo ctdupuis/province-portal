@@ -8,7 +8,7 @@ export default function AddStop({ entries }) {
     const renderEntries = entries.map((e) => {
         return(
             <>
-            <tr key={e.id} onClick={() => {
+            <tr className="selectable" key={e.id} onClick={() => {
                 setDisplay(!detailDisplay)
                 setDetailID(e.id)
             }}>
@@ -17,6 +17,7 @@ export default function AddStop({ entries }) {
                 <td>{e.stops.length}</td>
                 <td>{e.miles}</td>
             </tr>
+            
             {
                 detailDisplay && detailID === e.id ?
                     <AddStopFields />

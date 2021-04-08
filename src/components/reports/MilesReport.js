@@ -7,7 +7,7 @@ export default function MilesReport({ entries }) {
 
     const renderEntries = entries.map((e) => {
         return(
-            <tr key={e.id} onClick={() => {
+            <tr className="selectable" key={e.id} onClick={() => {
                 setDisplay(!detailDisplay)
                 setDetailID(e.id)
             }}>
@@ -30,7 +30,7 @@ export default function MilesReport({ entries }) {
     const mileageValues = entries.map((e) => e.miles) 
 
     const totalMileage = mileageValues.reduce((a, b) => a + b, 0).toFixed(1)
-    
+
     const table = <table id="report-layout">
         <thead>
             <th>Date</th>

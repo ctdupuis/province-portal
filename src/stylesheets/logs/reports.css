@@ -5,12 +5,19 @@
     outline: none;
 }
 
-tr:hover {
+tr.selectable:hover {
     background-color: var(--l-green);
     opacity: .75;
     cursor: hover;
 }
 
+.smaller-fields {
+    margin: .5em;
+    padding: .1em;
+    border-radius: .5em;
+    outline: none;
+    border: 1px solid var(--d-green);
+}
 
 .report-num {
     width: 5%;
