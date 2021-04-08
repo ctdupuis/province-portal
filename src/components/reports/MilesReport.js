@@ -38,17 +38,15 @@ export default function MilesReport({ entries }) {
     const totalMileage = mileageValues.reduce((a, b) => a + b, 0).toFixed(1)
     const table = <table id="report-layout">
         <thead>
- 
-                <th>Date</th>
-                <th>User</th>
-                <th># of Stops</th>
-                <th>Total Miles</th>
-                {detailDisplay ?
-                    <th>Patient Name | Patient Address</th>
-                    :
-                    <th></th>
-                }
-  
+            <th>Date</th>
+            <th>User</th>
+            <th># of Stops</th>
+            <th>Total Miles</th>
+            {detailDisplay ?
+                <th>Patient Name | Patient Address</th>
+                :
+                <th></th>
+            }
         </thead>
         <tbody>
             {renderEntries}
