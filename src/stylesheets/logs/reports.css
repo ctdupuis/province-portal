@@ -6,7 +6,9 @@
 }
 
 tr:hover {
-    background-color: darkgrey;
+    background-color: var(--l-green);
+    opacity: .75;
+    cursor: hover;
 }
 
 
