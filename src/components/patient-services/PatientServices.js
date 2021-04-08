@@ -69,8 +69,9 @@ export default class PatientServices extends Component {
     onReceived = response => {
         const message = JSON.parse(response);
         const found = this.props.messages.find(mes => mes.id === message.id)
-        console.log(found)
+        console.log("This is before the check:", found)
         if (!found) {
+            console.log("This is inside the check:", found)
             this.props.addMessage(message);
         } else {
             return null
