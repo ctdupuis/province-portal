@@ -5,6 +5,11 @@
     outline: none;
 }
 
+tr:hover {
+    background-color: darkgrey;
+}
+
+
 .report-num {
     width: 5%;
     text-align: center;
