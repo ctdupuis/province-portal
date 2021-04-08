@@ -25,12 +25,12 @@ export default function NewMessage({ handleChange, handleSubmit, body, disabled,
                 <input 
                     className="comment-submit" 
                     type="submit" 
-                    value="Send Message" 
+                    value="Send" 
                     disabled={disabled}
                 />
                 </form>
             </div>
-                { currentUser.admin ? <button onClick={() => handleMessageWipe(currentUser, wipeMessages)} className="comment-submit rounded">Clear Messages</button> : null }              
+                { currentUser.admin ? <button onClick={() => handleMessageWipe(currentUser, wipeMessages)} className="comment-submit rounded">Clear</button> : null }              
         </div>
     )
 }
