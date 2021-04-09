@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import AddStopFields from './AddStopFields';
 
-export default function AddStop({ entries }) {
+export default function AddStop({ entries, addStop }) {
     const [detailDisplay, setDisplay] = useState(false)
     const [detailID, setDetailID] = useState(undefined)
 
@@ -20,7 +20,7 @@ export default function AddStop({ entries }) {
             
             {
                 detailDisplay && detailID === e.id ?
-                    <AddStopFields routeID={e.id} />
+                    <AddStopFields routeID={e.id} addStop={addStop} />
                     :
                     null
             }

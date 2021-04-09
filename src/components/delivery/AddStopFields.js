@@ -16,8 +16,7 @@ export default class AddStopFields extends Component {
 
     handleClick = event => {
         event.preventDefault();
-        console.log(this.state)
-        
+        this.props.addStop(this.state);
     }
 
     render() {

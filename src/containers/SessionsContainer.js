@@ -15,7 +15,8 @@ import {
   getSchedule
 } from "../actions/schedules";
 import {
-  finalizeRoute
+  finalizeRoute,
+  addStop
 } from "../actions/deliveries";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Tabs from "../components/static/Tabs";
@@ -97,6 +98,7 @@ class SessionsContainer extends Component {
               <DeliveryMap
                 currentUser={this.props.currentUser}
                 finalizeRoute={this.props.finalizeRoute}
+                addStop={this.props.addStop}
                 loading={this.props.loading}
                 {...props}
               />
@@ -125,6 +127,7 @@ export default connect(
     removeUser,
     getContacts,
     getSchedule,
-    finalizeRoute
+    finalizeRoute,
+    addStop
   }
 )(SessionsContainer);

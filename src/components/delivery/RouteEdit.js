@@ -47,7 +47,7 @@ export default class RouteEdit extends Component {
         if (report) {
             switch (this.state.type) {
                 case 'add':
-                    return <AddStop entries={report} />
+                    return <AddStop entries={report} addStop={this.props.addStop} />
                 case 'edit':
                     return <EditStop entries={report} />
                 case 'remove':

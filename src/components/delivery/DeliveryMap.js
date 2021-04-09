@@ -161,7 +161,9 @@ class DeliveryMap extends Component {
           route={this.state.route}
           origin={this.state.origin}
         />
-        <RouteEdit />
+        <RouteEdit 
+          addStop={this.props.addStop}
+        />
         <div className="dash-content">
           <form className="new-user-form" onSubmit={this.handleSubmit}>
             <input
