@@ -20,7 +20,7 @@ export default function AddStop({ entries }) {
             
             {
                 detailDisplay && detailID === e.id ?
-                    <AddStopFields />
+                    <AddStopFields routeID={e.id} />
                     :
                     null
             }
