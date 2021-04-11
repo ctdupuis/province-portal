@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import RemoveStopFields from './RemoveStopFields';
 
 
 export default function RemoveStop({ entries, removeStop }) {
@@ -18,12 +19,12 @@ export default function RemoveStop({ entries, removeStop }) {
                 <td>{e.miles}</td>
             </tr>
             
-            {/* {
+            {
                 detailDisplay && detailID === e.id ?
-                    <RemoveStopFields routeID={e.id} removeStop={removeStop} />
+                    <RemoveStopFields route={e} removeStop={removeStop} />
                     :
                     null
-            } */}
+            }
             </>
         )
     })
