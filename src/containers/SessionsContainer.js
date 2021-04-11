@@ -17,7 +17,8 @@ import {
 import {
   finalizeRoute,
   addStop,
-  editStop
+  editStop,
+  removeStop
 } from "../actions/deliveries";
 import InfoUpdate from "../components/sessions/InfoUpdate";
 import Tabs from "../components/static/Tabs";
@@ -101,6 +102,7 @@ class SessionsContainer extends Component {
                 finalizeRoute={this.props.finalizeRoute}
                 addStop={this.props.addStop}
                 editStop={this.props.editStop}
+                removeStop={this.props.removeStop}
                 loading={this.props.loading}
                 {...props}
               />
@@ -131,6 +133,7 @@ export default connect(
     getSchedule,
     finalizeRoute,
     addStop,
-    editStop
+    editStop,
+    removeStop
   }
 )(SessionsContainer);

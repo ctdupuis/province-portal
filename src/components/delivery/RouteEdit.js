@@ -51,7 +51,7 @@ export default class RouteEdit extends Component {
                 case 'edit':
                     return <EditStop entries={report} editStop={this.props.editStop} />
                 case 'remove':
-                    return <RemoveStop entries={report} />
+                    return <RemoveStop entries={report} removeStop={this.props.removeStop} />
                 default: return null;
             }
         }
