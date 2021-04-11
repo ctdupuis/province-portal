@@ -9,6 +9,7 @@ tr.selectable:hover {
     background-color: var(--l-green);
     opacity: .75;
     cursor: hover;
+    padding: 1%;
 }
 
 .smaller-fields {

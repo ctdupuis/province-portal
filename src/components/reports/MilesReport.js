@@ -14,7 +14,7 @@ export default function MilesReport({ entries }) {
                 <td>{e.date_format}</td>
                 <td>{e.user.first_name} | {e.user.username}</td>
                 <td>{e.stops.length}</td>
-                <td>{e.miles}</td>
+                <td>{e.miles} {e.edited ? "(edited)" : null}</td>
                 <td>
                     {
                         detailDisplay && detailID === e.id ? 
