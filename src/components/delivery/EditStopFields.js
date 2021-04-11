@@ -7,8 +7,7 @@ export default class EditStopFields extends Component {
         patient_address: "",
         miles: "",
         routeID: this.props.route.id,
-        isEditing: false,
-        id: undefined,
+        id: undefined
     }
 
     onChange = event => {
@@ -47,7 +46,6 @@ export default class EditStopFields extends Component {
 
     renderStopFields = () => {
         return this.props.route.stops.map((s) => {
-            debugger
             return(
                 this.state.id == s.id ? 
                 <tr key={s.id}>
@@ -71,6 +69,10 @@ export default class EditStopFields extends Component {
                             className="smaller-fields"
                             defaultValue={s.patient_address}
                         />
+                    </td>
+
+                    <td>
+                        <button className="cancel" onClick={this.toggleEdit}>Cancel</button>
                     </td>
                 </tr>
                 :
