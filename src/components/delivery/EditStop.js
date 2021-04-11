@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import EditStopFields from './EditStopFields';
 
-export default function EditStop({ entries }) {
+export default function EditStop({ entries, editStop }) {
     const [detailDisplay, setDisplay] = useState(false)
     const [detailID, setDetailID] = useState(undefined)
 
@@ -20,7 +20,7 @@ export default function EditStop({ entries }) {
 
             {
                 detailDisplay && detailID === e.id ?
-                    <EditStopFields route={e} />
+                    <EditStopFields route={e} editStop={editStop} />
                     :
                     null
             }

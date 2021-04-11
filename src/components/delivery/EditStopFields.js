@@ -18,7 +18,7 @@ export default class EditStopFields extends Component {
 
     handleClick = event => {
         event.preventDefault();
-        // this.props.editStop(this.state);
+        this.props.editStop(this.state);
     }
 
     toggleEdit = event => {

@@ -59,6 +59,19 @@ export const addStop = (data) => {
         }, { withCredentials: true })
         const result = response.data
         dispatch({ type: 'END_LOAD' })
+    }
+}
 
+export const editStop = (data) => {
+    return async (dispatch) => {
+        dispatch({ type: 'START_LOAD' })
+        const response = await axios.put(`${API_ROOT}/routes/${data.routeID}/stops/${data.id}`, {
+            id: data.id,
+            patient_name: data.patient_name,
+            patient_address: data.patient_address,
+            miles: data.miles
+        }, { withCredentials: true })
+        const result = response.data
+        dispatch({ type: 'END_LOAD' })
     }
 }
