@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import EditStopFields from './EditStopFields';
 
 export default function EditStop({ entries }) {
     const [detailDisplay, setDisplay] = useState(false)
@@ -16,6 +17,13 @@ export default function EditStop({ entries }) {
                 <td>{e.stops.length}</td>
                 <td>{e.miles}</td>
             </tr>
+
+            {
+                detailDisplay && detailID === e.id ?
+                    <EditStopFields route={e} />
+                    :
+                    null
+            }
             </>
         )
     })
@@ -24,7 +32,7 @@ export default function EditStop({ entries }) {
             <th>Date</th>
             <th>User</th>
             <th># of Stops</th>
-            <th>Total miles</th>
+            <th>Total Miles</th>
         </thead>
         <tbody>
             {renderEntries}
