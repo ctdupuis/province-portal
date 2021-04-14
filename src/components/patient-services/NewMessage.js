@@ -10,27 +10,27 @@ export default function NewMessage({ handleChange, handleSubmit, body, disabled,
     }
 
     return (
-        <div className="comment_handler">
-            <div className="comment_field">
-                <input
-                    className="comment-input"
-                    name="body"
-                    type="text"
-                    onChange={handleChange}
-                    value={body}
-                />
+        <form style={{height: "100%"}} onSubmit={handleSubmit}>
+            <div className="comment_handler">
+                <div className="comment_field">
+                    <input
+                        className="comment-input"
+                        name="body"
+                        type="text"
+                        onChange={handleChange}
+                        value={body}
+                    />
+                </div>
+                <div className="comment_submit_btn">
+                    <input 
+                        className="comment-submit" 
+                        type="submit" 
+                        value="Send" 
+                        disabled={disabled}
+                    />
+                </div>
+                    { currentUser.admin ? <button onClick={() => handleMessageWipe(currentUser, wipeMessages)} className="comment-submit rounded">Clear</button> : null }              
             </div>
-            <div className="comment_submit_btn">
-                <form style={{height: "100%"}} onSubmit={handleSubmit}>
-                <input 
-                    className="comment-submit" 
-                    type="submit" 
-                    value="Send" 
-                    disabled={disabled}
-                />
-                </form>
-            </div>
-                { currentUser.admin ? <button onClick={() => handleMessageWipe(currentUser, wipeMessages)} className="comment-submit rounded">Clear</button> : null }              
-        </div>
+        </form>
     )
 }

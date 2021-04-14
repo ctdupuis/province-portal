@@ -81,6 +81,7 @@ export const removeStop = (routeID, stopID) => {
         dispatch({ type: 'START_LOAD' })
         const response = await axios.delete(`${API_ROOT}/routes/${routeID}/stops/${stopID}`,
         { withCredentials: true })
+        const result = response.data
         dispatch({ type: 'END_LOAD'})
     }
 }
