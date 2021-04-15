@@ -4,8 +4,10 @@ const Alert = ({ alert }) => {
 
     return(
         <div className={`alert ${alert.type}`}>
+        <header>
+            <span className={`x ${alert.type}`}>X</span>
+        </header>
             <p>{alert.text}</p>
-            <span className="x">X</span>
         </div>
     )
 }
