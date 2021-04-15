@@ -5,12 +5,14 @@ import Header from './components/static/Header';
 import PostsContainer from './containers/PostsContainer';
 import MessagesContainer from './containers/MessagesContainer';
 import ReportsContainer from './containers/ReportsContainer';
+import AlertHandler from './containers/AlertHandler';
 
 function App() {
   return (
     <div className="App">
       <Header />
       <main>
+        <AlertHandler />
         <SessionsContainer />
         <PostsContainer />
         <MessagesContainer />

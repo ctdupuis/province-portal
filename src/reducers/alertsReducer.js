@@ -1,6 +1,3 @@
-import { defaultCipherList } from "constants";
-import { start } from "repl";
-
 export default function alertsReducer(
     state = {
         alerts: []
@@ -9,6 +6,7 @@ export default function alertsReducer(
 ) {
     switch (action.type) {
         case 'ADD_ALERT':
+            console.log(action)
             return {
                 ...state,
                 alerts: [...state.alerts, action.alert]

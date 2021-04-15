@@ -4,7 +4,6 @@ import '../../stylesheets/sessions/forms.css';
 
 export default class Login extends Component {
     
-
     state = {
         username: '',
         password: ''
@@ -26,18 +25,18 @@ export default class Login extends Component {
         }
     }
 
-    renderAlert = () => {
-        if (this.props.error) {
-            return <Alert msg={this.props.error} />
-        }
-    }
+    // renderAlert = () => {
+    //     if (this.props.error) {
+    //         return <Alert msg={this.props.error} />
+    //     }
+    // }
 
     render() {
         return (
             <div className="session-form-container">
                 <div className="form-box">
                     <form className="session-form">
-                        {this.renderAlert()}
+                        {/* {this.renderAlert()} */}
 
                         <label>Username</label>
                         <input 
