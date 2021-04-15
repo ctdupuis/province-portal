@@ -42,7 +42,3 @@
   background: var(--l-green);
   transition: 0.3s;
 }
-
-.alert {
-  color: red;
-}

@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import Alert from '../components/static/Alert';
+import '../stylesheets/alerts.css';
 
 class AlertHandler extends Component {
 
     renderAlert = props => {
-        return <Alert alert={this.props.alert} />
+        return props.alerts.map(alert => <Alert alert={alert} />)
     }
 
     render() {

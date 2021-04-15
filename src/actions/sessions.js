@@ -21,7 +21,7 @@ export const login = (userdata, history) => {
             dispatch({type: 'END_LOAD'})
             history.push('/dashboard')
         } else {
-            const alert = resp.error
+            const alert = resp.alert
             dispatch({ type: 'ADD_ALERT', alert })
             dispatch({type: 'END_LOAD'})
             history.push('/')

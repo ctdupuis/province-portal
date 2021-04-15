@@ -1,0 +1,43 @@
+.alert-wrapper {
+    text-align: center;
+}
+
+.alert {
+    background-color: whitesmoke;
+    margin: .1em 25% 0 25%;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 15px;
+    padding: 1%;
+    animation-name: dropfromtop;
+    animation-duration: 1s;
+}
+
+.failure {
+    /* color: red; */
+    box-shadow: 0 0 2px red;
+}
+
+.success {
+    color: green;
+}
+
+.x {
+    border-radius: 100px;
+    transition: 0.5s;
+    padding: 1%;
+    box-shadow: 0 0 5px grey;
+}
+
+.x:hover{
+    background-color: lightgrey;
+    cursor: pointer;
+}
+
+@keyframes dropfromtop{
+    0% {top: 0px;}
+    25% {top: 25px;}
+    50% {top: 50px;}
+    75% {top: 50px;}
+    100% {top: 100px;}
+}
