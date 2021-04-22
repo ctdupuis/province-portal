@@ -1,13 +1,13 @@
 import React from 'react';
 
-export default function AptComplexes() {
+export default function SatDelivery() {
     return (
         <div className="ul-list">
             <fieldset className="info">
-                <legend>Gated Communities</legend>
+                <legend>Sat Delivery</legend>
                 <ul className="li-items">
-                    <li>201 Prescott Blvd</li>
-                    <li>215 Republic Ave</li>
+                    <li>Baldwin</li>
+                    <li>Boswick</li>
                 </ul>
             </fieldset>
         </div>

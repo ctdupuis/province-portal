@@ -1,14 +1,19 @@
 import React from 'react';
+import AptComplexes from './AptComplexes';
+import SatDelivery from './SatDelivery';
+import '../../stylesheets/delivery/deliveryinfo.css';
 
 export default function DeliveryInfo() {
     return (
         <div className="dash-content">
-            <table className="contact-list">
-                <thead>
-                    <th>Apartment Complexes</th>
-                    <th>Sat Delivery Not Supported</th>
-                </thead>
-            </table>
+            <div className="user-info-title">
+                <h3>Helpful Delivery info</h3>
+            </div>
+            <div className="flex-container">
+                <AptComplexes />
+                <SatDelivery />
+            </div>
+
         </div>
     )
 }
