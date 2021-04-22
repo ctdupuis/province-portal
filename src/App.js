@@ -12,12 +12,12 @@ function App() {
     <div className="App">
       <Header />
       <main>
-        <AlertHandler />
         <SessionsContainer />
         <PostsContainer />
         <MessagesContainer />
         <ReportsContainer />
       </main>
+        <AlertHandler />
     </div>
   );
 }

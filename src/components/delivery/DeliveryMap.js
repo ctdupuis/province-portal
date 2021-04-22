@@ -11,6 +11,7 @@ import {
 import { getGeocode } from "../../actions/deliveries";
 import DeliveryEntry from "./DeliveryEntry";
 import RouteEdit from "./RouteEdit";
+import DeliveryInfo from "./DeliveryInfo";
 require("dotenv").config();
 
 
@@ -166,6 +167,11 @@ class DeliveryMap extends Component {
           editStop={this.props.editStop}
           removeStop={this.props.removeStop}
         />
+
+        {/* <div className="dash-content"> */}
+          <DeliveryInfo />
+        {/* </div> */}
+
         <div className="dash-content">
           <form className="new-user-form" onSubmit={this.handleSubmit}>
             <input
