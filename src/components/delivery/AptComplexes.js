@@ -4,7 +4,7 @@ export default function AptComplexes() {
     return (
         <div className="ul-list">
             <fieldset className="info">
-                <legend>Apartment Complexes or Gated Communities</legend>
+                <legend>Addresses that Require Gate Code</legend>
                 <ul className="li-items">
                     <li>1521 Camellia Blvd</li>
                     <li>1000-1200 Robley Dr</li>

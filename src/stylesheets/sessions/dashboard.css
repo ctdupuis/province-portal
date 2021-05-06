@@ -86,6 +86,11 @@
   cursor: pointer;
 }
 
+.flex-form {
+  display: flex;
+  flex-wrap: wrap;
+}
+
 .new-user-form label {
   margin: 1rem;
   color: var(--m-green);

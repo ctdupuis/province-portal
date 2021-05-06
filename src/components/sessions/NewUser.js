@@ -58,7 +58,7 @@ export default class NewUser extends Component {
         <div className="user-info-title">
           <h3>Add a New User</h3>
         </div>
-        <form className="new-user-form" onSubmit={this.handleSubmit}>
+        <form className="new-user-form flex-form" onSubmit={this.handleSubmit}>
           <label htmlFor="username">Username</label>
           <input
             type="text"
