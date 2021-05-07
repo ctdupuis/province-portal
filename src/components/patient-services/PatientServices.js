@@ -66,14 +66,14 @@ export default class PatientServices extends Component {
         })
     }
 
-    onReceived = response => {
+    onReceived = async(response) => {
         const message = JSON.parse(response);
-        const found = this.props.messages.find(mes => mes.id === message.id)
-        console.log("This is before the check:", found)
+        const found = await this.props.messages.find(mes => mes.id === message.id)
         if (!found) {
-            console.log("This is inside the check:", found)
+            console.log("Message was not found so I added it")
             this.props.addMessage(message);
         } else {
+            console.log("We found it. No need to make another one")
             return null
         }
     }
