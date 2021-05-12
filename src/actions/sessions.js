@@ -13,6 +13,7 @@ export const login = (userdata, history) => {
         if (resp.first_login) { //send them to update password
             const user = resp.user
             dispatch({ type: 'LOGIN_USER', user })
+            dispatch({ type: 'CLEAR_ALERTS'})
             dispatch({ type: 'END_LOAD'})
             history.push('/update-info')
         } else if (resp.logged_in === true) {

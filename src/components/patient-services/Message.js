@@ -23,20 +23,22 @@ export default function Message({ message, currentUser, removeMessage }) {
     const { id, text, author, created, user_id } = message
 
     return (
-        <div className="message">
-            <div className="message-body">
-                {text}
-            </div>
-            <div className="message-metadata">
-                <div className="message-author">
-                    {author}
+        <div className="message-row">
+            <div className="message">
+                <div className="message-body">
+                    {text}
                 </div>
-                <div className="message-timestamps">
-                    <em>
-                        {created}
-                    </em>
+                <div className="message-metadata">
+                    <div className="message-author">
+                        {author}
+                    </div>
+                    <div className="message-timestamps">
+                        <em>
+                            {created}
+                        </em>
+                    </div>
+                {checkOwnership(currentUser, user_id, id)}
                 </div>
-            {checkOwnership(currentUser, user_id, id)}
             </div>
         </div>
     )

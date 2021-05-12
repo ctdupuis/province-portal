@@ -11,6 +11,11 @@ export default function alertsReducer(
                 ...state,
                 alerts: [...state.alerts, action.alert]
             }
+        case 'CLEAR_ALERTS':
+            return {
+                ...state,
+                alerts: []
+            }
     default: return state;
     }
 }

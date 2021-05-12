@@ -6,11 +6,27 @@
     flex-direction: column;
 }
 
+.message-row {
+    display: grid;
+    grid-template-columns: 45%;
+}
+
 .message {
     border: 2px solid var(--m-green);
     margin: 10px;
     padding: 10px;
+    border-radius: 14px 0 14px 14px;
+    /* width: 30%; */
+    justify-content: end;
+    justify-items: end;
+}
+
+.sender {
     border-radius: 10px 0 10px 10px;
+}
+
+.receiver {
+    border-radius: 0 10px 10px 10px;
 }
 
 .message-body {

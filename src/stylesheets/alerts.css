@@ -12,13 +12,12 @@
 }
 
 .alert header {
-    background-color:white;
     text-align: right;
 }
 
 .failure {
-    /* color: red; */
-    box-shadow: 0 0 2px red;
+    color: red;
+    /* box-shadow: 0 0 2px red; */
 }
 
 .success {
@@ -29,7 +28,7 @@
     border-radius: 100px;
     transition: 0.5s;
     padding: .5%;
-    box-shadow: 0 0 .5em grey;
+    /* box-shadow: 0 0 .5em grey; */
 }
 
 .x:hover{
