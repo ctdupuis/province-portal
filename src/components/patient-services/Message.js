@@ -8,23 +8,18 @@ export default function Message({ message, currentUser, removeMessage }) {
         }
     }
 
-    const checkOwnership = (currentUser, userID, messageID) => {
-        if (currentUser.id === userID) {
-          return (
-          <div className="edit-delete-container">
-            <button className="delete-info message-timestamps" onClick={() => handleDelete(messageID)}>
-                <FaTrash />
-            </button>    
-          </div>
-          );
-        }
+    const checkOwnership = (currentUser, userID) => {
+        if (currentUser.id === userID) {return true} else {return false}
     }
 
     const { id, text, author, created, user_id } = message
 
+    const rowType = checkOwnership(currentUser, message.user_id) ? "right" : "left"
+    const mesType = checkOwnership(currentUser, message.user_id) ? "sender" : "receiver"
+
     return (
-        <div className="message-row">
-            <div className="message">
+        <div className={`message-row ${rowType}`}>
+            <div className={`message ${mesType}`}>
                 <div className="message-body">
                     {text}
                 </div>
@@ -37,7 +32,14 @@ export default function Message({ message, currentUser, removeMessage }) {
                             {created}
                         </em>
                     </div>
-                {checkOwnership(currentUser, user_id, id)}
+                {checkOwnership(currentUser, user_id) ? 
+                    <div className="edit-delete-container">
+                        <button className="delete-info message-timestamps" onClick={() => handleDelete(id)}>
+                            <FaTrash />
+                        </button>    
+                    </div> 
+                :
+                null}
                 </div>
             </div>
         </div>

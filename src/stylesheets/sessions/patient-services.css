@@ -9,23 +9,32 @@
 .message-row {
     display: grid;
     grid-template-columns: 45%;
+    background-color: whitesmoke;
 }
 
 .message {
     border: 2px solid var(--m-green);
     margin: 10px;
     padding: 10px;
-    border-radius: 14px 0 14px 14px;
-    /* width: 30%; */
+}
+
+.right {
     justify-content: end;
     justify-items: end;
 }
 
+.left {
+
+    justify-items: start;
+}
+
 .sender {
+    background-color: var(--l-green);
     border-radius: 10px 0 10px 10px;
 }
 
 .receiver {
+    background-color: lightgrey;
     border-radius: 0 10px 10px 10px;
 }
 
