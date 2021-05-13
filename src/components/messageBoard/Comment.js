@@ -75,6 +75,7 @@ export default class Comment extends Component {
               name="content"
               onChange={this.handleChange}
               className="edit-input"
+              autoFocus={true}
             /> 
             :
             <div className="comment-text">

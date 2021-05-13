@@ -98,6 +98,7 @@ export default class Post extends Component {
                   name="content"
                   onChange={this.handleChange}
                   className="edit-input"
+                  autoFocus={true}
                 />
               </div>
               :

@@ -175,6 +175,7 @@
   padding: .3em;
   border: .1em solid var(--m-green);
   color: var(--d-green);
+  outline: none;
 }
 
 .info-save {

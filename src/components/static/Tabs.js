@@ -6,7 +6,7 @@ const Tabs = ({ endSession }) => {
   const activeStyle = {
     backgroundColor: "var(--d-green)",
     borderRadius: "10px",
-    transition: "0.5s"
+    transition: "0.3s"
   }
   return (
     <div className="nav-tabs-container">

@@ -110,6 +110,7 @@ export default class Dashboard extends Component {
                   type="email" 
                   placeholder="Enter email..." 
                   onChange={this.handleChange}
+                  autoFocus={true}
                 /> 
                 <button className="info-cancel" onClick={this.toggleEmailInput}>Cancel</button>
                 <button className="info-save" onClick={this.handleClick}>Save Changes</button>
@@ -132,6 +133,7 @@ export default class Dashboard extends Component {
                   placeholder="Enter phone..." 
                   value={this.state.phone}
                   onChange={this.handleChange}
+                  autoFocus={true}
                 /> 
                 <button className="info-cancel" onClick={this.togglePhoneInput}>Cancel</button>
                 <button className="info-save" onClick={this.handleClick}>Save Changes</button>
