@@ -59,73 +59,84 @@ export default class NewUser extends Component {
           <h3>Add a New User</h3>
         </div>
         <form className="new-user-form flex-form" onSubmit={this.handleSubmit}>
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            name="username"
-            onChange={this.handleChange}
-            value={this.state.username}
-            required
-          />
-          <br />
 
-          <label>First Name</label>
-          <input
-            type="text"
-            name="first_name"
-            onChange={this.handleChange}
-            value={this.state.first_name}
-            required
-          />
-          <br />
 
-          <label htmlFor="last_name">Last Name</label>
-          <input
-            type="text"
-            name="last_name"
-            onChange={this.handleChange}
-            value={this.state.last_name}
-            required
-          />
-          <br />
 
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            name="password"
-            onChange={this.handleChange}
-            value={this.state.password}
-            required
-          />
-          <br />
+          <div class="form-group">
+            <label>First Name</label>
+            <input
+              type="text"
+              name="first_name"
+              onChange={this.handleChange}
+              value={this.state.first_name}
+              required
+              />
+          
+            <label htmlFor="last_name">Last Name</label>
+            <input
+              type="text"
+              name="last_name"
+              onChange={this.handleChange}
+              value={this.state.last_name}
+              required
+              />
+          </div>
 
-          <label htmlFor="email">Email Address</label>
-          <input
-            type="email"
-            name="email"
-            onChange={this.handleChange}
-            value={this.state.email}
-          />
-          <br />
+          <div class="form-group">
 
-          <label htmlFor="phone">Phone Number</label>
-          <input
-            type="tel"
-            name="phone"
-            onChange={this.handleChange}
-            value={this.state.phone}
-          />
-          <br />
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              name="username"
+              onChange={this.handleChange}
+              value={this.state.username}
+              required
+              />
 
-          <label htmlFor="admin">Administrator</label>
-          <input 
-            name="admin"
-            type="checkbox"
-            onChange={this.setAdmin}
-            checked={this.state.admin}
-          />
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              name="password"
+              onChange={this.handleChange}
+              value={this.state.password}
+              required
+              />
+          </div>
 
-          <input className="new-user-sbmt" type="submit" value="Create User" />
+          <div class="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              name="email"
+              onChange={this.handleChange}
+              value={this.state.email}
+              />
+
+            <label htmlFor="phone">Phone</label>
+            <input
+              type="tel"
+              name="phone"
+              onChange={this.handleChange}
+              value={this.state.phone}
+              />
+
+          </div>
+
+          <div class="form-group">
+
+            <label htmlFor="admin">Administrator</label>
+            <input 
+              name="admin"
+              type="checkbox"
+              onChange={this.setAdmin}
+              checked={this.state.admin}
+            />
+
+          </div>
+
+          <div class="form-group">
+            <input className="new-user-sbmt" type="submit" value="Create User" />
+          </div>
         </form>
       </>
     );

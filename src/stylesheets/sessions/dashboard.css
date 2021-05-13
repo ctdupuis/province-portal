@@ -89,6 +89,12 @@
 .flex-form {
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.form-group {
+  text-align: center;
 }
 
 .new-user-form label {
