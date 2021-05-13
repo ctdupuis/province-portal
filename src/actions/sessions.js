@@ -22,6 +22,7 @@ export const login = (userdata, history) => {
             dispatch({type: 'END_LOAD'})
             history.push('/dashboard')
         } else {
+            console.log("Logged from the else block")
             const alert = resp.alert
             dispatch({ type: 'ADD_ALERT', alert })
             dispatch({type: 'END_LOAD'})

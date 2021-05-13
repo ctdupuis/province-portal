@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Alert from '../static/Alert';
 import '../../stylesheets/sessions/forms.css';
 
 export default class InfoUpdate extends Component {
@@ -43,18 +42,11 @@ export default class InfoUpdate extends Component {
         })
     }
 
-    renderAlert = () => {
-        if (this.props.error) {
-            return <Alert msg={this.props.error} />
-        }
-    }
-
     render() {
         return (
             <div className="session-form-container">
                 <div className="form-box">
                     <form className="session-form" onSubmit={this.handleSubmit}>
-                        {this.renderAlert()}
                         <h3>Please update your password. Optional info can be added later.</h3>
                         <label>Password</label>
                         <input 

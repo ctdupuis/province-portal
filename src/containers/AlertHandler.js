@@ -5,14 +5,19 @@ import '../stylesheets/alerts.css';
 
 class AlertHandler extends Component {
 
-    renderAlert = props => {
-        return props.alerts.map(alert => <Alert alert={alert} />)
+    renderAlert = alerts => {
+        if (alerts) {
+            alerts.map(alert => <Alert alert={alert} />)
+        } else {
+            return null
+        }
     }
 
     render() {
+        const { alerts } = this.props.alerts
         return (
             <div className="alert-wrapper">
-                {this.renderAlert(this.props)}
+                {this.renderAlert(alerts)}
             </div>
         )
     }

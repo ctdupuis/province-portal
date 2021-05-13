@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Alert from '../static/Alert';
 import '../../stylesheets/sessions/forms.css';
 
 export default class Login extends Component {
@@ -25,18 +24,11 @@ export default class Login extends Component {
         }
     }
 
-    // renderAlert = () => {
-    //     if (this.props.error) {
-    //         return <Alert msg={this.props.error} />
-    //     }
-    // }
-
     render() {
         return (
             <div className="session-form-container">
                 <div className="form-box">
                     <form className="session-form">
-                        {/* {this.renderAlert()} */}
 
                         <label>Username</label>
                         <input 
