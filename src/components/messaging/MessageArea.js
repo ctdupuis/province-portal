@@ -4,7 +4,7 @@ import Message from './Message';
 import { ActionCableConsumer } from 'react-actioncable-provider';
 import NewMessage from './NewMessage';
 import { API_WS_ROOT } from '../../constants';
-import { getConvo } from '../../actions/patient-services';
+import { getConvo } from '../../actions/messages';
 
 const actioncable = require("actioncable")
 
@@ -69,6 +69,7 @@ export default class PatientServices extends Component {
     onReceived = async(response) => {
         const message = JSON.parse(response);
         const found = await this.props.messages.find(mes => mes.id === message.id)
+        debugger
         if (!found) {
             console.log("Message was not found so I added it")
             this.props.addMessage(message);

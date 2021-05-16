@@ -8,22 +8,22 @@ import {
     addMessage,
     removeMessage,
     wipeMessages
-} from "../actions/patient-services";
+} from "../actions/messages";
 import { endSession } from "../actions/sessions";
 import Tabs from '../components/static/Tabs';
-import PatientServices from '../components/patient-services/PatientServices';
+import MessageArea from '../components/messaging/MessageArea';
 
 class MessagesContainer extends Component {
     render() {
         return (
             <Route 
                 exact
-                path={'/patient-services'}
+                path={'/messaging'}
                 render={(props) => (
                     this.props.currentUser ? 
                     <>
                         <Tabs endSession={this.props.endSession}/>
-                        <PatientServices
+                        <MessageArea
                             currentUser={this.props.currentUser}
                             endSession={this.props.endSession}
                             getMessages={this.props.getMessages}

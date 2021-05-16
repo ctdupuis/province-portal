@@ -33,7 +33,7 @@ const Tabs = ({ endSession }) => {
       <div className="nav-tab">
         <div className="link-container">
           <NavLink
-            to={"/patient-services"}
+            to={"/messaging"}
             activeStyle={activeStyle}
           >
             Messaging
