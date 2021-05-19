@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "../stylesheets/sessions/posts.css";
-import NewPost from "../components/messageBoard/NewPost";
-import PostList from "../components/messageBoard/PostList";
+import NewPost from "../components/announcements/NewPost";
+import PostList from "../components/announcements/PostList";
 import {
     getPosts,
     addPost,
