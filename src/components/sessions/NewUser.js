@@ -62,7 +62,7 @@ export default class NewUser extends Component {
 
 
 
-          <div class="form-group">
+          <div className="form-group">
             <label>First Name</label>
             <input
               type="text"
@@ -82,7 +82,7 @@ export default class NewUser extends Component {
               />
           </div>
 
-          <div class="form-group">
+          <div className="form-group">
 
             <label htmlFor="username">Username</label>
             <input
@@ -103,7 +103,7 @@ export default class NewUser extends Component {
               />
           </div>
 
-          <div class="form-group">
+          <div className="form-group">
             <label htmlFor="email">Email</label>
             <input
               type="email"
@@ -122,7 +122,7 @@ export default class NewUser extends Component {
 
           </div>
 
-          <div class="form-group">
+          <div className="form-group">
 
             <label htmlFor="admin">Administrator</label>
             <input 
@@ -134,7 +134,7 @@ export default class NewUser extends Component {
 
           </div>
 
-          <div class="form-group">
+          <div className="form-group">
             <input className="new-user-sbmt" type="submit" value="Create User" />
           </div>
         </form>

@@ -6,15 +6,11 @@ import '../stylesheets/alerts.css';
 class AlertHandler extends Component {
 
     renderAlert = alerts => {
-        if (alerts) {
-            alerts.map(alert => <Alert alert={alert} />)
-        } else {
-            return null
-        }
+        return alerts.map(alert => <Alert alert={alert} />)
     }
 
     render() {
-        const { alerts } = this.props.alerts
+        const {alerts} = this.props
         return (
             <div className="alert-wrapper">
                 {this.renderAlert(alerts)}
@@ -27,4 +23,4 @@ export default connect(
     (state) => ({
         alerts: state.alertsReducer.alerts
     }), null
-)(AlertHandler);
+)(AlertHandler);  
