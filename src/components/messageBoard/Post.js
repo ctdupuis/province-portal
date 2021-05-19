@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import CommentList from "../announcements/CommentList";
+import CommentList from "./CommentList";
 import NewComment from "./NewComment";
 import { FaPen, FaTrash } from 'react-icons/fa';
 import Loading from '../static/Loading';

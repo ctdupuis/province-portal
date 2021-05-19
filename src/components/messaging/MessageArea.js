@@ -31,7 +31,8 @@ export default class PatientServices extends Component {
                     disconnected: () => {
                         console.warn("disconnected")
                     },
-                    received: data => this.onReceived(data)
+                    received: data => this.onReceived(data),
+    
                 })
             }
         )
@@ -69,7 +70,6 @@ export default class PatientServices extends Component {
     onReceived = async(response) => {
         const message = JSON.parse(response);
         const found = await this.props.messages.find(mes => mes.id === message.id)
-        debugger
         if (!found) {
             console.log("Message was not found so I added it")
             this.props.addMessage(message);
