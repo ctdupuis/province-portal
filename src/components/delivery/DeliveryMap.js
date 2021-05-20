@@ -67,7 +67,6 @@ class DeliveryMap extends Component {
     event.preventDefault();
     event.stopPropagation();
     console.log("SOMETHING PLEASE")
-    debugger
   }
 
   handleChange = (event) => {
@@ -173,6 +172,9 @@ class DeliveryMap extends Component {
         {/* </div> */}
 
         <div className="dash-content">
+          <div className="user-info-title">
+            <h3>Plot a Delivery</h3>
+          </div>
           <form className="new-user-form" onSubmit={this.handleSubmit}>
             <input
               type="search"

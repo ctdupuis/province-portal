@@ -8,7 +8,6 @@ import RemoveStop from './RemoveStop';
 export default class RouteEdit extends Component {
     state = {
         start_date: "",
-        // end_date: "",
         type: undefined,
         report: undefined
     }
@@ -64,18 +63,19 @@ export default class RouteEdit extends Component {
                 <div className="user-info-title">
                     <h3>Route Amendment</h3>
                 </div>
+
                 <div className="user-info-content">
-                    <div className="form-group">
-                        <label htmlFor="start-date">Route Date</label>
-                        <input 
-                            type="date" 
-                            name="start_date" 
-                            id="start-date" 
-                            value={this.state.start_date}
-                            onChange={this.onChange}
-                            max={moment().format("YYYY-MM-DD")}
-                        />
-                    </div>
+
+                    <label htmlFor="start-date">Route Date</label>
+                    <input 
+                        type="date" 
+                        name="start_date" 
+                        id="start-date" 
+                        value={this.state.start_date}
+                        onChange={this.onChange}
+                        max={moment().format("YYYY-MM-DD")}
+                    />
+
                     <button 
                         className="green-btn" 
                         disabled={disabled}
