@@ -16,7 +16,10 @@ export default function SatDelivery() {
                 <li>Lockport</li>
                 <li>Luling</li>
                 <li>Madisonville</li>
+                <li>Mamou</li>
+                <li>Napoleonville</li>
                 <li>Pierre Part</li>
+                <li>Pitkin</li>
                 <li>Pollock</li>
                 <li>Ponchatoula</li>
                 <li>Reserve</li>
