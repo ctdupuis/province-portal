@@ -124,8 +124,9 @@ export default class Dashboard extends Component {
               </>}
             </div>
             <div className="user-info-content">
-              Phone: {this.state.togglePhoneInput ? 
-              <>
+               {this.state.togglePhoneInput ? 
+              <div className="form-group">
+                <label htmlFor="phone">Phone</label>
                 <input 
                   name="phone" 
                   className="user-input" 
@@ -137,7 +138,7 @@ export default class Dashboard extends Component {
                 /> 
                 <button className="info-cancel" onClick={this.togglePhoneInput}>Cancel</button>
                 <button className="info-save" onClick={this.handleClick}>Save Changes</button>
-              </>
+              </div>
               : 
               <>
               {this.renderPhone(currentUser)}

@@ -154,22 +154,25 @@ class DeliveryMap extends Component {
       <Loading />
       ) : (
         <section className="dash-container">
-        <DeliveryEntry 
-          finalizeRoute={this.props.finalizeRoute}
-          activeLocation={this.state.activeMarker.name}
-          destinations={this.state.destinations}
-          route={this.state.route}
-          origin={this.state.origin}
-        />
-        <RouteEdit 
-          addStop={this.props.addStop}
-          editStop={this.props.editStop}
-          removeStop={this.props.removeStop}
-        />
 
-        {/* <div className="dash-content"> */}
+          <div className="flex-container">
+            <DeliveryEntry 
+              finalizeRoute={this.props.finalizeRoute}
+              activeLocation={this.state.activeMarker.name}
+              destinations={this.state.destinations}
+              route={this.state.route}
+              origin={this.state.origin}
+              />
+            <RouteEdit 
+              addStop={this.props.addStop}
+              editStop={this.props.editStop}
+              removeStop={this.props.removeStop}
+            />
+        </div>
+
+       
           <DeliveryInfo />
-        {/* </div> */}
+        
 
         <div className="dash-content">
           <div className="user-info-title">

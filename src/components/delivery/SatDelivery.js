@@ -2,10 +2,13 @@ import React from 'react';
 
 export default function SatDelivery() {
     return (
+        <div className="dash-content">
+            <div className="user-info-title">
+                <h3>Saturday Delivery Not Supported</h3> 
+            </div>
+
         <div className="ul-list">
-            <fieldset className="info">
-                <legend>Sat Delivery Not Supported</legend>
-                <ul className="li-items">
+            <ul className="li-items">
                 <li>Basile</li>
                 <li>Baldwin</li>
                 <li>Cut Off</li>
@@ -24,8 +27,9 @@ export default function SatDelivery() {
                 <li>Ponchatoula</li>
                 <li>Reserve</li>
                 <li>Saint Francisville</li>
-                </ul>
-            </fieldset>
+            </ul>
+        </div>
+
         </div>
     )
 }

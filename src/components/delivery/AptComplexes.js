@@ -2,9 +2,13 @@ import React from 'react';
 
 export default function AptComplexes() {
     return (
-        <div className="ul-list">
-            <fieldset className="info">
-                <legend>Addresses that Require Gate Code</legend>
+
+        <div className="dash-content">
+            <div className="user-info-title">
+                <h3>Addresses that Require Gate Code</h3>
+            </div>
+
+            <div className="ul-list">
                 <ul className="li-items">
                     <li>1521 Camellia Blvd</li>
                     <li>1000-1200 Robley Dr</li>
@@ -15,7 +19,8 @@ export default function AptComplexes() {
                     <li>2314 Kaliste Saloom Rd</li>
                     <li>101 Shallowford Dr</li>
                 </ul>
-            </fieldset>
+            </div>
         </div>
+
     )
 }
