@@ -14,7 +14,6 @@ const Tabs = ({ endSession }) => {
         <div className="link-container">
           <NavLink
             to={"/dashboard"}
-            activeStyle={activeStyle}
           >
             Dashboard
           </NavLink>
@@ -24,7 +23,6 @@ const Tabs = ({ endSession }) => {
         <div className="link-container">
           <NavLink
             to={"/announcements"}
-            activeStyle={activeStyle}
           >
             Announcements
           </NavLink>
@@ -34,7 +32,6 @@ const Tabs = ({ endSession }) => {
         <div className="link-container">
           <NavLink
             to={"/messaging"}
-            activeStyle={activeStyle}
           >
             Messaging
           </NavLink>
@@ -44,7 +41,6 @@ const Tabs = ({ endSession }) => {
         <div className="link-container">
           <NavLink
             to={"/reports"}
-            activeStyle={activeStyle}
           >
             Reports
           </NavLink>
@@ -54,7 +50,6 @@ const Tabs = ({ endSession }) => {
         <div className="link-container">
           <NavLink
             to={"/deliveries"}
-            activeStyle={activeStyle}
           >
             Deliveries
           </NavLink>
@@ -64,7 +59,6 @@ const Tabs = ({ endSession }) => {
         <div className="link-container">
           <NavLink
             to={"/inventory"}
-            activeStyle={activeStyle}
           >
             Inventory
           </NavLink>
@@ -72,7 +66,7 @@ const Tabs = ({ endSession }) => {
       </div>
       <div className="nav-tab">
         <div className="link-container">
-          <NavLink to={"/dashboard"} onClick={() => endSession()}>
+          <NavLink to={"/logout"} onClick={() => endSession()}>
             Log Out
           </NavLink>
         </div>

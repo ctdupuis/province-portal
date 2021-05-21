@@ -11,9 +11,9 @@
   height: 150px;
   width: 100%;
   text-align: left;
-  border-bottom: 7px solid var(--d-green);
+  /* border-bottom: 7px solid var(--d-green);
   border-left: 6px solid var(--m-green);
-  border-top: 5px solid var(--l-green);
+  border-top: 5px solid var(--l-green); */
 }
 
 .company-name {

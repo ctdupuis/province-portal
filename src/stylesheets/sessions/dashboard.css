@@ -8,17 +8,15 @@
 .dash-header {
   border: 2px solid var(--d-green);
   margin: 1rem 2.5rem;
-  /* background-color: var(--o-green); */
   border-radius: 5px;
   padding: 10px;
   display: flex;
   box-shadow: 3px 3px var(--d-green);
-  background-image: linear-gradient(var(--o-green), var(--d-green));
+  background-image: linear-gradient(var(--o-green), var(--l-green));
 }
 
 .dash-header h3 {
   text-align: left;
-  /* background-color: var(--o-green); */
   width: 100%;
   padding-left: 5px;
   font-size: large;
@@ -31,7 +29,6 @@
   margin: 2rem 2.5rem;
   background-color: whitesmoke;
   border-radius: 5px;
-  /* padding: .5rem; */
   box-shadow: 3px 3px var(--d-green);
 }
 
@@ -49,10 +46,13 @@
 
 .user-info-title {
   border-bottom: .1rem solid var(--d-green);
-  /* margin: .5rem; */
   padding: 1%;
   border-radius: 5px 5px 0 0;
-  background-image: linear-gradient(to right, var(--l-green), var(--d-green));
+  background-image: linear-gradient(to right, var(--m-green), var(--o-green), var(--l-green));
+}
+
+.user-info-title h3 {
+  color: whitesmoke;
 }
 
 .user-info-content {

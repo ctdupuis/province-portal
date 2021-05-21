@@ -12,6 +12,10 @@
     background-color: whitesmoke;
 }
 
+.solid-bg {
+    background: whitesmoke;
+}
+
 .message {
     border: 2px solid var(--m-green);
     margin: 10px;

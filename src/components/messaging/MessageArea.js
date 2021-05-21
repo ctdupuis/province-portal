@@ -85,7 +85,7 @@ export default class PatientServices extends Component {
         return(
             <section className="dash-container">
                 <div className="dash-content">
-                    <div className="user-info-title">
+                    <div className="user-info-title solid-bg">
                         {/* <ActionCableConsumer
                             channel={{ channel: "MessagesChannel", demo: this.props.currentUser.demo }}
                             onReceived={this.onReceived}

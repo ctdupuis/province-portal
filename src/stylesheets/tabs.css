@@ -1,9 +1,8 @@
 @import '../index.css';
 
 .nav-tabs-container {
-    background-color: var(--o-green);
+    background-image: linear-gradient(var(--m-green), var(--o-green));
     height: 2.5rem;
-    border-bottom: .5rem solid var(--d-green);
     text-align: center;
     justify-content: center;
     display: flex;
@@ -11,7 +10,6 @@
 
 .nav-tab {
     display: flex;
-    /* margin: 0 1rem 0 1rem; */
     text-align: center;
     height: 100%;
     transition: 0.5s;
@@ -19,19 +17,24 @@
 
 .link-container {
     text-align: center;
-    padding: 0.5rem;
+    display: flex;
     height: 100%;
+    padding: 0 .5em;
+    justify-content: center;
 }
 
 .nav-tab a {
     text-decoration: none;
     color: whitesmoke;
-    padding: .1rem;
     height: 100%;
-    padding: 8px;
+    padding: .6em;
     transition: 0.5s;
 }
 
+a.active {
+    background-color: var(--o-green);
+}
+
 .nav-tab a:hover {
-    background-color: var(--d-green);
+    background-image: linear-gradient(var(--o-green), var(--m-green));
 }
