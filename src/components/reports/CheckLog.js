@@ -36,49 +36,64 @@ export default class CheckLog extends Component {
                 </div>
                 <div className="user-info-content">
                     <form id="report-form">
-                        <label htmlFor="patient_name">Patient Name</label>
-                        <input
-                            type="text"
-                            name="patient_name"
-                            className="report-text"
-                            value={this.state.patient_name}
-                            onChange={this.handleChange}
-                        />
-                        <label htmlFor="rxNumber">RX #</label>
-                        <input
-                            type="text"
-                            name="rx_num"
-                            className="report-text"
-                            value={this.state.rx_num}
-                            maxLength="6"
-                            onChange={this.handleChange}
-                        />
-                        <label htmlFor="original_amt">Original Amount</label>
-                        <input 
-                            type="number"
-                            min="0"
-                            step="0.01"
-                            name="original_amt"
-                            className="report-num"
-                            value={this.state.original_amt}
-                            onChange={this.handleChange}
-                        />
-                        <label htmlFor="adjusted_amt">Adjusted Amount</label>
-                        <input
-                            type="number"
-                            min="0"
-                            step="0.01"
-                            name="adjusted_amt"
-                            className="report-num"
-                            value={this.state.adjusted_amt}
-                            onChange={this.handleChange}
-                        />
+
+                        <div className="form-group">
+                            <label htmlFor="patient_name">Patient Name</label>
+                            <input
+                                type="text"
+                                name="patient_name"
+                                className="report-text"
+                                value={this.state.patient_name}
+                                onChange={this.handleChange}
+                            />
+                        {/* </div>
+
+                        <div className="form-group"> */}
+                            <label htmlFor="rxNumber">RX #</label>
+                            <input
+                                type="text"
+                                name="rx_num"
+                                className="report-text"
+                                value={this.state.rx_num}
+                                maxLength="6"
+                                onChange={this.handleChange}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <label htmlFor="original_amt">Original Amount</label>
+                            <input 
+                                type="number"
+                                min="0"
+                                step="0.01"
+                                name="original_amt"
+                                className="report-num"
+                                value={this.state.original_amt}
+                                onChange={this.handleChange}
+                            />
+                        {/* </div>
+
+                        <div className="form-group">     */}
+                            <label htmlFor="adjusted_amt">Adjusted Amount</label>
+                            <input
+                                type="number"
+                                min="0"
+                                step="0.01"
+                                name="adjusted_amt"
+                                className="report-num"
+                                value={this.state.adjusted_amt}
+                                onChange={this.handleChange}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <button 
+                                className="green-btn"
+                                type="submit"
+                                disabled={disabled}
+                            >Save Entry</button>
+                        </div>
     
-                        <button 
-                            className="green-btn"
-                            type="submit"
-                            disabled={disabled}
-                        >Save Entry</button>
                     </form>
                 </div>
             </div>

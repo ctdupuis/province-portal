@@ -21,16 +21,24 @@ tr.selectable:hover {
 }
 
 .report-num {
-    width: 5%;
-    text-align: center;
+    width: 10%;
     margin: 5px 15px 5px 0;
     outline: none;
+    border-radius: .5em;
+    border: 1px solid var(--d-green);
+    padding: .2%;
 }
 
 .report-text, label {
     margin: 1%;
     color: var(--d-green);
     outline: none;
+}
+
+.report-text {
+    border-radius: .5em;
+    border: 1px solid var(--d-green);
+    padding: .2%;
 }
 
 #report-layout {
