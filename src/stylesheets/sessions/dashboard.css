@@ -12,7 +12,7 @@
   padding: 10px;
   display: flex;
   box-shadow: 3px 3px var(--d-green);
-  background-image: linear-gradient(var(--o-green), var(--l-green));
+  background-image: linear-gradient(var(--o-green), var(--d-green));
 }
 
 .dash-header h3 {
@@ -26,7 +26,7 @@
 
 .dash-content {
   border: 2px solid var(--d-green);
-  margin: 2rem 2.5rem;
+  margin: 1rem;
   background-color: whitesmoke;
   border-radius: 5px;
   box-shadow: 3px 3px var(--d-green);
@@ -47,8 +47,7 @@
 .user-info-title {
   border-bottom: .1rem solid var(--d-green);
   padding: 1%;
-  border-radius: 5px 5px 0 0;
-  background-image: linear-gradient(to right, var(--m-green), var(--o-green), var(--l-green));
+  background-image: linear-gradient(to right, var(--m-green), var(--o-green), var(--d-green));
 }
 
 .user-info-title h3 {

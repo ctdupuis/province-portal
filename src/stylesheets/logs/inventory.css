@@ -2,6 +2,7 @@
 
 #new-item {
     padding: 10px;
+    width: 25%;
 }
 
 #new-item input {
@@ -27,4 +28,5 @@ select {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    flex-direction: column;
 }

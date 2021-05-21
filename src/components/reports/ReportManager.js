@@ -71,6 +71,8 @@ export default class ReportManager extends Component {
         const disabled = this.checkDisable() ? false : true 
         return (
             <section className="dash-container">
+                <div className="flex-container">
+
                 <CheckLog 
                     createCheckEntry={this.props.createCheckEntry}
                 />
@@ -107,7 +109,7 @@ export default class ReportManager extends Component {
                             value={this.state.end_date}
                             onChange={this.onChange}
                             max={moment().format("YYYY-MM-DD")}
-                        />
+                            />
 
                     </div>
                     <button 
@@ -119,6 +121,7 @@ export default class ReportManager extends Component {
                 </div>
 
                 {this.renderReport(this.state.report)}
+                </div>
             </section>
         )
     }
