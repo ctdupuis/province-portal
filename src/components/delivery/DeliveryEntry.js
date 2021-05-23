@@ -43,31 +43,41 @@ export default class DeliveryEntry extends Component {
                     {this.state.locations.map((val, idx) => {
                         let locationID = `location-${idx}`, patientID = `patient-${idx}`
                         return(
-                            <fieldset key={idx}>
+                            <fieldset key={idx} className="only-bottom">
                                 <legend>Stop #{idx + 1}</legend>
-                                <label htmlFor="patient">Patient Name</label>
-                                <input
-                                    type="text"
-                                    name={patientID}
-                                    className="patient"
-                                    id={patientID}
-                                    data-id={idx}
-                                    value={locations[idx].patient}
-                                    onChange={this.handleChange}
-                                />
-                                <label htmlFor="address">Address</label>
-                                <input
-                                    type="text"
-                                    name={locationID}
-                                    className="address"
-                                    id={locationID}
-                                    data-id={idx}
-                                    value={locations[idx].address}
-                                    onChange={this.handleChange}
-                                />
+
+                            <div className="fieldset-flex">
+
+
+                                <div className="form-group">
+                                    <label htmlFor="patient">Patient Name</label>
+                                    <input
+                                        type="text"
+                                        name={patientID}
+                                        className="patient"
+                                        id={patientID}
+                                        data-id={idx}
+                                        value={locations[idx].patient}
+                                        onChange={this.handleChange}
+                                        />
+                                </div>
+
+                                <div className="form-group">
+                                    <label htmlFor="address">Address</label>
+                                    <input
+                                        type="text"
+                                        name={locationID}
+                                        className="address"
+                                        id={locationID}
+                                        data-id={idx}
+                                        value={locations[idx].address}
+                                        onChange={this.handleChange}
+                                        />
+                                </div>
                                 {/* <button className="green-btn" onClick={() => { debugger }}>
                                     Check Location
                                 </button> */}
+                            </div>
                             </fieldset>
                         )
                     })}

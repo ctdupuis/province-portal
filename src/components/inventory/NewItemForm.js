@@ -51,71 +51,66 @@ export default class NewItemForm extends Component {
                             <div className="fieldset-flex">
 
                                 <div className="form-group">
-
-                                <label htmlFor={itemID}>Product Name</label>
-                                <input
-                                    type="text"
-                                    name={itemID}
-                                    className="product_name"
-                                    id={itemID}
-                                    data-id={idx}
-                                    value={items[idx].product_name}
-                                    onChange={this.handleChange}
-                                    required={true}
+                                    <label htmlFor={itemID}>Product Name</label>
+                                    <input
+                                        type="text"
+                                        name={itemID}
+                                        className="product_name"
+                                        id={itemID}
+                                        data-id={idx}
+                                        value={items[idx].product_name}
+                                        onChange={this.handleChange}
+                                        required={true}
                                     />
                                 </div>
 
                                 <div className="form-group">
-
-
-                                <label htmlFor={qtyID}>Quantity</label>
-                                <input 
-                                    type="number"
-                                    name={qtyID}
-                                    min="0"
-                                    max="100"
-                                    step="0.1"
-                                    className="qty"
-                                    id={qtyID}
-                                    data-id={idx}
-                                    value={items[idx].qty}
-                                    onChange={this.handleChange}
-                                    required={true}
+                                    <label htmlFor={qtyID}>Quantity</label>
+                                    <input 
+                                        type="number"
+                                        name={qtyID}
+                                        min="0"
+                                        max="100"
+                                        step="0.1"
+                                        className="qty"
+                                        id={qtyID}
+                                        data-id={idx}
+                                        value={items[idx].qty}
+                                        onChange={this.handleChange}
+                                        required={true}
                                     />
                                 </div>
 
                                 <div className="form-group">
-
-                                <label htmlFor={unitsID}>Unit of Measurement</label>
-                                <input
-                                    type="text"
-                                    name={unitsID}
-                                    className="units"
-                                    id={unitsID}
-                                    data-id={idx}
-                                    value={items[idx].units}
-                                    onChange={this.handleChange}
-                                    required={true}
+                                    <label htmlFor={unitsID}>Unit of Measurement</label>
+                                    <input
+                                        type="text"
+                                        name={unitsID}
+                                        className="units"
+                                        id={unitsID}
+                                        data-id={idx}
+                                        value={items[idx].units}
+                                        onChange={this.handleChange}
+                                        required={true}
                                     />
                                 </div>
 
                                 <div className="form-group">
-
-                                <label htmlFor={categoryID}>Item Type</label>
-                                <select
-                                    id={categoryID}
-                                    data-id={idx}
-                                    name={categoryID}
-                                    className="category"
-                                    value={items[idx].category}
-                                    onChange={this.handleChange}
-                                    required={true}
-                                    >
-                                    <option>Select a category...</option>
-                                    <option value="Shipping Supplies">Shipping Supplies</option>
-                                    <option value="Cleaning Supplies">Cleaning Supplies</option>
-                                    <option value="Office Supplies">Office Supplies</option>
-                                </select>
+                                    <label htmlFor={categoryID}>Item Type</label>
+                                    <select
+                                        id={categoryID}
+                                        data-id={idx}
+                                        name={categoryID}
+                                        className="category"
+                                        value={items[idx].category}
+                                        onChange={this.handleChange}
+                                        required={true}
+                                        >
+                                        <option>Select a category...</option>
+                                        <option value="Shipping Supplies">Shipping Supplies</option>
+                                        <option value="Cleaning Supplies">Cleaning Supplies</option>
+                                        <option value="Office Supplies">Office Supplies</option>
+                                    </select>
                                 </div>
 
                             </div>

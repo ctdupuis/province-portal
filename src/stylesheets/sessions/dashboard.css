@@ -103,12 +103,12 @@
 }
 
 .new-user-form label {
-  margin: 1rem;
+  margin: 1%;
   color: var(--m-green);
 }
 
 .new-user-form input {
-  margin: 1rem;
+  margin: .5em;
   padding: .3em;
   border-radius: .5em;
   outline: none;

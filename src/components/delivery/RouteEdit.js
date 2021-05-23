@@ -61,7 +61,7 @@ export default class RouteEdit extends Component {
         return (
             <div className="dash-content">
                 <div className="user-info-title">
-                    <h3>Route Amendment</h3>
+                    <h3>Make Changes to a Route</h3>
                 </div>
 
                 <div className="user-info-content">

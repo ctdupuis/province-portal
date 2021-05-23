@@ -114,3 +114,15 @@ tr.selectable:hover {
     list-style-type: none;
     margin: .2em 0;
 }
+
+.only-bottom {
+    border-left: none;
+    border-top: none;
+    border-right: none;
+}
+
+.only-right-side {
+    border-left: none;
+    border-top: none;
+    border-bottom: none;
+}
