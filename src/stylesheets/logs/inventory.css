@@ -6,9 +6,9 @@
 }
 
 #new-item input {
-    margin-right: 8px;
+    margin: 2%;
     border-radius: .5rem;
-    padding: 4px;
+    padding: .2em;
     outline: none;
     border: 1px solid var(--d-green);
 }
