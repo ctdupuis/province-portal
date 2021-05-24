@@ -83,17 +83,23 @@ export default class ReportManager extends Component {
 
                     <div className="user-info-content">
 
-                        <select id="reports" onChange={this.setType}>
+                    <div className="form-group">
+
+                        <label>Select Report Type</label>
+                        <select id="reports" name="reports" onChange={this.setType}>
                             <option>Select a report...</option>
                             <option value="Mileage">Mileage Report</option>
                             <option value="Check">Check Report</option>
                         </select>
+                    </div>
 
-                        <br />
+               
+                    <div className="form-group">
 
-                        <label htmlFor="start-date">Start Date</label>
+                        <label htmlFor="start_date">Start Date</label>
                         <input 
                             type="date" 
+                            className="date-input"
                             name="start_date" 
                             id="start-date" 
                             value={this.state.start_date}
@@ -101,17 +107,23 @@ export default class ReportManager extends Component {
                             max={moment().format("YYYY-MM-DD")}
                         />
 
-                        <label htmlFor="end-date">End Date</label>
+                    </div>
+
+                    <div className="form-group">
+
+                        <label htmlFor="end_date">End Date</label>
                         <input 
                             type="date" 
+                            className="date-input"
                             name="end_date" 
                             id="end-date" 
                             value={this.state.end_date}
                             onChange={this.onChange}
                             max={moment().format("YYYY-MM-DD")}
-                            />
+                        />
 
                     </div>
+                    </div>  
                     <button 
                         className="green-btn"
                         disabled={disabled}

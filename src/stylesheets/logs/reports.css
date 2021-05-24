@@ -126,3 +126,9 @@ tr.selectable:hover {
     border-top: none;
     /* border-bottom: none; */
 }
+
+.date-input {
+    border-radius: .5em;
+    outline: none;
+    border: .1em solid var(--d-green);
+}
