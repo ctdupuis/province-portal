@@ -91,15 +91,10 @@ export default class Dashboard extends Component {
     return (
       loading ? <Loading /> :
       <section className="dash-container">
-        <header className="dash-header">
-          <div className="dash-header-title">
-            <h3>{currentUser.first_name} {currentUser.last_name} | {currentUser.username} </h3>
-          </div>
-            {this.renderAdminBadge(currentUser)}
-        </header>
         <div className="dash-content">
             <div className="user-info-title">
-              <h3>Your Contact Info</h3>
+              <h2 style={{ fontSize: "2em" }}>{currentUser.first_name} {currentUser.last_name} | {currentUser.username} </h2>
+              {this.renderAdminBadge(currentUser)}
             </div>
             <div className="user-info-content">
               Email: {this.state.toggleEmailInput ? 

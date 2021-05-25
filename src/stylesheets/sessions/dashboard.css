@@ -48,9 +48,11 @@
   border-bottom: .1rem solid var(--d-green);
   padding: 1%;
   background-image: linear-gradient(to right, var(--m-green), var(--o-green), var(--d-green));
+  display: flex;
+  align-items: center;
 }
 
-.user-info-title h3 {
+.user-info-title h2, h3 {
   color: whitesmoke;
 }
 
