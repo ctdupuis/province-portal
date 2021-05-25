@@ -6,6 +6,7 @@ import ContactList from "./ContactList";
 import NewUser from "./NewUser";
 import DeleteUser from "./DeleteUser";
 import EmployeeSchedule from "./EmployeeSchedule";
+import ContactInfo from "./ContactInfo";
 
 export default class Dashboard extends Component {
   componentDidMount() {
@@ -96,7 +97,19 @@ export default class Dashboard extends Component {
               <h2 style={{ fontSize: "2em" }}>{currentUser.first_name} {currentUser.last_name} | {currentUser.username} </h2>
               {this.renderAdminBadge(currentUser)}
             </div>
-            <div className="user-info-content">
+
+            <ContactInfo 
+              toggleEmail={this.toggleEmailInput}
+              toggleEmailVal={this.state.toggleEmailInput}
+              email={this.state.email}
+              togglePhone={this.togglePhoneInput}
+              togglePhoneVal={this.state.togglePhoneInput}
+              phone={this.state.phone}
+              handleChange={this.handleChange}
+              handleClick={this.handleClick}
+              currentUser={currentUser}
+            />
+            {/* <div className="user-info-content">
               Email: {this.state.toggleEmailInput ? 
               <>
                 <input 
@@ -108,7 +121,7 @@ export default class Dashboard extends Component {
                   autoFocus={true}
                 /> 
                 <button className="info-cancel" onClick={this.toggleEmailInput}>Cancel</button>
-                <button className="info-save" onClick={this.handleClick}>Save Changes</button>
+                <button className="info-save" onClick={this.handleClick}>Save</button>
               </>
               : 
               <>
@@ -141,7 +154,7 @@ export default class Dashboard extends Component {
                   <FaPen onClick={this.togglePhoneInput}/>
                 </button>
               </>}
-            </div>
+            </div> */}
         </div>
               {/* <div className="dash-content">
                 <div className="user-info-title">
