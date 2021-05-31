@@ -118,13 +118,13 @@
 }
 
 .new-user-sbmt {
-  background-color: var(--m-green);
+  background-image: linear-gradient(var(--o-green), var(--d-green));
   color: whitesmoke;
   transition: 0.5s;
 }
 
 .new-user-sbmt:hover {
-  background-color: var(--l-green);
+  background-image: radial-gradient(var(--o-green), var(--d-green));
   cursor: pointer;
 }
 
@@ -162,14 +162,14 @@
   color: red;
   border-radius: .5rem;
   padding: .3rem;
-  background-color: whitesmoke;
+  background-image: linear-gradient(whitesmoke, lightgrey);
   transition: 0.5s;
 }
 
 .deactivate:hover {
   cursor: pointer;
   color: whitesmoke;
-  background-color: red;
+  background-image: radial-gradient(var(--d-red), var(--l-red));
 }
 
 .select-label {
@@ -191,30 +191,31 @@
   margin-right: .5rem;
   padding: .2em;
   color: whitesmoke;
-  background-color: var(--m-green);
+  background-image: linear-gradient(var(--o-green), var(--d-green));
   border: .1em solid var(--d-green);
   transition: 0.5s;
   outline: none;
 }
 
 .info-save:hover {
-  background-color: var(--l-green);
+  background-image: radial-gradient(var(--o-green), var(--d-green));
   cursor: pointer;
 }
 
 .info-cancel {
   border-radius: .5em;
-  /* float: right; */
   padding: .2em;
   color: whitesmoke;
-  background-color: rgb(158, 14, 14);
+  /* background-color: rgb(158, 14, 14); */
+  background-image: linear-gradient(var(--d-red), var(--l-red));
   transition: 0.5s;
   outline: none;
-  border: .1em solid rgb(253, 14, 14)
+  border: .1em solid var(--d-red);
 }
 
 .info-cancel:hover {
   background-color: rgb(250, 32, 32);
+  background-image: radial-gradient(var(--d-red), var(--l-red));
   cursor: pointer;
 }
 
@@ -274,6 +275,7 @@
   color: whitesmoke;
   padding: 1.5%;
   border-radius: .5em;
+  background-image: linear-gradient(var(--o-green), var(--d-green))
 }
 
 .fieldset-btn {

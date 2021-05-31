@@ -21,8 +21,8 @@
 
 .post-author {
   align-self: flex-start;
-  background-color: var(--o-green);
-  /* background-image: radial-gradient(var(--o-green), var(--m-green)); */
+  /* background-color: var(--o-green); */
+  background-image: linear-gradient(var(--o-green), var(--d-green));
   border-radius: 100%;
   padding: 1.5%;
   color: whitesmoke;
@@ -82,11 +82,10 @@ li.comment {
 
 .comment-submit {
   padding: 7px;
-  background-color: var(--o-green);
+  background-image: linear-gradient(var(--o-green), var(--d-green));
   color: whitesmoke;
   border-radius: 0 15px 15px 0;
   font-size: 1rem;
-  /* width: 100%; */
   height: 100%;
   border: none;
   outline: none;
@@ -94,7 +93,7 @@ li.comment {
 
 .comment-submit:hover {
   cursor: pointer;
-  background: var(--d-green);
+  background-image: radial-gradient(var(--o-green), var(--d-green));
   transition: 0.3s;
   color: whitesmoke;
 }
@@ -142,7 +141,7 @@ div.comment_field {
 
 .comment-author {
   align-self: flex-start;
-  background-color: var(--o-green);
+  background-image: linear-gradient(var(--o-green), var(--d-green));
   border-radius: 100%;
   padding: 1%;
   margin-right: 10px;
@@ -226,11 +225,13 @@ div.comment_field {
 
 input:disabled, button:disabled {
   background-color: darkgrey;
+  background-image: linear-gradient(lightgrey, grey);
   color: black;
 }
 
 input:disabled:hover, button:disabled:hover {
   cursor: not-allowed;
   background-color: darkgrey;
+  background-image: linear-gradient(lightgrey, grey);
   color: black;
 }

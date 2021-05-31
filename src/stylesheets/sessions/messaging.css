@@ -52,7 +52,7 @@
 
 .message-author {
     font-size: small;
-    background-color: var(--o-green);
+    background-image: linear-gradient(var(--o-green), var(--d-green));
     padding: 5px;
     border-radius: 100%;
     color: whitesmoke;

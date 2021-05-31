@@ -28,7 +28,7 @@ export default class NewComment extends Component {
             <div className="comment_field">
               <input
                 className="comment-input"
-                placeholder="Add a comment..."
+                placeholder="Leave a comment"
                 type="text"
                 onChange={this.handleChange}
                 value={this.state.content}
