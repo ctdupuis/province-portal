@@ -18,22 +18,27 @@ export default function ContactInfo({ toggleEmail, toggleEmailVal, email, toggle
                     <legend>Email</legend>
                     {
                         toggleEmailVal ? 
-                        <div className="form-group">
-                            <input
-                                name="email"
-                                className="user-input"
-                                type="email"
-                                autoFocus={true}
-                                defaultValue={currentUser.email}
-                            />
-                            <button className="info-save" onClick={handleClick}>Save</button>
-                            <button className="info-cancel" onClick={toggleEmail}>Cancel</button>
-                        </div>
+                        <>
+                            <div className="form-group">
+                                <input
+                                    name="email"
+                                    className="user-input"
+                                    type="email"
+                                    autoFocus={true}
+                                    defaultValue={currentUser.email}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <button className="info-save" onClick={handleClick}>Save</button>
+                                <button className="info-cancel" onClick={toggleEmail}>Cancel</button>
+                            </div>
+                        </>
                         :
                         <div className="form-group">
                             <h4>{renderEmail(currentUser.email)}</h4>
-                            <button className="edit-info">
-                                <FaPen onClick={toggleEmail} />
+                            <button className="info-save fieldset-btn" onClick={toggleEmail}>
+                                Change
                             </button>
                         </div>
                     }
@@ -44,22 +49,27 @@ export default function ContactInfo({ toggleEmail, toggleEmailVal, email, toggle
                     <legend>Phone</legend>
                     {
                         togglePhoneVal ? 
-                        <div className="form-group">
-                            <input
-                                name="phone"
-                                className="user-input"
-                                type="tel"
-                                autoFocus={true}
-                                defaultValue={currentUser.phone}
-                            />
-                            <button className="info-save" onClick={handleClick}>Save</button>
-                            <button className="info-cancel" onClick={togglePhone}>Cancel</button>
-                        </div>
+                        <>
+                            <div className="form-group">
+                                <input
+                                    name="phone"
+                                    className="user-input"
+                                    type="tel"
+                                    autoFocus={true}
+                                    defaultValue={currentUser.phone}
+                                    onChange={handleChange}
+                                />
+                            </div>
+                            <div className="form-group">
+                                <button className="info-save" onClick={handleClick}>Save</button>
+                                <button className="info-cancel" onClick={togglePhone}>Cancel</button>
+                            </div>
+                        </>
                         :
                         <div className="form-group">
                             <h4>{renderEmail(currentUser.phone)}</h4>
-                            <button className="edit-info">
-                                <FaPen onClick={togglePhone} />
+                            <button className="info-save fieldset-btn" onClick={togglePhone}>
+                                Change
                             </button>
                         </div>
                     }

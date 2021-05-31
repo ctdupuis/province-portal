@@ -264,13 +264,18 @@
 }
 
 .contact-info {
-  padding: 3%;
+  padding: 1% 0;
   width: 50%;
-  /* border: none; */
+  border-left: none;
 }
 
 .contact-info legend {
   background-color: var(--m-green);
   color: whitesmoke;
   padding: 1.5%;
+  border-radius: .5em;
+}
+
+.fieldset-btn {
+  margin-top: 1%;
 }

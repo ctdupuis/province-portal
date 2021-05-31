@@ -94,7 +94,7 @@ export default class Dashboard extends Component {
       <section className="dash-container">
         <div className="dash-content">
             <div className="user-info-title">
-              <h2 style={{ fontSize: "2em" }}>{currentUser.first_name} {currentUser.last_name} | {currentUser.username} </h2>
+              <h2 style={{ fontSize: "2em" }}>Welcome, {currentUser.first_name} {currentUser.last_name} | {currentUser.username} </h2>
               {this.renderAdminBadge(currentUser)}
             </div>
 
