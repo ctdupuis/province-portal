@@ -62,7 +62,7 @@ export default class NewItemForm extends Component {
                                             value={items[idx].product_name}
                                             onChange={this.handleChange}
                                             required={true}
-                                            />
+                                        />
                                     </div>
 
                                     <div className="form-group">
@@ -79,7 +79,7 @@ export default class NewItemForm extends Component {
                                             value={items[idx].qty}
                                             onChange={this.handleChange}
                                             required={true}
-                                            />
+                                        />
                                     </div>
 
                                     <div className="form-group">
@@ -93,7 +93,7 @@ export default class NewItemForm extends Component {
                                             value={items[idx].units}
                                             onChange={this.handleChange}
                                             required={true}
-                                            />
+                                        />
                                     </div>
 
                                     <div className="form-group">
@@ -106,7 +106,7 @@ export default class NewItemForm extends Component {
                                             value={items[idx].category}
                                             onChange={this.handleChange}
                                             required={true}
-                                            >
+                                        >
                                             <option>Select a category...</option>
                                             <option value="Shipping Supplies">Shipping Supplies</option>
                                             <option value="Cleaning Supplies">Cleaning Supplies</option>

@@ -40,15 +40,15 @@ export default class DeliveryEntry extends Component {
                     <h3>Route Planner</h3>
                 </div>
                 <form className="new-user-form" onSubmit={this.handleSubmit}>
+                    <div className="flex-container" style={{ flexWrap: "wrap"}}>
+
                     {this.state.locations.map((val, idx) => {
                         let locationID = `location-${idx}`, patientID = `patient-${idx}`
                         return(
-                            <fieldset key={idx} className="only-bottom">
+                            <fieldset key={idx} >
                                 <legend>Stop #{idx + 1}</legend>
 
                             <div className="fieldset-flex">
-
-
                                 <div className="form-group">
                                     <label htmlFor="patient">Patient Name</label>
                                     <input
@@ -81,6 +81,10 @@ export default class DeliveryEntry extends Component {
                             </fieldset>
                         )
                     })}
+                    </div>
+
+                <div className="flex-container" style={{ justifyContent: "center"}} >
+
                     <label htmlFor="mileage">Total Mileage</label>
                     <input 
                         type="number" 
@@ -97,11 +101,14 @@ export default class DeliveryEntry extends Component {
                     <button className="green-btn" onClick={this.popLocation}>
                         Remove Stop
                     </button>
-                    <br />
-                </form>
+                </div>
+            </form>
+
+                <div className="flex-container">
                     <button className="green-btn" onClick={() => this.props.finalizeRoute(this.state, this.props.origin)}>
                         Finalize Route
                     </button>
+                </div>
             </div>
         )
     }
