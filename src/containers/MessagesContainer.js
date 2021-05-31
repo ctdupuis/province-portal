@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "../stylesheets/sessions/patient-services.css";
+import "../stylesheets/sessions/messaging.css";
 import { Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
 import {

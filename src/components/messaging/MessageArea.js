@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import "../../stylesheets/sessions/patient-services.css";
+import "../../stylesheets/sessions/messaging.css";
 import Message from './Message';
 import { ActionCableConsumer } from 'react-actioncable-provider';
 import NewMessage from './NewMessage';
@@ -85,7 +85,7 @@ export default class PatientServices extends Component {
         return(
             <section className="dash-container">
                 <div className="dash-content">
-                    <div className="user-info-title solid-bg">
+                    <div className="user-info-title solid-bg" style={{ display: "block"}} >
                         {/* <ActionCableConsumer
                             channel={{ channel: "MessagesChannel", demo: this.props.currentUser.demo }}
                             onReceived={this.onReceived}
