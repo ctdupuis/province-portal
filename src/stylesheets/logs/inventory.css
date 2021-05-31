@@ -15,13 +15,12 @@
 
 select {
     color: var(--d-green);
-    border-radius: 1rem;
+    border-radius: 10px;
     height: 1.75rem;
 }
 
 .qty {
-    width: 50px;
-    text-align: center;
+    width: 50%;
 }
 
 .fieldset-flex {

@@ -118,7 +118,8 @@ div.comment_field {
   height: 100%;
   width: 100%;
   transition: width 0.4s ease-in-out;
-  background-color: lightgrey;
+  /* background-color: lightgrey; */
+  background-image: linear-gradient(lightgrey, darkgrey);
   resize: none;
   border-radius: 15px 0 0 15px;
   font-size: 1rem;
@@ -126,11 +127,12 @@ div.comment_field {
   border: none;
   border-color: var(--o-green);
   outline: none;
-  transition: 0.2s;
+  transition: 0.5s;
 }
 
 .comment-input:focus {
   background-color: white;
+  background-image: linear-gradient(whitesmoke, white);
   border: 1px solid var(--o-green);
 }
 

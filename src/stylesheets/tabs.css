@@ -32,7 +32,8 @@
 }
 
 a.active {
-    background-color: var(--o-green);
+    /* background-color: var(--l-green); */
+    background-image: radial-gradient(var(--o-green), var(--l-green));
 }
 
 .nav-tab a:hover {

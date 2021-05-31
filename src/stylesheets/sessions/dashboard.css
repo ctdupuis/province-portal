@@ -230,14 +230,14 @@
   margin: .5rem;
   padding: .3em;
   color: whitesmoke;
-  background-color: var(--m-green);
+  background-image: linear-gradient(var(--o-green), var(--d-green));
   transition: 0.5s;
   outline: none;
   border: 1px solid var(--d-green);
 }
 
 .green-btn:hover {
-  background-color: var(--l-green);
+  background-image: radial-gradient(var(--o-green), var(--d-green));
   cursor: pointer;
 }
 
