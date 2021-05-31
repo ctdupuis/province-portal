@@ -116,7 +116,6 @@ export default class EditStopFields extends Component {
                             onChange={this.onChange}
                             className="smaller-fields"
                             value={this.state.miles}
-                            style={{ textAlign: "center" }}
                         />
                     </td>
 

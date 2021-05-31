@@ -66,51 +66,52 @@ export default class RouteEdit extends Component {
 
                 <div className="user-info-content">
                         
-                    <div className="flex-container" style={{ flexDirection: "column"}}>
+                    <div className="flex-container" style={{ flexDirection: "column", textAlign: "center"}}>
 
-                    <div className="form-gropu">
-                        <label htmlFor="start-date">Route Date</label>
-                        <input 
-                            type="date" 
-                            name="start_date" 
-                            id="start-date" 
-                            value={this.state.start_date}
-                            onChange={this.onChange}
-                            max={moment().format("YYYY-MM-DD")}
-                        />
+                        <div className="form-group">
+                            <label htmlFor="start-date">Route Date</label>
+                            <input 
+                                type="date" 
+                                name="start_date" 
+                                id="start-date" 
+                                value={this.state.start_date}
+                                onChange={this.onChange}
+                                max={moment().format("YYYY-MM-DD")}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <button 
+                                className="green-btn" 
+                                disabled={disabled}
+                                onClick={this.handleClick}
+                                value={"add"}
+                            >
+                                Add A Stop
+                            </button>
+
+                            <button 
+                                className="green-btn" 
+                                disabled={disabled}
+                                onClick={this.handleClick}
+                                value={"edit"}
+                            >
+                                Edit A Stop
+                            </button>
+
+                            <button 
+                                className="green-btn" 
+                                disabled={disabled}
+                                onClick={this.handleClick}
+                                value={"remove"}
+                            >
+                                Remove A Stop
+                            </button>
+                        </div>
                     </div>
 
-                    <div className="form-group">
-                        <button 
-                            className="green-btn" 
-                            disabled={disabled}
-                            onClick={this.handleClick}
-                            value={"add"}
-                        >
-                            Add A Stop
-                        </button>
+                    {this.renderRouteAmend(this.state.report)}
 
-                        <button 
-                            className="green-btn" 
-                            disabled={disabled}
-                            onClick={this.handleClick}
-                            value={"edit"}
-                        >
-                            Edit A Stop
-                        </button>
-
-                        <button 
-                            className="green-btn" 
-                            disabled={disabled}
-                            onClick={this.handleClick}
-                            value={"remove"}
-                        >
-                            Remove A Stop
-                        </button>
-                    </div>
-                    </div>
-
-                        {this.renderRouteAmend(this.state.report)}
                 </div>
             </div>
         )

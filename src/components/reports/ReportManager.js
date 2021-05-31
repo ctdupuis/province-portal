@@ -76,64 +76,66 @@ export default class ReportManager extends Component {
                 <CheckLog 
                     createCheckEntry={this.props.createCheckEntry}
                 />
-                <div className="dash-content">
-                    <div className="user-info-title">
-                        <h3>Report Viewer</h3>
-                    </div>
 
-                    <div className="user-info-content">
 
-                    <div className="form-group">
+                    <div className="dash-content">
+                        <div className="user-info-title">
+                            <h3>Report Viewer</h3>
+                        </div>
 
-                        <label>Select Report Type</label>
-                        <select id="reports" name="reports" onChange={this.setType}>
-                            <option>Select a report...</option>
-                            <option value="Mileage">Mileage Report</option>
-                            <option value="Check">Check Report</option>
-                        </select>
-                    </div>
+                        <div className="user-info-content">
 
-               
-                    <div className="form-group">
+                            <div className="form-group">
 
-                        <label htmlFor="start_date">Start Date</label>
-                        <input 
-                            type="date" 
-                            className="date-input"
-                            name="start_date" 
-                            id="start-date" 
-                            value={this.state.start_date}
-                            onChange={this.onChange}
-                            max={moment().format("YYYY-MM-DD")}
-                        />
+                                <label>Select Report Type</label>
+                                <select id="reports" name="reports" onChange={this.setType}>
+                                    <option>Select a report...</option>
+                                    <option value="Mileage">Mileage Report</option>
+                                    <option value="Check">Check Report</option>
+                                </select>
+                            </div>
 
-                    </div>
+                
+                            <div className="form-group">
 
-                    <div className="form-group">
+                                <label htmlFor="start_date">Start Date</label>
+                                <input 
+                                    type="date" 
+                                    className="date-input"
+                                    name="start_date" 
+                                    id="start-date" 
+                                    value={this.state.start_date}
+                                    onChange={this.onChange}
+                                    max={moment().format("YYYY-MM-DD")}
+                                />
 
-                        <label htmlFor="end_date">End Date</label>
-                        <input 
-                            type="date" 
-                            className="date-input"
-                            name="end_date" 
-                            id="end-date" 
-                            value={this.state.end_date}
-                            onChange={this.onChange}
-                            max={moment().format("YYYY-MM-DD")}
-                        />
+                            </div>
 
-                    </div>
-                    </div>  
-                    <button 
-                        className="green-btn"
-                        disabled={disabled}
-                        onClick={() => this.handleSubmit(this.state)}>
-                            Generate Report
+                            <div className="form-group">
+
+                                <label htmlFor="end_date">End Date</label>
+                                <input 
+                                    type="date" 
+                                    className="date-input"
+                                    name="end_date" 
+                                    id="end-date" 
+                                    value={this.state.end_date}
+                                    onChange={this.onChange}
+                                    max={moment().format("YYYY-MM-DD")}
+                                />
+
+                            </div>
+                        </div>
+
+                        <button 
+                            className="green-btn"
+                            disabled={disabled}
+                            onClick={() => this.handleSubmit(this.state)}>
+                                Generate Report
                         </button>
+                    </div>
                 </div>
-
                 {this.renderReport(this.state.report)}
-                </div>
             </section>
         )
     }
