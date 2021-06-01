@@ -21,12 +21,12 @@ tr.selectable:hover {
 }
 
 .report-num {
-    width: 10%;
+    width: 4rem;
     margin: 5px 15px 5px 0;
     outline: none;
     border-radius: .5em;
     border: 1px solid var(--d-green);
-    padding: .2%;
+    padding: 1%;
 }
 
 .report-text, label {
@@ -38,7 +38,7 @@ tr.selectable:hover {
 .report-text {
     border-radius: .5em;
     border: 1px solid var(--d-green);
-    padding: .2%;
+    padding: 1%;
 }
 
 #report-layout {
