@@ -24,6 +24,8 @@ export default class AddStopFields extends Component {
         return (
             <tr>
                 <td>
+
+
                     <label>Patient Name</label>
                     <input 
                         type="text" 
@@ -32,6 +34,7 @@ export default class AddStopFields extends Component {
                         className="smaller-fields"
                         value={this.state.patient_name}
                     />
+
                 </td>
 
                 <td>

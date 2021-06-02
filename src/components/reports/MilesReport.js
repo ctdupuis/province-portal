@@ -7,23 +7,24 @@ export default function MilesReport({ entries }) {
 
     const renderEntries = entries.map((e) => {
         return(
-            <tr className="selectable" key={e.id} onClick={() => {
-                setDisplay(!detailDisplay)
-                setDetailID(e.id)
-            }}>
-                <td>{e.date_format}</td>
-                <td>{e.user.first_name} | {e.user.username}</td>
-                <td>{e.stops.length}</td>
-                <td>{e.miles} {e.edited ? "(edited)" : null}</td>
-                <td>
+            <>
+                <tr className="selectable" key={e.id} onClick={() => {
+                    setDisplay(!detailDisplay)
+                    setDetailID(e.id)
+                }}>
+                    <td>{e.date_format}</td>
+                    <td>{e.user.first_name} | {e.user.username}</td>
+                    <td>{e.stops.length}</td>
+                    <td>{e.miles} {e.edited ? "(edited)" : null}</td>
+                <br />
                     {
                         detailDisplay && detailID === e.id ? 
                             <RouteDetails stops={e.stops} />
                             :
                             null
                     }
-                </td>
-            </tr>
+                </tr>
+            </>
         )
     })
 
@@ -37,11 +38,7 @@ export default function MilesReport({ entries }) {
             <th>User</th>
             <th># of Stops</th>
             <th>Total Miles</th>
-            {detailDisplay ?
-                <th>Patient Name | Patient Address</th>
-                :
-                <th></th>
-            }
+            
         </thead>
         <tbody>
             {renderEntries}
