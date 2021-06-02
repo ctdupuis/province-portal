@@ -32,13 +32,13 @@
 
 .session-form input.form-btn {
   color: whitesmoke;
-  background: var(--m-green);
+  background-image: linear-gradient(var(--o-green), var(--m-green));
   cursor: pointer;
   font-size: 12px;
   padding: 7px;
 }
 
 .session-form input.form-btn:hover {
-  background: var(--l-green);
+  background-image: radial-gradient(var(--o-green), var(--m-green));
   transition: 0.3s;
 }

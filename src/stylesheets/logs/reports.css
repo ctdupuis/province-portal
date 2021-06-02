@@ -71,12 +71,12 @@ tr.selectable:hover {
     color: whitesmoke;
     outline: none;
     transition: 0.5s;
-    background-color: var(--m-green);
+    background-image: linear-gradient(var(--o-green), var(--m-green));
     border: .1em solid var(--d-green);
 }
 
 .save:hover {
-    background-color: var(--l-green);
+    background-image: radial-gradient(var(--o-green), var(--m-green));
     cursor: pointer;
 }
 
@@ -86,12 +86,12 @@ tr.selectable:hover {
     color: whitesmoke;
     outline: none;
     transition: 0.5s;
-    background-color: rgb(158, 14, 14);
-    border: .1em solid rgb(253, 14, 14)
+    background-image: linear-gradient(var(--l-red), var(--d-red));
+    border: 1px solid var(--d-red);
 }
 
 .cancel:hover {
-    background-color: rgb(250, 32, 32);
+    background-image: radial-gradient(var(--l-red), var(--d-red));
     cursor: pointer;
 }
 

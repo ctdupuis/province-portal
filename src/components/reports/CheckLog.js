@@ -31,8 +31,8 @@ export default class CheckLog extends Component {
         const disabled = (this.state.patient_name === "" || this.state.rx_num === "" || this.state.original_amt === "" || this.state.adjusted_amt === "") ? true : false
         return (
             <div className="dash-content" onSubmit={this.handleSubmit}>
-                <div className="user-info-title">
-                    <h3>Check Log</h3>
+                <div className="user-info-title" style={{ height: "3em", padding: "1rem"}}>
+                    <h3>Log a Checked Prescription</h3>
                 </div>
                 <div className="user-info-content">
                     <form id="report-form">

@@ -66,7 +66,7 @@ const Tabs = ({ endSession }) => {
       </div>
       <div className="nav-tab">
         <div className="link-container">
-          <NavLink to={"/logout"} onClick={() => endSession()}>
+          <NavLink activeClassName="" to={"/"} onClick={() => endSession()}>
             Log Out
           </NavLink>
         </div>

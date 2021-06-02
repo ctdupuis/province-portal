@@ -37,7 +37,7 @@ export default class DeliveryEntry extends Component {
         return (
             <div className="dash-content">
                 <div className="user-info-title">
-                    <h3>Route Planner</h3>
+                    <h3>Plan a Route</h3>
                 </div>
                 <form className="new-user-form" onSubmit={this.handleSubmit}>
                     <div className="flex-container" style={{ flexWrap: "wrap"}}>
@@ -48,36 +48,33 @@ export default class DeliveryEntry extends Component {
                             <fieldset key={idx} >
                                 <legend>Stop #{idx + 1}</legend>
 
-                            <div className="fieldset-flex">
-                                <div className="form-group">
-                                    <label htmlFor="patient">Patient Name</label>
-                                    <input
-                                        type="text"
-                                        name={patientID}
-                                        className="patient"
-                                        id={patientID}
-                                        data-id={idx}
-                                        value={locations[idx].patient}
-                                        onChange={this.handleChange}
-                                        />
-                                </div>
+                                <div className="fieldset-flex">
+                                    <div className="form-group">
+                                        <label htmlFor="patient">Patient Name</label>
+                                        <input
+                                            type="text"
+                                            name={patientID}
+                                            className="patient"
+                                            id={patientID}
+                                            data-id={idx}
+                                            value={locations[idx].patient}
+                                            onChange={this.handleChange}
+                                            />
+                                    </div>
 
-                                <div className="form-group">
-                                    <label htmlFor="address">Address</label>
-                                    <input
-                                        type="text"
-                                        name={locationID}
-                                        className="address"
-                                        id={locationID}
-                                        data-id={idx}
-                                        value={locations[idx].address}
-                                        onChange={this.handleChange}
-                                        />
+                                    <div className="form-group">
+                                        <label htmlFor="address">Address</label>
+                                        <input
+                                            type="text"
+                                            name={locationID}
+                                            className="address"
+                                            id={locationID}
+                                            data-id={idx}
+                                            value={locations[idx].address}
+                                            onChange={this.handleChange}
+                                            />
+                                    </div>
                                 </div>
-                                {/* <button className="green-btn" onClick={() => { debugger }}>
-                                    Check Location
-                                </button> */}
-                            </div>
                             </fieldset>
                         )
                     })}
@@ -95,12 +92,15 @@ export default class DeliveryEntry extends Component {
                         onChange={this.handleChange}
                         className="number-input"
                     />
+
                     <button className="green-btn" onClick={this.addLocation}>
                         Add Another Stop
                     </button>
+
                     <button className="green-btn" onClick={this.popLocation}>
                         Remove Stop
                     </button>
+
                 </div>
             </form>
 

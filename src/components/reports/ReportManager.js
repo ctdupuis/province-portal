@@ -77,10 +77,9 @@ export default class ReportManager extends Component {
                     createCheckEntry={this.props.createCheckEntry}
                 />
 
-
                     <div className="dash-content">
-                        <div className="user-info-title">
-                            <h3>Report Viewer</h3>
+                        <div className="user-info-title" style={{ height: "3em", padding: "1em"}}>
+                            <h3>Generate a Report</h3>
                         </div>
 
                         <div className="user-info-content">
