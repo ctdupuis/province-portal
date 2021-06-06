@@ -133,6 +133,8 @@ tr.selectable:hover {
 }
 
 .stops-container {
-    display: block;
-
+    border-left: .1em solid #ddd;
+    border-bottom: .1em solid #ddd;
+    margin-left: 7%;
+    border-radius: 0 0 0 10px;
 }

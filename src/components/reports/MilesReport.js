@@ -16,14 +16,13 @@ export default function MilesReport({ entries }) {
                     <td>{e.user.first_name} | {e.user.username}</td>
                     <td>{e.stops.length}</td>
                     <td>{e.miles} {e.edited ? "(edited)" : null}</td>
-                <br />
-                    {
-                        detailDisplay && detailID === e.id ? 
-                            <RouteDetails stops={e.stops} />
-                            :
-                            null
-                    }
                 </tr>
+                {
+                    detailDisplay && detailID === e.id ? 
+                        <RouteDetails stops={e.stops} />
+                        :
+                        null
+                }
             </>
         )
     })
