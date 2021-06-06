@@ -14,14 +14,12 @@
   align-items: center;
   background-color: whitesmoke;
   padding: 10px 2%;
-  margin-bottom: 10px;
   border-radius: 0 .5rem .5rem .5rem;
   border: .1rem solid var(--d-green);
 }
 
 .post-author {
   align-self: flex-start;
-  /* background-color: var(--o-green); */
   background-image: linear-gradient(var(--o-green), var(--d-green));
   border-radius: 100%;
   padding: 1.5%;
@@ -62,16 +60,18 @@ div.comment_handler {
   display: block;
   padding: 10px 2%;
   border-radius: .5rem;
+  border: 1px solid var(--d-green);
 }
 
 li.comment {
   display: flex;
   align-items: center;
   padding: 10px 2%;
-  background-color: whitesmoke;
+  background-color: white;
   border-radius: 0 .5rem .5rem .5rem;
   border: .1rem solid var(--o-green);
   margin-bottom: 10px;
+  box-shadow: 1px 1px var(--o-green);
 }
 
 .comment-list {
@@ -117,7 +117,6 @@ div.comment_field {
 .comment-input {
   height: 100%;
   width: 100%;
-  transition: width 0.4s ease-in-out;
   background-image: linear-gradient(lightgrey, darkgrey);
   resize: none;
   border-radius: 15px 0 0 15px;
@@ -126,7 +125,7 @@ div.comment_field {
   border: none;
   border-color: var(--o-green);
   outline: none;
-  transition: 0.2s ease-in;
+  transition: 0.2s ease-in-out;
 }
 
 .comment-input:focus {

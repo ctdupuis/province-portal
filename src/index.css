@@ -38,3 +38,7 @@ body {
   align-items: stretch;
   margin-top: 5px;
 }
+
+input {
+  color: var(--m-green);
+}
