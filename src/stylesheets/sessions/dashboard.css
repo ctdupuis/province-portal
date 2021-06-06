@@ -47,13 +47,15 @@
 .user-info-title {
   border-bottom: .1rem solid var(--d-green);
   padding: 1%;
-  background-image: linear-gradient(var(--m-green), var(--o-green));
+  background-color: var(--d-green);
   display: flex;
   align-items: center;
 }
 
 .user-info-title h2, h3 {
   color: whitesmoke;
+  font-variant: small-caps;
+  font-size: 2em;
 }
 
 .user-info-content {
@@ -118,13 +120,13 @@
 }
 
 .new-user-sbmt {
-  background-image: linear-gradient(var(--o-green), var(--d-green));
+  background-color: var(--o-green);
   color: whitesmoke;
-  transition: 0.5s;
+  transition: 1s;
 }
 
 .new-user-sbmt:hover {
-  background-image: radial-gradient(var(--o-green), var(--d-green));
+  background-image: radial-gradient(var(--o-green), var(--m-green));
   cursor: pointer;
 }
 
@@ -187,18 +189,17 @@
 
 .info-save {
   border-radius: .5em;
-  /* float: right; */
   margin-right: .5rem;
   padding: .2em;
   color: whitesmoke;
-  background-image: linear-gradient(var(--o-green), var(--d-green));
+  background-color: var(--o-green);
   border: .1em solid var(--d-green);
   transition: 0.5s;
   outline: none;
 }
 
 .info-save:hover {
-  background-image: radial-gradient(var(--o-green), var(--d-green));
+  background-image: radial-gradient(var(--o-green), var(--m-green));
   cursor: pointer;
 }
 
@@ -228,14 +229,14 @@
   margin: .5rem;
   padding: .3em;
   color: whitesmoke;
-  background-image: linear-gradient(var(--o-green), var(--d-green));
+  background-color: var(--o-green);
   transition: 0.5s;
   outline: none;
   border: 1px solid var(--d-green);
 }
 
 .green-btn:hover {
-  background-image: radial-gradient(var(--o-green), var(--d-green));
+  background-image: radial-gradient(var(--o-green), var(--m-green));
   cursor: pointer;
 }
 

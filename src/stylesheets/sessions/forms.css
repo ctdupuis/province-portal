@@ -32,7 +32,7 @@
 
 .session-form input.form-btn {
   color: whitesmoke;
-  background-image: linear-gradient(var(--o-green), var(--m-green));
+  background-color: var(--o-green);
   cursor: pointer;
   font-size: 12px;
   padding: 7px;

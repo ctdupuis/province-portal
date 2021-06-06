@@ -34,7 +34,6 @@ fieldset {
     border-radius: 10px;
     margin: 10px 0 10px 0;
     border-color: var(--d-green);
-    /* background-color: #ddd; */
     background-color: white;
 }
 
@@ -43,7 +42,6 @@ legend {
     color: whitesmoke;
     padding: 1.5%;
     border-radius: .5em;
-    background-image: linear-gradient(var(--o-green), var(--d-green));
     margin-left: 1rem;
 }
 

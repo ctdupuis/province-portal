@@ -93,7 +93,7 @@ li.comment {
 
 .comment-submit:hover {
   cursor: pointer;
-  background-image: radial-gradient(var(--o-green), var(--d-green));
+  background-image: radial-gradient(var(--o-green), var(--m-green));
   transition: 0.3s;
   color: whitesmoke;
 }
@@ -118,7 +118,6 @@ div.comment_field {
   height: 100%;
   width: 100%;
   transition: width 0.4s ease-in-out;
-  /* background-color: lightgrey; */
   background-image: linear-gradient(lightgrey, darkgrey);
   resize: none;
   border-radius: 15px 0 0 15px;
@@ -127,13 +126,14 @@ div.comment_field {
   border: none;
   border-color: var(--o-green);
   outline: none;
-  transition: 0.5s;
+  transition: 0.2s ease-in;
 }
 
 .comment-input:focus {
   background-color: white;
   background-image: linear-gradient(whitesmoke, white);
   border: 1px solid var(--o-green);
+  box-shadow: inset 1px 1px 7px var(--o-green);
 }
 
 .comment_submit_btn {

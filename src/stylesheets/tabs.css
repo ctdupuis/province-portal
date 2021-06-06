@@ -1,11 +1,11 @@
 @import '../index.css';
 
 .nav-tabs-container {
-    background-image: linear-gradient(var(--m-green), var(--o-green));
     height: 2.5rem;
     text-align: center;
     justify-content: center;
     display: flex;
+    background-color: #333;
 }
 
 .nav-tab {
@@ -29,11 +29,11 @@
     height: 100%;
     padding: .6em;
     transition: 0.5s;
+    font-variant: small-caps;
 }
 
 a.active {
-    background-color: var(--l-green);
-    /* background-image: radial-gradient(var(--o-green), var(--l-green)); */
+    background-color: var(--o-green);
 }
 
 .nav-tab a:hover {

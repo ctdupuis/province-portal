@@ -7,7 +7,7 @@
 
 tr.selectable:hover {
     background-color: var(--l-green);
-    opacity: .75;
+    background-image: linear-gradient(to right, var(--l-green), var(--o-green));
     cursor: pointer;
     padding: 1%;
 }
@@ -112,18 +112,7 @@ tr.selectable:hover {
 .stop {
     list-style-type: none;
     margin: .2em 0;
-}
-
-.only-bottom {
-    border-left: none;
-    border-top: none;
-    border-right: none;
-}
-
-.only-right-side {
-    /* border-left: none; */
-    border-top: none;
-    /* border-bottom: none; */
+    padding: 2%;
 }
 
 .date-input {
