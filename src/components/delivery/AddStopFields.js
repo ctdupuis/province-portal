@@ -22,51 +22,53 @@ export default class AddStopFields extends Component {
     render() {
         const disabled = this.state.patient_name === "" || this.state.patient_address === "" || this.state.miles === ""
         return (
-            <tr>
-                <td>
+            <div className="stops-container">
 
+                <div className="stop">
 
-                    <label>Patient Name</label>
-                    <input 
-                        type="text" 
-                        onChange={this.onChange}
-                        name="patient_name"
-                        className="smaller-fields"
-                        value={this.state.patient_name}
-                    />
+                    <div className="form-group">
+                        <label>Patient Name</label>
+                        <input 
+                            type="text" 
+                            onChange={this.onChange}
+                            name="patient_name"
+                            className="smaller-fields"
+                            value={this.state.patient_name}
+                        />
+                    </div>
 
-                </td>
+                    <div className="form-group">
+                        <label>Patient Address</label>
+                        <input 
+                            type="text"
+                            onChange={this.onChange}
+                            name="patient_address"
+                            className="smaller-fields"
+                            value={this.state.patient_address}
+                            />
+                    </div>
 
-                <td>
-                    <label>Patient Address</label>
-                    <input 
-                        type="text"
-                        onChange={this.onChange}
-                        name="patient_address"
-                        className="smaller-fields"
-                        value={this.state.patient_address}
-                    />
-                </td>
+                    <div className="form-group">
+                        <label>Adjusted Mileage</label>
+                        <input 
+                            type="number"
+                            step=".1"
+                            max="50"
+                            min="0"
+                            name="miles"
+                            onChange={this.onChange}
+                            className="smaller-fields"
+                            value={this.state.miles}
+                            style={{ textAlign: "center" }}
+                        />
+                    </div>
 
-                <td>
-                    <label>Adjusted Mileage</label>
-                    <input 
-                        type="number"
-                        step=".1"
-                        max="50"
-                        min="0"
-                        name="miles"
-                        onChange={this.onChange}
-                        className="smaller-fields"
-                        value={this.state.miles}
-                        style={{ textAlign: "center" }}
-                    />
-                </td>
+                    <div>
+                        <button className="green-btn" disabled={disabled} onClick={this.handleClick}>Submit</button>
+                    </div>
 
-                <td>
-                    <button className="green-btn" disabled={disabled} onClick={this.handleClick}>Submit</button>
-                </td>
-            </tr>
+                </div>
+            </div>
         )
     }
 }

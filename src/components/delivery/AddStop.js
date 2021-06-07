@@ -8,22 +8,22 @@ export default function AddStop({ entries, addStop }) {
     const renderEntries = entries.map((e) => {
         return(
             <>
-            <tr className="selectable" key={e.id} onClick={() => {
-                setDisplay(!detailDisplay)
-                setDetailID(e.id)
-            }}>
-                <td>{e.date_format}</td>
-                <td>{e.user.first_name} | {e.user.username}</td>
-                <td>{e.stops.length}</td>
-                <td>{e.miles}</td>
-            </tr>
-            
-            {
-                detailDisplay && detailID === e.id ?
-                    <AddStopFields routeID={e.id} addStop={addStop} />
-                    :
-                    null
-            }
+                <tr className="selectable" key={e.id} onClick={() => {
+                    setDisplay(!detailDisplay)
+                    setDetailID(e.id)
+                }}>
+                    <td>{e.date_format}</td>
+                    <td>{e.user.first_name} | {e.user.username}</td>
+                    <td>{e.stops.length}</td>
+                    <td>{e.miles}</td>
+                </tr>
+                
+                {
+                    detailDisplay && detailID === e.id ?
+                        <AddStopFields routeID={e.id} addStop={addStop} />
+                        :
+                        null
+                }
             </>
         )
     })
