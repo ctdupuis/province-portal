@@ -42,3 +42,8 @@ body {
 input {
   color: var(--m-green);
 }
+
+input:focus {
+  box-shadow: inset 1px -1px 3px var(--l-green);
+  border: 1px solid var(--m-green);
+}

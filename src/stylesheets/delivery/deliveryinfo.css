@@ -14,4 +14,6 @@
     list-style-type: none;
     margin: 1%;
     padding: 1.5%;
+    box-shadow: inset -25px 25px 75px var(--l-green);
+    border-radius: 10px;
 }

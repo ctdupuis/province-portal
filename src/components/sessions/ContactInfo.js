@@ -9,6 +9,14 @@ const renderEmail = email => {
     }
 }
 
+const renderPhone = phone => {
+    if (phone) {
+        return phone
+    } else {
+        return "No phone number on file"
+    }
+}
+
 export default function ContactInfo({ toggleEmail, toggleEmailVal, email, togglePhone, togglePhoneVal, phone, handleChange, handleClick, currentUser }) {
     return (
         <div className="user-info-content">
@@ -67,7 +75,7 @@ export default function ContactInfo({ toggleEmail, toggleEmailVal, email, toggle
                         </>
                         :
                         <div className="form-group">
-                            <h4>{renderEmail(currentUser.phone)}</h4>
+                            <h4>{renderPhone(currentUser.phone)}</h4>
                             <button className="info-save fieldset-btn" onClick={togglePhone}>
                                 Change
                             </button>

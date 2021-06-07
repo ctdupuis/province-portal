@@ -25,10 +25,10 @@ export default class Comment extends Component {
       <div className="edit-delete-container">
         {this.state.isEditing ? 
           <>
-            <button className="info-cancel" onClick={this.toggleEdit}>Cancel</button>
             <button className="info-save" onClick={
               () => this.props.updateComment(commentdata)}
             >Save</button>
+            <button className="info-cancel" onClick={this.toggleEdit}>Cancel</button>
           </>
           :
           <>

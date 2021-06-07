@@ -37,8 +37,8 @@ export default class Post extends Component {
       <div className="edit-delete-container">
         {this.state.isEditing ? 
           <>
-            <button className="info-cancel" onClick={this.toggleEdit}>Cancel</button>
             <button className="info-save" onClick={() => this.props.updatePost({ id: postID, content: this.state.content })}>Save</button>
+            <button className="info-cancel" onClick={this.toggleEdit}>Cancel</button>
           </>
           :
           <>
