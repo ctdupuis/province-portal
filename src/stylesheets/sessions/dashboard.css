@@ -54,7 +54,6 @@
 
 .user-info-title h2, h3 {
   color: whitesmoke;
-  font-variant: small-caps;
   font-size: 2em;
 }
 
@@ -85,7 +84,6 @@
   transition: 0.5s;
   margin-top: auto;
   border: none;
-  float: right;
   outline: none;
 }
 

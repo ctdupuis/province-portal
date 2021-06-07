@@ -87,12 +87,12 @@ export default class Inventory extends Component {
                 <td>{item.quantity}</td>
                 <td>{item.unit_of_measurement}</td>
                 <td>
-                <button className="delete-info" onClick={() => this.handleDelete(item.id)}>
-                    <FaTrash />
-                </button>
-                <button data-id={item.id} className="edit-info" onClick={this.toggleEdit}>
-                  <FaPen />
-                </button>
+                    <button data-id={item.id} className="edit-info" onClick={this.toggleEdit}>
+                        <FaPen />
+                    </button>
+                    <button className="delete-info" onClick={() => this.handleDelete(item.id)}>
+                        <FaTrash />
+                    </button>
                 </td>
             </tr>
             )

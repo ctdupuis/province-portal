@@ -42,11 +42,11 @@ export default class Post extends Component {
           </>
           :
           <>
-            <button className="timestamp total-comments delete-info" onClick={() => this.handleDelete(postID)}>
-              <FaTrash />
-            </button>
             <button className="timestamp total-comments edit-info" onClick={this.toggleEdit}>
               <FaPen />
+            </button>
+            <button className="timestamp total-comments delete-info" onClick={() => this.handleDelete(postID)}>
+              <FaTrash />
             </button>
           </>
           }

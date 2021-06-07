@@ -71,7 +71,7 @@ export default class ReportManager extends Component {
         const disabled = this.checkDisable() ? false : true 
         return (
             <section className="dash-container">
-                <div className="flex-container">
+                <div className="flex-container" stylr={{ flexWrap: "wrap"}}>
 
                 <CheckLog 
                     createCheckEntry={this.props.createCheckEntry}
@@ -85,7 +85,6 @@ export default class ReportManager extends Component {
                         <div className="user-info-content">
 
                             <div className="form-group">
-
                                 <label>Select Report Type</label>
                                 <select id="reports" name="reports" onChange={this.setType}>
                                     <option>Select a report...</option>
@@ -96,7 +95,6 @@ export default class ReportManager extends Component {
 
                 
                             <div className="form-group">
-
                                 <label htmlFor="start_date">Start Date</label>
                                 <input 
                                     type="date" 
@@ -107,11 +105,9 @@ export default class ReportManager extends Component {
                                     onChange={this.onChange}
                                     max={moment().format("YYYY-MM-DD")}
                                 />
-
                             </div>
 
                             <div className="form-group">
-
                                 <label htmlFor="end_date">End Date</label>
                                 <input 
                                     type="date" 
@@ -121,8 +117,7 @@ export default class ReportManager extends Component {
                                     value={this.state.end_date}
                                     onChange={this.onChange}
                                     max={moment().format("YYYY-MM-DD")}
-                                />
-
+                                   />
                             </div>
                         </div>
 

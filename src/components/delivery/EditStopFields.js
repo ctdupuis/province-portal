@@ -48,51 +48,59 @@ export default class EditStopFields extends Component {
         return this.props.route.stops.map((s) => {
             return(
                 this.state.id == s.id ? 
-                <tr key={s.id}>
-                    <td>
-                        <label>Patient Name</label>
-                        <input 
-                            type="text" 
-                            onChange={this.onChange}
-                            name="patient_name"
-                            className="smaller-fields"
-                            defaultValue={s.patient_name}
-                        />
-                    </td>
+                <div className="stops-container" key={s.id}>
+                    <div className="stop">
 
-                    <td>
-                        <label>Patient Address</label>
-                        <input 
-                            type="text"
-                            onChange={this.onChange}
-                            name="patient_address"
-                            className="smaller-fields"
-                            defaultValue={s.patient_address}
-                        />
-                    </td>
+                        <div className="form-group" style={{ flexDirection: "column", display: "flex", alignItems: "center"}}>
+                            <label>Patient Name</label>
+                            <input 
+                                type="text" 
+                                onChange={this.onChange}
+                                name="patient_name"
+                                className="smaller-fields"
+                                defaultValue={s.patient_name}
+                                style={{ width: "50%" }}
+                            />
+                        </div>
 
-                    <td>
-                        <button className="cancel" onClick={this.toggleEdit}>Cancel</button>
-                    </td>
-                </tr>
+                        <div className="form-group" style={{ flexDirection: "column", display: "flex", alignItems: "center" }}>
+                            <label>Patient Address</label>
+                            <input 
+                                type="text"
+                                onChange={this.onChange}
+                                name="patient_address"
+                                className="smaller-fields"
+                                defaultValue={s.patient_address}
+                                style={{ width: "50%" }}
+                            />
+                        </div>
+
+                        <div className="form-group">
+                            <button className="cancel" onClick={this.toggleEdit}>Cancel</button>
+                        </div>
+                    </div>
+                </div>
                 :
-                <tr>
-                    <td>
-                        <label>Patient Name</label>
-                        <p>{s.patient_name}</p>
-                    </td>
+                <div className="stops-container">
+                    <div className="stop">
 
-                    <td>
-                        <label>Patient Address</label>
-                        <p>{s.patient_address}</p>
-                    </td>
+                        <div className="form-group">
+                            <label>Patient Name</label>
+                            <p>{s.patient_name}</p>
+                        {/* </div>
 
-                    <td>
-                        <button data-id={s.id} className="edit-info" onClick={this.toggleEdit}>
-                            <FaPen />
-                        </button>
-                    </td>
-                </tr>
+                        <div className="form-group"> */}
+                            <label>Patient Address</label>
+                            <p>{s.patient_address}</p>
+                        </div>
+
+                        <div className="form-group">
+                            <button data-id={s.id} className="edit-info" onClick={this.toggleEdit}>
+                                <FaPen />
+                            </button>
+                        </div>
+                    </div>
+                </div>
             )
         })
     }
@@ -104,8 +112,8 @@ export default class EditStopFields extends Component {
             <tr>
                 {this.renderStopFields()}
 
-                <tr>
-                    <td>
+                <div className="stop">
+                    <div className="form-group">
                         <label>Adjusted Mileage</label>
                         <input 
                             type="number"
@@ -117,12 +125,12 @@ export default class EditStopFields extends Component {
                             className="smaller-fields"
                             value={this.state.miles}
                         />
-                    </td>
+                    </div>
 
-                    <td>
+                    <div className="form-group">
                         <button className="green-btn" disabled={disabled} onClick={this.handleClick}>Submit</button>
-                    </td>
-                </tr>
+                    </div>
+                </div>
             </tr>
         )
     }

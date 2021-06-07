@@ -12,23 +12,27 @@ export default function RemoveStopFields({ route, removeStop }) {
 
     const renderStops = route.stops.map((stop) => {
         return(
-            <tr key={stop.id}>
-                <td>
-                    <label>Patient Name</label>
-                    <p>{stop.patient_name}</p>
-                </td>
+            <div className="stops-container">
+                <div className="stop">
 
-                <td>
-                    <label>Patient Address</label>
-                    <p>{stop.patient_address}</p>
-                </td>
+                    <div className="form-group">
+                        <label>Patient Name</label>
+                        <p>{stop.patient_name}</p>
+                    </div>
 
-                <td>
-                    <button className="delete-info" onClick={() => handleDelete(route.id, stop.id)}>
-                        <FaTrash />
-                    </button>
-                </td>
-            </tr>
+                    <div className="form-group">
+                        <label>Patient Address</label>
+                        <p>{stop.patient_address}</p>
+                    </div>
+
+                    <div className="form-group">
+                        <button className="delete-info" onClick={() => handleDelete(route.id, stop.id)}>
+                            <FaTrash />
+                        </button>
+                    </div>
+                    
+                </div>
+            </div>
         )
     })
     return renderStops
