@@ -71,7 +71,7 @@ export default class ReportManager extends Component {
         const disabled = this.checkDisable() ? false : true 
         return (
             <section className="dash-container">
-                <div className="flex-container" stylr={{ flexWrap: "wrap"}}>
+                <div className="flex-container" style={{ flexWrap: "wrap"}}>
 
                 <CheckLog 
                     createCheckEntry={this.props.createCheckEntry}

@@ -11,7 +11,7 @@
   border-radius: 5px;
   padding: 10px;
   display: flex;
-  box-shadow: 3px 3px var(--d-green);
+  box-shadow: 3px 3px #333;
   background-image: linear-gradient(var(--o-green), var(--d-green));
 }
 
@@ -29,7 +29,7 @@
   margin: 1rem;
   background-color: whitesmoke;
   border-radius: 5px;
-  box-shadow: 3px 3px var(--d-green);
+  box-shadow: 3px 3px #333;
 }
 
 .sub-header {
@@ -55,6 +55,7 @@
 .user-info-title h2, h3 {
   color: whitesmoke;
   font-size: 2em;
+  font-variant-caps: small-caps;
 }
 
 .user-info-content {
