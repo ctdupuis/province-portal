@@ -84,7 +84,7 @@ export default class InfoUpdate extends Component {
                         />
                         <br />
 
-                        <input className="form-btn" type="submit" value="Update Info" />
+                        <input className="form-btn" type="submit" value="Save and continue" />
                     </form>
                 </div>
             </div>

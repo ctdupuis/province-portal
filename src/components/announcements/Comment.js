@@ -32,11 +32,11 @@ export default class Comment extends Component {
           </>
           :
           <>
-            <button className="timestamp total-comments delete-info" onClick={() => this.handleDelete(commentID, postID)}>
-              <FaTrash />
-            </button>
             <button className="timestamp total-comments edit-info" onClick={this.toggleEdit}>
               <FaPen />
+            </button>
+            <button className="timestamp total-comments delete-info" onClick={() => this.handleDelete(commentID, postID)}>
+              <FaTrash />
             </button>
           </>
           }
