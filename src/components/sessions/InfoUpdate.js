@@ -47,7 +47,7 @@ export default class InfoUpdate extends Component {
             <div className="session-form-container">
                 <div className="form-box">
                     <form className="session-form" onSubmit={this.handleSubmit}>
-                        <h3>Please update your password. Optional info can be added later.</h3>
+                        <h4 style={{color: "var(--d-green)"}}>Please update your password. Optional info can be added later.</h4>
                         <label>Password</label>
                         <input 
                             onChange={this.handleChange} 

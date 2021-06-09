@@ -30,23 +30,25 @@ export default class Login extends Component {
                 <div className="form-box">
                     <form className="session-form">
 
-                        <label>Username</label>
-                        <input 
-                            onChange={this.handleChange} 
-                            type='text' 
-                            name='username' 
-                            value={this.state.username}
-                        />
-                        <br />
+                        <div className="form-group">
+                            <label>Username</label>
+                            <input 
+                                onChange={this.handleChange} 
+                                type='text' 
+                                name='username' 
+                                value={this.state.username}
+                            />
+                        </div>
 
-                        <label>Password</label>
-                        <input 
-                            onChange={this.handleChange} 
-                            type='password' 
-                            name='password' 
-                            value={this.state.password}
-                        />
-                        <br />
+                        <div className="form-group">
+                            <label>Password</label>
+                            <input 
+                                onChange={this.handleChange} 
+                                type='password' 
+                                name='password' 
+                                value={this.state.password}
+                            />
+                        </div>
 
                         <input className="form-btn" type="submit"  onClick={this.handleClick} value="Log In" />
                         <input className="form-btn" type="submit"  onClick={this.handleClick} value="Demo" />
