@@ -27,6 +27,7 @@ export default function SatDelivery() {
                 <li>Ponchatoula</li>
                 <li>Reserve</li>
                 <li>Saint Francisville</li>
+                <li>Trout</li>
             </ul>
         </div>
 
