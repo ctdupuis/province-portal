@@ -42,3 +42,8 @@
   background-image: radial-gradient(var(--o-green), var(--m-green));
   transition: 0.3s;
 }
+
+.vertical {
+  display: flex;
+  flex-direction: column;
+}

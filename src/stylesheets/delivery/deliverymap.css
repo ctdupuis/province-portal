@@ -28,6 +28,7 @@
     color: var(--d-green);
     border-radius: 10px;
     height: 1.75rem;
+    margin: .5em;
 }
 
 fieldset {

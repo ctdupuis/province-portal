@@ -178,32 +178,47 @@ class DeliveryMap extends Component {
             <h3>Plot a Delivery</h3>
           </div>
           <form className="new-user-form" onSubmit={this.handleSubmit}>
-            <input
-              type="search"
-              name="address"
-              placeholder="Enter address..."
-              onChange={this.handleChange}
-            />
-            <select
-              id="city-select"
-              value={this.state.city}
-              onChange={this.setCity}
-            >
-              <option value="Lafayette">Lafayette</option>
-              <option value="Youngsville">Youngsville</option>
-              <option value="Broussard">Broussard</option>
-            </select>
 
-            <input
-              className="new-user-sbmt"
-              type="submit"
-              value="Check Location"
-            />
+            <div className="flex-container" style={{ justifyContent: "center" }}>
 
-            <button
-              className="new-user-sbmt green-btn"
-              onClick={this.clearMap}
-            >Clear Map </button>
+              <div className="form-group vertical">
+                <label htmlFor="address">Enter Address</label>
+                <input
+                  type="search"
+                  name="address"
+                  onChange={this.handleChange}
+                />
+              </div>
+
+              <div className="form-group vertical">
+                <label htmlFor="city-select">Select City</label>
+                <select
+                  id="city-select"
+                  value={this.state.city}
+                  onChange={this.setCity}
+                >
+                  <option value="Lafayette">Lafayette</option>
+                  <option value="Youngsville">Youngsville</option>
+                  <option value="Broussard">Broussard</option>
+                </select>
+              </div>
+
+              <div className="form-group vertical">
+                <input
+                  className="new-user-sbmt"
+                  type="submit"
+                  value="Check Location"
+                  style={{ margin: "0", marginBottom: "3px"}}
+                />
+
+                <button
+                  className="new-user-sbmt green-btn"
+                  onClick={this.clearMap}
+                  style={{ margin: "0"}}
+                >Clear Map</button>
+              </div>
+
+            </div>
           </form>
 
           <div className="map-container">
