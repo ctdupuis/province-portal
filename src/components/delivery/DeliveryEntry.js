@@ -39,7 +39,20 @@ export default class DeliveryEntry extends Component {
                 <div className="user-info-title">
                     <h3>Plan a Route</h3>
                 </div>
+
                 <form className="new-user-form" onSubmit={this.handleSubmit}>
+                        
+                        <div className="form-group">
+                            <button className="green-btn" onClick={this.addLocation}>
+                                Add Another Stop
+                            </button>
+
+                            <button className="green-btn" onClick={this.popLocation}>
+                                Remove Stop
+                            </button>
+                        </div>
+
+
                     <div className="flex-container" style={{ flexWrap: "wrap"}}>
 
                     {this.state.locations.map((val, idx) => {
@@ -59,7 +72,7 @@ export default class DeliveryEntry extends Component {
                                             data-id={idx}
                                             value={locations[idx].patient}
                                             onChange={this.handleChange}
-                                            />
+                                        />
                                     </div>
 
                                     <div className="form-group">
@@ -72,7 +85,7 @@ export default class DeliveryEntry extends Component {
                                             data-id={idx}
                                             value={locations[idx].address}
                                             onChange={this.handleChange}
-                                            />
+                                        />
                                     </div>
                                 </div>
                             </fieldset>
@@ -92,14 +105,6 @@ export default class DeliveryEntry extends Component {
                         onChange={this.handleChange}
                         className="number-input"
                     />
-
-                    <button className="green-btn" onClick={this.addLocation}>
-                        Add Another Stop
-                    </button>
-
-                    <button className="green-btn" onClick={this.popLocation}>
-                        Remove Stop
-                    </button>
 
                 </div>
             </form>
