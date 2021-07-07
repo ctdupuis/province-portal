@@ -127,6 +127,8 @@ div.comment_field {
   border-color: var(--o-green);
   outline: none;
   transition: 0.2s ease-in-out;
+  overflow: visible;
+  text-overflow: ellipsis;
 }
 
 .comment-input:focus {
@@ -235,4 +237,14 @@ input:disabled:hover, button:disabled:hover {
   background-color: darkgrey;
   background-image: linear-gradient(lightgrey, grey);
   color: black;
+}
+
+.heart {
+  color: lightgrey;
+  margin: 1rem 0 0 1rem;
+  /* margin-left: .1rem; */
+}
+
+.heart:hover {
+  cursor: pointer;
 }

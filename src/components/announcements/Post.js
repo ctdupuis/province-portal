@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import CommentList from "./CommentList";
 import NewComment from "./NewComment";
-import { FaPen, FaTrash } from 'react-icons/fa';
+import { FaPen, FaTrash, FaHeart } from 'react-icons/fa';
 import Loading from '../static/Loading';
 
 
@@ -112,6 +112,11 @@ export default class Post extends Component {
                 <button onClick={this.displayComments} className="timestamp total-comments">
                   {this.commentFormat(comments)}
                 </button>
+                <span className="likes-container">
+                  <FaHeart className="heart" />
+                  3
+                </span>
+                
               </div>
               {this.checkOwnership(currentUser, userID, id)}
             </div>
